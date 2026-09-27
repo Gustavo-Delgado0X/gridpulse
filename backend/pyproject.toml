@@ -1,0 +1,9 @@
+# Scaffold placeholder — dependencies to pin at build time (see master plan §5).
+[project]
+name = "gridpulse-backend"
+version = "0.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  # "fastapi", "pydantic>=2", "uvicorn", "shapely", "pymupdf", "slowapi",
+  # "pydantic-ai-slim[openrouter,google]==2.51.0",
+]

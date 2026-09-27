@@ -1,0 +1,9 @@
+# Source registry — scaffold placeholder. Fill id, title, url, sha256, pages, retrieved_at per source.
+sources:
+  - id: desc-2428      # DESC 2024-2028 $2M+ list (starter; sha256 prefix 890876d0faefd405)
+  - id: desc-2529      # DESC 2025-2029 (scrtp.com)
+  - id: desc-2630      # DESC 2026-2030 (scrtp.com)
+  - id: gpc-irp25-v3   # GPC 2025 IRP Vol 3 Public Disclosure (starter)
+  - id: sperry-key     # Projects_Overlaps.xlsx (starter)
+  - id: sertp-2025
+  - id: sertp-2026

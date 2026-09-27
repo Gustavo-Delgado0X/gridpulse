@@ -1,0 +1,11 @@
+{
+  "name": "gridpulse-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'TODO: vite'",
+    "build": "echo 'TODO: vite build'"
+  },
+  "//": "Scaffold placeholder. Dependencies to add at build time: react, react-dom, typescript, vite, maplibre-gl@^5, tailwindcss."
+}

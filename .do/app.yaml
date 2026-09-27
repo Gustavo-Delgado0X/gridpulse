@@ -1,0 +1,4 @@
+# DigitalOcean App Platform spec — scaffold placeholder (P1d). Fill at deploy time.
+# static_sites: frontend (npm ci && npm run build, output_dir: dist, catchall_document: index.html)
+# services: api (source_dir: backend, uvicorn --proxy-headers, http_port 8080, Python 3.12 pinned)
+# ingress.rules: /api -> api (preserve_path_prefix: true), / -> frontend
