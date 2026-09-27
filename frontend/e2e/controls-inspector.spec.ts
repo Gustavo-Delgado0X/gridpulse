@@ -172,3 +172,36 @@ test.describe("inspector", () => {
     await expect(page.getByRole("row").filter({ hasText: "IRP 2027 → SERTP 2026: 2028" })).toBeVisible();
   });
 });
+
+test.describe("voice briefing (ElevenLabs)", () => {
+  test("hidden when the server has no ElevenLabs key", async ({ page, request }) => {
+    const health = (await (await request.get("/api/health")).json()).data;
+    test.skip(health.voice === "available", "this server has a key configured");
+    await page.goto(`/app#pair=${THURMOND}&m=closest&d=25`);
+    await expect(inspector(page)).toContainText("Hooks - Thurmond");
+    await expect(page.getByRole("button", { name: /voice briefing/ })).toHaveCount(0);
+  });
+
+  test("when available: transcript comes from the script endpoint and Listen requests this pair's audio", async ({ page }) => {
+    await page.route("**/api/health", async (route) => {
+      const res = await route.fetch();
+      const body = await res.json();
+      await route.fulfill({ response: res, json: { ...body, data: { ...body.data, voice: "available" } } });
+    });
+    const audioRequests: string[] = [];
+    await page.route("**/brief/audio?*", (route) => {
+      audioRequests.push(route.request().url());
+      return route.fulfill({ status: 503, contentType: "application/json", body: "{}" });
+    });
+    await page.goto(`/app#pair=${THURMOND}&m=closest&d=25`);
+    const panel = inspector(page);
+    await panel.getByText("Transcript").click();
+    await expect(panel).toContainText("GridPulse briefing. Pair 1");
+    await expect(panel).toContainText("page 31");
+    await panel.getByRole("button", { name: "Listen to voice briefing" }).click();
+    await expect.poll(() => audioRequests.length).toBeGreaterThan(0);
+    expect(audioRequests[0]).toContain(`/api/opportunities/${THURMOND}/brief/audio?method=closest`);
+    await expect(panel.getByRole("button", { name: "Retry voice briefing" })).toBeVisible();
+    await expect(panel.getByRole("status").filter({ hasText: "could not load" })).toBeVisible();
+  });
+});

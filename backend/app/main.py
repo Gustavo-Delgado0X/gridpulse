@@ -5,25 +5,24 @@ from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from slowapi import Limiter
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
-from slowapi.util import get_remote_address
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from app import voice
+from app.limits import limiter
 from app.repository import get_repository
 from app.routes import changes, export, opportunities, projects, sources
 from app.schemas import fail, ok
 
 API_PREFIX = "/api"
 ERROR_CODES = {400: "bad_request", 404: "not_found", 405: "method_not_allowed", 429: "rate_limited",
-               503: "unavailable"}
-RATE_LIMIT = os.environ.get("RATE_LIMIT", "120/minute")
+               502: "upstream_error", 503: "unavailable", 504: "upstream_timeout"}
 
 app = FastAPI(title="GridPulse API", version="0.1.0", docs_url=f"{API_PREFIX}/docs",
               openapi_url=f"{API_PREFIX}/openapi.json")
 
-app.state.limiter = Limiter(key_func=get_remote_address, default_limits=[RATE_LIMIT])
+app.state.limiter = limiter
 app.add_middleware(SlowAPIMiddleware)
 app.add_middleware(
     CORSMiddleware,
@@ -56,6 +55,7 @@ async def validation_error(_: Request, exc: RequestValidationError) -> JSONRespo
 def health() -> dict:
     ai = "available" if os.environ.get("OPENROUTER_API_KEY") or os.environ.get("GOOGLE_API_KEY") else "unavailable"
     return ok({"api": "ok", "data_mode": os.environ.get("DATA_MODE", "seed"), "ai": ai,
+               "voice": "available" if voice.api_key() else "unavailable",
                "sources_pinned": sum(1 for s in get_repository().sources if s.get("sha256"))})
 
 

@@ -42,6 +42,8 @@ def required_fields(interface: str) -> set[str]:
 def test_api_ts_uses_the_expected_routes():
     assert templates() == sorted([
         "/changes", "/export/overlaps.csv?d=${q.d}&method=${q.method}", "/health",
+        "/opportunities/${encodeURIComponent(id)}/brief/audio?method=${method}",
+        "/opportunities/${encodeURIComponent(id)}/brief/script?method=${method}",
         "/opportunities/${encodeURIComponent(id)}/brief?method=${method}",
         "/opportunities/${encodeURIComponent(id)}?method=${method}", "/opportunities?d=${q.d}&method=${q.method}",
         "/projects?located=true", "/quality"])
@@ -52,6 +54,9 @@ def test_api_ts_uses_the_expected_routes():
 def test_every_frontend_route_is_served(d, method):
     for template in templates():
         res = client.get("/api" + concrete(template, d, method))
+        if "/brief/audio" in template and res.status_code == 503:  # no ElevenLabs key here: documented fallback
+            assert res.json()["error"]["code"] == "unavailable"
+            continue
         assert res.status_code == 200, (template, res.text[:200])
 
 
