@@ -2,7 +2,7 @@ import type { Opportunity, ProjectRef, Quality } from "../types";
 
 export const ref = (over: Partial<ProjectRef>): ProjectRef => ({
   id: "desc-1", utility: "DESC", name: "Hooks - Thurmond 115kV Tie: Rebuild", source_id: "desc-2428", page: 31,
-  in_service_date: "2024-12-31", window_start: "2024-01-01", window_end: "2024-12-31", precision: "sperry_provided",
+  in_service_date: "2024-12-31", window_start: "2024-01-01", window_end: "2024-12-31", precision: "osm_feature",
   answer_key_id: "DESC_2", ...over,
 });
 
@@ -12,7 +12,7 @@ export const opp = (over: Partial<Opportunity>): Opportunity => ({
   method: "closest", tier: "T1", touching: true, dist_closest_mi: 0, dist_center_mi: 4.088, in_sperry_method: true,
   closest_points: [[33.66, -82.19], [33.66, -82.19]], centers: [[33.66, -82.19], [33.6, -82.18]],
   window_overlap_days: 0, in_service_gap_days: 3074, timeline_label: "separate", rank: 1, flags: [],
-  precision_a: "sperry_provided", precision_b: "sperry_provided", ...over,
+  precision_a: "osm_feature", precision_b: "osm_feature", ...over,
 });
 
 export const OPPS: Opportunity[] = [

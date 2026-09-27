@@ -1,6 +1,10 @@
+import { useState } from "react";
+import { TIER_TEXT } from "../format";
+import { discrepancyCards, formatDay } from "../landingData";
 import { WORKSPACE_PATH } from "../route";
-import { toHash } from "../urlState";
 import type { Opportunity, Quality } from "../types";
+import { toHash } from "../urlState";
+import { TIER_RANGE } from "./OpportunityTable";
 
 export interface LandingStats {
   projects: number | null;
@@ -19,16 +23,25 @@ export interface SourceFact {
 
 interface Props {
   stats: LandingStats;
+  /** The pair used for the Evidence section and the product screenshot. */
   featured?: Opportunity | null;
+  /** The top-ranked pair, shown in the hero. */
+  finding?: Opportunity | null;
+  /** Where the top-ranked pair touches, when it does. */
+  shared?: { name: string; lat: number; lon: number } | null;
   quality?: Quality | null;
-  conflict?: { message: string; project_id: string } | null;
   /** The featured DESC project's in-service date exactly as printed in the list GridPulse ranks on. */
   sourceFact?: SourceFact | null;
 }
 
 const PENDING = "—";
+const REPO_URL = "https://github.com/Gustavo-Delgado0X/gridpulse";
 const MONTH = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
 const month = (iso: string) => MONTH.format(new Date(`${iso}T00:00:00Z`));
+const fmt = (n: number | null | undefined) => (n == null ? PENDING : String(n));
+const miles = (o: Opportunity) => (o.touching ? "0.00 mi" : `${o.dist_closest_mi.toFixed(2)} mi`);
+const sentence = (s: string) => s[0] + s.slice(1).toLowerCase();
+const pairHref = (o: Opportunity | null | undefined) => (o ? `${WORKSPACE_PATH}${toHash({ pair: o.id, method: "closest", d: 25 })}` : WORKSPACE_PATH);
 
 /** The build-window intersection of the featured pair, e.g. "Jun 2025 → Dec 2025". */
 export function overlapRange(o: Opportunity | null | undefined): string | null {
@@ -39,287 +52,223 @@ export function overlapRange(o: Opportunity | null | undefined): string | null {
   return `${month(start)} → ${month(end)}`;
 }
 
-function coordLabel(o: Opportunity | null | undefined): string {
-  if (!o) return "SAVANNAH / AUGUSTA STUDY AREA";
-  const [[lat1, lon1], [lat2, lon2]] = o.closest_points;
-  return `${((lat1 + lat2) / 2).toFixed(2)}°N ${Math.abs((lon1 + lon2) / 2).toFixed(2)}°W · FEATURED PAIR`;
+type ShotKey = "opportunities" | "changes" | "quality";
+
+function shots(stats: LandingStats, featured: Opportunity | null | undefined) {
+  return {
+    opportunities: { label: "Opportunities", path: `opportunities/${featured ? String(featured.rank).padStart(2, "0") : ""}`,
+      src: "/landing/opportunities.jpg", alt: "Opportunities: a ranked pair's detail beside the map",
+      head: "A ranked queue of every DESC × Georgia Power pair, with the map beside it.",
+      body: `${fmt(stats.pairs)} pairs within 25 mi, tiered from touching to under 25 mi, measured at closest points or with Sperry's center method, and weighed by build-window overlap. Open any pair to see why it ranks where it does.` },
+    changes: { label: "Plan changes", path: "plan-changes", src: "/landing/plan-changes.jpg", alt: "Plan changes: schedule slips and cost changes grouped by project",
+      head: `${fmt(stats.changes)} changes between plan editions, with the size of each one.`,
+      body: "Slipped in-service dates, cost moves and renamed projects, grouped by project. Both source pages are cited, and each change links to the opportunities it affects." },
+    quality: { label: "Data quality", path: "data-quality", src: "/landing/data-quality.jpg", alt: "Data quality: location provenance, answer-key benchmark and issue queue",
+      head: "Where each coordinate came from, and where the sources disagree.",
+      body: "Every endpoint is resolved from OpenStreetMap or left unresolved; none is taken from the answer key. A benchmark checks GridPulse against Sperry's answer key, and an issue queue lists every conflict." },
+  } satisfies Record<ShotKey, Record<string, string>>;
 }
 
-const FEATURED_ID = "desc-2428-6367-d-g__gpc-20065";
-const REPO_URL = "https://github.com/Gustavo-Delgado0X/gridpulse";
+function Finding({ finding, shared }: Pick<Props, "finding" | "shared">) {
+  return (
+    <figure className="lp2-finding" aria-label="Top-ranked finding">
+      <div className="lp2-finding__head"><span>FINDING · RANK #{finding ? String(finding.rank).padStart(2, "0") : PENDING}</span>
+        <span>{finding?.tier ?? PENDING} · {finding ? (finding.touching ? "TOUCHING" : TIER_RANGE[finding.tier!]) : PENDING}</span></div>
+      <div className="lp2-finding__row">
+        <span className="lp2-mono lp2-dim">Center to center · Sperry's method</span>
+        <span className="lp2-finding__center">{finding ? `${finding.dist_center_mi.toFixed(2)} mi` : PENDING}</span>
+      </div>
+      <div className="lp2-finding__row">
+        <span className="lp2-mono">Closest points · GridPulse</span>
+        <span className="lp2-finding__closest">{finding ? miles(finding) : PENDING}</span>
+      </div>
+      <div className="lp2-finding__foot">
+        <span className="lp2-proj"><span className="lp2-dot" aria-hidden="true" />{finding?.a.name ?? PENDING}<span className="lp2-dim">DESC</span></span>
+        <span className="lp2-proj"><span className="lp2-sq" aria-hidden="true" />{finding?.b.name ?? PENDING}<span className="lp2-dim">GPC</span></span>
+        <span className="lp2-dim small">{shared
+          ? `They share the ${shared.name} endpoint at ${shared.lat.toFixed(4)}, ${shared.lon.toFixed(4)}. Same substation, different plans.`
+          : finding ? `Closest points ${miles(finding)} apart.` : PENDING}</span>
+        {finding && <a className="lp2-link" href={pairHref(finding)}>Open this pair →</a>}
+      </div>
+    </figure>
+  );
+}
 
-const dots = (pattern: string) => pattern.split("").map((c, i) => <span key={i} className={c === "1" ? "on" : ""} />);
-
-const PROBLEMS = [
-  { h: "Plans are PDFs, not data", b: "Hundreds of pages of project tables and detail sheets, each utility in its own format, some fields redacted.", p: "101010101" },
-  { h: "Neighbours plan blind", b: "DESC and Georgia Power schedule work within a few miles of each other across the Savannah River, on overlapping build windows.", p: "110110000" },
-  { h: "Schedules drift between versions", b: "In-service dates slip and costs move from one edition to the next, and a table can disagree with its own detail page.", p: "100010001" },
-  { h: "Locations are ambiguous", b: "Substations are named, not placed. The same endpoint can appear with two coordinates a third of a mile apart.", p: "010111010" },
-];
-
-const STEPS = [
-  { n: "01", h: "Detect plan changes", b: "Compare plan editions project by project: slipped dates, cost changes, renames, and tables that disagree with their detail pages." },
-  { n: "02", h: "Validate the data", b: "Place endpoints from OpenStreetMap only, leave ambiguous ones unresolved, and check the result against Sperry's answer key without borrowing its coordinates." },
-  { n: "03", h: "Rank opportunities", b: "Measure every DESC × GPC pair at closest points and centers, tier it from touching to under 25 mi, and weigh build-window overlap." },
-  { n: "04", h: "Trace to evidence", b: "Open any pair to see the rationale, the timeline, and each quoted field with its source document and page." },
-];
+function Product({ stats, featured }: Pick<Props, "stats" | "featured">) {
+  const [view, setView] = useState<ShotKey>("opportunities");
+  const all = shots(stats, featured);
+  const shot = all[view];
+  return (
+    <section id="product" className="lp2-product" aria-label="Product">
+      <div role="tablist" aria-label="Product views" className="lp2-tabs">
+        {(Object.keys(all) as ShotKey[]).map((key, i) => (
+          <button key={key} type="button" role="tab" id={`shot-${key}`} aria-selected={view === key} aria-controls="shot-panel"
+                  className="lp2-tab" onClick={() => setView(key)}><span className="lp2-mono">0{i + 1}</span>{all[key].label}</button>
+        ))}
+      </div>
+      <div id="shot-panel" role="tabpanel" aria-labelledby={`shot-${view}`} className="lp2-window">
+        <div className="lp2-window__bar"><span /><span /><span /><span className="lp2-mono">gridpulse / savannah-augusta / {shot.path}</span></div>
+        <img src={shot.src} alt={shot.alt} width={1600} height={940} />
+      </div>
+      <div className="lp2-caption"><p className="lp2-caption__head">{shot.head}</p><p>{shot.body}</p></div>
+    </section>
+  );
+}
 
 function layers(pair: Opportunity | null, fact: SourceFact | null | undefined) {
-  const miles = pair ? (pair.touching ? "touching" : `${pair.dist_closest_mi.toFixed(2)} mi apart`) : PENDING;
+  const overlap = pair?.window_overlap_days ? `their build windows overlap by ${pair.window_overlap_days} days${overlapRange(pair) ? ` (${overlapRange(pair)})` : ""}` : "their build windows do not overlap";
   return [
-    { tag: "Source fact", glyph: "fact",
-      claim: fact ? `${fact.name.replace(/:.*$/, "")} planned in-service: ${fact.printed}` : PENDING,
+    { tag: "SOURCE FACT", kind: "fact", claim: fact ? `${fact.name} is planned to enter service ${fact.printed}.` : PENDING,
       src: fact ? `${fact.source_id} · p.${fact.page} · quoted as printed` : "loading" },
-    { tag: "Derived", glyph: "derived",
-      claim: pair ? `Closest points ${miles}; build windows overlap by ${pair.window_overlap_days ?? 0} days.` : PENDING,
-      src: "computed · geodesic closest points (nearest points found in EPSG:5070)" },
-    { tag: "Assessment", glyph: "assessment", claim: "Tier T3 — shared logistics worth reviewing. Candidate for human review.",
+    { tag: "DERIVED", kind: "derived",
+      claim: pair ? `Its closest point is ${miles(pair)} from ${pair.b.name}, and ${overlap}.` : PENDING,
+      src: "Computed by GridPulse · closest-point geometry" },
+    { tag: "ASSESSMENT", kind: "assessment",
+      claim: pair?.tier ? `Tier ${pair.tier}: ${sentence(TIER_TEXT[pair.tier])}. A candidate for human review.` : PENDING,
       src: "GridPulse rationale · labelled as such" },
   ];
 }
 
-const fmt = (n: number | null | undefined) => (n == null ? PENDING : String(n));
-
-function Schematic({ miles }: { miles: string }) {
-  return (
-    <svg className="schematic" viewBox="0 0 540 460" role="img" aria-label={`Schematic: the Jasper–Okatie DESC line and the Goshen–McIntosh GPC line, ${miles} apart across the Savannah River`}>
-      <defs>
-        <pattern id="lp-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="var(--line-soft)" /></pattern>
-      </defs>
-      <rect width="540" height="460" fill="url(#lp-grid)" />
-      <text x="16" y="26" className="schematic__caption">SCHEMATIC · NOT TO SCALE</text>
-      <path d="M236 45 C 250 150, 262 190, 270 220 S 300 320, 330 390 S 360 450, 368 460" fill="none" stroke="var(--line-hairline)" strokeWidth="9" strokeLinecap="round" />
-      <g stroke="#b9b4ac" strokeWidth="1.5">
-        <line x1="338" y1="70" x2="372" y2="125" /><line x1="102" y1="285" x2="158" y2="308" /><line x1="158" y1="308" x2="180" y2="374" />
-        <line x1="430" y1="285" x2="474" y2="340" />
-      </g>
-      <line x1="221" y1="178" x2="198" y2="340" stroke="var(--text-primary)" strokeWidth="2" />
-      <line x1="268" y1="171" x2="338" y2="191" stroke="var(--text-primary)" strokeWidth="2" />
-      <line x1="338" y1="191" x2="415" y2="211" stroke="var(--text-primary)" strokeWidth="2" strokeDasharray="2 4" />
-      <line x1="221" y1="178" x2="268" y2="171" stroke="var(--text-primary)" strokeWidth="1.5" strokeDasharray="4 3" />
-      <rect x="215" y="172" width="12" height="12" fill="var(--text-primary)" /><rect x="192" y="334" width="12" height="12" fill="var(--text-primary)" />
-      <circle cx="268" cy="171" r="6" fill="var(--text-primary)" /><circle cx="338" cy="191" r="4" fill="var(--text-primary)" /><circle cx="415" cy="211" r="5" fill="var(--bg-surface, #fff)" stroke="var(--text-primary)" strokeWidth="1.5" />
-      <rect x="233" y="141" width="54" height="20" rx="3" fill="var(--text-primary)" /><text x="260" y="155" textAnchor="middle" className="schematic__pill">{miles.replace(" miles", " mi")}</text>
-      <text x="152" y="162" className="schematic__label">McIntosh</text><text x="272" y="200" className="schematic__label">Jasper</text>
-      <text x="360" y="240" className="schematic__label">Okatie · not located</text>
-      <text x="152" y="358" className="schematic__label">Goshen</text>
-      <circle cx="21" cy="422" r="3.5" fill="var(--text-primary)" /><text x="30" y="426" className="schematic__legend">DESC</text>
-      <rect x="17.5" y="438" width="7" height="7" fill="var(--text-primary)" /><text x="30" y="445" className="schematic__legend">Georgia Power</text>
-    </svg>
-  );
-}
-
-export function Landing({ stats, featured, quality, conflict, sourceFact }: Props) {
-  const acceptance = stats.acceptance;
-  const pair = featured ?? null;
-  const studyHref = `${WORKSPACE_PATH}${toHash({ pair: pair?.id ?? FEATURED_ID, method: "closest", d: 25 })}`;
-  const precision = quality?.coverage.endpoints_by_precision;
-  const count = (key: string) => (precision ? String(precision[key] ?? 0) : PENDING);
-  const independent = stats.independent;
-  const bench = acceptance?.details.map((d) => ({ id: d.overlap_id, expected: d.expected_mi, got: d.got_mi, gap: d.got_gap, passed: d.passed })) ?? [];
-  const closest = pair ? (pair.touching ? "touching" : `${pair.dist_closest_mi.toFixed(2)} mi`) : PENDING;
-  const schematicMiles = pair ? (pair.touching ? "touching" : `${pair.dist_closest_mi.toFixed(2)} miles`) : "a few miles";
-  const overlap = overlapRange(pair);
+export function Landing({ stats, featured, finding, shared, quality, sourceFact }: Props) {
+  const { acceptance, independent } = stats;
+  const coverage = quality?.coverage;
+  const unresolved = coverage ? coverage.endpoints_by_precision.unresolved ?? 0 : null;
+  const cards = discrepancyCards(quality?.discrepancies ?? []);
+  const conflict = quality?.discrepancies.filter((d) => d.kind === "coordinate_conflict").toSorted((a, b) => (b.miles_apart ?? 0) - (a.miles_apart ?? 0))[0];
   const proof = [
     { n: fmt(stats.projects), l: "projects parsed from public plans" },
     { n: fmt(stats.pairs), l: "DESC × GPC pairs within 25 mi" },
-    { n: fmt(stats.changes), l: "changes detected between plan versions" },
-    { n: independent ? `${independent.found} / ${independent.expected}` : PENDING, l: "answer-key pairs found with our own locations" },
+    { n: fmt(stats.changes), l: "changes detected between plan editions" },
+    { n: fmt(unresolved), l: "endpoints left unresolved, not guessed" },
+  ];
+  const problems = [
+    { n: "A", h: "Plans are PDFs, not data", b: "Hundreds of pages of tables and detail sheets, a different format for each utility, and some fields redacted." },
+    { n: "B", h: "Neighbours plan separately", b: "DESC and Georgia Power schedule work a few miles apart across the river, with overlapping build windows." },
+    { n: "C", h: "Schedules drift", b: "Dates slip and costs move between editions, and the tables often disagree with their own detail pages." },
+    { n: "D", h: "Places are named, not located", b: conflict
+      ? `The ${conflict.endpoint} substation appears at two coordinates ${(conflict.miles_apart ?? 0).toFixed(2)} mi apart: one from OpenStreetMap, one from Sperry's answer key.`
+      : "Substations are named in the plans, not placed on a map." },
   ];
 
   return (
-    <div className="landing">
+    <div className="landing lp2">
       <a className="skip-link" href="#main">Skip to content</a>
-      <header className="lp-nav">
-        <div className="lp-wrap lp-nav__inner">
-          <a className="lp-brand" href="/"><span aria-hidden="true">◆</span> GridPulse</a>
-          <nav aria-label="Sections" className="lp-nav__links">
-            <a href="#problem">Problem</a><a href="#how">How it works</a><a href="#evidence">Evidence</a><a href="#validation">Validation</a>
+      <section id="top" className="lp2-hero">
+        <div className="lp2-grid" aria-hidden="true" />
+        <header className="lp2-wrap lp2-nav">
+          <a className="lp2-brand" href="/"><span className="lp2-diamond" aria-hidden="true" />GridPulse</a>
+          <nav aria-label="Sections" className="lp2-nav__links">
+            <a href="#corridor">The corridor</a><a href="#product">Product</a><a href="#evidence">Evidence</a><a href="#validation">Validation</a>
           </nav>
-          <a className="lp-btn lp-btn--ghost" href={WORKSPACE_PATH}>Open the workspace</a>
+          <a className="lp2-btn lp2-btn--light lp2-btn--sm" href={WORKSPACE_PATH}>Open the study <span aria-hidden="true">→</span></a>
+        </header>
+        <div id="main" className="lp2-wrap lp2-hero__body">
+          <div className="lp2-hero__copy">
+            <span className="lp2-eyebrow"><span className="lp2-live" aria-hidden="true" />SAVANNAH / AUGUSTA STUDY · DESC × GEORGIA POWER</span>
+            <h1 className="lp2-h1">Where two utilities' plans <em>meet</em>.</h1>
+            <p className="lp2-lede">GridPulse reads both utilities' transmission plans, ranks the project pairs that should be coordinating, and cites
+              the page behind every distance, date and dollar.</p>
+            <div className="lp2-actions">
+              <a className="lp2-btn lp2-btn--light" href={WORKSPACE_PATH}>Explore the {fmt(stats.projects)} projects <span aria-hidden="true">→</span></a>
+              <a className="lp2-btn lp2-btn--outline-light" href="#evidence">How we cite</a>
+            </div>
+          </div>
+          <Finding finding={finding} shared={shared} />
         </div>
-      </header>
+      </section>
 
-      <main id="main">
-        <section className="lp-wrap lp-hero">
-          <div className="lp-hero__copy">
-            <p className="lp-eyebrow">DESC × Georgia Power · Savannah / Augusta</p>
-            <p className="lp-hero__kicker">Two utilities. One corridor. Separate plans.</p>
-            <h1 className="lp-hero__title">GridPulse finds where transmission plans meet — before the crews do.</h1>
-            <p className="lp-hero__lede">GridPulse reads Dominion Energy SC and Georgia Power transmission plans, ranks the project pairs that should talk to
-              each other, cites the source page for every fact it quotes, and names the method behind every derived distance and date.</p>
-            <div className="lp-actions">
-              <a className="lp-btn lp-btn--primary" href={studyHref}>Open the Savannah / Augusta study</a>
-              <a className="lp-btn lp-btn--ghost" href="#how">See how it works</a>
+      <Product stats={stats} featured={featured} />
+
+      <section className="lp2-wrap lp2-proof" aria-label="At a glance">
+        {proof.map((p) => <div key={p.l}><p className="lp2-proof__n">{p.n}</p><p className="lp2-proof__l">{p.l}</p></div>)}
+      </section>
+
+      <section id="corridor" className="lp2-wrap lp2-section lp2-split">
+        <div className="lp2-stack"><span className="lp2-kicker">01 — THE CORRIDOR</span>
+          <h2 className="lp2-h2">The Savannah River is a state line. It isn't a construction line.</h2></div>
+        <div>
+          {problems.map((p) => (
+            <div key={p.n} className="lp2-problem"><span className="lp2-mono lp2-muted">{p.n}</span>
+              <div><h3>{p.h}</h3><p>{p.b}</p></div></div>
+          ))}
+        </div>
+      </section>
+
+      <section className="lp2-band" aria-label="Discrepancies">
+        <div className="lp2-wrap lp2-band__inner">
+          <div className="lp2-band__head">
+            <h2 className="lp2-h3">{quality ? `${quality.discrepancies.length} places the sources disagree.` : "Where the sources disagree."} Logged, not smoothed over.</h2>
+            <span className="lp2-mono lp2-muted">quality.json{quality?.built_at ? ` · built ${formatDay(quality.built_at.slice(0, 10))}` : ""}</span>
+          </div>
+          <div className="lp2-cards">
+            {cards.map((c) => (
+              <div key={`${c.kind}-${c.id}`} className="lp2-card">
+                <span className="lp2-card__meta"><span>{c.kind}</span><span>{c.id}</span></span>
+                <span className="lp2-card__name">{c.name}</span>
+                <span className="lp2-card__vs"><s>{c.a}</s><span aria-hidden="true">vs</span><span className="sr-only">versus</span><span>{c.b}</span></span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="evidence" className="lp2-wrap lp2-section lp2-stack--lg">
+        <div className="lp2-split lp2-split--end">
+          <div className="lp2-stack"><span className="lp2-kicker">02 — EVIDENCE</span><h2 className="lp2-h2">Every number has a page number.</h2></div>
+          <p className="lp2-body">GridPulse keeps three kinds of statement apart, so a planner can see what a utility published, what we calculated, and what we recommend.</p>
+        </div>
+        <div className="lp2-layers">
+          {layers(featured ?? null, sourceFact).map((l, i) => (
+            <div key={l.tag} className={`lp2-layer lp2-layer--${l.kind}`}>
+              <div className="lp2-layer__head"><span className="lp2-layer__tag"><span className="lp2-layer__mark" aria-hidden="true" />{l.tag}</span>
+                <span className="lp2-mono lp2-faint">{i + 1}/3</span></div>
+              <div className="lp2-layer__body"><p className="lp2-layer__claim">{l.claim}</p><p className="lp2-mono lp2-layer__src">{l.src}</p></div>
             </div>
-          </div>
-          <div className="lp-hero__visual" aria-label="Example from the study">
-            <p className="lp-hero__coords">{coordLabel(pair)}</p>
-            <figure className="lp-card lp-card--pair" aria-label="Example opportunity">
-              <div className="lp-card__head"><span className="lp-tierchip">{pair?.tier ?? "T3"} · SHARE LOGISTICS</span>
-                <span className="lp-muted">#{pair ? String(pair.rank).padStart(2, "0") : PENDING} of {fmt(stats.pairs)}</span></div>
-              <p className="lp-card__proj"><span className="lp-shape lp-shape--circle" aria-hidden="true" /><span className="lp-code">DESC</span>{pair?.a.name ?? PENDING}</p>
-              <p className="lp-card__proj"><span className="lp-shape lp-shape--square" aria-hidden="true" /><span className="lp-code">GPC</span>{pair?.b.name ?? PENDING}</p>
-              <dl className="lp-card__stats">
-                <div><dd>{pair ? `${pair.dist_closest_mi.toFixed(2)} mi` : PENDING}</dd><dt>closest</dt></div>
-                <div><dd>{pair ? `${pair.dist_center_mi.toFixed(2)} mi` : PENDING}</dd><dt>centers</dt></div>
-                <div><dd>{pair ? `${pair.in_service_gap_days} d` : PENDING}</dd><dt>in-service gap</dt></div>
-              </dl>
-            </figure>
-            <figure className="lp-card lp-card--alert" aria-label="Example data-quality finding">
-              <p className="lp-card__title">Sources disagree</p>
-              <p>{conflict?.message ?? PENDING}</p>
-              <p className="lp-mono lp-muted">{conflict?.project_id ?? ""}</p>
-            </figure>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        <section className="lp-proof" aria-label="At a glance">
-          <div className="lp-wrap lp-proof__grid">
-            {proof.map((p) => <div key={p.l}><p className="lp-proof__n">{p.n}</p><p className="lp-muted">{p.l}</p></div>)}
+      <section id="validation" className="lp2-dark">
+        <div className="lp2-wrap lp2-section lp2-split">
+          <div className="lp2-stack">
+            <span className="lp2-kicker lp2-kicker--dark">03 — VALIDATION</span>
+            <span className="lp2-huge">{independent ? `${independent.found}/${independent.expected}` : PENDING}</span>
+            <h2 className="lp2-h3">Every pair in Sperry's answer key, found with GridPulse's own OpenStreetMap locations.</h2>
+            <p className="lp2-dim">The answer key is a benchmark, never a data source.{acceptance
+              ? ` Run on the key's own coordinates, the distance math reproduces ${acceptance.matched} of ${acceptance.expected} distances to ±0.01 mi, with exact day gaps.` : ""}</p>
+            <p className="lp2-dim">Where the data is thin, GridPulse says so. {fmt(unresolved)} endpoints stay unresolved rather than guessed, and
+              {" "}{coverage ? `${coverage.projects_unlocated} of ${coverage.projects}` : PENDING} projects are listed without being mapped. Okatie is not in
+              OpenStreetMap, so centers that depend on it differ from the key.</p>
           </div>
-        </section>
-
-        <section id="problem" className="lp-dark">
-          <div className="lp-wrap">
-            <p className="lp-eyebrow lp-eyebrow--dark">Problem</p>
-            <h2 className="lp-h2">Neighbouring utilities publish their plans in isolation — and build within miles of each other anyway.</h2>
-            <div className="lp-problems">
-              {PROBLEMS.map((p) => (
-                <div key={p.h} className="lp-problem">
-                  <span className="lp-dots" aria-hidden="true">{dots(p.p)}</span>
-                  <div><h3>{p.h}</h3><p>{p.b}</p></div>
-                </div>
+          <table className="lp2-table" aria-label="Answer-key pairs found with GridPulse locations">
+            <thead><tr><th scope="col">CASE</th><th scope="col" className="num">KEY</th><th scope="col" className="num">GRIDPULSE</th>
+              <th scope="col" className="num">TIER</th><th scope="col" className="num">GAP</th><th scope="col"><span className="sr-only">Result</span></th></tr></thead>
+            <tbody>
+              {(independent?.details ?? []).map((d) => (
+                <tr key={d.overlap_id}><td className="lp2-mono">{d.overlap_id}</td><td className="num lp2-dim">{d.expected_mi.toFixed(2)}</td>
+                  <td className="num">{d.got_center_mi != null ? d.got_center_mi.toFixed(2) : PENDING}</td><td className="num">{d.tier ?? PENDING}</td>
+                  <td className="num lp2-dim">{d.got_gap ?? PENDING} d</td>
+                  <td className={`num ${d.found ? "lp2-ok" : "lp2-fail"}`}>{d.found ? "✓ Found" : "✗ Not found"}</td></tr>
               ))}
-            </div>
-          </div>
-        </section>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-        <section id="how" className="lp-wrap lp-section">
-          <p className="lp-eyebrow">How it works</p>
-          <div className="lp-split lp-split--head">
-            <h2 className="lp-h2">Detect the change. Check the data. Rank the pair. Show the page.</h2>
-            <p className="lp-lede">One pipeline, three views. Plan changes feed data quality; data quality decides how far to trust each opportunity;
-              every opportunity opens onto its evidence.</p>
-          </div>
-          <div className="lp-split">
-            <div className="lp-schematic">
-              <Schematic miles={schematicMiles} />
-              <div className="lp-card lp-card--float"><p className="lp-card__title">Build windows overlap · {pair?.window_overlap_days ?? PENDING} days</p>
-                <p className="lp-muted">{overlap ?? PENDING}. Shared staging and outages worth reviewing.</p></div>
-            </div>
-            <ol className="lp-steps">
-              {STEPS.map((s) => <li key={s.n}><span className="lp-mono lp-muted">{s.n}</span><div><h3>{s.h}</h3><p>{s.b}</p></div></li>)}
-            </ol>
-          </div>
-          <div className="lp-views">
-            <article>
-              <div className="lp-mini">
-                <p className="lp-muted small">#{pair ? String(pair.rank).padStart(2, "0") : PENDING} <span className="lp-badge">{pair?.tier ?? PENDING}</span> &lt; 5 mi · Share logistics</p>
-                <p><span className="lp-code">DESC</span> Jasper – Okatie 230 kV #2</p><p><span className="lp-code">GPC</span> SAV: Goshen – McIntosh 115 kV</p>
-                <p><strong>{closest}</strong> <span className="lp-muted">closest · {pair?.window_overlap_days ?? PENDING}-day overlap</span></p>
-                <p className="lp-warn small">▲ Source conflict · IRP and SERTP disagree on a date</p>
-              </div>
-              <h3>Opportunities</h3>
-              <p>A ranked queue of cross-utility project pairs — by tier, build-window overlap, in-service gap and distance — measured at closest points or Sperry's center method.</p>
-            </article>
-            <article>
-              <div className="lp-mini">
-                <p><strong>Jasper – Okatie 230 kV #2: Construct</strong></p>
-                <p className="lp-row"><span className="lp-muted">Schedule</span> Dec 31, 2025 → May 31, 2026 <strong>+151 days</strong></p>
-                <p className="lp-row"><span className="lp-muted">Cost</span> $23.79M → $28.58M <strong>+20.1%</strong></p>
-                <p className="lp-mono lp-muted">desc-2428 p.23 → desc-2529 p.18</p>
-              </div>
-              <h3>Plan changes</h3>
-              <p>{fmt(stats.changes)} detected changes between plan versions — slips, cost moves and renames — with the magnitude computed and both source pages cited.</p>
-            </article>
-            <article>
-              <div className="lp-mini">
-                <div className="lp-bar" aria-hidden="true">
-                  <span style={{ flexGrow: precision?.osm_feature ?? 0 }} className="ink" />
-                  <span style={{ flexGrow: precision?.unresolved ?? 0 }} className="none" />
-                </div>
-                <p className="lp-row"><span>OSM-resolved</span><strong>{count("osm_feature")}</strong></p>
-                <p className="lp-row"><span className="lp-muted">Unresolved — not guessed</span><strong>{count("unresolved")}</strong></p>
-              </div>
-              <h3>Data quality</h3>
-              <p>Location provenance for every endpoint, a live validation benchmark, and an issue queue of every place the sources disagree.</p>
-            </article>
-          </div>
-        </section>
+      <section className="lp2-wrap lp2-cta">
+        <h2 className="lp2-h1 lp2-h1--ink">Start with the pairs that should already be talking.</h2>
+        <div className="lp2-actions">
+          <a className="lp2-btn lp2-btn--ink" href={WORKSPACE_PATH}>Open the study <span aria-hidden="true">→</span></a>
+          <a className="lp2-btn lp2-btn--outline" href={REPO_URL} target="_blank" rel="noreferrer">Read the source</a>
+        </div>
+      </section>
 
-        <section id="evidence" className="lp-band">
-          <div className="lp-wrap lp-split">
-            <div>
-              <p className="lp-eyebrow">Evidence</p>
-              <h2 className="lp-h2">Every fact has a page number.</h2>
-              <p className="lp-lede">GridPulse keeps three kinds of statement apart, so a planner can tell what a utility published from what we calculated and what we recommend.</p>
-            </div>
-            <ul className="lp-layers">
-              {layers(pair, sourceFact).map((l) => (
-                <li key={l.tag}>
-                  <span className="lp-layer__tag"><span className={`lp-glyph lp-glyph--${l.glyph}`} aria-hidden="true" />{l.tag}</span>
-                  <div><p className="lp-layer__claim">{l.claim}</p><p className="lp-mono lp-muted">{l.src}</p></div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section id="validation" className="lp-wrap lp-section lp-split">
-          <div>
-            <p className="lp-eyebrow">Validation</p>
-            <h2 className="lp-h2">Checked against the answer key, not built from it.</h2>
-            <p className="lp-lede">Sperry's answer key is a benchmark only: no coordinate from it is used to place a project.
-              {acceptance ? ` With the key's own coordinates, GridPulse's distance math reproduces ${acceptance.matched} of ${acceptance.expected} distances to within ±0.01 mi.` : ""}
-              {independent ? ` With its own OpenStreetMap locations, it finds ${independent.found} of ${independent.expected} answer-key pairs and matches every in-service gap.` : ""}</p>
-            <p className="lp-muted">Where the data is thin, it says so. Ambiguous or unmatched endpoints are left unresolved rather than guessed — Okatie is not in
-              OpenStreetMap, so centers that depend on it differ from the key — and {quality ? `${quality.coverage.projects_unlocated} of ${quality.coverage.projects}` : PENDING} projects are listed but not mapped.</p>
-          </div>
-          <div className="lp-tables">
-            <table className="lp-table" aria-label="Distance math on Sperry's coordinates">
-              <caption>Distance math · key coordinates</caption>
-              <thead><tr><th scope="col">Case</th><th scope="col" className="num">Answer key</th><th scope="col" className="num">GridPulse</th>
-                <th scope="col" className="num">Gap</th><th scope="col" className="num">Result</th></tr></thead>
-              <tbody>
-                {bench.map((b) => (
-                  <tr key={b.id}><td className="lp-mono">{b.id}</td><td className="num">{b.expected.toFixed(2)} mi</td>
-                    <td className="num">{b.got != null ? `${b.got.toFixed(2)} mi` : "—"}</td><td className="num lp-muted">{b.gap ?? "—"} d</td>
-                    <td className={`num ${b.passed ? "" : "lp-fail"}`}>{b.passed ? "Pass" : "Fail"}</td></tr>
-                ))}
-              </tbody>
-            </table>
-            <table className="lp-table" aria-label="Answer-key pairs found with GridPulse locations">
-              <caption>Our own locations · OpenStreetMap</caption>
-              <thead><tr><th scope="col">Case</th><th scope="col" className="num">Key centers</th><th scope="col" className="num">Our centers</th>
-                <th scope="col" className="num">Tier</th><th scope="col" className="num">Result</th></tr></thead>
-              <tbody>
-                {(independent?.details ?? []).map((d) => (
-                  <tr key={d.overlap_id}><td className="lp-mono">{d.overlap_id}</td><td className="num">{d.expected_mi.toFixed(2)} mi</td>
-                    <td className="num">{d.got_center_mi != null ? `${d.got_center_mi.toFixed(2)} mi` : "—"}</td><td className="num">{d.tier ?? "—"}</td>
-                    <td className={`num ${d.found ? "" : "lp-fail"}`}>{d.found ? "Found" : "Not found"}</td></tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="lp-cta">
-          <div className="lp-wrap">
-            <h2 className="lp-h2 lp-h2--lg">Start with the pairs that should already be talking.</h2>
-            <div className="lp-actions">
-              <a className="lp-btn lp-btn--primary" href={WORKSPACE_PATH}>Open the workspace</a>
-              <a className="lp-btn lp-btn--ghost" href={REPO_URL} target="_blank" rel="noreferrer">View the source</a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="lp-footer">
-        <div className="lp-wrap lp-footer__grid">
-          <div><p className="lp-brand"><span aria-hidden="true">◆</span> GridPulse</p><p className="lp-muted">Built for Sperry Tech's GridLock challenge.</p></div>
-          <div><p className="lp-footer__head">Sources</p><p className="lp-muted">DESC 2024–28 ten-year plan and later editions · Georgia Power 2025 IRP Vol. 3 (public disclosure) · SERTP 2025–26</p></div>
-          <div><p className="lp-footer__head">Notes</p><p className="lp-muted">Public, unredacted fields only. Map data © OpenStreetMap contributors (ODbL). AGPL-3.0.</p></div>
+      <footer className="lp2-footer">
+        <div className="lp2-wrap lp2-footer__grid">
+          <div><p className="lp2-brand lp2-brand--ink"><span className="lp2-diamond" aria-hidden="true" />GridPulse</p><p>Built for Sperry Tech's GridLock challenge.</p></div>
+          <div><p className="lp2-footer__head">Sources</p><p>DESC planned transmission projects $2M and above (2024–28, 2025–29, 2026–30) · Georgia Power 2025 IRP Vol. 3
+            (public disclosure) · SERTP 2025–26</p></div>
+          <div><p className="lp2-footer__head">Notes</p><p>Public, unredacted fields only. Map data © OpenStreetMap contributors (ODbL). AGPL-3.0.</p></div>
         </div>
       </footer>
     </div>

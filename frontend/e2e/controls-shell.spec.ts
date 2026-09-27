@@ -5,32 +5,46 @@ import { apiData, opportunities, rows } from "./helpers";
 test.describe("landing page", () => {
   test("section anchors scroll to their sections", async ({ page }) => {
     await page.goto("/");
-    for (const [name, id] of [["Problem", "problem"], ["How it works", "how"], ["Evidence", "evidence"], ["Validation", "validation"]]) {
-      await page.getByRole("link", { name, exact: true }).click();
+    const sections = page.getByRole("navigation", { name: "Sections" });
+    for (const [name, id] of [["The corridor", "corridor"], ["Product", "product"], ["Evidence", "evidence"], ["Validation", "validation"]]) {
+      await sections.getByRole("link", { name, exact: true }).click();
       await expect(page).toHaveURL(new RegExp(`#${id}$`));
       await expect(page.locator(`#${id}`)).toBeInViewport();
     }
-    await page.getByRole("link", { name: "See how it works" }).click();
-    await expect(page.locator("#how")).toBeInViewport();
+    await page.getByRole("link", { name: "How we cite" }).click();
+    await expect(page.locator("#evidence")).toBeInViewport();
     await expect(page.getByRole("link", { name: "Skip to content" })).toHaveAttribute("href", "#main");
   });
 
-  test("both 'Open the workspace' links open /app; brand goes home; source link is the repo in a new tab", async ({ page }) => {
+  test("both 'Open the study' links and 'Explore' open /app; brand goes home; source link is the repo in a new tab", async ({ page }) => {
     await page.goto("/");
-    const workspace = page.getByRole("link", { name: "Open the workspace" });
-    await expect(workspace).toHaveCount(2);
-    for (const index of [0, 1]) {
+    const study = page.getByRole("link", { name: /Open the study/ });
+    await expect(study).toHaveCount(2);
+    for (const link of [study.first(), study.last(), page.getByRole("link", { name: /Explore the \d+ projects/ })]) {
       await page.goto("/");
-      await workspace.nth(index).click();
+      await link.click();
       await expect(page).toHaveURL(/\/app(#|$)/);
       await expect(page.getByRole("complementary", { name: "Primary" })).toBeVisible();
     }
     await page.goto("/");
-    const source = page.getByRole("link", { name: "View the source" });
+    const source = page.getByRole("link", { name: "Read the source" });
     await expect(source).toHaveAttribute("href", "https://github.com/Gustavo-Delgado0X/gridpulse");
     await expect(source).toHaveAttribute("target", "_blank");
     await page.getByRole("link", { name: /GridPulse/ }).first().click();
     await expect(page).toHaveURL(/\/$/);
+  });
+
+  test("product tabs switch between real screenshots that load", async ({ page, request }) => {
+    await page.goto("/");
+    const product = page.getByRole("region", { name: "Product" });
+    for (const [tab, src] of [["Plan changes", "/landing/plan-changes.jpg"], ["Data quality", "/landing/data-quality.jpg"],
+                              ["Opportunities", "/landing/opportunities.jpg"]]) {
+      await product.getByRole("tab", { name: new RegExp(tab) }).click();
+      await expect(product.getByRole("tab", { name: new RegExp(tab) })).toHaveAttribute("aria-selected", "true");
+      await expect(product.getByRole("img")).toHaveAttribute("src", src);
+      expect((await request.get(src)).headers()["content-type"]).toContain("image/jpeg");
+      await expect.poll(() => product.getByRole("img").evaluate((img: HTMLImageElement) => img.naturalWidth)).toBe(1600);
+    }
   });
 });
 

@@ -105,16 +105,23 @@ test("brief and CSV exports are served", async ({ request }) => {
   expect((await csv.text()).split("\n")[0]).toContain("overlap_id,distance_mi,time_gap (day)");
 });
 
-test("landing page shows live proof numbers and opens the study", async ({ page, request }) => {
-  const featured = (await (await request.get("/api/opportunities?d=25&method=closest")).json()).data
-    .find((o: { id: string }) => o.id === "desc-2428-6367-d-g__gpc-20065");
+test("landing page shows live numbers and opens the top-ranked pair", async ({ page, request }) => {
+  const [top] = (await (await request.get("/api/opportunities?d=25&method=closest")).json()).data;
+  const quality = (await (await request.get("/api/quality")).json()).data;
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1, name: /GridPulse finds where transmission plans meet/ })).toBeVisible();
-  await expect(page.getByRole("region", { name: "At a glance" })).toContainText("6 / 6");
-  await expect(page.getByRole("figure", { name: "Example opportunity" })).toContainText(`${featured.dist_closest_mi.toFixed(2)} mi`);
-  await page.getByRole("link", { name: "Open the Savannah / Augusta study" }).click();
-  await expect(page).toHaveURL(/\/app#pair=desc-2428-6367-d-g__gpc-20065/);
-  await expect(page.getByRole("region", { name: "Selected opportunity" })).toContainText("SAV: GOSHEN (SAV) - MCINTOSH");
+  await expect(page.getByRole("heading", { level: 1, name: "Where two utilities' plans meet." })).toBeVisible();
+  const proof = page.getByRole("region", { name: "At a glance" });
+  await expect(proof).toContainText(String(quality.coverage.projects));
+  await expect(proof).toContainText(String(quality.coverage.endpoints_by_precision.unresolved));
+  await expect(page.getByRole("region", { name: "Discrepancies" })).toContainText(`${quality.discrepancies.length} places the sources disagree.`);
+  await expect(page.getByRole("table", { name: "Answer-key pairs found with GridPulse locations" }).getByText("✓ Found"))
+    .toHaveCount(quality.independent.found);
+  const finding = page.getByRole("figure", { name: "Top-ranked finding" });
+  await expect(finding).toContainText(`${top.dist_center_mi.toFixed(2)} mi`);
+  await expect(finding).toContainText("They share the Thurmond endpoint");
+  await finding.getByRole("link", { name: "Open this pair →" }).click();
+  await expect(page).toHaveURL(new RegExp(`/app#pair=${top.id}`));
+  await expect(page.getByRole("region", { name: "Selected opportunity" })).toContainText("Hooks - Thurmond");
 });
 
 test("old share links on / still open the workspace", async ({ page }) => {

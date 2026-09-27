@@ -154,6 +154,7 @@ export interface Quality {
     }[];
   };
   discrepancies: Discrepancy[];
+  built_at?: string;
 }
 
 export interface Change {
