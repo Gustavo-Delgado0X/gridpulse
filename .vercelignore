@@ -6,3 +6,6 @@ frontend/test-results
 frontend/playwright-report
 .playwright-mcp
 **/__pycache__
+.python-version
+runtime.txt
+backend/runtime.txt

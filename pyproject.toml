@@ -2,6 +2,13 @@
 name = "gridpulse"
 version = "0.1.0"
 requires-python = ">=3.12,<3.13"
+# API runtime only (Vercel reads this). Pipeline/dev extras: requirements-pipeline.txt, requirements-dev.txt.
+dependencies = [
+  "fastapi==0.141.1",
+  "pydantic==2.13.5",
+  "slowapi==0.1.10",
+  "PyYAML==6.0.3",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

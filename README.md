@@ -101,6 +101,8 @@ make pipeline                                # -> data/processed/*.json
 
 ## Deploy (Vercel)
 
+Live: **https://gridpulse-five.vercel.app**
+
 `vercel.json` builds the frontend to static files and serves the API from one Python function (`api/index.py`), which is bundled with `data/processed`. From the repo root:
 
 ```bash
