@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 
 const SHORTCUTS: [string, string][] = [
-  ["/", "Filter pairs"], ["↑ ↓", "Move through the ranked list"], ["Enter", "Open the focused pair"],
-  ["M", "Switch Centers ↔ Closest"], ["?", "Show or hide this panel"], ["Esc", "Close"],
+  ["⌘/Ctrl K", "Search projects"], ["/", "Filter the queue"], ["↑ ↓", "Move through the ranked list"],
+  ["Enter", "Open the focused pair's details"], ["Esc", "Back to the list (or close this panel)"],
+  ["M", "Switch closest points ↔ project centers"], ["?", "Show or hide this panel"],
 ];
 
 export function ShortcutsDialog({ open, onClose }: { open: boolean; onClose: () => void }) {

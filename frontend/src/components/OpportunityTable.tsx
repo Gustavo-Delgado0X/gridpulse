@@ -31,6 +31,8 @@ interface Props {
   onWiden?: () => void;
   csvUrl?: string;
   projectName?: string;
+  /** Opens the pair detail (two-column layout). Enter on a row calls it; without it Enter just selects. */
+  onOpen?: (id: string) => void;
 }
 
 const SORTS: Record<SortKey, (a: Opportunity, b: Opportunity) => number> = {
@@ -39,8 +41,8 @@ const SORTS: Record<SortKey, (a: Opportunity, b: Opportunity) => number> = {
   overlap: (a, b) => (b.window_overlap_days ?? 0) - (a.window_overlap_days ?? 0) || a.rank - b.rank,
 };
 
-function Row({ o, index, selected, compact, status, onSelect, onHover, onKey, refFn }: {
-  o: Opportunity; index: number; selected: boolean; compact: boolean; status: Triage;
+function Row({ o, index, selected, compact, status, onSelect, onHover, onKey, refFn, onOpen }: {
+  o: Opportunity; index: number; selected: boolean; compact: boolean; status: Triage; onOpen?: (id: string) => void;
   onSelect: (id: string) => void; onHover: (id: string | null) => void;
   onKey: (e: KeyboardEvent<HTMLLIElement>, index: number) => void; refFn: (el: HTMLLIElement | null) => void;
 }) {
@@ -48,13 +50,18 @@ function Row({ o, index, selected, compact, status, onSelect, onHover, onKey, re
   return (
     <li ref={refFn} role="option" tabIndex={selected ? 0 : -1} aria-selected={selected}
         className={`qrow ${selected ? "is-selected" : ""} ${compact ? "qrow--compact" : ""} triage--${status}`}
-        onClick={() => onSelect(o.id)} onKeyDown={(e) => onKey(e, index)} onMouseEnter={() => onHover(o.id)} onFocus={() => onHover(o.id)}>
+        onClick={() => onSelect(o.id)} onDoubleClick={() => onOpen?.(o.id)} onKeyDown={(e) => onKey(e, index)}
+        onMouseEnter={() => onHover(o.id)} onFocus={() => onHover(o.id)}>
       <span className="qrow__rank">#{o.rank}</span>
       <div className="qrow__body">
         <div className="qrow__head">
           <TierBadge tier={o.tier} compact />
           <span className="qrow__tier">{tierLine(o)}</span>
           {status !== "new" && <span className="triage-tag">{status[0].toUpperCase() + status.slice(1)}</span>}
+          {selected && onOpen && (
+            <button type="button" className="btn btn--primary btn--xs qrow__open" aria-label={`Open details for #${o.rank}`}
+                    onClick={(e) => { e.stopPropagation(); onOpen(o.id); }}>Open details <span aria-hidden="true">›</span></button>
+          )}
         </div>
         <p className="qrow__proj" title={o.a.name}><UtilityChip utility={o.a.utility} /><span className="clamp">{o.a.name}</span></p>
         <p className="qrow__proj" title={o.b.name}><UtilityChip utility={o.b.utility} /><span className="clamp">{o.b.name}</span></p>
@@ -70,7 +77,7 @@ function Row({ o, index, selected, compact, status, onSelect, onHover, onKey, re
 }
 
 export function OpportunityTable({ items, total, filters, onFilters, selectedId, onSelect, onHover, triage, method = "closest",
-  distance = 25, onWiden, csvUrl, projectName }: Props) {
+  distance = 25, onWiden, csvUrl, projectName, onOpen }: Props) {
   const [sort, setSort] = useState<SortKey>("rank");
   const [compact, setCompact] = useState(false);
   const search = useRef<HTMLInputElement>(null);
@@ -96,7 +103,7 @@ export function OpportunityTable({ items, total, filters, onFilters, selectedId,
 
   const move = (event: KeyboardEvent<HTMLLIElement>, index: number) => {
     const step = event.key === "ArrowDown" ? 1 : event.key === "ArrowUp" ? -1 : 0;
-    if (event.key === "Enter") onSelect(rows[index].id);
+    if (event.key === "Enter") (onOpen ?? onSelect)(rows[index].id);
     if (!step) return;
     event.preventDefault();
     const next = rows[Math.min(rows.length - 1, Math.max(0, index + step))];
@@ -177,7 +184,7 @@ export function OpportunityTable({ items, total, filters, onFilters, selectedId,
         <ul className="queue__list" role="listbox" aria-label="Opportunities" onMouseLeave={() => onHover(null)}>
           {rows.map((o, index) => (
             <Row key={o.id} o={o} index={index} selected={o.id === selectedId} compact={compact} status={triage[o.id] ?? "new"}
-                 onSelect={onSelect} onHover={onHover} onKey={move}
+                 onSelect={onSelect} onHover={onHover} onKey={move} onOpen={onOpen}
                  refFn={(el) => { if (el) rowRefs.current.set(o.id, el); else rowRefs.current.delete(o.id); }} />
           ))}
         </ul>

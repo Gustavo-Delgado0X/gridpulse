@@ -5,11 +5,13 @@ interface Props {
   ariaLabel?: string;
   className?: string;
   align?: "left" | "right";
+  /** Open upwards (for controls at the bottom of the screen). */
+  up?: boolean;
   children: (close: () => void) => ReactNode;
 }
 
 /** Button + anchored panel; closes on outside click and Escape (returns focus to the button). */
-export function Popover({ label, ariaLabel, className = "", align = "left", children }: Props) {
+export function Popover({ label, ariaLabel, className = "", align = "left", up = false, children }: Props) {
   const [open, setOpen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const button = useRef<HTMLButtonElement>(null);
@@ -30,7 +32,7 @@ export function Popover({ label, ariaLabel, className = "", align = "left", chil
               onClick={() => setOpen((o) => !o)}>
         {label} <span className="caret" aria-hidden="true">▾</span>
       </button>
-      {open && <div id={id} className={`popover__panel popover__panel--${align}`}>{children(() => setOpen(false))}</div>}
+      {open && <div id={id} className={`popover__panel popover__panel--${align} ${up ? "popover__panel--up" : ""}`}>{children(() => setOpen(false))}</div>}
     </div>
   );
 }

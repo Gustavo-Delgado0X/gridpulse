@@ -29,6 +29,8 @@ test("deep-link hash round-trips and ignores junk", () => {
   const hash = toHash({ pair: "desc-2428-6810-a__gpc-20793", method: "center", d: 30 });
   expect(parseHash(hash)).toEqual({ pair: "desc-2428-6810-a__gpc-20793", method: "center", d: 30 });
   expect(parseHash("#m=bogus&d=999&pair=")).toEqual({});
+  expect(parseHash("#d=1")).toEqual({ d: 1 });
+  expect(parseHash("#d=0")).toEqual({});
 });
 
 test("timeline labels thin out on long spans", () => {

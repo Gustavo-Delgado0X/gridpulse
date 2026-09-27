@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { useState } from "react";
 import { CostEstimator } from "../components/CostEstimator";
 import { DataQualityView } from "../components/DataQualityView";
-import { OpportunitiesToolbar } from "../components/OpportunitiesToolbar";
+import { StudyBar } from "../components/StudyBar";
 import { OpportunityTable, tierLine } from "../components/OpportunityTable";
 import { PrecisionTag } from "../components/PrecisionTag";
 import { TierBadge } from "../components/TierBadge";
@@ -96,13 +96,14 @@ test("row meta shows closest distance, overlap and gap; conflicts are called out
   expect(second).toHaveTextContent("152 d in-service gap");
 });
 
-test("toolbar metrics are filter buttons and the method control is a roving radio group", async () => {
+test("study bar metrics are filter buttons and the method control is a roving radio group", async () => {
   const onMust = vi.fn();
   const onMethod = vi.fn();
-  render(<OpportunitiesToolbar items={OPPS} filters={EMPTY_FILTERS} method="closest" onMethod={onMethod} distance={25} onDistance={() => {}}
-                               onReset={() => {}} onMustCoordinate={onMust} onOverlap={() => {}} onConflicts={() => {}} />);
+  render(<StudyBar items={OPPS} filters={EMPTY_FILTERS} method="closest" onMethod={onMethod} distance={25} onDistance={() => {}}
+                   onReset={() => {}} onMustCoordinate={onMust} onOverlap={() => {}} onConflicts={() => {}} />);
   await userEvent.click(screen.getByRole("button", { name: /1\s*must coordinate/ }));
   expect(onMust).toHaveBeenCalled();
+  await userEvent.click(screen.getByRole("button", { name: /Distance:/ }));
   const closest = screen.getByRole("radio", { name: "Closest points" });
   expect(closest).toHaveAttribute("tabindex", "0");
   expect(screen.getByRole("radio", { name: "Project centers" })).toHaveAttribute("tabindex", "-1");

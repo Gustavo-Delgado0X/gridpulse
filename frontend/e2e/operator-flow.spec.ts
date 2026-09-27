@@ -8,6 +8,7 @@ test("queue opens on the shared Thurmond facility with sourced evidence", async 
   await page.goto("/app");
   await expect(rows(page).first()).toContainText("Hooks - Thurmond 115kV Tie: Rebuild");
   await expect(rows(page).first()).toContainText("Touching · Must coordinate");
+  await page.getByRole("button", { name: "Open details for #1" }).click();
   await expect(inspector(page)).toContainText("Must coordinate");
   await expect(inspector(page)).toContainText("Touching");
   await inspector(page).getByRole("tab", { name: "Evidence" }).click();
@@ -25,20 +26,21 @@ test("toolbar metrics filter the queue and the Validated link opens the proof", 
 
 test("deep link opens the pair and method it encodes", async ({ page }) => {
   await page.goto("/app#pair=desc-2428-6367-d-g__gpc-20065&m=center&d=25");
-  await expect(page.getByRole("radio", { name: "Project centers" })).toHaveAttribute("aria-checked", "true");
+  await expect(page.getByRole("button", { name: "Distance: project centers, 25 miles" })).toBeVisible();
   await expect(inspector(page)).toContainText("SAV: GOSHEN (SAV) - MCINTOSH");
   await expect(inspector(page)).toContainText("Source conflict detected");
 });
 
 test("brief export carries edited estimator values", async ({ page }) => {
-  await page.goto("/app");
+  await page.goto(`/app#pair=${THURMOND}&m=closest&d=25`);
   await inspector(page).getByRole("tab", { name: "Estimate" }).click();
   await inspector(page).getByLabel(/Shared corridor/).fill("3");
   await expect(inspector(page).getByRole("link", { name: "Export brief" })).toHaveAttribute("href", /shared_corridor_mi=3/);
 });
 
 test("switching to project centers re-tiers the Thurmond pair", async ({ page }) => {
-  await page.goto("/app");
+  await page.goto(`/app#pair=${THURMOND}&m=closest&d=25`);
+  await page.getByRole("button", { name: /^Distance:/ }).click();
   await page.getByRole("radio", { name: "Project centers" }).click();
   await expect(inspector(page)).toContainText("Share logistics");
   await expect(inspector(page)).toContainText("4.09 mi");
@@ -49,17 +51,18 @@ test("keyboard triage: arrow to the next pair and mark it contacted", async ({ p
   await rows(page).first().focus();
   await page.keyboard.press("ArrowDown");
   await expect(rows(page).nth(1)).toHaveAttribute("aria-selected", "true");
+  await page.keyboard.press("Enter");
   await inspector(page).getByRole("button", { name: /Review status/ }).click();
   await page.getByRole("radio", { name: "Contacted" }).click();
+  await page.keyboard.press("Escape");
   await expect(rows(page).nth(1)).toContainText("Contacted");
-  await page.reload();
-  await rows(page).nth(1).click();
+  await page.reload(); // the hash keeps the pair, so the reload reopens its detail
   await expect(inspector(page).getByRole("button", { name: /Review status: Contacted/ })).toBeVisible();
 });
 
 test("radius presets and the filter popover narrow the queue; empty state offers a way out", async ({ page }) => {
   await page.goto("/app");
-  await page.getByRole("button", { name: /Radius 25 miles/ }).click();
+  await page.getByRole("button", { name: /^Distance:/ }).click();
   await page.getByRole("button", { name: "5 mi", exact: true }).click();
   await expect(page.getByText("candidates").first()).toBeVisible();
   await page.getByRole("button", { name: "Filter opportunities" }).click();
