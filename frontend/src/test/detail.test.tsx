@@ -12,7 +12,7 @@ const project = (id: string, utility: "DESC" | "GPC"): Project => ({
 
 const DETAIL: OpportunityDetail = {
   ...OPPS[0], project_a: project("desc-1", "DESC"), project_b: project("gpc-1", "GPC"),
-  evidence: [{ id: "a.name", type: "fact", label: "FACT · P.31", quote: "Hooks - Thurmond", page: 31, source_id: "desc-2428", field: "name" },
+  evidence: [{ id: "a.name", type: "fact", label: "FACT · P.31", quote: "Hooks - Thurmond", page: 31, source_id: "desc-2428", field: "name", project_id: "desc-1" },
              { id: "interpretation.template", type: "interpretation", label: "TEMPLATE", quote: "They share a facility." }],
   estimator: { inputs: { shared_corridor_mi: 0, row_width_ft: 100, usd_per_acre: 5000, mobilization_usd: 250000,
     avoided_mobilizations: 1, assumptions: [], cost_context: [] } },
@@ -21,16 +21,30 @@ const DETAIL: OpportunityDetail = {
 
 test("detail panel is organised in tabs", async () => {
   render(<DetailPanel detail={DETAIL} triage="new" onTriage={() => {}} briefUrl={(q) => `/brief?${q}`} />);
-  expect(screen.getByRole("tab", { name: "OVERVIEW" })).toHaveAttribute("aria-selected", "true");
-  await userEvent.click(screen.getByRole("tab", { name: "EVIDENCE" }));
+  expect(screen.getByRole("tab", { name: "Overview" })).toHaveAttribute("aria-selected", "true");
+  expect(screen.getByRole("tab", { name: "Timeline" })).toBeInTheDocument();
+  await userEvent.click(screen.getByRole("tab", { name: "Evidence" }));
   expect(screen.getByText("Hooks - Thurmond")).toBeInTheDocument();
 });
 
 test("brief export carries the edited estimate", async () => {
   render(<DetailPanel detail={DETAIL} triage="new" onTriage={() => {}} briefUrl={(q) => `/brief?${q}`} />);
-  await userEvent.click(screen.getByRole("tab", { name: "ESTIMATE" }));
+  await userEvent.click(screen.getByRole("tab", { name: "Estimate" }));
   const miles = screen.getByLabelText(/Shared corridor/);
   await userEvent.clear(miles);
   await userEvent.type(miles, "3");
   expect(screen.getByRole("link", { name: "Export brief" })).toHaveAttribute("href", expect.stringContaining("shared_corridor_mi=3"));
+});
+
+test("schedule changes from the plan-change feed surface as an alert with actions", async () => {
+  const onView = vi.fn();
+  render(<DetailPanel detail={DETAIL} triage="new" onTriage={() => {}} briefUrl={(q) => `/brief?${q}`} onViewChanges={onView}
+                      changes={[{ project_id: "desc-1", utility: "DESC", name: "DESC project", event: "slipped", before: "2025-12-31",
+                                  after: "2026-05-31", evidence: [{ source_id: "desc-2428", page: 23, quote: "12/31/25" },
+                                                                  { source_id: "desc-2529", page: 18, quote: "5/31/26" }] }]} />);
+  expect(screen.getByText(/Schedule changed between plan versions/)).toBeInTheDocument();
+  await userEvent.click(screen.getByRole("button", { name: "View plan change" }));
+  expect(onView).toHaveBeenCalledWith("desc-1");
+  await userEvent.click(screen.getByRole("button", { name: "Review conflicting sources →" }));
+  expect(screen.getByText("Current · used")).toBeInTheDocument();
 });

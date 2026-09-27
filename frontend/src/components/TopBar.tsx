@@ -1,7 +1,5 @@
-import type { Method } from "../types";
-import { radioProps } from "../useRovingRadio";
-
-const METHODS: readonly Method[] = ["center", "closest"];
+import type { Quality } from "../types";
+import { Popover } from "./Popover";
 
 export type View = "opportunities" | "changes" | "quality";
 export type Theme = "light" | "dark";
@@ -9,52 +7,65 @@ export type Theme = "light" | "dark";
 interface Props {
   view: View;
   onView: (v: View) => void;
-  method: Method;
-  onMethod: (m: Method) => void;
-  distance: number;
-  onDistance: (d: number) => void;
+  counts: { opportunities: number | null; changes: number | null; issues: number | null };
+  query: string;
+  onQuery: (q: string) => void;
+  acceptance: Quality["acceptance"] | null;
   dataMode: string | null;
   theme: Theme;
   onTheme: (t: Theme) => void;
   onHelp: () => void;
 }
 
-const VIEWS: { id: View; label: string }[] = [
-  { id: "opportunities", label: "OPPORTUNITIES" },
-  { id: "changes", label: "PLAN CHANGES" },
-  { id: "quality", label: "DATA QUALITY" },
+const VIEWS: { id: View; label: string; count: keyof Props["counts"] }[] = [
+  { id: "opportunities", label: "Opportunities", count: "opportunities" },
+  { id: "changes", label: "Plan changes", count: "changes" },
+  { id: "quality", label: "Data quality", count: "issues" },
 ];
 
-export function TopBar({ view, onView, method, onMethod, distance, onDistance, dataMode, theme, onTheme, onHelp }: Props) {
+export function TopBar({ view, onView, counts, query, onQuery, acceptance, dataMode, theme, onTheme, onHelp }: Props) {
   return (
     <header className="topbar">
-      <div className="brand"><span className="brand__mark" aria-hidden="true" /> GridPulse
-        <span className="muted brand__sub">DESC × Georgia Power coordination</span></div>
-      <nav className="tabs" aria-label="Views">
+      <div className="brand"><span className="brand__mark" aria-hidden="true"><span /></span>GridPulse</div>
+      <button type="button" className="btn study-btn" title="Study: Dominion Energy South Carolina × Georgia Power">
+        <span className="shape shape--circle chip--DESC" aria-hidden="true" />
+        <span className="shape shape--square chip--GPC" aria-hidden="true" />
+        DESC × Georgia Power
+      </button>
+      <nav className="nav" aria-label="Views">
         {VIEWS.map((v) => (
-          <button key={v.id} type="button" className="tab" aria-current={view === v.id ? "page" : undefined} onClick={() => onView(v.id)}>
-            {v.label}
+          <button key={v.id} type="button" className="nav__tab" aria-current={view === v.id ? "page" : undefined} onClick={() => onView(v.id)}>
+            {v.label}{counts[v.count] != null && <span className="nav__count">{counts[v.count]}</span>}
           </button>
         ))}
       </nav>
-      <div className="controls">
-        <div className="segmented" role="radiogroup" aria-label="Distance method" title="M switches method">
-          <button type="button" className="segmented__item" {...radioProps(METHODS, method, onMethod, "center")}>CENTERS</button>
-          <button type="button" className="segmented__item" {...radioProps(METHODS, method, onMethod, "closest")}>CLOSEST</button>
-        </div>
-        <label className="slider">
-          <span className="field__label">Within</span>
-          <input type="range" min={5} max={50} step={1} value={distance} onChange={(e) => onDistance(Number(e.target.value))}
-                 aria-valuetext={`${distance} miles`} style={{ ["--fill" as string]: `${((distance - 5) / 45) * 100}%` }} />
-          <span className="mono slider__value">{distance} mi</span>
-        </label>
-        <span className="tag tag--xs" title="Data source mode">{dataMode === "db" ? "LIVE DB" : "SEED"}</span>
-        <button type="button" className="icon-btn" onClick={() => onTheme(theme === "dark" ? "light" : "dark")}
-                aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"} title="Theme">
-          {theme === "dark" ? "☀" : "☾"}
+      <span className="spacer" />
+      <label className="search">
+        <span className="search__icon" aria-hidden="true">⌕</span>
+        <input type="search" placeholder="Search projects" value={query} aria-label="Search projects"
+               onChange={(e) => { onQuery(e.target.value); if (view !== "opportunities") onView("opportunities"); }} />
+      </label>
+      {acceptance && (
+        <button type="button" className={`validated ${acceptance.passed ? "is-ok" : "is-fail"}`} onClick={() => onView("quality")}
+                title="Sperry's six answer-key overlaps reproduced to ±0.01 mi">
+          <span className="dot" aria-hidden="true" />{acceptance.passed ? "Validated" : "Validation failed"} {acceptance.matched}/{acceptance.expected}
         </button>
-        <button type="button" className="icon-btn" onClick={onHelp} aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">?</button>
-      </div>
+      )}
+      <span className="pill" title="Dataset status">{dataMode === "db" ? "Live DB" : "Seed dataset"}</span>
+      <button type="button" className="icon-btn" onClick={onHelp} aria-label="Keyboard shortcuts" title="Keyboard shortcuts (?)">?</button>
+      <Popover label={<span aria-hidden="true">⚙</span>} ariaLabel="Settings" align="right" className="settings">
+        {(close) => (
+          <div className="menu" role="menu">
+            <p className="menu__label">Theme</p>
+            {(["light", "dark"] as Theme[]).map((t) => (
+              <button key={t} type="button" role="menuitemradio" aria-checked={theme === t} className="menu__item"
+                      onClick={() => { onTheme(t); close(); }}>
+                <span className="menu__check" aria-hidden="true">{theme === t ? "✓" : ""}</span>{t === "light" ? "Light" : "Dark"}
+              </button>
+            ))}
+          </div>
+        )}
+      </Popover>
     </header>
   );
 }

@@ -1,78 +1,98 @@
 import { expect, test } from "@playwright/test";
 
 const THURMOND = "desc-2428-6810-a__gpc-20793";
+const inspector = (page: import("@playwright/test").Page) => page.getByRole("region", { name: "Selected opportunity" });
+const rows = (page: import("@playwright/test").Page) => page.getByRole("listbox", { name: "Opportunities" }).getByRole("option");
 
-test("ranked list opens on the shared Thurmond facility", async ({ page }) => {
+test("queue opens on the shared Thurmond facility with sourced evidence", async ({ page }) => {
   await page.goto("/");
-  const firstRow = page.getByRole("table").getByRole("row").nth(1);
-  await expect(firstRow).toContainText("Hooks - Thurmond 115kV Tie: Rebuild");
-  await expect(firstRow).toContainText("T1");
-  const detail = page.getByRole("region", { name: "Selected opportunity" });
-  await expect(detail).toContainText("touching");
-  await expect(detail).toContainText("T1 · MUST COORDINATE");
-  await detail.getByRole("tab", { name: "EVIDENCE" }).click();
-  await expect(detail).toContainText("FACT · P.31");
+  await expect(rows(page).first()).toContainText("Hooks - Thurmond 115kV Tie: Rebuild");
+  await expect(rows(page).first()).toContainText("Touching · Must coordinate");
+  await expect(inspector(page)).toContainText("Must coordinate");
+  await expect(inspector(page)).toContainText("Touching");
+  await inspector(page).getByRole("tab", { name: "Evidence" }).click();
+  await expect(inspector(page)).toContainText("desc-2428 · p.31");
 });
 
-test("headline numbers filter the list and the answer-key badge opens the proof", async ({ page }) => {
+test("toolbar metrics filter the queue and the Validated link opens the proof", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: /MUST COORDINATE/ }).click();
-  const rows = page.getByRole("table").getByRole("row");
-  await expect(rows).toHaveCount(3); // header + 2 T1 pairs
-  await page.getByRole("button", { name: /ANSWER KEY 6\/6/ }).click();
-  await expect(page.getByText("ANSWER KEY 6/6 ✓")).toBeVisible();
+  await page.getByRole("button", { name: /must coordinate/ }).click();
+  await expect(rows(page)).toHaveCount(2);
+  await page.getByRole("button", { name: /Validated 6\/6/ }).click();
+  await expect(page.getByRole("heading", { name: "Data quality", level: 1 })).toBeVisible();
+  await expect(page.getByText("Validation passed")).toBeVisible();
 });
 
 test("deep link opens the pair and method it encodes", async ({ page }) => {
   await page.goto("/#pair=desc-2428-6367-d-g__gpc-20065&m=center&d=25");
-  await expect(page.getByRole("radio", { name: "CENTERS" })).toHaveAttribute("aria-checked", "true");
-  await expect(page.getByRole("region", { name: "Selected opportunity" })).toContainText("SAV: GOSHEN (SAV) - MCINTOSH");
+  await expect(page.getByRole("radio", { name: "Project centers" })).toHaveAttribute("aria-checked", "true");
+  await expect(inspector(page)).toContainText("SAV: GOSHEN (SAV) - MCINTOSH");
+  await expect(inspector(page)).toContainText("Source conflict detected");
 });
 
 test("brief export carries edited estimator values", async ({ page }) => {
   await page.goto("/");
-  const detail = page.getByRole("region", { name: "Selected opportunity" });
-  await detail.getByRole("tab", { name: "ESTIMATE" }).click();
-  await detail.getByLabel(/Shared corridor/).fill("3");
-  await expect(detail.getByRole("link", { name: "Export brief" })).toHaveAttribute("href", /shared_corridor_mi=3/);
+  await inspector(page).getByRole("tab", { name: "Estimate" }).click();
+  await inspector(page).getByLabel(/Shared corridor/).fill("3");
+  await expect(inspector(page).getByRole("link", { name: "Export brief" })).toHaveAttribute("href", /shared_corridor_mi=3/);
 });
 
-test("switching to Sperry's center method re-tiers the Thurmond pair", async ({ page }) => {
+test("switching to project centers re-tiers the Thurmond pair", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("radio", { name: "CENTERS" }).click();
-  await expect(page.getByText(/Center-to-center \(Sperry method\)/)).toBeVisible();
-  const detail = page.getByRole("region", { name: "Selected opportunity" });
-  await expect(detail).toContainText("T3 · SHARE LOGISTICS");
-  await expect(detail).toContainText("4.09 mi");
+  await page.getByRole("radio", { name: "Project centers" }).click();
+  await expect(inspector(page)).toContainText("Share logistics");
+  await expect(inspector(page)).toContainText("4.09 mi");
 });
 
 test("keyboard triage: arrow to the next pair and mark it contacted", async ({ page }) => {
   await page.goto("/");
-  const rows = page.getByRole("table").getByRole("row");
-  await rows.nth(1).focus();
+  await rows(page).first().focus();
   await page.keyboard.press("ArrowDown");
-  await expect(rows.nth(2)).toHaveAttribute("aria-selected", "true");
-  await page.getByRole("radio", { name: "CONTACTED" }).click();
-  await expect(rows.nth(2)).toContainText("CONTACTED");
+  await expect(rows(page).nth(1)).toHaveAttribute("aria-selected", "true");
+  await inspector(page).getByRole("button", { name: /Review status/ }).click();
+  await page.getByRole("radio", { name: "Contacted" }).click();
+  await expect(rows(page).nth(1)).toContainText("Contacted");
   await page.reload();
-  await rows.nth(2).click();
-  await expect(page.getByRole("radio", { name: "CONTACTED" })).toHaveAttribute("aria-checked", "true");
+  await rows(page).nth(1).click();
+  await expect(inspector(page).getByRole("button", { name: /Review status: Contacted/ })).toBeVisible();
 });
 
-test("data quality shows the answer-key gate and discrepancies", async ({ page }) => {
+test("radius presets and the filter popover narrow the queue; empty state offers a way out", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "DATA QUALITY" }).click();
-  await expect(page.getByText("ANSWER KEY 6/6 ✓")).toBeVisible();
-  await expect(page.getByText(/MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi/)).toBeVisible();
+  await page.getByRole("button", { name: /Radius 25 miles/ }).click();
+  await page.getByRole("button", { name: "5 mi", exact: true }).click();
+  await expect(page.getByText("candidates").first()).toBeVisible();
+  await page.getByRole("button", { name: "Filter opportunities" }).click();
+  await page.getByLabel("T2 · < 1 mi").check();
+  await expect(page.getByText("No opportunities match")).toBeVisible();
+  await page.getByRole("button", { name: "Clear filters" }).click();
+  await expect(rows(page).first()).toBeVisible();
 });
 
-test("plan changes can be filtered to source disagreements", async ({ page }) => {
+test("data quality issue expands to a source comparison", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("button", { name: "PLAN CHANGES" }).click();
-  await page.getByRole("combobox").selectOption("sources_disagree");
-  const row = page.getByRole("row").filter({ hasText: "SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD" });
-  await expect(row).toContainText("IRP 2027 → SERTP 2026: 2028");
-  await expect(row).toContainText("sertp-2026 p.53");
+  await page.getByRole("button", { name: /Data quality/ }).click();
+  await page.getByRole("button", { name: /MCINTOSH OSM and Sperry/ }).click();
+  await expect(page.getByText("GridPulse uses")).toBeVisible();
+  await expect(page.getByText("Sperry answer key", { exact: true }).first()).toBeVisible();
+});
+
+test("plan changes: schedule filter, drawer and deltas", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: /Plan changes/ }).click();
+  await page.getByRole("button", { name: "Schedule", exact: true }).click();
+  const row = page.getByRole("row").filter({ hasText: "2025-12-31 → 2026-05-31" }).first();
+  await expect(row).toContainText("+151 days");
+  await row.click();
+  await expect(page.getByRole("complementary", { name: "Change detail" })).toContainText("Source comparison");
+});
+
+test("plan changes: IRP vs SERTP disagreement is listed with its evidence", async ({ page }) => {
+  await page.goto("/");
+  await page.getByRole("button", { name: /Plan changes/ }).click();
+  await page.getByLabel("More change types").selectOption("Source conflicts");
+  const row = page.getByRole("row").filter({ hasText: "IRP 2027 → SERTP 2026: 2028" }).first();
+  await expect(row).toBeVisible();
 });
 
 test("brief and CSV exports are served", async ({ request }) => {

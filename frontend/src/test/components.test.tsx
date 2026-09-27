@@ -1,14 +1,14 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { useState } from "react";
 import { CostEstimator } from "../components/CostEstimator";
 import { DataQualityView } from "../components/DataQualityView";
-import { OpportunityTable } from "../components/OpportunityTable";
+import { OpportunitiesToolbar } from "../components/OpportunitiesToolbar";
+import { OpportunityTable, tierLine } from "../components/OpportunityTable";
 import { PrecisionTag } from "../components/PrecisionTag";
 import { TierBadge } from "../components/TierBadge";
 import { TriageControl } from "../components/TriageControl";
 import { UtilityChip } from "../components/UtilityChip";
-import { useState } from "react";
-import { HeadlineStrip } from "../components/HeadlineStrip";
 import { applyFilters, EMPTY_FILTERS } from "../filters";
 import { computeEstimate, formatMiles, formatUsd } from "../format";
 import { OPPS, QUALITY } from "./fixtures";
@@ -16,6 +16,11 @@ import { OPPS, QUALITY } from "./fixtures";
 test("tier badge names the shared resource, not just a color", () => {
   render(<TierBadge tier="T2" />);
   expect(screen.getByText("T2 · SHARE LAND")).toBeInTheDocument();
+});
+
+test("queue tier line reads as sentence case", () => {
+  expect(tierLine({ tier: "T3" })).toBe("< 5 mi · Share logistics");
+  expect(tierLine({ tier: null })).toBe("Beyond 25 mi");
 });
 
 test("utility chip always pairs a shape with the label", () => {
@@ -43,61 +48,66 @@ test("estimate matches the backend formula", () => {
   expect(r.total).toBeCloseTo(r.acres * 5000 + 500000);
 });
 
-function Table(props: Partial<Parameters<typeof OpportunityTable>[0]>) {
+function Queue(props: Partial<Parameters<typeof OpportunityTable>[0]>) {
   const [filters, setFilters] = useState(EMPTY_FILTERS);
   return <OpportunityTable items={applyFilters(OPPS, filters)} total={OPPS.length} filters={filters} onFilters={setFilters}
-                           selectedId={null} onSelect={() => {}} onHover={() => {}} triage={{}} {...props} />;
+                           selectedId={OPPS[0].id} onSelect={() => {}} onHover={() => {}} triage={{}} {...props} />;
 }
 
-test("opportunity table: rows, keyboard selection and filter shortcut", async () => {
+test("queue: rows, keyboard selection and filter shortcut", async () => {
   const onSelect = vi.fn();
-  render(<Table onSelect={onSelect} />);
-  const table = screen.getByRole("table");
-  expect(within(table).getAllByRole("row")).toHaveLength(3);
+  render(<Queue onSelect={onSelect} />);
+  const list = screen.getByRole("listbox", { name: "Opportunities" });
+  const rows = within(list).getAllByRole("option");
+  expect(rows).toHaveLength(2);
+  expect(rows[0]).toHaveAttribute("aria-selected", "true");
 
-  const first = within(table).getAllByRole("row")[1];
-  first.focus();
-  fireEvent.keyDown(first, { key: "ArrowDown" });
+  rows[0].focus();
+  fireEvent.keyDown(rows[0], { key: "ArrowDown" });
   expect(onSelect).toHaveBeenLastCalledWith("desc-3__gpc-2");
 
   fireEvent.keyDown(document.body, { key: "/" });
   expect(screen.getByRole("searchbox")).toHaveFocus();
   await userEvent.type(screen.getByRole("searchbox"), "purrysburg");
-  expect(within(screen.getByRole("table")).getAllByRole("row")).toHaveLength(2);
+  expect(within(screen.getByRole("listbox")).getAllByRole("option")).toHaveLength(1);
 });
 
-test("tier chips filter the table and an empty result explains itself", async () => {
-  render(<Table />);
-  await userEvent.click(screen.getByRole("button", { name: "Show T2 only" }));
-  expect(screen.getByText("NO PAIRS MATCH THESE FILTERS")).toBeInTheDocument();
+test("filter popover narrows the queue, chips remove filters, empty state explains itself", async () => {
+  render(<Queue />);
+  await userEvent.click(screen.getByRole("button", { name: "Filter opportunities" }));
+  await userEvent.click(screen.getByLabelText("T2 · < 1 mi"));
+  expect(screen.getByText("No opportunities match")).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Remove filter Tier: T2" })).toBeInTheDocument();
   await userEvent.click(screen.getByRole("button", { name: "Clear filters" }));
-  expect(within(screen.getByRole("table")).getAllByRole("row")).toHaveLength(3);
+  expect(within(screen.getByRole("listbox")).getAllByRole("option")).toHaveLength(2);
 });
 
 test("hovering a row reports it for map highlighting", async () => {
   const onHover = vi.fn();
-  render(<Table onHover={onHover} />);
-  await userEvent.hover(within(screen.getByRole("table")).getAllByRole("row")[1]);
-  expect(onHover).toHaveBeenLastCalledWith("desc-1__gpc-1");
+  render(<Queue onHover={onHover} />);
+  await userEvent.hover(within(screen.getByRole("listbox")).getAllByRole("option")[1]);
+  expect(onHover).toHaveBeenLastCalledWith("desc-3__gpc-2");
 });
 
-test("headline strip numbers are filter buttons", async () => {
-  const onTier = vi.fn();
-  const onQuality = vi.fn();
-  render(<HeadlineStrip items={OPPS} distance={25} filters={EMPTY_FILTERS} acceptance={QUALITY.acceptance}
-                        onReset={() => {}} onTier={onTier} onSameWindow={() => {}} onFlag={() => {}} onQuality={onQuality} />);
-  await userEvent.click(screen.getByRole("button", { name: /1\s*MUST COORDINATE/ }));
-  expect(onTier).toHaveBeenCalledWith("T1");
-  await userEvent.click(screen.getByRole("button", { name: /ANSWER KEY 6\/6/ }));
-  expect(onQuality).toHaveBeenCalled();
+test("row meta shows closest distance, overlap and gap; conflicts are called out", () => {
+  render(<Queue />);
+  const second = within(screen.getByRole("listbox")).getAllByRole("option")[1];
+  expect(second).toHaveTextContent("2.99 mi closest");
+  expect(second).toHaveTextContent("152 d in-service gap");
 });
 
-test("opportunity table sorts by a column header", async () => {
-  render(<Table />);
-  await userEvent.click(screen.getByRole("button", { name: /Center mi/ }));
-  await userEvent.click(screen.getByRole("button", { name: /Center mi/ }));
-  const rows = within(screen.getByRole("table")).getAllByRole("row");
-  expect(rows[1]).toHaveTextContent("PURRYSBURG");
+test("toolbar metrics are filter buttons and the method control is a roving radio group", async () => {
+  const onMust = vi.fn();
+  const onMethod = vi.fn();
+  render(<OpportunitiesToolbar items={OPPS} filters={EMPTY_FILTERS} method="closest" onMethod={onMethod} distance={25} onDistance={() => {}}
+                               onReset={() => {}} onMustCoordinate={onMust} onOverlap={() => {}} onConflicts={() => {}} />);
+  await userEvent.click(screen.getByRole("button", { name: /1\s*must coordinate/ }));
+  expect(onMust).toHaveBeenCalled();
+  const closest = screen.getByRole("radio", { name: "Closest points" });
+  expect(closest).toHaveAttribute("tabindex", "0");
+  expect(screen.getByRole("radio", { name: "Project centers" })).toHaveAttribute("tabindex", "-1");
+  fireEvent.keyDown(closest, { key: "ArrowRight" });
+  expect(onMethod).toHaveBeenLastCalledWith("center");
 });
 
 test("cost estimator recomputes when an assumption is edited", async () => {
@@ -113,32 +123,27 @@ test("cost estimator recomputes when an assumption is edited", async () => {
   expect(screen.getByText(/redacted in public filing/)).toBeInTheDocument();
 });
 
-test("triage control reports the chosen status", async () => {
+test("triage menu reports the chosen status", async () => {
   const onChange = vi.fn();
   render(<TriageControl value="new" onChange={onChange} />);
-  await userEvent.click(screen.getByRole("radio", { name: "CONTACTED" }));
+  await userEvent.click(screen.getByRole("button", { name: "Review status: New" }));
+  await userEvent.click(screen.getByRole("radio", { name: "Contacted" }));
   expect(onChange).toHaveBeenCalledWith("contacted");
 });
 
-test("data quality shows the answer-key check and discrepancies", () => {
-  render(<DataQualityView quality={QUALITY} />);
-  expect(screen.getByText("ANSWER KEY 6/6 ✓")).toBeInTheDocument();
-  expect(screen.getByText(/differ by 0.41 mi/)).toBeInTheDocument();
-});
-
-test("radio groups support arrow keys with a roving tab stop", () => {
-  const onChange = vi.fn();
-  render(<TriageControl value="reviewed" onChange={onChange} />);
-  const reviewed = screen.getByRole("radio", { name: "REVIEWED" });
-  expect(reviewed).toHaveAttribute("tabindex", "0");
-  expect(screen.getByRole("radio", { name: "NEW" })).toHaveAttribute("tabindex", "-1");
-  fireEvent.keyDown(reviewed, { key: "ArrowRight" });
-  expect(onChange).toHaveBeenLastCalledWith("contacted");
-  fireEvent.keyDown(reviewed, { key: "ArrowLeft" });
-  expect(onChange).toHaveBeenLastCalledWith("new");
-});
-
-test("every view has a level-one heading", () => {
-  render(<DataQualityView quality={QUALITY} />);
+test("data quality shows the validation benchmark, provenance and issues", async () => {
+  render(<DataQualityView quality={QUALITY} opportunities={OPPS} />);
   expect(screen.getByRole("heading", { level: 1, name: "Data quality" })).toBeInTheDocument();
+  expect(screen.getByText("Validation passed")).toBeInTheDocument();
+  expect(screen.getByText("Sperry-confirmed")).toBeInTheDocument();
+  expect(screen.getByText(/differ by 0.41 mi/)).toBeInTheDocument();
+  expect(screen.getByText("Status · proposed")).toBeInTheDocument();
+});
+
+test("issue messages split into entity and finding even when names contain colons", async () => {
+  const { splitIssue } = await import("../components/DataQualityView");
+  expect(splitIssue("SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD: IRP 2027 vs SERTP 2026: 2028"))
+    .toEqual(["SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD", "IRP 2027 vs SERTP 2026: 2028"]);
+  expect(splitIssue("MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi", "MCINTOSH"))
+    .toEqual(["MCINTOSH", "OSM and Sperry's answer key differ by 0.41 mi"]);
 });

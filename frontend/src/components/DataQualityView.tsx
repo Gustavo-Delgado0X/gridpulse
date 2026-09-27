@@ -1,57 +1,156 @@
-import { PRECISION_TEXT } from "../format";
-import type { Precision, Quality } from "../types";
-import { InsetAlertCard } from "./InsetAlertCard";
+import { useState } from "react";
+import { pairsFor } from "../filters";
+import type { Opportunity, Quality } from "../types";
 
-const KIND_TAG: Record<string, string> = { coordinate_conflict: "COORDINATES DISAGREE", sources_disagree: "SOURCES DISAGREE" };
+const PROVENANCE: { key: string; label: string; tag: string; tone: "ok" | "neutral" | "warn" | "muted"; help: string }[] = [
+  { key: "sperry_provided", label: "Sperry-confirmed", tag: "Confirmed", tone: "ok", help: "Matches the Sperry answer key" },
+  { key: "osm_feature", label: "OSM-resolved", tag: "Resolved", tone: "neutral", help: "Matched to a named OpenStreetMap substation" },
+  { key: "approximate", label: "Approximate", tag: "Approximate", tone: "warn", help: "Endpoint proxy or regional approximation" },
+  { key: "unresolved", label: "Unresolved", tag: "Unresolved", tone: "muted", help: "No safe match — intentionally not guessed" },
+];
+const ISSUE_TYPES = { all: "All", coordinate_conflict: "Coordinate mismatch", sources_disagree: "Source conflict" } as const;
+type IssueFilter = keyof typeof ISSUE_TYPES;
 
-export function DataQualityView({ quality }: { quality: Quality }) {
+interface Props {
+  quality: Quality;
+  opportunities?: Opportunity[];
+  onOpenOpportunity?: (id: string) => void;
+}
+
+const FINDING = /: (need date|IRP \d|OSM and)/;
+
+/** "Entity: finding" — entity names can contain colons ("SAV: GOSHEN…"), so split on the known finding phrases. */
+export function splitIssue(message: string, entity?: string): [string, string] {
+  if (entity) return [entity, message.startsWith(`${entity}: `) ? message.slice(entity.length + 2) : message];
+  const match = FINDING.exec(message);
+  return match ? [message.slice(0, match.index), message.slice(match.index + 2)] : [message, ""];
+}
+
+function formatValue(v: unknown): string {
+  if (Array.isArray(v)) return v.map((n) => (typeof n === "number" ? n.toFixed(5) : String(n))).join(", ");
+  return String(v ?? "—");
+}
+
+const VALUE_LABEL: Record<string, string> = { osm: "OpenStreetMap", answer_key: "Sperry answer key", table_2: "IRP Table 2",
+  detail_page: "IRP detail page", irp: "GPC IRP", sertp: "SERTP" };
+
+export function DataQualityView({ quality, opportunities = [], onOpenOpportunity }: Props) {
   const { coverage, acceptance, discrepancies } = quality;
+  const [filter, setFilter] = useState<IssueFilter>("all");
+  const [query, setQuery] = useState("");
+  const [expanded, setExpanded] = useState<number | null>(null);
+  const counts = coverage.endpoints_by_precision;
+  const bucket = (key: string) => key === "approximate" ? (counts.endpoint_proxy ?? 0) + (counts.regional_approximation ?? 0) : counts[key] ?? 0;
+  const totalEndpoints = PROVENANCE.reduce((n, p) => n + bucket(p.key), 0) || 1;
+  const locatedPct = Math.round((coverage.projects_located / coverage.projects) * 100);
+  const issues = discrepancies.map((d, i) => ({ ...d, index: i }))
+    .filter((d) => (filter === "all" || d.kind === filter) && (!query || `${d.message} ${d.project_id}`.toLowerCase().includes(query.toLowerCase())));
+
   return (
-    <section className="view quality" aria-label="Data quality">
-      <h1 className="view-title view-title--page">Data quality</h1>
-      <div className="inverse-strip">
-        <div><span className="strip__num mono">{coverage.projects}</span><span className="strip__label">PROJECTS PARSED</span></div>
-        <div><span className="strip__num mono">{coverage.projects_located}</span><span className="strip__label">LOCATED</span></div>
-        <div><span className="strip__num mono">{coverage.projects_unlocated}</span><span className="strip__label">NOT LOCATED</span></div>
-        <div><span className="strip__num mono">{acceptance.passed ? `ANSWER KEY ${acceptance.matched}/${acceptance.expected} ✓` : `ANSWER KEY ${acceptance.matched}/${acceptance.expected} ✗`}</span>
-          <span className="strip__label">SPERRY GATE A</span></div>
-      </div>
-      <div className="quality__grid">
-        <section className="panel">
-          <h2 className="panel-title">Location precision</h2>
-          <table className="table table--compact">
-            <thead><tr><th scope="col">Endpoint precision</th><th scope="col" className="num">Endpoints</th></tr></thead>
-            <tbody>
-              {Object.entries(coverage.endpoints_by_precision).map(([k, n]) => (
-                <tr key={k}><td><span className="tag">{PRECISION_TEXT[k as Precision] ?? k}</span></td><td className="num mono">{n}</td></tr>
+    <main className="page page--quality" aria-label="Data quality">
+      <section className="toolbar">
+        <div>
+          <h1 className="page-title">Data quality</h1>
+          <p className="muted small">{coverage.projects} projects · {discrepancies.length} issues · conservative: unresolved values are never guessed</p>
+        </div>
+        <span className="spacer" />
+        <dl className="health">
+          <div><dd>{coverage.projects}</dd><dt>Projects parsed</dt></div>
+          <div><dd>{coverage.projects_located} <span className="muted small">· {locatedPct}%</span></dd><dt>Located</dt></div>
+          <div><dd>{coverage.projects_unlocated}</dd><dt>Not located · listed, not mapped</dt></div>
+          <div className={acceptance.passed ? "is-ok" : "is-danger"}><dd>{acceptance.matched}/{acceptance.expected}</dd><dt>Validation passed</dt></div>
+          <div className="is-warn"><dd>{discrepancies.length}</dd><dt>Open issues</dt></div>
+        </dl>
+      </section>
+      <div className="quality-layout">
+        <div className="quality-left">
+          <section className="block">
+            <header className="block__head"><h2 className="panel-title">Location provenance</h2><span className="muted">{totalEndpoints} endpoints</span></header>
+            <div className="stackbar" role="img" aria-label="Endpoint location provenance">
+              {PROVENANCE.map((p) => <span key={p.key} className={`stackbar__seg tone--${p.tone}`} style={{ flexGrow: bucket(p.key) }} />)}
+            </div>
+            <ul className="prov-list">
+              {PROVENANCE.filter((p) => bucket(p.key) > 0).map((p) => (
+                <li key={p.key}>
+                  <span className={`prov-dot tone--${p.tone}`} aria-hidden="true" />
+                  <div><p><strong>{p.label}</strong> <span className={`prov-tag tone-text--${p.tone}`}>{p.tag}</span></p><p className="muted small">{p.help}</p></div>
+                  <p className="prov-count"><strong>{bucket(p.key)}</strong> <span className="muted">{Math.round((bucket(p.key) / totalEndpoints) * 100)}%</span></p>
+                </li>
               ))}
-            </tbody>
-          </table>
-          <p className="muted">Unresolved endpoints are never guessed. Projects with no located endpoint are listed but not mapped.</p>
-          <h2 className="panel-title">Answer-key check (center method)</h2>
-          <table className="table table--compact">
-            <thead><tr><th scope="col">Overlap</th><th scope="col" className="num">Sperry mi</th><th scope="col" className="num">Ours</th>
-              <th scope="col" className="num">Gap</th><th scope="col">Result</th></tr></thead>
-            <tbody>
-              {acceptance.details.map((d) => (
-                <tr key={d.overlap_id}><td className="mono">{d.overlap_id}</td><td className="num mono">{d.expected_mi.toFixed(2)}</td>
-                  <td className="num mono">{d.got_mi?.toFixed(2) ?? "—"}</td><td className="num mono">{d.got_gap ?? "—"}</td>
-                  <td>{d.passed ? <span className="tag tag--ok">PASS</span> : <span className="tag tag--danger">FAIL</span>}</td></tr>
+            </ul>
+            <p className="muted small">Unresolved endpoints are never guessed. Projects with no located endpoint remain listed but are not mapped — {coverage.projects_unlocated} of {coverage.projects} today.</p>
+          </section>
+          <section className="block">
+            <header className="block__head"><h2 className="panel-title">Sperry validation benchmark</h2>
+              <span className={acceptance.passed ? "tone-text--ok" : "tone-text--danger"}><strong>{acceptance.matched} / {acceptance.expected} passed</strong></span></header>
+            <p className="muted small">Project-center distances calculated by GridPulse, compared against the Sperry answer key. Tolerance ±0.01 mi.</p>
+            <table className="mini-table">
+              <thead><tr><th scope="col">Case</th><th scope="col" className="num">Expected</th><th scope="col" className="num">GridPulse</th>
+                <th scope="col" className="num">Difference</th><th scope="col" className="num">In-service gap</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+                {acceptance.details.map((d) => (
+                  <tr key={d.overlap_id}>
+                    <td className="mono">{d.overlap_id}</td><td className="num">{d.expected_mi.toFixed(2)} mi</td>
+                    <td className="num">{d.got_mi != null ? `${d.got_mi.toFixed(2)} mi` : "—"}</td>
+                    <td className="num">{d.got_mi != null ? `${Math.abs(d.got_mi - d.expected_mi).toFixed(2)} mi` : "—"}</td>
+                    <td className="num">{d.got_gap ?? "—"} d</td>
+                    <td>{d.passed ? <span className="tone-text--ok">✓ Pass</span> : <span className="tone-text--danger">✗ Fail</span>}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        </div>
+        <section className="issues" aria-label="Issues">
+          <header className="issues__head">
+            <h2 className="panel-title">Issues</h2><span className="muted">{discrepancies.length} open</span>
+            <div className="segmented" role="group" aria-label="Issue type">
+              {(Object.keys(ISSUE_TYPES) as IssueFilter[]).map((k) => (
+                <button key={k} type="button" className="segmented__item" aria-pressed={filter === k} onClick={() => setFilter(k)}>{ISSUE_TYPES[k]}</button>
               ))}
-            </tbody>
-          </table>
-        </section>
-        <section className="panel">
-          <h2 className="panel-title">Discrepancies ({discrepancies.length})</h2>
-          <div className="stack">
-            {discrepancies.map((d, i) => (
-              <InsetAlertCard key={`${d.project_id}-${i}`} tag={KIND_TAG[d.kind] ?? d.kind.toUpperCase()} title={d.message} tone="warn">
-                <span className="mono">{d.project_id}</span>
-              </InsetAlertCard>
-            ))}
-          </div>
+            </div>
+            <span className="spacer" />
+            <label className="search"><span className="search__icon" aria-hidden="true">⌕</span>
+              <input type="search" placeholder="Search issues" value={query} onChange={(e) => setQuery(e.target.value)} aria-label="Search issues" /></label>
+          </header>
+          <div className="issues__row issues__row--head"><span>Type</span><span>Entity and finding</span><span>Affected pairs</span>
+            <span title="Status tracking has no backend yet">Status · proposed</span></div>
+          {issues.map((d) => {
+            const pairs = pairsFor(d.project_id, opportunities);
+            const isOpen = expanded === d.index;
+            return (
+              <div key={d.index} className={`issue ${isOpen ? "is-open" : ""}`}>
+                <button type="button" className="issues__row" aria-expanded={isOpen} onClick={() => setExpanded(isOpen ? null : d.index)}>
+                  <span className={d.kind === "sources_disagree" ? "tone-text--warn" : ""}>{d.kind === "sources_disagree" ? "▲ Source conflict" : "◇ Coordinate mismatch"}</span>
+                  <span><strong>{splitIssue(d.message, d.endpoint)[0]}</strong><span className="issue__msg">{splitIssue(d.message, d.endpoint)[1]}</span>
+                    <span className="mono muted small">{d.project_id}</span></span>
+                  <span>{pairs.length ? `${pairs.length} ${pairs.length === 1 ? "pair" : "pairs"} affected` : <span className="muted">Not in study area</span>}</span>
+                  <span className="muted">Open</span>
+                </button>
+                {isOpen && (
+                  <div className="issue__detail">
+                    {d.values && (
+                      <div className="compare__grid">
+                        {Object.entries(d.values).map(([k, v]) => (
+                          <div key={k} className="compare__cell"><span className="compare__label">{VALUE_LABEL[k] ?? k}</span><strong>{formatValue(v)}</strong></div>
+                        ))}
+                        <div className="compare__cell compare__cell--used"><span className="compare__label">GridPulse uses</span>
+                          <strong>{d.kind === "coordinate_conflict" ? "Sperry answer key" : d.values.table_2 ? "IRP Table 2" : "GPC IRP"}</strong></div>
+                      </div>
+                    )}
+                    <div className="issue__actions">
+                      {pairs.slice(0, 4).map((o) => (
+                        <button key={o.id} type="button" className="btn" onClick={() => onOpenOpportunity?.(o.id)}>Pair #{o.rank} · {o.tier ?? "—"} →</button>
+                      ))}
+                      <span className="btn btn--proposed" aria-disabled="true" title="No backend support yet">Mark reviewed · proposed</span>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </section>
       </div>
-    </section>
+    </main>
   );
 }

@@ -1,26 +1,33 @@
-import maplibregl, { type ExpressionSpecification, type GeoJSONSource, type Map as MLMap, type StyleSpecification } from "maplibre-gl";
+import maplibregl, { type GeoJSONSource, type Map as MLMap, type StyleSpecification } from "maplibre-gl";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import statesTopo from "us-atlas/states-10m.json";
-import { allBounds, overlapLines, pairBounds, PLACES, projectLines, projectPoints, STUDY_AREA, studyAreaOutline, touchPoints } from "../mapData";
-import { TIER_TEXT } from "../format";
+import { pairsFor } from "../filters";
+import { allBounds, connector, overlapLines, pairBounds, PLACES, projectLines, projectPoints, STUDY_AREA, studyAreaOutline } from "../mapData";
 import type { Method, Opportunity, Project } from "../types";
+import { MapLegend } from "./MapLegend";
+import { Popover } from "./Popover";
 
 const STATE_FIPS = new Set(["45", "13", "37", "12", "01", "47"]); // SC, GA + neighbors for context
 const METHOD_MS = 300;
 const FLY_MS = 600;
+const DIM = 0.3;
+const OTHER_GREY = "#b9b4ac";
 const USGS_IMAGERY = "https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/{z}/{y}/{x}";
+const EMPTY = { type: "FeatureCollection" as const, features: [] };
 
 interface Props {
   projects: Project[];
   opportunities: Opportunity[];
   selectedId: string | null;
   hoveredId: string | null;
+  hoveredProjectId?: string | null;
   method: Method;
   onSelect: (id: string) => void;
   onHover: (id: string | null) => void;
-  /** Increments when the user picks a pair (table, map, deep link): the map flies to it. */
+  onProjectFilter?: (projectId: string) => void;
+  /** Increments when the user picks a pair (queue, map, deep link): the map flies to it. */
   focusToken: number;
   theme?: string;
 }
@@ -38,13 +45,13 @@ function states() {
   return { ...all, features: all.features.filter((f) => STATE_FIPS.has(String(f.id))) };
 }
 
-function squareImage(fill: string, stroke: string, hollow: boolean): ImageData {
+function squareImage(fill: string, hollow: boolean): ImageData {
   const size = 14;
   const canvas = document.createElement("canvas");
   canvas.width = canvas.height = size;
   const ctx = canvas.getContext("2d")!;
   ctx.fillStyle = hollow ? "#ffffff" : fill;
-  ctx.strokeStyle = hollow ? fill : stroke;
+  ctx.strokeStyle = hollow ? fill : "#ffffff";
   ctx.lineWidth = 2;
   ctx.fillRect(2, 2, size - 4, size - 4);
   ctx.strokeRect(2, 2, size - 4, size - 4);
@@ -54,10 +61,7 @@ function squareImage(fill: string, stroke: string, hollow: boolean): ImageData {
 function baseStyle(): StyleSpecification {
   return {
     version: 8,
-    sources: {
-      imagery: { type: "raster", tiles: [USGS_IMAGERY], tileSize: 256, maxzoom: 16,
-                 attribution: "Imagery: USGS The National Map" },
-    },
+    sources: { imagery: { type: "raster", tiles: [USGS_IMAGERY], tileSize: 256, maxzoom: 16 } },
     layers: [
       { id: "bg", type: "background", paint: { "background-color": color("--bg-canvas", "#f3f1ed") } },
       { id: "imagery", type: "raster", source: "imagery", layout: { visibility: "none" } },
@@ -65,59 +69,39 @@ function baseStyle(): StyleSpecification {
   };
 }
 
-const TIER_LINES: { tier: string; width: number; dash?: number[] }[] = [
-  { tier: "T4", width: 1.5, dash: [1, 3] },
-  { tier: "T3", width: 2, dash: [6, 4] },
-  { tier: "T2", width: 3 },
-  { tier: "T1", width: 4 },
-];
+const dimmed = ["case", ["get", "dim"], DIM, 1] as unknown as number;
 
 function addLayers(map: MLMap) {
-  const ink = color("--text-primary", "#181011");
-  const hair = color("--line-hairline", "#d8d4d4");
   const desc = color("--utility-desc", "#1a5fa8");
   const gpc = color("--utility-gpc", "#9a4f00");
-  const violet = color("--overlap", "#6e36b5");
-
-  map.addImage("sq-solid", squareImage(gpc, gpc, false));
-  map.addImage("sq-hollow", squareImage(gpc, gpc, true));
-  map.addSource("states", { type: "geojson", data: states() });
-  map.addSource("study", { type: "geojson", data: studyAreaOutline() });
-  map.addSource("lines", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
-  map.addSource("points", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
-  map.addSource("overlaps", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
-  map.addSource("touch", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
-
-  map.addLayer({ id: "states-fill", type: "fill", source: "states", paint: { "fill-color": "#ffffff", "fill-opacity": 0.35 } });
-  map.addLayer({ id: "states-line", type: "line", source: "states", paint: { "line-color": ink, "line-opacity": 0.4, "line-width": 1 } });
-  map.addLayer({ id: "study", type: "line", source: "study", paint: { "line-color": ink, "line-width": 1, "line-dasharray": [4, 3] } });
-  map.addLayer({ id: "proj-casing", type: "line", source: "lines", paint: { "line-color": "#ffffff", "line-width": 4 } });
-  map.addLayer({ id: "proj-lines", type: "line", source: "lines",
-    paint: { "line-color": ["match", ["get", "utility"], "DESC", desc, gpc], "line-width": 2 } });
-
-  map.addLayer({ id: "ovl-casing", type: "line", source: "overlaps", filter: ["==", ["get", "tier"], "T1"],
-    paint: { "line-color": "#ffffff", "line-width": 7 } });
-  for (const t of TIER_LINES) {
-    map.addLayer({ id: `ovl-${t.tier}`, type: "line", source: "overlaps", filter: ["==", ["get", "tier"], t.tier],
-      layout: { "line-cap": t.dash ? "butt" : "round" },
-      paint: { "line-color": violet, "line-width": ["case", ["get", "focus"], t.width + 2, t.width],
-               "line-opacity": ["case", ["get", "focus"], 1, 0.35],
-               ...(t.dash ? { "line-dasharray": t.dash } : {}) } });
+  map.addImage("sq-solid", squareImage(gpc, false));
+  map.addImage("sq-hollow", squareImage(gpc, true));
+  map.addImage("sq-grey", squareImage(OTHER_GREY, false));
+  for (const id of ["states", "study", "lines", "points", "overlaps", "connector", "touch"]) {
+    map.addSource(id, { type: "geojson", data: id === "states" ? states() : id === "study" ? studyAreaOutline() : EMPTY });
   }
-  map.addLayer({ id: "ovl-none", type: "line", source: "overlaps", filter: ["==", ["get", "tier"], "none"],
-    paint: { "line-color": hair, "line-width": 1, "line-dasharray": [2, 2] } });
-  map.addLayer({ id: "ovl-hit", type: "line", source: "overlaps", paint: { "line-color": "#000000", "line-opacity": 0, "line-width": 14 } });
+  map.addLayer({ id: "states-fill", type: "fill", source: "states", paint: { "fill-color": "#ffffff", "fill-opacity": 0.3 } });
+  map.addLayer({ id: "states-line", type: "line", source: "states", paint: { "line-color": "#181011", "line-opacity": 0.35, "line-width": 1 } });
+  map.addLayer({ id: "study", type: "line", source: "study", paint: { "line-color": "#181011", "line-opacity": 0.5, "line-width": 1, "line-dasharray": [4, 3] } });
+  map.addLayer({ id: "overlaps", type: "line", source: "overlaps", paint: { "line-color": OTHER_GREY, "line-width": 1, "line-opacity": 0.55, "line-dasharray": [1, 2] } });
+  map.addLayer({ id: "ovl-hit", type: "line", source: "overlaps", paint: { "line-color": "#000", "line-opacity": 0, "line-width": 12 } });
+  map.addLayer({ id: "proj-casing", type: "line", source: "lines", filter: ["==", ["get", "focus"], true],
+    paint: { "line-color": "#ffffff", "line-width": 6.5 } });
+  map.addLayer({ id: "proj-lines", type: "line", source: "lines", layout: { "line-cap": "round" },
+    paint: { "line-color": ["case", ["get", "dim"], OTHER_GREY, ["match", ["get", "utility"], "DESC", desc, gpc]],
+             "line-width": ["case", ["get", "focus"], 3.5, 1.8], "line-opacity": dimmed } });
+  map.addLayer({ id: "connector", type: "line", source: "connector", paint: { "line-color": "#181011", "line-width": 2, "line-dasharray": [3, 2] } });
   map.addLayer({ id: "touch-ring", type: "circle", source: "touch",
-    paint: { "circle-radius": 11, "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": violet, "circle-stroke-width": 3 } });
-
-  const hollow: ExpressionSpecification = ["in", ["get", "precision"], ["literal", ["endpoint_proxy", "regional_approximation"]]];
+    paint: { "circle-radius": 11, "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#181011", "circle-stroke-width": 2 } });
+  const hollow = ["in", ["get", "precision"], ["literal", ["endpoint_proxy", "regional_approximation"]]] as unknown as boolean;
   map.addLayer({ id: "desc-points", type: "circle", source: "points", filter: ["==", ["get", "utility"], "DESC"],
-    paint: { "circle-radius": 5, "circle-color": ["case", hollow, "#ffffff", desc], "circle-stroke-color": ["case", hollow, desc, "#ffffff"],
-             "circle-stroke-width": ["case", hollow, 2, 1] } });
+    paint: { "circle-radius": ["case", ["get", "focus"], 6, 4.5] as unknown as number,
+             "circle-color": ["case", ["get", "dim"], OTHER_GREY, hollow, "#ffffff", desc] as unknown as string,
+             "circle-stroke-color": ["case", hollow, desc, "#ffffff"] as unknown as string, "circle-stroke-width": 1.5, "circle-opacity": dimmed,
+             "circle-stroke-opacity": dimmed } });
   map.addLayer({ id: "gpc-points", type: "symbol", source: "points", filter: ["==", ["get", "utility"], "GPC"],
-    layout: { "icon-image": ["case", hollow, "sq-hollow", "sq-solid"], "icon-allow-overlap": true } });
-  map.addLayer({ id: "sperry-dot", type: "circle", source: "points", filter: ["==", ["get", "precision"], "sperry_provided"],
-    paint: { "circle-radius": 1.6, "circle-color": ink } });
+    layout: { "icon-image": ["case", ["get", "dim"], "sq-grey", hollow, "sq-hollow", "sq-solid"] as unknown as string, "icon-allow-overlap": true },
+    paint: { "icon-opacity": dimmed } });
 }
 
 /** Re-read the CSS tokens after a theme switch (MapLibre paint values are not CSS). */
@@ -125,71 +109,97 @@ function applyTheme(map: MLMap) {
   const ink = color("--text-primary", "#181011");
   const desc = color("--utility-desc", "#1a5fa8");
   const gpc = color("--utility-gpc", "#9a4f00");
-  const violet = color("--overlap", "#6e36b5");
   map.setPaintProperty("bg", "background-color", color("--bg-canvas", "#f3f1ed"));
-  map.setPaintProperty("proj-casing", "line-color", color("--bg-canvas", "#ffffff"));
-  map.setPaintProperty("ovl-casing", "line-color", color("--bg-canvas", "#ffffff"));
   map.setPaintProperty("states-fill", "fill-color", color("--bg-surface", "#ffffff"));
-  map.setPaintProperty("states-line", "line-color", ink);
-  map.setPaintProperty("study", "line-color", ink);
-  map.setPaintProperty("proj-lines", "line-color", ["match", ["get", "utility"], "DESC", desc, gpc]);
-  map.setPaintProperty("desc-points", "circle-stroke-color", ["case", ["in", ["get", "precision"],
-    ["literal", ["endpoint_proxy", "regional_approximation"]]], desc, "#ffffff"]);
-  for (const t of TIER_LINES) map.setPaintProperty(`ovl-${t.tier}`, "line-color", violet);
-  map.setPaintProperty("touch-ring", "circle-stroke-color", violet);
+  map.setPaintProperty("proj-casing", "line-color", color("--bg-canvas", "#ffffff"));
+  for (const id of ["states-line", "study", "connector"]) map.setPaintProperty(id, "line-color", ink);
+  map.setPaintProperty("touch-ring", "circle-stroke-color", ink);
+  map.setPaintProperty("proj-lines", "line-color", ["case", ["get", "dim"], OTHER_GREY, ["match", ["get", "utility"], "DESC", desc, gpc]]);
 }
 
-function tooltip(o: Opportunity): HTMLElement {
+function withDim<T extends { features: { properties: Record<string, unknown> | null }[] }>(fc: T, hasFocus: boolean, hideUnrelated: boolean): T {
+  const features = fc.features
+    .map((f) => ({ ...f, properties: { ...f.properties, dim: hasFocus && !f.properties?.focus } }))
+    .filter((f) => !(hideUnrelated && f.properties.dim));
+  return { ...fc, features };
+}
+
+function projectCard(p: Project, count: number): HTMLElement {
   const el = document.createElement("div");
-  el.className = "map-tip";
-  const head = document.createElement("strong");
-  head.textContent = o.tier ? `${o.tier} · ${TIER_TEXT[o.tier]}` : "BEYOND 25 MI";
-  const pair = document.createElement("span");
-  pair.textContent = `DESC ${o.a.name}  ×  GPC ${o.b.name}`;
-  const dist = document.createElement("span");
-  dist.className = "mono";
-  dist.textContent = `${o.touching ? "touching" : `${o.dist_closest_mi.toFixed(2)} mi closest`} · ${o.dist_center_mi.toFixed(2)} mi centers`;
-  el.append(head, pair, dist);
+  el.className = "map-card";
+  const head = document.createElement("span");
+  head.className = `chip chip--${p.utility}`;
+  head.textContent = p.utility;
+  const name = document.createElement("strong");
+  name.textContent = p.name;
+  const meta = document.createElement("span");
+  meta.className = "muted";
+  meta.textContent = `${count} ${count === 1 ? "opportunity" : "opportunities"} · click to filter queue`;
+  el.append(head, name, meta);
   return el;
 }
 
-export function MapView({ projects, opportunities, selectedId, hoveredId, method, onSelect, onHover, focusToken, theme }: Props) {
+export function MapView({ projects, opportunities, selectedId, hoveredId, hoveredProjectId = null, method, onSelect, onHover,
+  onProjectFilter, focusToken, theme }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
   const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
   const [satellite, setSatellite] = useState(false);
+  const [showPlaces, setShowPlaces] = useState(true);
+  const [hideUnrelated, setHideUnrelated] = useState(false);
   const shownMethod = useRef<Method>(method);
-  const labels = useRef<maplibregl.Marker[]>([]);
+  const markers = useRef<maplibregl.Marker[]>([]);
   const places = useRef<maplibregl.Marker[]>([]);
   const popup = useRef<maplibregl.Popup | null>(null);
   const overviewShown = useRef(false);
   const byId = useMemo(() => new Map(projects.map((p) => [p.id, p])), [projects]);
   const byOpp = useMemo(() => new Map(opportunities.map((o) => [o.id, o])), [opportunities]);
-  const callbacks = useRef({ onSelect, onHover, byOpp });
-  callbacks.current = { onSelect, onHover, byOpp };
+  const selected = selectedId ? byOpp.get(selectedId) : undefined;
+  const hovered = hoveredId ? byOpp.get(hoveredId) : undefined;
+  const focus = useMemo(() => new Set([selected?.a.id, selected?.b.id, hovered?.a.id, hovered?.b.id, hoveredProjectId]
+    .filter((x): x is string => Boolean(x))), [selected, hovered, hoveredProjectId]);
+  const callbacks = useRef({ onSelect, onHover, onProjectFilter, byOpp, byId, opportunities });
+  callbacks.current = { onSelect, onHover, onProjectFilter, byOpp, byId, opportunities };
 
   useEffect(() => {
     if (!container.current) return;
-    const map = new maplibregl.Map({
-      container: container.current, style: baseStyle(), attributionControl: { compact: true },
-      bounds: [[STUDY_AREA.west - 0.6, STUDY_AREA.south - 0.4], [STUDY_AREA.east + 0.6, STUDY_AREA.north + 0.2]],
-    });
-    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
-    popup.current = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12, maxWidth: "320px" });
+    let map: MLMap;
+    try {
+      map = new maplibregl.Map({
+        container: container.current, style: baseStyle(), attributionControl: false,
+        bounds: [[STUDY_AREA.west - 0.6, STUDY_AREA.south - 0.4], [STUDY_AREA.east + 0.6, STUDY_AREA.north + 0.2]],
+      });
+    } catch {
+      setFailed(true);
+      return;
+    }
+    setFailed(false);
+    popup.current = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12, maxWidth: "300px" });
     map.on("load", () => { addLayers(map); setReady(true); });
+    map.on("webglcontextlost", () => setFailed(true));
     map.on("click", "ovl-hit", (e) => { const id = e.features?.[0]?.properties?.id; if (id) callbacks.current.onSelect(String(id)); });
     map.on("mousemove", "ovl-hit", (e) => {
-      const id = String(e.features?.[0]?.properties?.id ?? "");
-      const o = callbacks.current.byOpp.get(id);
       map.getCanvas().style.cursor = "pointer";
-      callbacks.current.onHover(id || null);
-      if (o) popup.current?.setLngLat(e.lngLat).setDOMContent(tooltip(o)).addTo(map);
+      callbacks.current.onHover(String(e.features?.[0]?.properties?.id ?? "") || null);
     });
-    map.on("mouseleave", "ovl-hit", () => {
-      map.getCanvas().style.cursor = "";
-      callbacks.current.onHover(null);
-      popup.current?.remove();
-    });
+    map.on("mouseleave", "ovl-hit", () => { map.getCanvas().style.cursor = ""; callbacks.current.onHover(null); });
+    for (const layer of ["proj-lines", "desc-points", "gpc-points"]) {
+      map.on("mousemove", layer, (e) => {
+        const props = e.features?.[0]?.properties;
+        const project = callbacks.current.byId.get(String(props?.project ?? props?.id));
+        if (!project) return;
+        map.getCanvas().style.cursor = "pointer";
+        popup.current?.setLngLat(e.lngLat).setDOMContent(projectCard(project, pairsFor(project.id, callbacks.current.opportunities).length)).addTo(map);
+      });
+      map.on("mouseleave", layer, () => { map.getCanvas().style.cursor = ""; popup.current?.remove(); });
+      map.on("click", layer, (e) => {
+        const props = e.features?.[0]?.properties;
+        const id = String(props?.project ?? props?.id ?? "");
+        if (id) callbacks.current.onProjectFilter?.(id);
+      });
+    }
     for (const place of PLACES) {
       const el = document.createElement("div");
       el.className = `map-place map-place--${place.kind}`;
@@ -198,15 +208,23 @@ export function MapView({ projects, opportunities, selectedId, hoveredId, method
     }
     mapRef.current = map;
     if (import.meta.env.DEV) (window as unknown as { __gridpulseMap?: MLMap }).__gridpulseMap = map;
-    return () => { popup.current?.remove(); map.remove(); mapRef.current = null; };
-  }, []);
+    return () => {
+      popup.current?.remove();
+      places.current = [];
+      map.remove();
+      mapRef.current = null;
+      setReady(false);
+    };
+  }, [attempt]);
+
+  const hasFocus = focus.size > 0;
 
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    (map.getSource("lines") as GeoJSONSource).setData(projectLines(projects));
-    (map.getSource("points") as GeoJSONSource).setData(projectPoints(projects));
-  }, [ready, projects]);
+    (map.getSource("lines") as GeoJSONSource).setData(withDim(projectLines(projects, focus), hasFocus, hideUnrelated));
+    (map.getSource("points") as GeoJSONSource).setData(withDim(projectPoints(projects, focus), hasFocus, hideUnrelated));
+  }, [ready, projects, focus, hasFocus, hideUnrelated]);
 
   const fitAll = (animate = true) => {
     const map = mapRef.current;
@@ -214,74 +232,77 @@ export function MapView({ projects, opportunities, selectedId, hoveredId, method
     if (map && bounds) map.fitBounds(bounds, { padding: 60, maxZoom: 10, duration: animate && !reducedMotion() ? FLY_MS : 0 });
   };
 
-  // First data: show the whole region, not one pair.
   useEffect(() => {
     if (!ready || overviewShown.current || !opportunities.length) return;
     overviewShown.current = true;
-    fitAll(false);
+    const requested = selectedId ? byOpp.get(selectedId) : undefined;
+    const bounds = focusToken > 0 && requested ? pairBounds(requested, byId) : null;
+    if (bounds) mapRef.current?.fitBounds(bounds, { padding: 110, maxZoom: 10.5, duration: 0 }); // deep link: open on the pair
+    else fitAll(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready, opportunities]);
 
-  // Overlap lines; when the method changes, slide them from the old ends to the new ends.
+  // Other pairs as faint context; the selected pair's connector slides between centers and closest points.
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    const overlaps = map.getSource("overlaps") as GeoJSONSource;
+    const others = hideUnrelated ? [] : opportunities.filter((o) => o.id !== selectedId);
+    (map.getSource("overlaps") as GeoJSONSource).setData(overlapLines(others, method, method, 1, null));
+    const conn = map.getSource("connector") as GeoJSONSource;
     const touch = map.getSource("touch") as GeoJSONSource;
+    touch.setData(selected?.touching && method === "closest"
+      ? { type: "FeatureCollection", features: [{ type: "Feature", properties: {}, geometry: { type: "Point", coordinates: connector(selected, method).mid } }] }
+      : EMPTY);
     const from = shownMethod.current;
     shownMethod.current = method;
-    if (from === method || reducedMotion()) {
-      overlaps.setData(overlapLines(opportunities, method, method, 1, selectedId, hoveredId));
-      touch.setData(touchPoints(opportunities, method));
-      return;
-    }
-    touch.setData(touchPoints(opportunities, "center"));
+    if (!selected) { conn.setData(EMPTY); return; }
+    if (from === method || reducedMotion()) { conn.setData(overlapLines([selected], method, method, 1, null)); return; }
     const start = performance.now();
     let frame = 0;
     const step = (now: number) => {
       const t = Math.min(1, (now - start) / METHOD_MS);
-      const eased = 1 - Math.pow(1 - t, 3);
-      overlaps.setData(overlapLines(opportunities, from, method, eased, selectedId, hoveredId));
+      conn.setData(overlapLines([selected], from, method, 1 - Math.pow(1 - t, 3), null));
       if (t < 1) frame = requestAnimationFrame(step);
-      else touch.setData(touchPoints(opportunities, method));
     };
     frame = requestAnimationFrame(step);
     return () => cancelAnimationFrame(frame);
-  }, [ready, opportunities, method, selectedId, hoveredId]);
+  }, [ready, opportunities, selected, selectedId, method, hideUnrelated]);
 
-  // Label the selected pair's projects (HTML labels: no glyph server needed).
+  // HTML labels: selected/hovered endpoints (halo, no boxes) and the connector's distance pill.
   useEffect(() => {
     const map = mapRef.current;
-    labels.current.forEach((m) => m.remove());
-    labels.current = [];
-    const selected = selectedId ? byOpp.get(selectedId) : undefined;
-    if (!ready || !map || !selected) return;
-    for (const ref of [selected.a, selected.b]) {
-      for (const e of byId.get(ref.id)?.endpoints.filter((ep) => ep.lat != null) ?? []) {
+    markers.current.forEach((m) => m.remove());
+    markers.current = [];
+    if (!ready || !map) return;
+    for (const id of focus) {
+      for (const e of byId.get(id)?.endpoints.filter((ep) => ep.lat != null) ?? []) {
         const el = document.createElement("div");
-        el.className = `map-label map-label--${ref.utility}`;
-        el.textContent = e.osm_name ?? e.name_raw;
-        labels.current.push(new maplibregl.Marker({ element: el, anchor: "bottom", offset: [0, -8] })
-          .setLngLat([e.lon!, e.lat!]).addTo(map));
+        el.className = "map-label";
+        el.textContent = (e.osm_name ?? e.name_raw).replace(/ (Substation|Switching Station)$/i, "");
+        markers.current.push(new maplibregl.Marker({ element: el, anchor: "left", offset: [9, 0] }).setLngLat([e.lon!, e.lat!]).addTo(map));
       }
     }
-  }, [ready, selectedId, byOpp, byId]);
+    if (selected) {
+      const c = connector(selected, method);
+      const pill = document.createElement("div");
+      pill.className = "map-pill";
+      pill.textContent = c.label;
+      markers.current.push(new maplibregl.Marker({ element: pill, anchor: "top", offset: [0, 14] }).setLngLat(c.mid).addTo(map));
+    }
+  }, [ready, focus, byId, selected, method]);
 
-  // Fly only when the user asked for a pair.
   useEffect(() => {
     const map = mapRef.current;
-    const selected = selectedId ? byOpp.get(selectedId) : undefined;
     if (!ready || !map || !selected || focusToken === 0) return;
     const bounds = pairBounds(selected, byId);
-    if (bounds) map.fitBounds(bounds, { padding: 90, maxZoom: 10.5, duration: reducedMotion() ? 0 : FLY_MS });
+    if (bounds) map.fitBounds(bounds, { padding: 110, maxZoom: 10.5, duration: reducedMotion() ? 0 : FLY_MS });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ready, focusToken]);
 
   useEffect(() => {
     const map = mapRef.current;
     if (!ready || !map) return;
-    // The parent sets <html data-theme> in its own effect, which runs after this one: wait a frame.
-    const frame = requestAnimationFrame(() => applyTheme(map));
+    const frame = requestAnimationFrame(() => applyTheme(map)); // parent sets <html data-theme> after this effect
     return () => cancelAnimationFrame(frame);
   }, [ready, theme]);
 
@@ -289,19 +310,50 @@ export function MapView({ projects, opportunities, selectedId, hoveredId, method
     const map = mapRef.current;
     if (!ready || !map) return;
     map.setLayoutProperty("imagery", "visibility", satellite ? "visible" : "none");
-    places.current.forEach((p) => p.getElement().classList.toggle("is-on-imagery", satellite));
-  }, [ready, satellite]);
+    places.current.forEach((p) => {
+      p.getElement().classList.toggle("is-on-imagery", satellite);
+      p.getElement().style.display = showPlaces ? "" : "none";
+    });
+  }, [ready, satellite, showPlaces]);
+
+  if (failed) {
+    return (
+      <section className="map-panel map-panel--failed" aria-label="Map unavailable">
+        <div className="map-fallback">
+          <p className="map-fallback__title">Map unavailable</p>
+          <p className="muted">This browser could not start the map renderer. Rankings, evidence and exports are unaffected.</p>
+          <button type="button" className="btn" onClick={() => setAttempt((a) => a + 1)}>Retry</button>
+        </div>
+      </section>
+    );
+  }
+
+  const zoom = (delta: number) => mapRef.current?.easeTo({ zoom: (mapRef.current?.getZoom() ?? 7) + delta, duration: reducedMotion() ? 0 : 200 });
 
   return (
     <section className="map-panel" aria-label="Map of projects and overlaps">
-      <div ref={container} className="map" role="img" aria-label="Schematic map: DESC circles, GPC squares, violet overlap lines" />
-      <span className="tag map-study-label">STUDY AREA · SAVANNAH / AUGUSTA</span>
-      <div className="map-actions">
-        <button type="button" className="btn btn--ghost btn--sm" onClick={() => fitAll()} title="Zoom out to every pair">Fit all</button>
-        <button type="button" className="btn btn--ghost btn--sm" aria-pressed={satellite} onClick={() => setSatellite((s) => !s)}>
-          {satellite ? "Schematic" : "Satellite"}
-        </button>
+      <div ref={container} className="map" role="img" aria-label="Map: DESC projects as blue circles, Georgia Power as orange squares; the selected pair is joined by a dashed line" />
+      {!ready && <div className="map-loading" aria-hidden="true" />}
+      <div className="map-zoom" role="group" aria-label="Zoom">
+        <button type="button" onClick={() => zoom(1)} aria-label="Zoom in">+</button>
+        <button type="button" onClick={() => zoom(-1)} aria-label="Zoom out">−</button>
+        <button type="button" onClick={() => fitAll()} aria-label="Fit all pairs">Fit</button>
       </div>
+      <div className="map-tools">
+        <button type="button" className="btn btn--map" aria-pressed={hideUnrelated} onClick={() => setHideUnrelated((h) => !h)}>
+          {hideUnrelated ? "Show all" : "Hide unrelated"}
+        </button>
+        <Popover label="Layers" ariaLabel="Map layers" align="right" className="popover--map">
+          {() => (
+            <div className="menu">
+              <label className="check"><input type="checkbox" checked={satellite} onChange={() => setSatellite((s) => !s)} /> Satellite imagery (USGS)</label>
+              <label className="check"><input type="checkbox" checked={showPlaces} onChange={() => setShowPlaces((s) => !s)} /> Place labels</label>
+            </div>
+          )}
+        </Popover>
+      </div>
+      <MapLegend />
+      <p className="map-attrib">Unresolved endpoints are not drawn · © OpenStreetMap contributors (ODbL) · US Census{satellite ? " · USGS imagery" : ""}</p>
     </section>
   );
 }

@@ -99,6 +99,7 @@ export interface EvidenceItemData {
   page?: number;
   source_id?: string;
   field?: string;
+  project_id?: string;
 }
 
 export interface EstimatorInputs {
@@ -125,6 +126,8 @@ export interface Discrepancy {
   project_id: string;
   message: string;
   miles_apart?: number;
+  values?: Record<string, unknown>;
+  endpoint?: string;
 }
 
 export interface Quality {

@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import App from "./App";
 import { OPPS, QUALITY } from "./test/fixtures";
 
@@ -22,18 +23,20 @@ beforeEach(() => {
 
 test("renders the ranked opportunities from the API", async () => {
   render(<App />);
-  expect(await screen.findByRole("heading", { name: "Ranked opportunities" })).toBeInTheDocument();
+  expect(await screen.findByRole("heading", { name: "Savannah / Augusta study" })).toBeInTheDocument();
   expect(await screen.findByText(/SAV: MCINTOSH - PURRYSBURG/)).toBeInTheDocument();
-  expect(screen.getByRole("radio", { name: "CLOSEST" })).toHaveAttribute("aria-checked", "true");
-  expect(screen.getByText("SEED")).toBeInTheDocument();
+  expect(screen.getByRole("radio", { name: "Closest points" })).toHaveAttribute("aria-checked", "true");
+  expect(screen.getByText("Seed dataset")).toBeInTheDocument();
+  expect(await screen.findByRole("button", { name: /Validated 6\/6/ })).toBeInTheDocument();
 });
 
 test("clears the detail panel when the threshold leaves no opportunities", async () => {
   const { rerender } = render(<App />);
   expect(await screen.findByText(/SAV: MCINTOSH - PURRYSBURG/)).toBeInTheDocument();
   responses["/api/opportunities"] = [];
+  await userEvent.click(screen.getByRole("button", { name: /Radius/ }));
   fireEvent.change(screen.getByRole("slider"), { target: { value: "5" } });
   rerender(<App />);
-  expect(await screen.findByText("NO OVERLAPS AT THIS THRESHOLD")).toBeInTheDocument();
+  expect(await screen.findByText("No opportunities match")).toBeInTheDocument();
   expect(screen.queryByRole("region", { name: "Selected opportunity" })).not.toBeInTheDocument();
 });
