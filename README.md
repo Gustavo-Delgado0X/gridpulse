@@ -8,17 +8,17 @@ GridPulse reads the public transmission plans of **Dominion Energy South Carolin
 - **Secondary signal:** timeline overlap (shared build windows and the gap in days).
 - **Bonus:** a transparent cost/impact estimate with editable assumptions.
 
-> **Answer key: 6/6.** Sperry's `Projects_Overlaps.xlsx` is reproduced exactly: every distance to ±0.01 mi and every day gap exact. The 3 control projects are never flagged. Two automated gates check this:
-> - **Gate A** runs on the key's own data.
-> - **Gate B** runs on the full dataset built from the PDFs.
+> **Answer key: a benchmark, never a data source.** No coordinate from Sperry's `Projects_Overlaps.xlsx` is used to place a project. It is checked two ways:
+> - **Distance math (Gate A), 6/6:** on the key's own coordinates, every distance is reproduced to ±0.01 mi, every day gap exactly, and the 3 control projects are never flagged.
+> - **Independent locating (Gate B), 6/6 found:** on GridPulse's own OpenStreetMap locations, all six answer-key pairs are found in the ranked list with exact day gaps. Four center distances differ from the key because Okatie substation is not in OpenStreetMap and stays unresolved.
 
 ## What it finds
 
 | | |
 |---|---|
 | Projects parsed | 182 (44 DESC 2024–28 + 138 GPC/SAV from the 2025 IRP), plus 70 other-utility rows kept but hidden |
-| Projects located | 102 (OpenStreetMap substations matched by name — confirmed by GPC zone, voltage or tie-line context where available — plus Sperry's coordinates). 80 are listed but not mapped |
-| DESC × GPC pairs within 25 mi (closest points) | 52: **2 × T1**, 2 × T3, 48 × T4. 15 of them share a build window |
+| Projects located | 100 (OpenStreetMap substations matched by name — confirmed by GPC zone, voltage or tie-line context where available — plus two reviewed OSM overrides). 82 are listed but not mapped |
+| DESC × GPC pairs within 25 mi (closest points) | 39: **2 × T1**, 2 × T3, 35 × T4. 12 of them share a build window |
 | Plan-change events | 317 across DESC 2024–28 → 2025–29 → 2026–30, GPC IRP tables, and IRP vs SERTP 2025/2026 |
 | Data-quality issues | 41: source conflicts, coordinate mismatches, cost tables that do not sum, normalized dates, reused Project IDs |
 
@@ -59,7 +59,7 @@ data/raw PDFs ──► pipeline/ parse ──► locate (OSM) ──► answer 
 - Overpass queries pull every `power=substation|plant` feature per state.
 - Names are normalized, then narrowed by GPC planning zone and the project's voltage.
 - The neighbouring state is searched only for tie lines or when the zone confirms the match.
-- Every endpoint carries a precision label (`osm_feature`, `sperry_provided`, `endpoint_proxy`, `regional_approximation`, `unresolved`).
+- Every endpoint carries a precision label (`osm_feature`, `endpoint_proxy`, `regional_approximation`, `unresolved`). No endpoint takes its coordinates from the answer key.
 
 **Engine**
 - **Closest points:** nearest points found on EPSG:5070 geometry, then measured geodesically on WGS84.
@@ -77,7 +77,7 @@ data/raw PDFs ──► pipeline/ parse ──► locate (OSM) ──► answer 
 ### Design choices
 
 - **Evidence over assertion.** Every source fact is quoted as printed (dates like `6/1/2027` included) with its page; a test checks each quote against its cited PDF page. Derived numbers name their method, and interpretations are labelled `TEMPLATE`.
-- **Honest locations.** Ambiguous or unmatched names are not guessed: 199 endpoints stay `unresolved` and are listed, not drawn. When several OpenStreetMap features share a name and nothing (zone, voltage, tie line) picks one, the endpoint stays unresolved. Coordinate conflicts are reported, for example two McIntosh coordinates 0.41 mi apart (OpenStreetMap vs Sperry's answer key).
+- **Honest locations.** Ambiguous or unmatched names are not guessed: 204 endpoints stay `unresolved` and are listed, not drawn. When several OpenStreetMap features share a name and nothing (zone, voltage, tie line) picks one, the endpoint stays unresolved. Coordinate conflicts are reported, for example two McIntosh coordinates 0.41 mi apart (OpenStreetMap vs Sperry's answer key); GridPulse keeps the OpenStreetMap one.
 - **One list for ranking, all lists for change.** Opportunities are ranked on the DESC 2024–28 list, the edition Sperry's answer key uses. The 2025–29 and 2026–30 lists feed the plan-change view, and the inspector shows when a later list moves a date.
 - **Color is never the only signal.** DESC is always a blue circle and GPC an orange square, each with a text label. Tiers use line weight and dash as well as a text badge.
 
@@ -115,7 +115,7 @@ npx vercel --prod
 ## Tests
 
 ```bash
-make test         # pytest (engine, parsers, locate, build, API, Gate A/B) + Vitest (components, map data)
+make test         # pytest (engine, parsers, locate, build, API, Gate A distance math, Gate B independent locating) + Vitest
 cd frontend && npx playwright test   # E2E: every button, filter, link and map control against the live API
 make acceptance   # Gate A only
 ```
@@ -141,7 +141,7 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent.
 | DESC *Planned Transmission Projects $2M and above* 2024–28 (Sperry starter, identical to scrtp.com), 2025–29 and 2026–30 (scrtp.com) | DESC projects, costs, change view |
 | Georgia Power 2025 IRP Volume 3, **Public Disclosure** copy (Sperry starter) | GPC projects |
 | SERTP 2025 and 2026 preliminary expansion plans, non-CEII (southeasternrtp.com) | Cross-source date check |
-| Sperry `Projects_Overlaps.xlsx` | Acceptance tests, `sperry_provided` coordinates |
+| Sperry `Projects_Overlaps.xlsx` | Benchmark only: Gate A distance math, Gate B pair check, coordinate-conflict reports (never used as locations) |
 | © OpenStreetMap contributors, ODbL 1.0 | Substation locations |
 | U.S. Census Bureau cartographic boundaries via `us-atlas` | Schematic map outlines |
 | USGS The National Map imagery | Optional satellite layer |
