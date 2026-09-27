@@ -1,5 +1,7 @@
 # GridPulse
 
+[![CI](https://github.com/Gustavo-Delgado0X/gridpulse/actions/workflows/ci.yml/badge.svg)](https://github.com/Gustavo-Delgado0X/gridpulse/actions/workflows/ci.yml)
+
 Cross-utility planning intelligence for Sperry Tech's **GridLock** challenge (ShellHacks 2026).
 
 GridPulse reads the public transmission plans of **Dominion Energy South Carolina (DESC)** and **Georgia Power (GPC)**. It finds where their planned work overlaps across the Savannah River and ranks those pairs so planners know whom to call first. Every source fact it quotes cites its page, every derived value names its method, and it shows what changed between plan versions.
@@ -9,8 +11,8 @@ GridPulse reads the public transmission plans of **Dominion Energy South Carolin
 - **Bonus:** a transparent cost/impact estimate with editable assumptions.
 
 > **Answer key: a benchmark, never a data source.** No coordinate from Sperry's `Projects_Overlaps.xlsx` is used to place a project. It is checked two ways:
-> - **Distance math (Gate A), 6/6:** on the key's own coordinates, every distance is reproduced to ±0.01 mi, every day gap exactly, and the 3 control projects are never flagged.
-> - **Independent locating (Gate B), 6/6 found:** on GridPulse's own OpenStreetMap locations, all six answer-key pairs are found in the ranked list with exact day gaps. Four center distances differ from the key because Okatie substation is not in OpenStreetMap and stays unresolved.
+> - **Distance math (Gate A), 6/6** — `tests/test_acceptance.py`: on the key's own coordinates, every distance is reproduced to ±0.01 mi, every day gap exactly, and the 3 control projects are never flagged.
+> - **Independent locating (Gate B), 6/6 found** — `tests/test_processed.py` (it also fails if any location comes from the key): on GridPulse's own OpenStreetMap locations, all six answer-key pairs are found in the ranked list with exact day gaps. Four center distances differ from the key because Okatie substation is not in OpenStreetMap and stays unresolved.
 
 ## What it finds
 
@@ -120,7 +122,7 @@ cd frontend && npx playwright test   # E2E: every button, filter, link and map c
 make acceptance   # Gate A only
 ```
 
-Tests that need the gitignored PDFs skip cleanly when those files are absent.
+Tests that need the gitignored PDFs skip cleanly when those files are absent. CI (`.github/workflows/ci.yml`) runs pytest, ruff, Vitest and the production build on every push and pull request; both answer-key gates run there on the committed data.
 
 ## API
 
