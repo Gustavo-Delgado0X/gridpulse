@@ -45,6 +45,7 @@ data/raw PDFs ──► pipeline/ parse ──► locate (OSM) ──► answer 
 | Changes | `engine/changes.py` | DESC versions matched by Project ID; GPC by TEAMS and a normalized project key against SERTP |
 | API | `backend/app/` | FastAPI, read-only, `{data, error, meta}` envelope, rate-limited |
 | UI | `frontend/` | React + TypeScript + Vite + MapLibre GL v5, detailed below |
+| Voice | `backend/app/voice.py` | ElevenLabs text-to-speech briefing per pair, scripted from cited facts only |
 
 **Parse**
 - **DESC lists:** one project per page, handling several quirks:
@@ -132,6 +133,8 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent. CI
 - `GET /api/opportunities?d=1..50&tier=&timeline=&method=closest|center`
 - `GET /api/opportunities/{id}`
 - `GET /api/opportunities/{id}/brief` (printable HTML)
+- `GET /api/opportunities/{id}/brief/script` (the voice briefing's exact words)
+- `GET /api/opportunities/{id}/brief/audio` (the briefing read aloud by ElevenLabs, MP3; 503 when no key is set)
 - `GET /api/changes?utility=&event=`
 - `GET /api/quality`
 - `GET /api/export/overlaps.csv`: Sperry's column layout, with GridPulse columns appended
@@ -168,5 +171,6 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent. CI
 
 - **AI assistance:** built with Claude Code (Anthropic) as a pair programmer. All code is written for this project; no code was copied from other teams. An independent review with the Codex CLI flagged overclaims and data-integrity issues, which were fixed and are covered by tests.
 - **AI features:** the PydanticAI resource-profiler and explainer (plan item P1c) are **not** included in this submission. Explanations are deterministic templates, labelled `TEMPLATE`.
+- **Voice (ElevenLabs):** each pair has a **Listen to briefing** button. ElevenLabs text-to-speech reads a short script built only from verified data: tier, measured distances, and in-service dates with their source pages. No language model writes it, so the voice never says anything the app cannot cite, and the transcript shows the exact words. The key stays on the server (`ELEVENLABS_API_KEY`); audio is cached and rate-limited. See `backend/app/voice.py`.
 - **Estimates:** cost/impact figures are illustrative arithmetic, not forecasts. Right-of-way widths, $/acre and mobilization costs are team assumptions (not sourced from either utility), shown and editable in the UI.
 - **Planning documents:** `docs/GRIDPULSE_MASTER_STRATEGY.md` and `docs/GRIDPULSE_CONTRACTS_DRAFT.md`.

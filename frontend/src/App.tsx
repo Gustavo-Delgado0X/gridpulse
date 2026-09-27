@@ -186,7 +186,10 @@ export default function App() {
         <DetailPanel key={`${detail.data.id}:${method}`} detail={detail.data} triage={triage[detail.data.id] ?? "new"}
                      onTriage={(t) => setTriage(detail.data!.id, t)} changes={changeList} onHoverProject={setHoveredProjectId}
                      onViewChanges={(projectId) => { setChangesFor(projectId); setView("changes"); }}
-                     briefUrl={(q) => `${api.briefUrl(detail.data!.id, method)}&${q}`} />
+                     briefUrl={(q) => `${api.briefUrl(detail.data!.id, method)}&${q}`}
+                     voice={health.status === "ok" && health.data.voice === "available"
+                       ? { audioUrl: api.briefAudioUrl(detail.data.id, method), loadScript: () => api.briefScript(detail.data!.id, method) }
+                       : undefined} />
       )}
     </>
   );

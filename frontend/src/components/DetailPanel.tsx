@@ -10,6 +10,7 @@ import { TierBadge } from "./TierBadge";
 import { TimelineStrip, type PriorDate } from "./TimelineStrip";
 import { TriageControl } from "./TriageControl";
 import { UtilityChip } from "./UtilityChip";
+import { VoiceBrief } from "./VoiceBrief";
 
 const FLAG_HELP: Record<string, string> = {
   method_disagree: "Sperry's center-to-center rule and the closest-point rule give different answers at 25 mi.",
@@ -39,6 +40,8 @@ interface Props {
   changes?: Change[];
   onHoverProject?: (projectId: string | null) => void;
   onViewChanges?: (projectId: string) => void;
+  /** Spoken briefing for this pair; omitted when the server has no ElevenLabs key. */
+  voice?: { audioUrl: string; loadScript: () => Promise<string> };
 }
 
 function ProjectFacts({ project, mapsLink }: { project: Project; mapsLink: string | null }) {
@@ -88,7 +91,7 @@ function Compare({ change, rankedSource }: { change: Change; rankedSource: strin
   );
 }
 
-export function DetailPanel({ detail, triage, onTriage, briefUrl, changes = [], onHoverProject, onViewChanges }: Props) {
+export function DetailPanel({ detail, triage, onTriage, briefUrl, changes = [], onHoverProject, onViewChanges, voice }: Props) {
   const [tab, setTab] = useState<Tab>("overview");
   const [draft, setDraft] = useState<EstimatorDraft>(() => initialDraft(detail.estimator.inputs));
   const facts = detail.evidence.filter((e) => e.type === "fact");
@@ -146,6 +149,7 @@ export function DetailPanel({ detail, triage, onTriage, briefUrl, changes = [], 
       <div className="inspector__scroll">
         <p className="recommendation"><span aria-hidden="true">◆</span> <strong>{detail.tier ? title(TIER_TEXT[detail.tier]) : "Beyond the tier table"}</strong>
           <span className="muted"> · {title(TIMING_TEXT[detail.timeline_label])}</span></p>
+        {voice && <VoiceBrief audioUrl={voice.audioUrl} loadScript={voice.loadScript} />}
 
         <div className="pair-card">
           {projectHeader(detail.project_a, "circle")}

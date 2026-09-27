@@ -173,5 +173,7 @@ export interface Health {
   api: string;
   data_mode: "seed" | "db";
   ai: "available" | "unavailable";
+  /** ElevenLabs voice briefing: available only when the server has an API key. */
+  voice?: "available" | "unavailable";
   sources_pinned: number;
 }
