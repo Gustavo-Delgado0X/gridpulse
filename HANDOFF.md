@@ -1,5 +1,33 @@
 # GridPulse: Session Handoff
 
+## ▶ BUILD STATUS (updated 2026-09-27 ~00:45 EDT). Read this first.
+
+**The build is done and all tests pass.** 23 commits on `main`, all authored by **Gustavo Delgado**.
+- Tests: 165 pytest, 18 Vitest and 6 Playwright E2E, all passing. Coverage is 88%.
+- Gate A passes (answer key 6/6), and so does Gate B (the real-data build reproduces all 6).
+
+**Done:**
+- WP-01 through WP-06.
+- P1a: cost estimator and printable brief.
+- P1b: plan changes, including DESC versions, GPC tables 3/4 and IRP vs SERTP.
+- Parts of P1d: data-quality view, satellite toggle, DigitalOcean spec (`.do/app.yaml`).
+- README and E2E suite.
+- Code review by 3 agents; all findings fixed.
+
+**Not done (blockers needing the user):**
+1. **GitHub.** There's no remote yet. SSH auth works as `gustavodelgado00x-AI`. The user must create the repo (or approve creating it), then run `git remote add origin git@github.com:<owner>/gridpulse.git && git push -u origin main`.
+2. **Deploy.** DigitalOcean needs an account, `doctl` and the repo URL. Set `github.repo` in `.do/app.yaml`.
+3. **P1c AI agents.** Cut, since no `OPENROUTER_API_KEY` is available. The README discloses this, and explanations are labelled TEMPLATE.
+4. **LICENSE.** PyMuPDF is AGPL-3.0, so the repo license must be AGPL-compatible. This is the user's choice.
+5. **Devpost.** Screenshots, a demo recording and the submission, due before 11:00 EDT.
+
+**Run it:** `make dev`, then open http://localhost:5173. Other targets: `make test`, `make e2e`, `make pipeline` (rebuilding needs `data/raw` and `data/cache`).
+
+**Planning estimate corrected:** GPC Table 2 has **208** rows (122 GPC, 54 GTC, 16 SAV, 14 MEAG, 2 DU), not 218. The extra 10 in the planning estimate are Table 3's cancelled rows.
+
+---
+
+
 **Written:** 2026-09-26 23:50 EDT, at the end of the planning session.
 **Deadline:** **Sunday 2026-09-27, 11:00 AM EDT** (Devpost submission, with the GitHub repo link attached).
 **State:** Planning is complete and the scaffold is created. **Nothing has been built.**
