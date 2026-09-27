@@ -26,7 +26,7 @@ const VIEWS: { id: View; label: string; count: keyof Props["counts"] }[] = [
 export function TopBar({ view, onView, counts, query, onQuery, acceptance, dataMode, theme, onTheme, onHelp }: Props) {
   return (
     <header className="topbar">
-      <div className="brand"><span className="brand__mark" aria-hidden="true"><span /></span>GridPulse</div>
+      <a className="brand" href="/" title="GridPulse home"><span className="brand__mark" aria-hidden="true"><span /></span>GridPulse</a>
       <button type="button" className="btn study-btn" title="Study: Dominion Energy South Carolina × Georgia Power">
         <span className="shape shape--circle chip--DESC" aria-hidden="true" />
         <span className="shape shape--square chip--GPC" aria-hidden="true" />

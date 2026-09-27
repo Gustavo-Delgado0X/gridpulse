@@ -129,7 +129,7 @@ kbd { font: 500 11px/1 var(--font-data); padding: 2px 5px; border: 1px solid var
   border-bottom: 1px solid var(--line-hairline); }
 .topbar > * { white-space: nowrap; flex-shrink: 0; }
 .topbar > .search, .topbar > .spacer { flex-shrink: 1; }
-.brand { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+.brand { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: var(--text-primary); text-decoration: none; }
 .brand__mark { display: grid; place-items: center; width: 16px; height: 16px; border: 2px solid var(--text-primary); border-radius: 50%; }
 .brand__mark span { width: 4px; height: 4px; border-radius: 50%; background: var(--text-primary); }
 .study-btn { gap: 4px; font-weight: 600; }

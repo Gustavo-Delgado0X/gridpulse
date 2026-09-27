@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html,body{margin:0;padding:0;background:#F3F1ED}
+*{box-sizing:border-box}
+a{color:#181011;text-decoration:underline;text-underline-offset:3px}
+a:hover{color:#666666}
+:focus-visible{outline:2px solid #181011;outline-offset:2px}
+</style>
+</helmet>
+<div style="background:#F3F1ED;color:#181011;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased">
+
+  <header style="border-bottom:1px solid #D8D4D4">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;gap:32px">
+      <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#181011">
+        <span style="width:9px;height:9px;background:#181011;transform:rotate(45deg)"></span>
+        <span style="font-size:15px;font-weight:700;letter-spacing:-0.01em">GridPulse</span>
+      </a>
+      <nav style="display:flex;gap:24px;flex:1;flex-wrap:wrap">
+        <a href="#problem" style="font-size:14px;text-decoration:none">Problem</a>
+        <a href="#how" style="font-size:14px;text-decoration:none">How it works</a>
+        <a href="#evidence" style="font-size:14px;text-decoration:none">Evidence</a>
+        <a href="#validation" style="font-size:14px;text-decoration:none">Validation</a>
+      </nav>
+      <a href="GridPulse.dc.html" style="flex-shrink:0;white-space:nowrap;display:inline-flex;align-items:center;height:36px;padding:0 20px;border:1px solid #181011;border-radius:100px;font-size:15px;text-decoration:none">Open the workspace</a>
+    </div>
+  </header>
+
+  <section id="top" style="max-width:1200px;margin:0 auto;padding:64px 32px 80px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:stretch">
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:32px;padding:24px 0">
+      <span style="align-self:flex-start;background:#FFFFFF;border-radius:4px;padding:2px 8px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase">DESC × Georgia Power · Savannah / Augusta</span>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <sc-if value="{{ v1 }}" hint-placeholder-val="{{ true }}">
+          <p style="margin:0;font-size:30px;line-height:1.3;letter-spacing:-0.02em;color:#8C8886">Two utilities. One corridor. Separate plans.</p>
+          <h1 style="margin:0;font-size:52px;font-weight:400;line-height:1.08;letter-spacing:-0.025em;text-wrap:balance">GridPulse finds where transmission plans meet — before the crews do.</h1>
+        </sc-if>
+        <sc-if value="{{ v2 }}">
+          <p style="margin:0;font-size:30px;line-height:1.3;letter-spacing:-0.02em;color:#8C8886">Public plans, read line by line.</p>
+          <h1 style="margin:0;font-size:52px;font-weight:400;line-height:1.08;letter-spacing:-0.025em;text-wrap:balance">Cross-utility coordination intelligence, with a page number behind every claim.</h1>
+        </sc-if>
+        <sc-if value="{{ v3 }}">
+          <p style="margin:0;font-size:30px;line-height:1.3;letter-spacing:-0.02em;color:#8C8886">3.40 miles apart. 213 days of overlap.</p>
+          <h1 style="margin:0;font-size:52px;font-weight:400;line-height:1.08;letter-spacing:-0.025em;text-wrap:balance">Neither utility's plan mentions the other. GridPulse does.</h1>
+        </sc-if>
+      </div>
+      <p style="margin:0;max-width:480px;font-size:17px;color:#222222;text-wrap:pretty">GridPulse reads Dominion Energy SC and Georgia Power transmission plans, ranks the project pairs that should talk to each other, and traces every distance, date and dollar back to its source page.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+        <a href="GridPulse.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 24px;border-radius:100px;background:#181011;color:#F3F1ED;font-size:15px;text-decoration:none">Open the Savannah / Augusta study</a>
+        <a href="#how" style="display:inline-flex;align-items:center;height:44px;padding:0 24px;border:1px solid #181011;border-radius:100px;font-size:15px;text-decoration:none">See how it works</a>
+      </div>
+    </div>
+
+    <div style="position:relative;min-height:560px;border-radius:4px;overflow:hidden;background:#302023">
+      <sc-if value="{{ showPhoto }}">
+        <div style="position:absolute;inset:0"><image-slot id="hero-tower" shape="rect" placeholder="Pointillist transmission-tower photo (dark, dot-matrix)"></image-slot></div>
+      </sc-if>
+      <div style="position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(243,241,237,0.42) 1px,transparent 1.6px);background-size:9px 9px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 62% 44%,#000 20%,transparent 78%);mask-image:radial-gradient(ellipse 70% 80% at 62% 44%,#000 20%,transparent 78%)"></div>
+      <div style="position:absolute;left:24px;top:24px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#AAAAAA">32.26°N 81.01°W · STUDY AREA</div>
+
+      <div style="position:absolute;left:24px;top:64px;width:min(320px,calc(100% - 48px));padding:16px;border-radius:6px;background:rgba(255,255,255,0.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,0.15);display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="background:#181011;color:#FFFFFF;border-radius:4px;padding:1px 7px;font-size:11px;letter-spacing:0.1em">T3 · SHARE LOGISTICS</span><span style="font-size:12px;color:#666666">#04 of 52</span></div>
+        <div style="display:flex;flex-direction:column;gap:4px;font-size:14px;line-height:1.35">
+          <span style="display:flex;gap:8px;align-items:baseline"><span style="flex:none;width:8px;height:8px;border-radius:50%;background:#181011;transform:translateY(-1px)"></span><span><span style="font-size:11px;letter-spacing:0.1em;color:#666666">DESC </span>Jasper – Okatie 230 kV #2</span></span>
+          <span style="display:flex;gap:8px;align-items:baseline"><span style="flex:none;width:8px;height:8px;background:#181011;transform:translateY(-1px)"></span><span><span style="font-size:11px;letter-spacing:0.1em;color:#666666">GPC </span>Goshen – McIntosh 115 kV rebuild</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #D8D4D4;padding-top:10px">
+          <div style="display:flex;flex-direction:column"><span style="font-size:18px;font-weight:700;letter-spacing:-0.02em">3.40 mi</span><span style="font-size:12px;color:#666666">closest</span></div>
+          <div style="display:flex;flex-direction:column"><span style="font-size:18px;font-weight:700;letter-spacing:-0.02em">7.55 mi</span><span style="font-size:12px;color:#666666">centers</span></div>
+          <div style="display:flex;flex-direction:column"><span style="font-size:18px;font-weight:700;letter-spacing:-0.02em">517 d</span><span style="font-size:12px;color:#666666">in-service gap</span></div>
+        </div>
+      </div>
+
+      <div style="position:absolute;right:24px;bottom:24px;width:min(290px,calc(100% - 48px));padding:14px 16px;border-radius:6px;background:rgba(255,255,255,0.86);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 20px rgba(0,0,0,0.15);display:flex;flex-direction:column;gap:6px">
+        <span style="font-size:14px;font-weight:700">Sources disagree</span>
+        <span style="font-size:13px;color:#555;line-height:1.4">Need date for SAV: CC – Hyundai Motors Savannah differs between Table 2 and detail page p.231.</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#666666">gpc-19523</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="At a glance" style="border-top:1px solid #D8D4D4;border-bottom:1px solid #D8D4D4">
+    <div style="max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <sc-for list="{{ proof }}" as="p" hint-placeholder-count="4">
+        <div style="padding:28px 24px 28px 0;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:40px;line-height:1.1;letter-spacing:-0.025em">{{ p.n }}</span>
+          <span style="font-size:14px;color:#666666">{{ p.l }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="problem" style="background:#302023;color:#FFFFFF">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 32px;display:flex;flex-direction:column;gap:48px">
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:760px">
+        <span style="align-self:flex-start;background:#FFFFFF;color:#181011;border-radius:4px;padding:2px 8px;font-size:12px;letter-spacing:0.1em">PROBLEM</span>
+        <h2 style="margin:0;font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">Neighbouring utilities publish their plans in isolation — and build within miles of each other anyway.</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));column-gap:64px">
+        <sc-for list="{{ problems }}" as="p" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:28px 0;border-top:1px solid rgba(243,241,237,0.18)">
+            <div style="display:grid;grid-template-columns:repeat(3,8px);gap:5px;align-content:start;padding-top:6px">
+              <sc-for list="{{ p.dots }}" as="d"><span style="width:7px;height:7px;transform:rotate(45deg);background:{{ d.bg }};border:1px solid #AAAAAA"></span></sc-for>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <h3 style="margin:0;font-size:20px;font-weight:700;line-height:1.3">{{ p.h }}</h3>
+              <p style="margin:0;font-size:15px;color:#BDB6B7;text-wrap:pretty">{{ p.b }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="max-width:1200px;margin:0 auto;padding:96px 32px 64px;display:flex;flex-direction:column;gap:64px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px;align-items:end">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="align-self:flex-start;background:#FFFFFF;border-radius:4px;padding:2px 8px;font-size:12px;letter-spacing:0.1em">HOW IT WORKS</span>
+        <h2 style="margin:0;font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">Detect the change. Check the data. Rank the pair. Show the page.</h2>
+      </div>
+      <p style="margin:0;font-size:17px;color:#222222;max-width:520px;text-wrap:pretty">One pipeline, three views. Plan changes feed data quality; data quality decides how far to trust each opportunity; every opportunity opens onto its evidence.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:48px;align-items:center">
+      <div style="position:relative;aspect-ratio:1 / 0.86;background:#FFFFFF;border:1px solid #D8D4D4;border-radius:4px;overflow:hidden;background-image:linear-gradient(#EFECE7 1px,transparent 1px),linear-gradient(90deg,#EFECE7 1px,transparent 1px);background-size:32px 32px">
+        <svg viewBox="0 0 480 412" style="position:absolute;inset:0;width:100%;height:100%" fill="none" stroke="#181011">
+          <polyline points="210,40 222,120 238,190 262,250 300,330 330,400" stroke="#D8D4D4" stroke-width="6"></polyline>
+          <polyline points="238,150 300,168 368,186" stroke-width="2"></polyline>
+          <circle cx="238" cy="150" r="5" fill="#181011"></circle><circle cx="300" cy="168" r="3" fill="#181011"></circle><circle cx="368" cy="186" r="5" fill="#181011"></circle>
+          <polyline points="196,156 186,230 176,300" stroke-width="2"></polyline>
+          <rect x="191" y="151" width="10" height="10" fill="#181011"></rect><rect x="171" y="295" width="10" height="10" fill="#181011"></rect>
+          <line x1="199" y1="158" x2="236" y2="151" stroke-width="1.25" stroke-dasharray="4 3"></line>
+          <polyline points="90,250 140,272 160,330" stroke="#AAAAAA" stroke-width="1.5"></polyline>
+          <polyline points="380,250 420,300" stroke="#AAAAAA" stroke-width="1.5"></polyline>
+          <polyline points="300,60 330,110" stroke="#AAAAAA" stroke-width="1.5"></polyline>
+        </svg>
+        <span style="position:absolute;left:43%;top:30%;font-size:12px;background:#181011;color:#FFFFFF;padding:1px 6px;border-radius:3px">3.40 mi</span>
+        <span style="position:absolute;left:50%;top:40%;font-size:12px;color:#181011">Okatie</span>
+        <span style="position:absolute;left:28%;top:32%;font-size:12px;color:#181011">McIntosh</span>
+        <span style="position:absolute;left:28%;top:74%;font-size:12px;color:#181011">Goshen</span>
+        <span style="position:absolute;left:16px;top:14px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#666666">SCHEMATIC · NOT TO SCALE</span>
+        <div style="position:absolute;right:16px;bottom:16px;max-width:250px;padding:12px 14px;background:#FFFFFF;border:1px solid #D8D4D4;border-radius:4px;display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:14px;font-weight:700">Build windows overlap · 213 days</span>
+          <span style="font-size:12px;color:#666666">Oct 2025 → May 2026. Shared staging and outages worth reviewing.</span>
+        </div>
+        <div style="position:absolute;left:16px;bottom:16px;display:flex;flex-direction:column;gap:4px;font-size:12px;color:#666666">
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;border-radius:50%;background:#181011"></span>DESC</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:7px;height:7px;background:#181011"></span>Georgia Power</span>
+        </div>
+      </div>
+
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <li style="display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px;padding:24px 0;border-top:1px solid #D8D4D4">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#666666;padding-top:4px">{{ s.n }}</span>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <h3 style="margin:0;font-size:20px;font-weight:700;line-height:1.3">{{ s.h }}</h3>
+              <p style="margin:0;font-size:15px;color:#222222;text-wrap:pretty">{{ s.b }}</p>
+            </div>
+          </li>
+        </sc-for>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-label="Three views" style="max-width:1200px;margin:0 auto;padding:32px 32px 96px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:24px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#FFFFFF;border:1px solid #D8D4D4;border-radius:4px;padding:16px;display:flex;flex-direction:column;gap:6px;min-height:176px">
+          <div style="display:flex;gap:8px;align-items:center"><span style="font-size:12px;color:#666666">#04</span><span style="font-size:11px;border:1px solid #181011;border-radius:4px;padding:0 5px;letter-spacing:0.06em">T3</span><span style="font-size:12px;color:#666666">&lt; 5 mi · Share logistics</span></div>
+          <span style="font-size:14px"><span style="font-size:11px;letter-spacing:0.1em;color:#666666">DESC </span>Jasper – Okatie 230 kV #2</span>
+          <span style="font-size:14px"><span style="font-size:11px;letter-spacing:0.1em;color:#666666">GPC </span>SAV: Goshen – McIntosh 115 kV</span>
+          <span style="font-size:13px;color:#666666"><strong style="color:#181011">3.40 mi</strong> closest · 213-day overlap</span>
+          <span style="font-size:12px;color:#181011;display:flex;gap:6px;align-items:center"><span style="font-size:9px">▲</span>Schedule conflict · plan versions disagree</span>
+        </div>
+        <h3 style="margin:0;font-size:20px;font-weight:700">Opportunities</h3>
+        <p style="margin:0;font-size:15px;color:#222222;text-wrap:pretty">A ranked queue of cross-utility project pairs — by tier, build-window overlap, in-service gap and distance — measured at closest points or Sperry's center method.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#FFFFFF;border:1px solid #D8D4D4;border-radius:4px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:176px">
+          <span style="font-size:14px">Jasper – Okatie 230 kV #2: Construct</span>
+          <div style="display:grid;grid-template-columns:auto 1fr auto;gap:8px 12px;font-size:13px;align-items:baseline;font-variant-numeric:tabular-nums">
+            <span style="color:#666666">Schedule</span><span>Dec 31, 2025 → May 31, 2026</span><strong>+151 days</strong>
+            <span style="color:#666666">Cost</span><span>$23.79M → $28.58M</span><strong>+20.1%</strong>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#666666;margin-top:auto">desc-2428 p.23 → desc-2529 p.18</span>
+        </div>
+        <h3 style="margin:0;font-size:20px;font-weight:700">Plan changes</h3>
+        <p style="margin:0;font-size:15px;color:#222222;text-wrap:pretty">322 detected changes between plan versions — slips, cost moves and renames — with the magnitude computed and both source pages cited.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:#FFFFFF;border:1px solid #D8D4D4;border-radius:4px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:176px">
+          <div style="display:flex;height:8px;gap:2px;border-radius:2px;overflow:hidden"><span style="flex:17;background:#181011"></span><span style="flex:116;background:#8C8886"></span><span style="flex:194;background:#E4E0DC"></span></div>
+          <div style="display:grid;grid-template-columns:1fr auto;gap:6px;font-size:13px;font-variant-numeric:tabular-nums">
+            <span>Sperry-confirmed</span><span>17</span>
+            <span>OSM-resolved</span><span>116</span>
+            <span style="color:#666666">Unresolved — never guessed</span><span style="color:#666666">194</span>
+          </div>
+        </div>
+        <h3 style="margin:0;font-size:20px;font-weight:700">Data quality</h3>
+        <p style="margin:0;font-size:15px;color:#222222;text-wrap:pretty">Location provenance for every endpoint, a live validation benchmark, and an issue queue of every place the sources disagree.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="evidence" style="border-top:1px solid #D8D4D4">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:64px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px;position:sticky;top:32px">
+        <span style="align-self:flex-start;background:#FFFFFF;border-radius:4px;padding:2px 8px;font-size:12px;letter-spacing:0.1em">EVIDENCE</span>
+        <h2 style="margin:0;font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">Every number has a page number.</h2>
+        <p style="margin:0;font-size:17px;color:#222222;text-wrap:pretty">GridPulse keeps three kinds of statement apart, so a planner can tell what a utility published from what we calculated and what we recommend.</p>
+      </div>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ layers }}" as="l" hint-placeholder-count="3">
+          <div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;padding:24px 0;border-top:1px solid #D8D4D4">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.1em"><span style="width:8px;height:8px;background:{{ l.fill }};border:1px solid #181011;transform:{{ l.rot }}"></span>{{ l.tag }}</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:20px;line-height:1.35;letter-spacing:-0.01em;text-wrap:pretty">{{ l.claim }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#666666">{{ l.src }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="validation" style="background:#FFFFFF;border-top:1px solid #D8D4D4;border-bottom:1px solid #D8D4D4">
+    <div style="max-width:1200px;margin:0 auto;padding:96px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:64px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="align-self:flex-start;background:#F3F1ED;border-radius:4px;padding:2px 8px;font-size:12px;letter-spacing:0.1em">VALIDATION</span>
+        <h2 style="margin:0;font-size:40px;font-weight:400;line-height:1.2;letter-spacing:-0.02em;text-wrap:balance">Checked against the answer key. Six for six.</h2>
+        <p style="margin:0;font-size:17px;color:#222222;text-wrap:pretty">GridPulse reproduces every overlap in Sperry's answer key to within ±0.01 mi using the center method, matches every in-service gap, and leaves the three control projects unflagged.</p>
+        <p style="margin:0;font-size:15px;color:#666666;text-wrap:pretty">And where the data is thin, it says so. Unresolved endpoints are never guessed — 78 of 182 projects are listed but not mapped.</p>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums">
+        <thead><tr style="color:#666666;font-size:13px"><th style="text-align:left;font-weight:400;padding:10px 0;border-bottom:1px solid #181011">Case</th><th style="text-align:right;font-weight:400;padding:10px 0;border-bottom:1px solid #181011">Answer key</th><th style="text-align:right;font-weight:400;padding:10px 0;border-bottom:1px solid #181011">GridPulse</th><th style="text-align:right;font-weight:400;padding:10px 0;border-bottom:1px solid #181011">Gap</th><th style="text-align:right;font-weight:400;padding:10px 0;border-bottom:1px solid #181011">Result</th></tr></thead>
+        <tbody>
+          <sc-for list="{{ bench }}" as="b" hint-placeholder-count="6">
+            <tr><td style="padding:12px 0;border-bottom:1px solid #E6E2DE;font-family:'IBM Plex Mono',monospace;font-size:13px">{{ b.id }}</td><td style="padding:12px 0;border-bottom:1px solid #E6E2DE;text-align:right">{{ b.v }} mi</td><td style="padding:12px 0;border-bottom:1px solid #E6E2DE;text-align:right">{{ b.v }} mi</td><td style="padding:12px 0;border-bottom:1px solid #E6E2DE;text-align:right;color:#666666">{{ b.g }} d</td><td style="padding:12px 0;border-bottom:1px solid #E6E2DE;text-align:right">Pass</td></tr>
+          </sc-for>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="max-width:1200px;margin:0 auto;padding:112px 32px;display:flex;flex-direction:column;align-items:flex-start;gap:32px">
+    <h2 style="margin:0;font-size:48px;font-weight:400;line-height:1.1;letter-spacing:-0.025em;max-width:820px;text-wrap:balance">Start with the pairs that should already be talking.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <a href="GridPulse.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 24px;border-radius:100px;background:#181011;color:#F3F1ED;font-size:15px;text-decoration:none">Open the workspace</a>
+      <a href="https://github.com/Gustavo-Delgado0X/gridpulse" style="display:inline-flex;align-items:center;height:44px;padding:0 24px;border:1px solid #181011;border-radius:100px;font-size:15px;text-decoration:none">View the source</a>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #D8D4D4">
+    <div style="max-width:1200px;margin:0 auto;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;font-size:13px;color:#666666">
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="display:flex;align-items:center;gap:8px;color:#181011;font-weight:700"><span style="width:7px;height:7px;background:#181011;transform:rotate(45deg)"></span>GridPulse</span><span>Built for Sperry Tech's GridLock challenge.</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="color:#181011">Sources</span><span>DESC 2024–28 ten-year plan and later editions · Georgia Power 2025 IRP Vol. 3 (public disclosure) · SERTP 2025–26</span></div>
+      <div style="display:flex;flex-direction:column;gap:6px"><span style="color:#181011">Notes</span><span>Public, unredacted fields only. Map data © OpenStreetMap contributors (ODbL). AGPL-3.0.</span></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;headline&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;meet&quot;,&quot;evidence&quot;,&quot;numbers&quot;],&quot;default&quot;:&quot;meet&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;heroPhoto&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const v = this.props.headline ?? 'meet';
+    const dots = pat => pat.split('').map(c => ({ bg: c === '1' ? '#FFFFFF' : 'transparent' }));
+    return {
+      v1: v === 'meet', v2: v === 'evidence', v3: v === 'numbers',
+      showPhoto: this.props.heroPhoto ?? true,
+      proof: [
+        { n: '182', l: 'projects parsed from public plans' },
+        { n: '52', l: 'DESC × GPC pairs within 25 mi' },
+        { n: '322', l: 'changes detected between plan versions' },
+        { n: '6 / 6', l: "Sperry answer-key overlaps reproduced" }
+      ],
+      problems: [
+        { h: 'Plans are PDFs, not data', b: 'Hundreds of pages of project tables and detail sheets, each utility in its own format, some fields redacted.', dots: dots('101010101') },
+        { h: 'Neighbours plan blind', b: 'DESC and Georgia Power schedule work within a few miles of each other across the Savannah River, on overlapping build windows.', dots: dots('110110000') },
+        { h: 'Schedules drift between versions', b: 'In-service dates slip and costs move from one edition to the next, and the tables rarely agree with their own detail pages.', dots: dots('100010001') },
+        { h: 'Locations are ambiguous', b: 'Substations are named, not placed. The same endpoint can appear with two coordinates a third of a mile apart.', dots: dots('010111010') }
+      ],
+      steps: [
+        { n: '01', h: 'Detect plan changes', b: 'Compare plan editions project by project: slipped dates, cost changes, renames, and tables that disagree with their detail pages.' },
+        { n: '02', h: 'Validate the data', b: 'Resolve endpoints conservatively — Sperry-confirmed, OSM-resolved, or unresolved — and benchmark distances against the answer key.' },
+        { n: '03', h: 'Rank opportunities', b: 'Measure every DESC × GPC pair at closest points and centers, tier it from touching to under 25 mi, and weigh build-window overlap.' },
+        { n: '04', h: 'Trace to evidence', b: 'Open any pair to see the rationale, the timeline, and each quoted field with its source document and page.' }
+      ],
+      layers: [
+        { tag: 'SOURCE FACT', fill: '#181011', rot: 'none', claim: 'Jasper – Okatie 230 kV #2 planned in-service: May 31, 2026.', src: 'desc-2529 · p.18 · verbatim quote' },
+        { tag: 'DERIVED', fill: 'transparent', rot: 'none', claim: 'Closest points 3.40 mi apart; build windows overlap by 213 days.', src: 'computed · closest-point geometry, EPSG:5070' },
+        { tag: 'ASSESSMENT', fill: '#181011', rot: 'rotate(45deg)', claim: 'Tier T3 — shared logistics worth reviewing. Candidate for human review.', src: 'GridPulse rationale · labelled as such' }
+      ],
+      bench: [['OVL_1', '4.09', 3074], ['OVL_2', '5.65', 152], ['OVL_3', '7.55', 517], ['OVL_4', '8.01', 3074], ['OVL_5', '14.34', 365], ['OVL_6', '14.81', 730]].map(([id, v, g]) => ({ id, v, g }))
+    };
+  }
+}
+</script>
+</body>
+</html>
