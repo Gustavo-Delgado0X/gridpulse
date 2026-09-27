@@ -3,13 +3,21 @@ import io
 import json
 import urllib.error
 
+import pytest
 from fastapi.testclient import TestClient
 
 from app import voice
+from app.limits import limiter
 from app.main import app
 
 client = TestClient(app)
 SIGNED = "wss://api.elevenlabs.io/v1/convai/conversation?agent_id=agent_x&conversation_signature=sig"
+
+
+@pytest.fixture(autouse=True)
+def fresh_rate_limits():
+    limiter.reset()  # other test modules also call /voice/session, which allows 5 per minute
+    yield
 
 
 class FakeResponse(io.BytesIO):

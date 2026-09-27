@@ -40,6 +40,8 @@ export const api = {
   changes: (signal?: AbortSignal) => get<Change[]>("/changes", signal),
   csvUrl: (q: OpportunityQuery) => `${API_BASE}/export/overlaps.csv?d=${q.d}&method=${q.method}`,
   briefUrl: (id: string, method: Method) => `${API_BASE}/opportunities/${encodeURIComponent(id)}/brief?method=${method}`,
+  /** Signed, short-lived URL for one conversation with the ElevenLabs voice agent. */
+  voiceSession: (signal?: AbortSignal) => get<{ signed_url: string }>("/voice/session", signal),
   /** ElevenLabs voice briefing (MP3) and the exact words it speaks. */
   briefAudioUrl: (id: string, method: Method) => `${API_BASE}/opportunities/${encodeURIComponent(id)}/brief/audio?method=${method}`,
   briefScript: (id: string, method: Method, signal?: AbortSignal) =>

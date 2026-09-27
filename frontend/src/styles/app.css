@@ -543,3 +543,21 @@ p.sidebar__item { margin: 0; cursor: default; } /* labels, not controls: no poin
 .voice-brief__transcript { grid-column: 1 / -1; font-size: 13px; }
 .voice-brief__transcript summary { cursor: pointer; color: var(--text-muted); }
 .voice-brief__transcript p { margin: 6px 0 0; line-height: 1.5; }
+
+/* Voice analyst (ElevenLabs agent) */
+.voice-agent { position: fixed; right: 20px; bottom: 20px; z-index: 40; }
+.voice-agent__fab { gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; box-shadow: var(--shadow-popover, 0 8px 24px rgba(0,0,0,.18)); }
+.voice-agent__panel { display: flex; flex-direction: column; width: min(380px, calc(100vw - 32px)); max-height: min(520px, calc(100vh - 120px));
+  background: var(--bg-surface); border: 1px solid var(--line-soft); border-radius: var(--radius-lg, 12px); box-shadow: 0 16px 40px rgba(0,0,0,.22); }
+.voice-agent__head { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--line-hairline); }
+.voice-agent__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--text-muted); }
+.voice-agent__dot--listening { background: var(--status-ok); }
+.voice-agent__dot--speaking { background: var(--accent, #1f6feb); animation: voice-pulse 1s ease-in-out infinite; }
+@keyframes voice-pulse { 50% { transform: scale(1.4); opacity: .6; } }
+@media (prefers-reduced-motion: reduce) { .voice-agent__dot--speaking { animation: none; } }
+.voice-agent__error { margin: 8px 12px 0; color: var(--status-danger); }
+.voice-agent__log { flex: 1; overflow-y: auto; margin: 0; padding: 10px 12px; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.voice-agent__line { display: flex; flex-direction: column; gap: 2px; font-size: 13.5px; line-height: 1.45; }
+.voice-agent__line--you { align-self: flex-end; max-width: 85%; padding: 6px 10px; border-radius: 10px; background: var(--bg-subtle); }
+.voice-agent__foot { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-top: 1px solid var(--line-hairline); }
+@media (max-width: 900px) { .voice-agent { right: 12px; bottom: 12px; } }
