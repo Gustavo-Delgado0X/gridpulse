@@ -86,5 +86,16 @@ def opportunity(opportunity_id: str, method: Method = "closest") -> dict:
 
 
 @router.get("/opportunities/{opportunity_id}/brief", response_class=HTMLResponse)
-def brief(opportunity_id: str, method: Method = "closest") -> HTMLResponse:
-    return HTMLResponse(render_brief(detail(get_repository(), opportunity_id, method)))
+def brief(opportunity_id: str, method: Method = "closest",
+          shared_corridor_mi: float | None = Query(None, ge=0, le=500),
+          row_width_ft: float | None = Query(None, ge=0, le=1000),
+          usd_per_acre: float | None = Query(None, ge=0),
+          mobilization_usd: float | None = Query(None, ge=0),
+          avoided_mobilizations: float | None = Query(None, ge=0, le=100)) -> HTMLResponse:
+    """Printable brief; estimator values edited in the UI arrive as query parameters."""
+    base = detail(get_repository(), opportunity_id, method)
+    edits = {k: v for k, v in {"shared_corridor_mi": shared_corridor_mi, "row_width_ft": row_width_ft,
+                               "usd_per_acre": usd_per_acre, "mobilization_usd": mobilization_usd,
+                               "avoided_mobilizations": avoided_mobilizations}.items() if v is not None}
+    inputs = {**base["estimator"]["inputs"], **edits}
+    return HTMLResponse(render_brief({**base, "estimator": {"inputs": inputs, "result": estimate(inputs)}}))

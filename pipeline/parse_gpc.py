@@ -13,6 +13,7 @@ from pathlib import Path
 import pymupdf
 
 from pipeline.normalize import endpoint_names
+from pipeline.parse_desc import stated_miles
 
 SOURCE_ID = "gpc-irp25-v3"
 PLAN_PAGES = range(177, 191)
@@ -152,6 +153,7 @@ def _project(row: dict, detail: dict | None) -> dict:
         "window_end": row["need_date"] if detail.get("start_date") else None,
         "window_method": "gpc_start_need" if detail.get("start_date") else None,
         "endpoint_names": endpoint_names(row["name"]),
+        "line_miles": stated_miles(detail.get("description") or ""),
         "cost_public": None,
         "change_notes": {"vs_prev_ten_year": detail.get("change_vs_prev_ten_year"),
                          "vs_prev_irp": detail.get("change_vs_prev_irp")} if detail else None,

@@ -151,3 +151,11 @@ def test_threshold_is_inclusive_for_both_methods():
 
     edge = {"touching": False, "dist_closest_mi": 25.0, "dist_center_mi": 25.0}
     assert within(edge, 25, "closest") and within(edge, 25, "center")
+
+
+def test_center_method_explanation_quotes_center_distance():
+    detail = data(f"/opportunities/{THURMOND}?method=center")["data"]
+    text = next(e["quote"] for e in detail["evidence"] if e["type"] == "interpretation")
+
+    assert "4.1 mi apart center-to-center" in text
+    assert "share a facility" not in text

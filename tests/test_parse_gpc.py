@@ -134,3 +134,9 @@ def test_real_table_vs_detail_need_date_conflicts_are_flagged(irp):
     assert set(flagged) == {"19523", "20684", "17900"}
     assert flagged["17900"]["disagreements"] == [
         {"field": "need_date", "values": {"table_2": "2026-04-01", "detail_page": "2026-06-01"}}]
+
+
+def test_real_gpc_line_miles_come_from_description(irp):
+    reactors = next(p for p in irp["projects"] if p["teams"] == "20277")
+
+    assert reactors["line_miles"] == 0.1

@@ -4859,6 +4859,7 @@
    "CC",
    "HYUNDAI MOTORS SAVANNAH AKA. PROJECT EA"
   ],
+  "line_miles": 12.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -4978,6 +4979,7 @@
    "MITCHELL",
    "NORTH TIFTON"
   ],
+  "line_miles": 35.21,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced in 2025",
@@ -5115,6 +5117,7 @@
    "ADAMSVILLE",
    "JACK MCDONOUGH"
   ],
+  "line_miles": 6.1,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -5223,6 +5226,7 @@
    "ECHECONNEE",
    "WELLSTON"
   ],
+  "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -5342,6 +5346,7 @@
    "BREMEN",
    "CROOKED CREEK"
   ],
+  "line_miles": 14.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2024 to 2025",
@@ -5464,6 +5469,7 @@
    "JESUP",
    "LUDOWICI PRIMARY"
   ],
+  "line_miles": 7.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -5590,6 +5596,7 @@
   "endpoint_names": [
    "NORCROSS"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -5687,6 +5694,7 @@
   "endpoint_names": [
    "PINE GROVE PRIMARY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -5785,6 +5793,7 @@
    "DEPTFORD",
    "MAGNOLIA"
   ],
+  "line_miles": 5.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -5896,6 +5905,7 @@
   "endpoint_names": [
    "SMART VALVE INSTALLATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -5991,6 +6001,7 @@
   "endpoint_names": [
    "THALMANN AND COLERAIN 23O KV LINE RELAY PANEL UPGRADES"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -6086,6 +6097,7 @@
   "endpoint_names": [
    "VILLA RICA LOW SIDE BREAKER"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -6181,6 +6193,7 @@
   "endpoint_names": [
    "CAMDEN INDUSTRIAL PARK"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -6287,6 +6300,7 @@
    "JEFFERSON STREET#3",
    "NORTHWEST"
   ],
+  "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -6394,6 +6408,7 @@
   "endpoint_names": [
    "ANTHONY SHOALS STATCOM SYSTEM"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -6493,6 +6508,7 @@
    "CASS PINE",
    "HILL VIEW"
   ],
+  "line_miles": 7.58,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -6614,6 +6630,7 @@
    "PROJECT CHRONOS",
    "SK"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -6733,6 +6750,7 @@
   "endpoint_names": [
    "LITTLE OGEECHEE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed in 2025",
@@ -6831,6 +6849,7 @@
    "CC",
    "QTS FAYETTEVILLE TRANSMISSION NEEDS"
   ],
+  "line_miles": 6.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -6939,6 +6958,7 @@
    "ADAMSVILLE",
    "BUZZARD ROOST"
   ],
+  "line_miles": 8.08,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2027 to 2026",
@@ -7047,6 +7067,7 @@
    "BLANKETS CREEK",
    "WOODSTOCK"
   ],
+  "line_miles": 7.1,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -7160,6 +7181,7 @@
    "GARRETT ROAD SWITCHING STATION",
    "TRAE LANE"
   ],
+  "line_miles": 8.6,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2025 to 2026",
@@ -7280,6 +7302,7 @@
    "CC",
    "STONEWALL TELL ROAD"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -7387,6 +7410,7 @@
   "endpoint_names": [
    "EAST POINT RELAY MODERNIZATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -7483,6 +7507,7 @@
    "FENWICK STREET",
    "SAND BAR FERRY"
   ],
+  "line_miles": 2.72,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -7590,6 +7615,7 @@
   "endpoint_names": [
    "GOAT ROCK"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -7686,6 +7712,7 @@
    "GORDON",
    "N DUBLIN"
   ],
+  "line_miles": 2.81,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -7796,6 +7823,7 @@
    "GRADY",
    "MORROW"
   ],
+  "line_miles": 0.72,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -7915,6 +7943,7 @@
   "endpoint_names": [
    "GRADY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8011,6 +8040,7 @@
    "GRID",
    "GAINESVILLE #2 EQUIPMENT REPLACEMENT"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -8121,6 +8151,7 @@
    "HAMMOND",
    "WEISS DAM"
   ],
+  "line_miles": 11.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8228,6 +8259,7 @@
   "endpoint_names": [
    "KATHLEEN AREA IMPROVEMENTS"
   ],
+  "line_miles": 1.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8323,6 +8355,7 @@
   "endpoint_names": [
    "KLONDIKE RELAY MODERNIZATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8420,6 +8453,7 @@
   "endpoint_names": [
    "MORROW"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8517,6 +8551,7 @@
   "endpoint_names": [
    "PALMYRA REACTOR REMOVAL"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2025 to 2026",
@@ -8613,6 +8648,7 @@
    "BOULEVARD",
    "DEPTFORD"
   ],
+  "line_miles": 8.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8725,6 +8761,7 @@
    "CC",
    "BIG OGEECHEE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8833,6 +8870,7 @@
    "MCINTOSH",
    "PURRYSBURG"
   ],
+  "line_miles": 0.1,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -8950,6 +8988,7 @@
   "endpoint_names": [
    "SCOTTDALE RELAY MODERNIZATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -9046,6 +9085,7 @@
    "UNION CITY",
    "YATES"
   ],
+  "line_miles": 23.4,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Delayed in 2026.",
@@ -9166,6 +9206,7 @@
    "UNION CITY",
    "YATES"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -9276,6 +9317,7 @@
    "CC",
    "PROJECT PAYTON BAINBRIDGE"
   ],
+  "line_miles": 8.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -9383,6 +9425,7 @@
   "endpoint_names": [
    "OHARA BREAKER REPLACEMENT"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -9478,6 +9521,7 @@
   "endpoint_names": [
    "DRESDEN LINE PROTECTIVE RELAYING"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -9576,6 +9620,7 @@
    "QCELLS",
    "CC IMPROVEMENTS"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -9708,6 +9753,7 @@
    "GRADY",
    "WEST END"
   ],
+  "line_miles": 2.6,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -9816,6 +9862,7 @@
    "MORROW",
    "MOUNTAIN VIEW"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -9926,6 +9973,7 @@
    "CC",
    "EMBLEM RIVERSIDE CUSTOMER SUB"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -10034,6 +10082,7 @@
    "MORROW",
    "YATES COMMON"
   ],
+  "line_miles": 5.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -10146,6 +10195,7 @@
    "POSSUM BRANCH",
    "YATES COMMON"
   ],
+  "line_miles": 11.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -10256,6 +10306,7 @@
    "CC",
    "GULLATT ROAD TRANSMISSION IMPROVEMENTS"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -10365,6 +10416,7 @@
    "MICROSOFT",
    "SHUGART"
   ],
+  "line_miles": 0.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2024 to 2027",
@@ -10486,6 +10538,7 @@
    "SUMMER LAKE",
    "VILLA RICA"
   ],
+  "line_miles": 2.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -10608,6 +10661,7 @@
    "CC",
    "TA REALTY ELLENWOOD NETWORK IMPROVEMENTS"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -10716,6 +10770,7 @@
    "DOYLE",
    "LG"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -10826,6 +10881,7 @@
    "JESUP",
    "OFFERMAN"
   ],
+  "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -10938,6 +10994,7 @@
    "LAWRENCEVILLE",
    "WINDER"
   ],
+  "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -11048,6 +11105,7 @@
    "LAWRENCEVILLE",
    "WINDER PRIMARY"
   ],
+  "line_miles": 15.4,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2029 to 2027",
@@ -11158,6 +11216,7 @@
    "SANDERSVILLE #1",
    "WADLEY PRI."
   ],
+  "line_miles": 24.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -11270,6 +11329,7 @@
    "GOSHEN",
    "KRAFT"
   ],
+  "line_miles": 9.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -11398,6 +11458,7 @@
    "GOSHEN",
    "MCINTOSH"
   ],
+  "line_miles": 6.7,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -11540,6 +11601,7 @@
    "CC",
    "TOMOCHICHI"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -11649,6 +11711,7 @@
    "ARKWRIGHT",
    "LLOYD SHOALS"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2024 to 2027",
@@ -11771,6 +11834,7 @@
    "ATHENA",
    "EAST WATKINSVILLE"
   ],
+  "line_miles": 8.47,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Delayed from 2026 to 2027",
@@ -11883,6 +11947,7 @@
    "CC",
    "HILL VIEW"
   ],
+  "line_miles": 8.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2024 to 2027",
@@ -11991,6 +12056,7 @@
    "DYER ROAD",
    "EAST ROANOKE"
   ],
+  "line_miles": 20.7,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12109,6 +12175,7 @@
    "AULTMAN ROAD",
    "PERRY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12217,6 +12284,7 @@
    "CC",
    "EAST VILLA RICA AREA SWITCHING STATION"
   ],
+  "line_miles": 2.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12325,6 +12393,7 @@
    "CC",
    "VILLA RICA UPGRADES"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12435,6 +12504,7 @@
    "FITZGERALD",
    "PITTS"
   ],
+  "line_miles": 26.14,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12545,6 +12615,7 @@
    "JACK MCDONOUGH",
    "NORTHWEST"
   ],
+  "line_miles": 4.59,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12653,6 +12724,7 @@
    "PITTMAN ROAD",
    "WEST POINT DAM"
   ],
+  "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2031 to 2028",
@@ -12768,6 +12840,7 @@
   "endpoint_names": [
    "PLANT YATES BREAKER AND HALF STATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12864,6 +12937,7 @@
    "COLEMAN",
    "DEAN FOREST"
   ],
+  "line_miles": 6.67,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -12982,6 +13056,7 @@
    "MAGNOLIA",
    "TRUMAN PARKWAY"
   ],
+  "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Changes",
@@ -13091,6 +13166,7 @@
   "endpoint_names": [
    "SMART VALVES AT EAST VILLA RICA SWITCHING STATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -13186,6 +13262,7 @@
   "endpoint_names": [
    "SOUTH MACON"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -13294,6 +13371,7 @@
    "UNION CITY",
    "YATES"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -13404,6 +13482,7 @@
    "FIRST AVENUE",
    "NORTH COLUMBUS"
   ],
+  "line_miles": 0.9,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -13512,6 +13591,7 @@
    "ASHLEY PARK",
    "WANSLEY"
   ],
+  "line_miles": 35.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -13622,6 +13702,7 @@
    "BLAKELY PRIMARY",
    "HUCKLEBERRY"
   ],
+  "line_miles": 13.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -13732,6 +13813,7 @@
    "BROADWAY",
    "ECHECONNEE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -13850,6 +13932,7 @@
    "BUTLER",
    "THOMASTON"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -13958,6 +14041,7 @@
    "BUZZARD ROOST",
    "FACTORY SHOALS"
   ],
+  "line_miles": 2.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -14066,6 +14150,7 @@
    "CONYERS",
    "KLONDIKE"
   ],
+  "line_miles": 6.56,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -14176,6 +14261,7 @@
    "GLENWOOD SPRINGS",
    "PORTERDALE PRIMARY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -14284,6 +14370,7 @@
    "LLOYD SHOALS",
    "PORTERDALE PRIMARY"
   ],
+  "line_miles": 15.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -14404,6 +14491,7 @@
    "LOWER RIVER",
    "WEBB"
   ],
+  "line_miles": 0.97,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2030 to 2029",
@@ -14512,6 +14600,7 @@
    "MCEVER ROAD",
    "SHOAL CREEK"
   ],
+  "line_miles": 1.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -14622,6 +14711,7 @@
    "MCMANUS",
    "WEST BRUNSWICK"
   ],
+  "line_miles": 5.7,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -14734,6 +14824,7 @@
    "NORCROSS",
    "NORTH DRUID HILLS"
   ],
+  "line_miles": 3.9,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -14844,6 +14935,7 @@
    "BOULEVARD",
    "MAGNOLIA"
   ],
+  "line_miles": 4.56,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -14956,6 +15048,7 @@
    "DEAN FOREST",
    "LITTLE OGEECHEE"
   ],
+  "line_miles": 8.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15067,6 +15160,7 @@
   "endpoint_names": [
    "RICE HOPE NEW AUTO TRANSFORMER"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15163,6 +15257,7 @@
    "SOUTH BAINBRIDGE",
    "SINAI"
   ],
+  "line_miles": 9.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15273,6 +15368,7 @@
    "BAY CREEK",
    "CONYERS"
   ],
+  "line_miles": 15.29,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15393,6 +15489,7 @@
    "ANNISTON",
    "HAMMOND"
   ],
+  "line_miles": 28.12,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15501,6 +15598,7 @@
    "ATKINSON",
    "NORTHSIDE DRIVE"
   ],
+  "line_miles": 3.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15619,6 +15717,7 @@
    "ATKINSON",
    "NORTHWEST"
   ],
+  "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15737,6 +15836,7 @@
    "CC",
    "NORTH GEORGIA DATA NETWORK UPGRADES"
   ],
+  "line_miles": 7.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New project",
@@ -15845,6 +15945,7 @@
    "CORNELIA",
    "TALLULAH LODGE"
   ],
+  "line_miles": 9.7,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -15953,6 +16054,7 @@
    "EAST POINT",
    "TRIBUTARY"
   ],
+  "line_miles": 2.9,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -16061,6 +16163,7 @@
    "EAST POINT",
    "UNION CITY"
   ],
+  "line_miles": 1.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2031 to 2030",
@@ -16169,6 +16272,7 @@
    "ECHECONNEE",
    "WELLSTON"
   ],
+  "line_miles": 11.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -16277,6 +16381,7 @@
    "FARLEY",
    "TAZEWELL"
   ],
+  "line_miles": 120.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -16385,6 +16490,7 @@
    "GAINESVILLE #2",
    "MCEVER ROAD"
   ],
+  "line_miles": 5.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -16497,6 +16603,7 @@
    "GLENWOOD SPRINGS",
    "LAKE OCONEE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Advance to 2030 from 2033.",
@@ -16606,6 +16713,7 @@
   "endpoint_names": [
    "GOAT ROCK REACTORS INSTALLATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -16712,6 +16820,7 @@
    "GOLDENS CREEK",
    "WARRENTON PRIMARY"
   ],
+  "line_miles": 0.34,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -16822,6 +16931,7 @@
    "GORDON",
    "SANDERSVILLE #1"
   ],
+  "line_miles": 7.6,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -16933,6 +17043,7 @@
   "endpoint_names": [
    "GOSHEN AREA STRATEGIC SOLUTION"
   ],
+  "line_miles": 12.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -17029,6 +17140,7 @@
    "JEFFERSON ROAD",
    "WINDER PRIMARY"
   ],
+  "line_miles": 11.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -17139,6 +17251,7 @@
    "KETTLE CREEK PRIMARY",
    "PINE GROVE PRIMARY"
   ],
+  "line_miles": 38.04,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2029 to 2030",
@@ -17259,6 +17372,7 @@
    "NEW CAVENDER DRIVE",
    "TRIBUTARY"
   ],
+  "line_miles": 4.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -17366,6 +17480,7 @@
   "endpoint_names": [
    "NORTH SPA"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -17462,6 +17577,7 @@
    "TALLULAH LODGE",
    "TOCCOA"
   ],
+  "line_miles": 10.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -17570,6 +17686,7 @@
    "TRIBUTARY",
    "THORNTON RD"
   ],
+  "line_miles": 2.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -17677,6 +17794,7 @@
   "endpoint_names": [
    "THOMASTON 230 NEW BUILD SUB"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -17772,6 +17890,7 @@
   "endpoint_names": [
    "BAINBRIDGE TRANSMISSION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -17869,6 +17988,7 @@
   "endpoint_names": [
    "GLENWOOD SPRINGS"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2031 to 2030.",
@@ -17965,6 +18085,7 @@
    "EAST POINT",
    "UNION CITY"
   ],
+  "line_miles": 5.49,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18083,6 +18204,7 @@
    "AVERY",
    "HOPEWELL"
   ],
+  "line_miles": 3.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -18194,6 +18316,7 @@
   "endpoint_names": [
    "BOWEN #10"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18292,6 +18415,7 @@
    "HATCH",
    "WADLEY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18410,6 +18534,7 @@
    "COLEMAN",
    "MELDRIM"
   ],
+  "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18537,6 +18662,7 @@
   "endpoint_names": [
    "ARKWRIGHT BUS AND JUMPER REPLACEMENT"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18633,6 +18759,7 @@
    "BAY CREEK",
    "CONYERS"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18743,6 +18870,7 @@
    "EVANS PRIMARY",
    "THURMOND DAM #5"
   ],
+  "line_miles": 5.45,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18870,6 +18998,7 @@
    "EVANS PRIMARY",
    "THURMOND DAM #6"
   ],
+  "line_miles": 8.9,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -18982,6 +19111,7 @@
    "MCEVER ROAD",
    "SHOAL CREEK"
   ],
+  "line_miles": 2.9,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19092,6 +19222,7 @@
    "MCGRAU FORD",
    "MIDDLE FORK"
   ],
+  "line_miles": 64.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19201,6 +19332,7 @@
   "endpoint_names": [
    "MELDRIM BANK D REPLACEMENT"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19298,6 +19430,7 @@
   "endpoint_names": [
    "THOMSON PRIMARY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2031 to 2033",
@@ -19395,6 +19528,7 @@
   "endpoint_names": [
    "WINDER PRIMARY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19493,6 +19627,7 @@
    "PINE GROVE PRIMARY",
    "WEST VALDOSTA"
   ],
+  "line_miles": 3.7,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19603,6 +19738,7 @@
    "DAWSON CROSSING",
    "GAINESVILLE #1"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19712,6 +19848,7 @@
   "endpoint_names": [
    "LITTLE OGEECHEE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19820,6 +19957,7 @@
    "EVANS PRIMARY",
    "THOMSON PRIMARY"
   ],
+  "line_miles": 5.28,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -19932,6 +20070,7 @@
    "BANKS CROSSING",
    "POND FORK"
   ],
+  "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced in 2025",
@@ -20015,6 +20154,7 @@
    "BONAIRE PRI",
    "ECHECONNEE"
   ],
+  "line_miles": 2.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20097,6 +20237,7 @@
   "endpoint_names": [
    "CAMDEN INDUSTRIAL PARK"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20180,6 +20321,7 @@
    "EATONTON PRIMARY",
    "LICK CREEK"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20263,6 +20405,7 @@
    "ALCOVY ROAD",
    "SKC"
   ],
+  "line_miles": 0.53,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20346,6 +20489,7 @@
    "AULTMAN ROAD",
    "BONAIRE PRIMARY"
   ],
+  "line_miles": 1.99,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20429,6 +20573,7 @@
    "HEARD COUNTY",
    "TENASKA"
   ],
+  "line_miles": 0.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2024 to 2025",
@@ -20512,6 +20657,7 @@
    "ANTHONY SHOALS",
    "WASHINGTON"
   ],
+  "line_miles": 21.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20595,6 +20741,7 @@
    "LIZARD LOPE",
    "WESTOVER"
   ],
+  "line_miles": 19.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2025 to 2026",
@@ -20678,6 +20825,7 @@
    "EAST DALTON",
    "OOSTANAULA"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20761,6 +20909,7 @@
    "CONYERS",
    "CORNISH MOUNTAIN"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -20844,6 +20993,7 @@
    "LAGRANGE",
    "NORTH OPELIKA"
   ],
+  "line_miles": 29.4,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -20926,6 +21076,7 @@
   "endpoint_names": [
    "MORNING HORNET 2ND"
   ],
+  "line_miles": 2.4,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -21008,6 +21159,7 @@
   "endpoint_names": [
    "ROBINS SPRING BUS REPLACEMENT"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2025 to 2026",
@@ -21090,6 +21242,7 @@
   "endpoint_names": [
    "ROBINS SPRING CAPACITOR BANK INSTALLATION"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2025 to 2026",
@@ -21173,6 +21326,7 @@
    "DRESDEN",
    "LAGRANGE PRIMARY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -21256,6 +21410,7 @@
    "RAY PLACE RD",
    "WASHINGTON #3"
   ],
+  "line_miles": 17.4,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -21339,6 +21494,7 @@
    "RAY PLACE RD",
    "WASHINGTON"
   ],
+  "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -21422,6 +21578,7 @@
    "BARNESVILLE PRIMARY",
    "BARNESVILLE #1"
   ],
+  "line_miles": 4.53,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -21504,6 +21661,7 @@
   "endpoint_names": [
    "DRESDEN"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -21587,6 +21745,7 @@
    "GORDON",
    "SANDERSVILLE #1"
   ],
+  "line_miles": 1.87,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed in 2026",
@@ -21669,6 +21828,7 @@
   "endpoint_names": [
    "FORTSON"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2025 to 2027",
@@ -21752,6 +21912,7 @@
    "HICKORY LEVEL",
    "VILLA RICA"
   ],
+  "line_miles": 8.6,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2029 to 2027",
@@ -21835,6 +21996,7 @@
    "ADAMSVILLE",
    "BUZZARD ROOST"
   ],
+  "line_miles": 5.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -21918,6 +22080,7 @@
    "DOUGLASVILLE",
    "VILLA RICA"
   ],
+  "line_miles": 2.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -22001,6 +22164,7 @@
    "DOYLE",
    "WINDER PRIMARY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -22084,6 +22248,7 @@
    "EAST MOULTRIE",
    "HIGHWAY 112"
   ],
+  "line_miles": 27.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -22166,6 +22331,7 @@
   "endpoint_names": [
    "EAST WALTON"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -22249,6 +22415,7 @@
    "GARRETT RD",
    "V. RICA"
   ],
+  "line_miles": 11.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2029 to 2027",
@@ -22331,6 +22498,7 @@
   "endpoint_names": [
    "RIDDLEVILLE BUS REPLACEMENT"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2024 to 2027",
@@ -22413,6 +22581,7 @@
   "endpoint_names": [
    "SKC"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -22496,6 +22665,7 @@
    "SOUTH HAZLEHURST",
    "NEW LACY"
   ],
+  "line_miles": 25.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -22579,6 +22749,7 @@
    "SWITCH WAY",
    "THORNTON ROAD"
   ],
+  "line_miles": 1.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -22662,6 +22833,7 @@
    "RAY PLACE RD",
    "WARRENTON PRIMARY"
   ],
+  "line_miles": 10.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2030 to 2027",
@@ -22745,6 +22917,7 @@
    "EATONTON PRIMARY",
    "LICK CREEK"
   ],
+  "line_miles": 7.5,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -22828,6 +23001,7 @@
    "BARNESVILLE",
    "SOUTH GRIFFIN"
   ],
+  "line_miles": 19.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -22911,6 +23085,7 @@
    "BARNEYVILLE",
    "EAST MOULTRIE"
   ],
+  "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -22993,6 +23168,7 @@
   "endpoint_names": [
    "BONAIRE PRIMARY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -23076,6 +23252,7 @@
    "BOSTWICK",
    "EAST SOCIAL CIRCLE"
   ],
+  "line_miles": 10.8,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2030 to 2028",
@@ -23159,6 +23336,7 @@
    "BRUMBLEY CREEK",
    "SOUTH BAINBRIDGE"
   ],
+  "line_miles": 2.1,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project delayed from 2025 to 2028",
@@ -23241,6 +23419,7 @@
   "endpoint_names": [
    "THOMASVILLE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "Project advanced from 2029 to 2028",
@@ -23323,6 +23502,7 @@
   "endpoint_names": [
    "NORTH DUBLIN"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -23406,6 +23586,7 @@
    "BARNESVILLE PRIMARY",
    "THOMASTON"
   ],
+  "line_miles": 13.24,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -23488,6 +23669,7 @@
   "endpoint_names": [
    "BAY CREEK"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -23571,6 +23753,7 @@
    "BONAIRE PRIMARY",
    "EASTMAN PRIMARY"
   ],
+  "line_miles": 41.08,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -23654,6 +23837,7 @@
    "CLIFTONDALE",
    "LINE CREEK"
   ],
+  "line_miles": 11.6,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -23737,6 +23921,7 @@
    "DRESDEN",
    "TALBOT"
   ],
+  "line_miles": 75.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -23819,6 +24004,7 @@
   "endpoint_names": [
    "HOPEWELL"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -23902,6 +24088,7 @@
    "TENASKA",
    "WANSLEY"
   ],
+  "line_miles": 5.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -23985,6 +24172,7 @@
    "AULTMAN ROAD",
    "FORT VALLEY #1"
   ],
+  "line_miles": 8.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24068,6 +24256,7 @@
    "SLAPPEY DRIVE",
    "WESTOVER"
   ],
+  "line_miles": 2.92,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "No Change",
@@ -24151,6 +24340,7 @@
    "DAWSON CROSSING",
    "NELSON"
   ],
+  "line_miles": 15.7,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24234,6 +24424,7 @@
    "BIG SMARR",
    "TOMOCHICHI"
   ],
+  "line_miles": 36.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24317,6 +24508,7 @@
    "BUZZARD ROOST",
    "CAVENDER DRIVE"
   ],
+  "line_miles": 7.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24399,6 +24591,7 @@
   "endpoint_names": [
    "CAVENDER DRIVE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24481,6 +24674,7 @@
   "endpoint_names": [
    "EAST WATKINSVILLE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24564,6 +24758,7 @@
    "HARTWELL DAM",
    "HARTWELL ENERGY"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24647,6 +24842,7 @@
    "HARTWELL ENERGY",
    "MIDDLE FORK"
   ],
+  "line_miles": 35.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24730,6 +24926,7 @@
    "POND FORK",
    "MIDWAY"
   ],
+  "line_miles": 6.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New project",
@@ -24814,6 +25011,7 @@
    "TIGER CREEK",
    "WARTHEN"
   ],
+  "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New project",
@@ -24897,6 +25095,7 @@
    "TALLBOT #2",
    "TAZEWELL"
   ],
+  "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -24981,6 +25180,7 @@
    "ROCKVILLE",
    "NORTH SPA"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25064,6 +25264,7 @@
    "ATHENA",
    "WARRENTON"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25146,6 +25347,7 @@
   "endpoint_names": [
    "PIO NONO"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25228,6 +25430,7 @@
   "endpoint_names": [
    "SOUTH GRIFFIN"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25311,6 +25514,7 @@
    "CENTER PRIMARY",
    "CLARKSBORO"
   ],
+  "line_miles": 8.3,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25394,6 +25598,7 @@
    "CLARKSBORO",
    "WINDER PRIMARY"
   ],
+  "line_miles": 14.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25477,6 +25682,7 @@
    "EAST SOCIAL CIRCLE",
    "SNELLVILLE"
   ],
+  "line_miles": null,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25560,6 +25766,7 @@
    "EAST WALTON",
    "MIDDLE FORK"
   ],
+  "line_miles": 45.0,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",
@@ -25643,6 +25850,7 @@
    "SHOAL CREEK",
    "SOUTH HALL"
   ],
+  "line_miles": 7.9,
   "cost_public": null,
   "change_notes": {
    "vs_prev_ten_year": "New Project",

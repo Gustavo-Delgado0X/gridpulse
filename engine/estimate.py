@@ -30,10 +30,13 @@ def row_width_for(voltage_kv: int | None) -> int:
 
 def default_inputs(project_a: dict, project_b: dict, dist_closest_mi: float) -> dict:
     voltages = [p.get("voltage_kv") for p in (project_a, project_b) if p.get("voltage_kv")]
-    miles = [p.get("line_miles") for p in (project_a, project_b)]
-    shared = min(miles) if all(m is not None for m in miles) else 0.0
+    known = [p["line_miles"] for p in (project_a, project_b) if p.get("line_miles") is not None]
+    shared = min(known) if known else 0.0
+    source = {2: "shorter of the two stated line lengths", 1: "stated length of the one project that publishes it",
+              0: "no line length stated in either source; enter your own"}[len(known)]
     return {
         "shared_corridor_mi": float(shared),
+        "corridor_source": source,
         "row_width_ft": row_width_for(max(voltages) if voltages else None),
         "usd_per_acre": DEFAULT_USD_PER_ACRE,
         "mobilization_usd": DEFAULT_MOBILIZATION_USD,

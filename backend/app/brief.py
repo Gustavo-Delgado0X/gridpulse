@@ -25,8 +25,8 @@ h2 { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; margin: 2
 dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; margin: 8px 0 0; font-size: 13px; }
 dt { color: #666; } dd { margin: 0; }
 blockquote { margin: 4px 0 10px; padding-left: 8px; border-left: 2px solid #d8d4d4; }
-.print { position: fixed; top: 12px; right: 12px; }
-@media print { .print { display: none; } }
+.strip button { font: 600 11px/1 system-ui; letter-spacing: .1em; padding: 6px 12px; border: 1px solid #aaa; border-radius: 100px; background: transparent; color: #fff; cursor: pointer; }
+@media print { .strip button { display: none; } }
 """
 
 
@@ -67,8 +67,8 @@ def render_brief(detail: dict) -> str:
     a, b = detail["project_a"], detail["project_b"]
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><title>GridPulse brief · {escape(detail['id'])}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1"><style>{STYLE}</style></head><body>
-<div class="strip"><strong>GridPulse · coordination brief</strong><span>CANDIDATE FOR HUMAN REVIEW</span></div>
-<button class="print" onclick="window.print()">Print</button>
+<div class="strip"><strong>GridPulse · coordination brief</strong><span>CANDIDATE FOR HUMAN REVIEW</span>
+<button type="button" onclick="window.print()">PRINT</button></div>
 <main>
 <p><span class="tag tier">{escape(tier_text)}</span><span class="tag">{escape(TIMING[detail['timeline_label']])}</span>
 <span class="tag">Rank #{detail['rank']}</span></p>

@@ -11,7 +11,7 @@ def test_defaults_use_higher_voltage_row_width_and_known_miles():
     inputs = default_inputs(DESC, GPC, dist_closest_mi=2.0)
 
     assert inputs["row_width_ft"] == 125  # 230 kV assumption
-    assert inputs["shared_corridor_mi"] == 0.0  # GPC miles unknown -> user enters
+    assert inputs["shared_corridor_mi"] == 18.0  # only DESC states a length -> use it
     assert inputs["avoided_mobilizations"] == 1
     assert {a["key"] for a in inputs["assumptions"]} >= {"row_width_ft", "mobilization_usd", "usd_per_acre"}
 
@@ -32,3 +32,10 @@ def test_estimate_rejects_negative_inputs():
     with pytest.raises(ValueError):
         estimate({"shared_corridor_mi": -1, "row_width_ft": 100, "usd_per_acre": 1, "mobilization_usd": 1,
                   "avoided_mobilizations": 1})
+
+
+def test_defaults_use_the_known_line_length_when_only_one_is_stated():
+    inputs = default_inputs({**DESC, "line_miles": 18.0}, {**GPC, "line_miles": None}, dist_closest_mi=2.0)
+
+    assert inputs["shared_corridor_mi"] == 18.0
+    assert inputs["corridor_source"] == "stated length of the one project that publishes it"

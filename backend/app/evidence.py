@@ -33,10 +33,15 @@ def _derived(opportunity: dict) -> list[dict]:
 
 def template_explanation(opportunity: dict, a: dict, b: dict) -> str:
     tier = opportunity["tier"]
-    where = "share a facility" if opportunity["touching"] else f"come within {opportunity['dist_closest_mi']:.1f} mi"
+    if opportunity.get("method") == "center":
+        where = f"are {opportunity['dist_center_mi']:.1f} mi apart center-to-center (Sperry method)"
+    elif opportunity["touching"]:
+        where = "share a facility"
+    else:
+        where = f"come within {opportunity['dist_closest_mi']:.1f} mi at their closest points"
+    tier_text = f"Tier {tier} · {TIER_LABELS[tier].lower()}" if tier else "Beyond the 25 mi tier table"
     return (f"{a['utility']} '{a['name']}' and {b['utility']} '{b['name']}' {where}; "
-            f"{TIMING_TEXT[opportunity['timeline_label']]}. Tier {tier} · {TIER_LABELS[tier].lower()}. "
-            "Candidate for human review.")
+            f"{TIMING_TEXT[opportunity['timeline_label']]}. {tier_text}. Candidate for human review.")
 
 
 def build_evidence(opportunity: dict, a: dict, b: dict) -> list[dict]:
