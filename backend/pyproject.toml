@@ -1,9 +1,5 @@
-# Scaffold placeholder — dependencies to pin at build time (see master plan §5).
+# Deploy note: the API service installs the root requirements.txt (see .do/app.yaml).
 [project]
 name = "gridpulse-backend"
-version = "0.0.0"
+version = "0.1.0"
 requires-python = ">=3.12,<3.13"
-dependencies = [
-  # "fastapi", "pydantic>=2", "uvicorn", "shapely", "pymupdf", "slowapi",
-  # "pydantic-ai-slim[openrouter,google]==2.51.0",
-]

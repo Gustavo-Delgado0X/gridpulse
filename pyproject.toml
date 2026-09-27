@@ -1,0 +1,13 @@
+[project]
+name = "gridpulse"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "backend"]
+markers = ["raw: needs source PDFs in data/raw (skipped when absent)"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
