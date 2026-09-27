@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
-import { FLAG_TEXT, TIMING_TEXT } from "../format";
+import { FLAG_TEXT, TIMING_SHORT, TIMING_TEXT } from "../format";
 import type { Opportunity, Triage } from "../types";
 import { TierBadge } from "./TierBadge";
 import { UtilityChip } from "./UtilityChip";
@@ -97,14 +97,16 @@ export function OpportunityTable({ items, selectedId, onSelect, triage }: Props)
                     className={`${o.id === selectedId ? "is-selected" : ""} triage--${triage[o.id] ?? "new"}`}
                     onClick={() => onSelect(o.id)} onKeyDown={(e) => move(e, index)}>
                   <td className="num mono">{o.rank}</td>
-                  <td><TierBadge tier={o.tier} /></td>
-                  <td className="pair">
-                    <span className="pair__line"><UtilityChip utility={o.a.utility} /> {o.a.name}</span>
-                    <span className="pair__line"><UtilityChip utility={o.b.utility} /> {o.b.name}</span>
+                  <td><TierBadge tier={o.tier} compact /></td>
+                  <td>
+                    <div className="pair">
+                      <span className="pair__line" title={o.a.name}><UtilityChip utility={o.a.utility} /><span className="pair__name">{o.a.name}</span></span>
+                      <span className="pair__line" title={o.b.name}><UtilityChip utility={o.b.utility} /><span className="pair__name">{o.b.name}</span></span>
+                    </div>
                   </td>
                   <td className="num mono">{o.touching ? "0.00" : o.dist_closest_mi.toFixed(2)}</td>
                   <td className="num mono">{o.dist_center_mi.toFixed(2)}</td>
-                  <td><span className={`timing timing--${o.timeline_label}`}>{TIMING_TEXT[o.timeline_label]}</span></td>
+                  <td><span className={`timing timing--${o.timeline_label}`} title={TIMING_TEXT[o.timeline_label]}>{TIMING_SHORT[o.timeline_label]}</span></td>
                   <td className="num mono">{o.in_service_gap_days}</td>
                   <td className="flags">
                     {o.flags.map((f) => <span key={f} className="tag tag--warn">{FLAG_TEXT[f] ?? f}</span>)}

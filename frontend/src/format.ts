@@ -14,6 +14,12 @@ export const TIMING_TEXT: Record<TimelineLabel, string> = {
   separate: "SEPARATE TIMING",
 };
 
+export const TIMING_SHORT: Record<TimelineLabel, string> = {
+  same_window: "SAME WINDOW",
+  within_1y: "≤ 1 YEAR",
+  separate: "SEPARATE",
+};
+
 export const PRECISION_TEXT: Record<Precision, string> = {
   osm_feature: "OSM",
   sperry_provided: "SPERRY",
