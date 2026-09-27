@@ -1,13 +1,13 @@
 # GridPulse: Session Handoff
 
-## ▶ BUILD STATUS (updated 2026-09-27 ~05:30 EDT). Read this first.
+## ▶ BUILD STATUS (updated 2026-09-27 ~09:50 EDT). Read this first.
 
 **Built, deployed and audited.** `main` is pushed to the private repo https://github.com/Gustavo-Delgado0X/gridpulse (all commits authored by **Gustavo Delgado**) and live at https://gridpulse-five.vercel.app (landing at `/`, workspace at `/app`).
-- Tests: 195 pytest (engine/pipeline/app + frontend API contract), 64 Vitest, 58 Playwright E2E (every control, checked against live API data) — all passing.
+- Tests: 212 pytest (engine/pipeline/app, voice endpoints, frontend API contract), 81 Vitest, 60 Playwright E2E (every control, checked against live API data) — all passing. CI (`.github/workflows/ci.yml`) runs pytest, ruff, Vitest and the build on every push and PR.
 - Gate A (distance math on the key's coordinates, 6/6) and Gate B (our own OSM locations find all 6 key pairs; key coordinates are never used as locations) pass; `tests/test_evidence_verbatim.py` checks every quoted fact against its PDF page.
 - Current data: 182 projects (100 located), 39 DESC × GPC pairs within 25 mi (2 T1, 2 T3, 35 T4), 317 plan-change events, 41 data-quality issues. Okatie is not in OSM, so it stays unresolved.
 
-**Done:** WP-01–WP-06; P1a estimator + brief; P1b plan changes; P1d data-quality view, satellite layer; production redesign and landing page (design handoffs in `design_handoff_*`); AGPL-3.0 license; Vercel deploy (`vercel.json`, `api/index.py`).
+**Done:** WP-01–WP-06; P1a estimator + brief; P1b plan changes; P1d data-quality view, satellite layer; production redesign and landing page (design handoffs in `design_handoff_*`); AGPL-3.0 license; Vercel deploy (`vercel.json`, `api/index.py`); ElevenLabs voice: **Listen to briefing** per pair (`backend/app/voice.py`) and the **Ask GridPulse** voice analyst (ElevenLabs agent with six client tools over the live API; `scripts/voice_agent.py`, `frontend/src/components/VoiceAgent.tsx`). Vercel env: `ELEVENLABS_API_KEY`, `ELEVENLABS_AGENT_ID`.
 **Audits:** reviewer agents, a judge-style UI review, and a Codex CLI data-integrity audit. Fixed: SERTP key collisions, reused DESC Project IDs, change↔opportunity linking (`primary_id`), dates quoted as printed, ambiguous locations left unresolved, estimator no longer assumes a shared corridor, parser anomalies reported, UI/README overclaims removed.
 **Ranking list:** opportunities use DESC 2024–28 (the edition Sperry's answer key uses); later DESC lists feed Plan changes and the inspector's "later plan" markers.
 
