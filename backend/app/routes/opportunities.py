@@ -3,7 +3,9 @@ from typing import Literal
 from urllib.parse import quote
 
 from fastapi import APIRouter, HTTPException, Query
+from fastapi.responses import HTMLResponse
 
+from app.brief import render_brief
 from app.evidence import build_evidence
 from app.repository import Repository, get_repository
 from app.schemas import ok
@@ -80,3 +82,8 @@ def detail(repo: Repository, opportunity_id: str, method: str = "closest") -> di
 @router.get("/opportunities/{opportunity_id}")
 def opportunity(opportunity_id: str, method: Method = "closest") -> dict:
     return ok(detail(get_repository(), opportunity_id, method))
+
+
+@router.get("/opportunities/{opportunity_id}/brief", response_class=HTMLResponse)
+def brief(opportunity_id: str, method: Method = "closest") -> HTMLResponse:
+    return HTMLResponse(render_brief(detail(get_repository(), opportunity_id, method)))
