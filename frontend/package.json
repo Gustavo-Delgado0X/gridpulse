@@ -1,11 +1,31 @@
 {
   "name": "gridpulse-frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "echo 'TODO: vite'",
-    "build": "echo 'TODO: vite build'"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
   },
-  "//": "Scaffold placeholder. Dependencies to add at build time: react, react-dom, typescript, vite, maplibre-gl@^5, tailwindcss."
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "maplibre-gl": "^5.24.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "jsdom": "^30.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  }
 }

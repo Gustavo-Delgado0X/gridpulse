@@ -1,2 +1,60 @@
-/* Design tokens — scaffold placeholder. Values are locked in docs/GRIDPULSE_CONTRACTS_DRAFT.md §6
-   (light parchment default, dark toggle, print). Populate at build time. */
+/* Design tokens — locked in docs/GRIDPULSE_CONTRACTS_DRAFT.md §6 ("engineering dossier"). */
+:root {
+  --bg-canvas: #f3f1ed;
+  --bg-surface: #ffffff;
+  --bg-inverse: #302023;
+  --text-primary: #181011;
+  --text-muted: #666666;
+  --text-on-inverse-muted: #aaaaaa;
+  --line-hairline: #d8d4d4;
+  --line-strong: #181011;
+  --utility-desc: #1a5fa8;
+  --utility-gpc: #9a4f00;
+  --overlap: #6e36b5;
+  --status-ok: #1e7a4c;
+  --status-warn: #8a6100;
+  --status-danger: #b3261e;
+  --evidence-ai: #0f6e66;
+  --tint-desc: #e3ecf7;
+  --tint-gpc: #f6e9da;
+
+  --font-ui: "IBM Plex Sans", system-ui, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, monospace;
+  --radius: 4px;
+  --motion-fast: 120ms ease-out;
+  --motion-base: 200ms cubic-bezier(0.2, 0, 0, 1);
+  --motion-method: 300ms cubic-bezier(0.2, 0, 0, 1);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg-canvas: #0b111c;
+  --bg-surface: #111a28;
+  --text-primary: #e7ecf4;
+  --text-muted: #aab6c8;
+  --line-hairline: #26324a;
+  --line-strong: #aab6c8;
+  --utility-desc: #4ea8ff;
+  --utility-gpc: #f2a33a;
+  --overlap: #c792ff;
+  --tint-desc: #13263f;
+  --tint-gpc: #2e2213;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  background: var(--bg-canvas);
+  color: var(--text-primary);
+  font: 400 14px/1.4 var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible { outline: 2px solid var(--overlap); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}
