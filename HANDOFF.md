@@ -3,7 +3,7 @@
 ## ▶ BUILD STATUS (updated 2026-09-27 ~05:30 EDT). Read this first.
 
 **Built, deployed and audited.** `main` is pushed to the private repo https://github.com/Gustavo-Delgado0X/gridpulse (all commits authored by **Gustavo Delgado**) and live at https://gridpulse-five.vercel.app (landing at `/`, workspace at `/app`).
-- Tests: 195 pytest (engine/pipeline/app + frontend API contract), 58 Vitest, 57 Playwright E2E (every control, checked against live API data) — all passing.
+- Tests: 195 pytest (engine/pipeline/app + frontend API contract), 64 Vitest, 58 Playwright E2E (every control, checked against live API data) — all passing.
 - Gate A (distance math on the key's coordinates, 6/6) and Gate B (our own OSM locations find all 6 key pairs; key coordinates are never used as locations) pass; `tests/test_evidence_verbatim.py` checks every quoted fact against its PDF page.
 - Current data: 182 projects (100 located), 39 DESC × GPC pairs within 25 mi (2 T1, 2 T3, 35 T4), 317 plan-change events, 41 data-quality issues. Okatie is not in OSM, so it stays unresolved.
 
