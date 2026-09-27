@@ -1,0 +1,5407 @@
+[
+ {
+  "project_id": "desc-2529-139-m-n",
+  "utility": "DESC",
+  "name": "Okatie 230-115kV Substation, Jasper – Yemassee 230kV #1 Fold-in",
+  "event": "slipped",
+  "before": "2024-12-31",
+  "after": "2026-05-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 3,
+    "quote": "2024-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 2,
+    "quote": "2026-05-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6341-a-f",
+  "utility": "DESC",
+  "name": "Cainhoy - Hamlin 115kV: Rebuild Line and Cainhoy – Hamlin 115 kV #2: Construct New 115 kV Line",
+  "event": "slipped",
+  "before": "2025-12-01",
+  "after": "2026-12-02",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 4,
+    "quote": "2025-12-01"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 3,
+    "quote": "2026-12-02"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6341-a-f",
+  "utility": "DESC",
+  "name": "Cainhoy - Hamlin 115kV: Rebuild Line and Cainhoy – Hamlin 115 kV #2: Construct New 115 kV Line",
+  "event": "cost_changed",
+  "before": "$19,890,850",
+  "after": "$31,362,092",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 4,
+    "quote": "$19,890,850"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 3,
+    "quote": "$31,362,092"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-k",
+  "utility": "DESC",
+  "name": "Burton-St Helena 115kV: Rebuild Burton-Frogmore Transmission Section",
+  "event": "slipped",
+  "before": "2024-12-31",
+  "after": "2025-04-30",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 6,
+    "quote": "2024-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 4,
+    "quote": "2025-04-30"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-k",
+  "utility": "DESC",
+  "name": "Burton-St Helena 115kV: Rebuild Burton-Frogmore Transmission Section",
+  "event": "cost_changed",
+  "before": "$8,580,000",
+  "after": "$12,000,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 6,
+    "quote": "$8,580,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 4,
+    "quote": "$12,000,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-l",
+  "utility": "DESC",
+  "name": "Burton-St Helena 115kV: Frogmore Distribution - St Helena",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 7,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 5,
+    "quote": "2027-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-l",
+  "utility": "DESC",
+  "name": "Burton-St Helena 115kV: Frogmore Distribution - St Helena",
+  "event": "cost_changed",
+  "before": "$6,925,000",
+  "after": "$18,825,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 7,
+    "quote": "$6,925,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 5,
+    "quote": "$18,825,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-n-o",
+  "utility": "DESC",
+  "name": "VCS1-Denny Terrace 230kV & VCS1-Pineland 230kV: Rebuild Single Circuit Sections",
+  "event": "slipped",
+  "before": "2026-12-31",
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 8,
+    "quote": "2026-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 6,
+    "quote": "2027-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-n-o",
+  "utility": "DESC",
+  "name": "VCS1-Denny Terrace 230kV & VCS1-Pineland 230kV: Rebuild Single Circuit Sections",
+  "event": "cost_changed",
+  "before": "$4,912,096",
+  "after": "$8,667,157",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 8,
+    "quote": "$4,912,096"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 6,
+    "quote": "$8,667,157"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-u",
+  "utility": "DESC",
+  "name": "Hopkins-CIP 230kV: Rebuild",
+  "event": "cost_changed",
+  "before": "$2,600,000",
+  "after": "$3,500,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 11,
+    "quote": "$2,600,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 9,
+    "quote": "$3,500,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-v",
+  "utility": "DESC",
+  "name": "Faber Place-Bayfront 115kV: Rebuild North Bridge Terrace to Bayfront Section",
+  "event": "cost_changed",
+  "before": "$10,200,000",
+  "after": "$13,218,768",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 12,
+    "quote": "$10,200,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 10,
+    "quote": "$13,218,768"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6809-g",
+  "utility": "DESC",
+  "name": "Hooks - Modoc 115/46 kV Rebuild",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 15,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 11,
+    "quote": "2027-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6809-g",
+  "utility": "DESC",
+  "name": "Hooks - Modoc 115/46 kV Rebuild",
+  "event": "renamed",
+  "before": "Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV",
+  "after": "Hooks - Modoc 115/46 kV Rebuild",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 15,
+    "quote": "Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 11,
+    "quote": "Hooks - Modoc 115/46 kV Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6805-g",
+  "utility": "DESC",
+  "name": "Edenwood Sub: #1 & #2 230-115kV Autobanks, Replace with 336MVA",
+  "event": "slipped",
+  "before": "2024-12-25",
+  "after": "2025-06-30",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 16,
+    "quote": "2024-12-25"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 12,
+    "quote": "2025-06-30"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6805-g",
+  "utility": "DESC",
+  "name": "Edenwood Sub: #1 & #2 230-115kV Autobanks, Replace with 336MVA",
+  "event": "cost_changed",
+  "before": "$10,833,462",
+  "after": "$9,821,256",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 16,
+    "quote": "$10,833,462"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 12,
+    "quote": "$9,821,256"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-1060a-i-l",
+  "utility": "DESC",
+  "name": "Williams St Sub: Replace Sw House & Relays, AM Williams Sub: Replace Sw House, and McMeekin Sub: Add Sw House",
+  "event": "cost_changed",
+  "before": "$9,898,924",
+  "after": "$11,182,924",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 17,
+    "quote": "$9,898,924"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 13,
+    "quote": "$11,182,924"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6076a",
+  "utility": "DESC",
+  "name": "Canadys-Ritter 115KV-Rebld SPDC 230/115KV 1272 (Approx 18 Miles)",
+  "event": "slipped",
+  "before": "2026-06-01",
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 20,
+    "quote": "2026-06-01"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 15,
+    "quote": "2028-06-01"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6359",
+  "utility": "DESC",
+  "name": "Yemassee– Ritter 230kV #1 & #2: Construct SPDC with B-1272",
+  "event": "slipped",
+  "before": "2026-06-01",
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 21,
+    "quote": "2026-06-01"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 16,
+    "quote": "2027-06-01"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6359",
+  "utility": "DESC",
+  "name": "Yemassee– Ritter 230kV #1 & #2: Construct SPDC with B-1272",
+  "event": "cost_changed",
+  "before": "$40,611,419",
+  "after": "$45,032,777",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 21,
+    "quote": "$40,611,419"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 16,
+    "quote": "$45,032,777"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6367-a-c-h",
+  "utility": "DESC",
+  "name": "Sherwood Tap: Construct Tap",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2026-05-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 22,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 17,
+    "quote": "2026-05-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6367-a-c-h",
+  "utility": "DESC",
+  "name": "Sherwood Tap: Construct Tap",
+  "event": "renamed",
+  "before": "Riverport Tap: Construct Tap",
+  "after": "Sherwood Tap: Construct Tap",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 22,
+    "quote": "Riverport Tap: Construct Tap"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 17,
+    "quote": "Sherwood Tap: Construct Tap"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6367-a-c-h",
+  "utility": "DESC",
+  "name": "Sherwood Tap: Construct Tap",
+  "event": "cost_changed",
+  "before": "$34,877,427",
+  "after": "$54,446,256",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 22,
+    "quote": "$34,877,427"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 17,
+    "quote": "$54,446,256"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6367-d-g",
+  "utility": "DESC",
+  "name": "Jasper – Okatie 230 kV #2: Construct",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2026-05-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 23,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 18,
+    "quote": "2026-05-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6367-d-g",
+  "utility": "DESC",
+  "name": "Jasper – Okatie 230 kV #2: Construct",
+  "event": "cost_changed",
+  "before": "$23,787,423",
+  "after": "$28,578,734",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 23,
+    "quote": "$23,787,423"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 18,
+    "quote": "$28,578,734"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6371-d",
+  "utility": "DESC",
+  "name": "Wagener 115kV Tap: Construct Tap",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 24,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 19,
+    "quote": "2027-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6372-a",
+  "utility": "DESC",
+  "name": "Church Creek - Ritter 230kV - Replace 38 Large Angles and Dead Ends",
+  "event": "slipped",
+  "before": "2024-06-01",
+  "after": "2025-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 25,
+    "quote": "2024-06-01"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 20,
+    "quote": "2025-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6372-a",
+  "utility": "DESC",
+  "name": "Church Creek - Ritter 230kV - Replace 38 Large Angles and Dead Ends",
+  "event": "cost_changed",
+  "before": "$10,850,000",
+  "after": "$11,401,163",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 25,
+    "quote": "$10,850,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 20,
+    "quote": "$11,401,163"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-f",
+  "utility": "DESC",
+  "name": "VCS2-Ward 230kV: Rebuild Line",
+  "event": "cost_changed",
+  "before": "$30,000,000",
+  "after": "$38,275,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 26,
+    "quote": "$30,000,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 21,
+    "quote": "$38,275,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-g",
+  "utility": "DESC",
+  "name": "Goose Creek Reservoir: Rebuild Transmission Line Crossings",
+  "event": "slipped",
+  "before": "2024-12-31",
+  "after": "2025-10-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 27,
+    "quote": "2024-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 22,
+    "quote": "2025-10-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-h",
+  "utility": "DESC",
+  "name": "Summerville 115kV Loop: Rebuild",
+  "event": "slipped",
+  "before": "2024-12-31",
+  "after": "2025-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 28,
+    "quote": "2024-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 23,
+    "quote": "2025-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6809-m",
+  "utility": "DESC",
+  "name": "St George - Sumter 230kV Tie: Rebuild Line from Santee Substation - Duke/Progress Energy Tie",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 29,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 24,
+    "quote": "2027-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6809-m",
+  "utility": "DESC",
+  "name": "St George - Sumter 230kV Tie: Rebuild Line from Santee Substation - Duke/Progress Energy Tie",
+  "event": "cost_changed",
+  "before": "$4,000,000",
+  "after": "$5,000,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 29,
+    "quote": "$4,000,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 24,
+    "quote": "$5,000,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-5392-a-c",
+  "utility": "DESC",
+  "name": "Coit – Gills Creek 115kV: Construct",
+  "event": "slipped",
+  "before": "2024-12-31",
+  "after": "2025-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 30,
+    "quote": "2024-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 25,
+    "quote": "2025-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-5392-a-c",
+  "utility": "DESC",
+  "name": "Coit – Gills Creek 115kV: Construct",
+  "event": "cost_changed",
+  "before": "$2,509,602",
+  "after": "$5,773,202",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 30,
+    "quote": "$2,509,602"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 25,
+    "quote": "$5,773,202"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6853-b-f",
+  "utility": "DESC",
+  "name": "Scout 230 kV Sub and Fold-in: Construct",
+  "event": "cost_changed",
+  "before": "$23,685,000",
+  "after": "$28,579,145",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 33,
+    "quote": "$23,685,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 27,
+    "quote": "$28,579,145"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6388-a",
+  "utility": "DESC",
+  "name": "Williams-Summerville 230kV: Upgrade to SPDC B1272 ACSR",
+  "event": "slipped",
+  "before": "2027-05-01",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 36,
+    "quote": "2027-05-01"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 30,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6388-a",
+  "utility": "DESC",
+  "name": "Williams-Summerville 230kV: Upgrade to SPDC B1272 ACSR",
+  "event": "cost_changed",
+  "before": "$19,300,000",
+  "after": "$25,500,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 36,
+    "quote": "$19,300,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 30,
+    "quote": "$25,500,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-147-c-k",
+  "utility": "DESC",
+  "name": "Cainhoy 115 kV Tap: Construct",
+  "event": "slipped",
+  "before": "2027-12-31",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 37,
+    "quote": "2027-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 31,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-147-b-j",
+  "utility": "DESC",
+  "name": "Jack Primus 115 kV Tap: Construct",
+  "event": "slipped",
+  "before": "2027-12-31",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 38,
+    "quote": "2027-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 32,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6847",
+  "utility": "DESC",
+  "name": "Church Creek – Faber Place – Charleston Transmission: Add 230kV Line",
+  "event": "new",
+  "before": null,
+  "after": "2027-05-01",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 33,
+    "quote": "Church Creek – Faber Place – Charleston Transmission: Add 230kV Line"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-u",
+  "utility": "DESC",
+  "name": "Cameron Jct – Elloree 46 kV Rebuild",
+  "event": "slipped",
+  "before": "2026-12-31",
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 41,
+    "quote": "2026-12-31"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 35,
+    "quote": "2027-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-u",
+  "utility": "DESC",
+  "name": "Cameron Jct – Elloree 46 kV Rebuild",
+  "event": "cost_changed",
+  "before": "$4,500,000",
+  "after": "$6,615,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 41,
+    "quote": "$4,500,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 35,
+    "quote": "$6,615,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-j",
+  "utility": "DESC",
+  "name": "Elloree – Santee City 46 kV: Rebuild",
+  "event": "cost_changed",
+  "before": "$4,500,000",
+  "after": "$8,200,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 42,
+    "quote": "$4,500,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 36,
+    "quote": "$8,200,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-t",
+  "utility": "DESC",
+  "name": "Cameron Jct – Cameron – St Matthews 46 kV Rebuild",
+  "event": "cost_changed",
+  "before": "$5,900,000",
+  "after": "$8,550,000",
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 44,
+    "quote": "$5,900,000"
+   },
+   {
+    "source_id": "desc-2529",
+    "page": 38,
+    "quote": "$8,550,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6870-a",
+  "utility": "DESC",
+  "name": "Saluda Hydro – Bush River 115kV #1 and #2 Tie Lines Rebuild",
+  "event": "new",
+  "before": null,
+  "after": "2026-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 39,
+    "quote": "Saluda Hydro – Bush River 115kV #1 and #2 Tie Lines Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-p",
+  "utility": "DESC",
+  "name": "Wateree-Hopkins 230kV Line #1: Rebuild",
+  "event": "new",
+  "before": null,
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 40,
+    "quote": "Wateree-Hopkins 230kV Line #1: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6809-f",
+  "utility": "DESC",
+  "name": "Orangeburg #1 - Cameron Jct 46kV Line Rebuild",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 41,
+    "quote": "Orangeburg #1 - Cameron Jct 46kV Line Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6888",
+  "utility": "DESC",
+  "name": "Okatie – McIntosh 115kV Tie: Add Series Reactor",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 42,
+    "quote": "Okatie – McIntosh 115kV Tie: Add Series Reactor"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6877-a",
+  "utility": "DESC",
+  "name": "Church Creek – Dawson 230 kV: Rebuild from Long Savannah to Dawson",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 43,
+    "quote": "Church Creek – Dawson 230 kV: Rebuild from Long Savannah to Dawson"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6238-h",
+  "utility": "DESC",
+  "name": "Fairfax-Yemassee 115kV: Upgrade for DESCSQ #1151 Interconnection",
+  "event": "new",
+  "before": null,
+  "after": "2027-09-07",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 44,
+    "quote": "Fairfax-Yemassee 115kV: Upgrade for DESCSQ #1151 Interconnection"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6873",
+  "utility": "DESC",
+  "name": "Winnsboro West 230-115 kV Sub and Fold-in: Construct",
+  "event": "new",
+  "before": null,
+  "after": "2028-01-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 45,
+    "quote": "Winnsboro West 230-115 kV Sub and Fold-in: Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6864-d-e",
+  "utility": "DESC",
+  "name": "Millrace 115 kV Tap: Construct",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 46,
+    "quote": "Millrace 115 kV Tap: Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6869-d",
+  "utility": "DESC",
+  "name": "Long Savannah 115 kV Tap: Construct",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 47,
+    "quote": "Long Savannah 115 kV Tap: Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2428-6807-b",
+  "utility": "DESC",
+  "name": "Queensboro - Ft Johnson 115 kV & Queensboro-Bayfront 115kV (Queensboro-James Island Sect)",
+  "event": "removed",
+  "before": "2023-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 1,
+    "quote": "Queensboro - Ft Johnson 115 kV & Queensboro-Bayfront 115kV (Queensboro-James Island Sect)"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2428-6808-j",
+  "utility": "DESC",
+  "name": "Eastover - Square D 115kV: Rebuild",
+  "event": "removed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 5,
+    "quote": "Eastover - Square D 115kV: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2428-6808-w",
+  "utility": "DESC",
+  "name": "Square D - Hopkins 115kV: Rebuild",
+  "event": "removed",
+  "before": "2024-09-30",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 13,
+    "quote": "Square D - Hopkins 115kV: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2428-6809-e",
+  "utility": "DESC",
+  "name": "Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV Rebuilds",
+  "event": "removed",
+  "before": "2024-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 14,
+    "quote": "Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV Rebuilds"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2428-5004-p",
+  "utility": "DESC",
+  "name": "Summerville: Replace and Spare 230-115kV 336MVA Auto Bank",
+  "event": "removed",
+  "before": "2024-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 19,
+    "quote": "Summerville: Replace and Spare 230-115kV 336MVA Auto Bank"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2428-6810-a",
+  "utility": "DESC",
+  "name": "Hooks - Thurmond 115kV Tie: Rebuild",
+  "event": "removed",
+  "before": "2024-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 31,
+    "quote": "Hooks - Thurmond 115kV Tie: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2428-6847-a-b-d-h",
+  "utility": "DESC",
+  "name": "Church Creek – Faber Place – Charleston Transmission: Add 230kV Line",
+  "event": "removed",
+  "before": "2027-05-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2428",
+    "page": 39,
+    "quote": "Church Creek – Faber Place – Charleston Transmission: Add 230kV Line"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-h",
+  "utility": "DESC",
+  "name": "Summerville 115kV Loop: Rebuild",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2026-04-30",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 23,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 1,
+    "quote": "2026-04-30"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-h",
+  "utility": "DESC",
+  "name": "Summerville 115kV Loop: Rebuild",
+  "event": "cost_changed",
+  "before": "$12,475,000",
+  "after": "$15,775,885",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 23,
+    "quote": "$12,475,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 1,
+    "quote": "$15,775,885"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-2726-k",
+  "utility": "DESC",
+  "name": "Columbia Canal 115 kV: Rebuild",
+  "event": "new",
+  "before": null,
+  "after": "2026-05-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 2,
+    "quote": "Columbia Canal 115 kV: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6853-b-f",
+  "utility": "DESC",
+  "name": "Scout 230 kV Sub and Fold-in: Construct",
+  "event": "slipped",
+  "before": "2026-03-31",
+  "after": "2026-05-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 27,
+    "quote": "2026-03-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 3,
+    "quote": "2026-05-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6853-b-f",
+  "utility": "DESC",
+  "name": "Scout 230 kV Sub and Fold-in: Construct",
+  "event": "cost_changed",
+  "before": "$28,579,145",
+  "after": "$19,418,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 27,
+    "quote": "$28,579,145"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 3,
+    "quote": "$19,418,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6846-a",
+  "utility": "DESC",
+  "name": "Eastover – Sumter 115kV DEP Tie: Rebuild with 1272 ACSR",
+  "event": "cost_changed",
+  "before": "$1,100,000",
+  "after": "$1,238,443",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 34,
+    "quote": "$1,100,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 4,
+    "quote": "$1,238,443"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-n",
+  "utility": "DESC",
+  "name": "Batesburg - Saluda County 115kV: Rebuild",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2026-06-30",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 26,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 5,
+    "quote": "2026-06-30"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-n",
+  "utility": "DESC",
+  "name": "Batesburg - Saluda County 115kV: Rebuild",
+  "event": "cost_changed",
+  "before": "$8,750,000",
+  "after": "$13,040,765",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 26,
+    "quote": "$8,750,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 5,
+    "quote": "$13,040,765"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6874-b",
+  "utility": "DESC",
+  "name": "Summerville-Boone Hill 115kV: Move Line for US78 SCDOT Road Widening",
+  "event": "new",
+  "before": null,
+  "after": "2026-07-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 6,
+    "quote": "Summerville-Boone Hill 115kV: Move Line for US78 SCDOT Road Widening"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6852",
+  "utility": "DESC",
+  "name": "Urquhart – Toolebeck 115kV line: Rebuild",
+  "event": "cost_changed",
+  "before": "$17,520,000",
+  "after": "$15,948,620",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 29,
+    "quote": "$17,520,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 7,
+    "quote": "$15,948,620"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6341-a-f",
+  "utility": "DESC",
+  "name": "Cainhoy - Hamlin 115kV: Rebuild Line and Cainhoy – Hamlin 115 kV #2: Construct New 115 kV Line",
+  "event": "cost_changed",
+  "before": "$31,362,092",
+  "after": "$40,858,628",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 3,
+    "quote": "$31,362,092"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 9,
+    "quote": "$40,858,628"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-5392-a-c",
+  "utility": "DESC",
+  "name": "Coit – Gills Creek 115kV: Construct",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2026-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 25,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 10,
+    "quote": "2026-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-139-m-n",
+  "utility": "DESC",
+  "name": "Okatie 230-115kV Substation, Jasper – Yemassee 230kV #1 Fold-in",
+  "event": "slipped",
+  "before": "2026-05-31",
+  "after": "2026-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 2,
+    "quote": "2026-05-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 11,
+    "quote": "2026-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6367-d-g",
+  "utility": "DESC",
+  "name": "Jasper – Okatie 230 kV #2: Construct",
+  "event": "slipped",
+  "before": "2026-05-31",
+  "after": "2026-12-01",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 18,
+    "quote": "2026-05-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 12,
+    "quote": "2026-12-01"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6367-d-g",
+  "utility": "DESC",
+  "name": "Jasper – Okatie 230 kV #2: Construct",
+  "event": "cost_changed",
+  "before": "$28,578,734",
+  "after": "$19,280,474",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 18,
+    "quote": "$28,578,734"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 12,
+    "quote": "$19,280,474"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6367-d",
+  "utility": "DESC",
+  "name": "Riverport 115kV Tap: Construct Tap",
+  "event": "new",
+  "before": null,
+  "after": "2026-12-01",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 13,
+    "quote": "Riverport 115kV Tap: Construct Tap"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6381",
+  "utility": "DESC",
+  "name": "Flat Rock 115kV Sub and Tap: Construct",
+  "event": "new",
+  "before": null,
+  "after": "2026-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 14,
+    "quote": "Flat Rock 115kV Sub and Tap: Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6847",
+  "utility": "DESC",
+  "name": "Church Creek – Faber Place – Charleston Transmission: Add 230kV Line",
+  "event": "cost_changed",
+  "before": "$40,336,395",
+  "after": "$22,788,174",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 33,
+    "quote": "$40,336,395"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 16,
+    "quote": "$22,788,174"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6359",
+  "utility": "DESC",
+  "name": "Yemassee– Ritter 230kV #1 & #2: Construct SPDC with B-1272",
+  "event": "cost_changed",
+  "before": "$45,032,777",
+  "after": "$39,066,742",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 16,
+    "quote": "$45,032,777"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 17,
+    "quote": "$39,066,742"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-m",
+  "utility": "DESC",
+  "name": "St George - Sumter 230kV Tie: Rebuild Line from Santee Substation - Duke/Progress Energy Tie",
+  "event": "cost_changed",
+  "before": "$5,000,000",
+  "after": "$4,569,331",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 24,
+    "quote": "$5,000,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 19,
+    "quote": "$4,569,331"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-g",
+  "utility": "DESC",
+  "name": "Hooks - Modoc 115/46 kV Rebuild",
+  "event": "cost_changed",
+  "before": "$7,800,000",
+  "after": "$10,534,285",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 11,
+    "quote": "$7,800,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 20,
+    "quote": "$10,534,285"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-l",
+  "utility": "DESC",
+  "name": "Burton-St Helena 115kV: Rebuild Frogmore Distribution – St. Helena Section",
+  "event": "renamed",
+  "before": "Burton-St Helena 115kV: Frogmore Distribution - St Helena",
+  "after": "Burton-St Helena 115kV: Rebuild Frogmore Distribution – St. Helena Section",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 5,
+    "quote": "Burton-St Helena 115kV: Frogmore Distribution - St Helena"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 21,
+    "quote": "Burton-St Helena 115kV: Rebuild Frogmore Distribution – St. Helena Section"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6371-d",
+  "utility": "DESC",
+  "name": "Wagener 115kV Tap: Construct Tap",
+  "event": "cost_changed",
+  "before": "$6,005,000",
+  "after": "$7,540,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 19,
+    "quote": "$6,005,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 22,
+    "quote": "$7,540,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-u",
+  "utility": "DESC",
+  "name": "Cameron Jct – Elloree 46 kV Rebuild",
+  "event": "cost_changed",
+  "before": "$6,615,000",
+  "after": "$8,075,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 35,
+    "quote": "$6,615,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 23,
+    "quote": "$8,075,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-7956b",
+  "utility": "DESC",
+  "name": "Atomic Road 115/12kV Sub:  Construct",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 24,
+    "quote": "Atomic Road 115/12kV Sub:  Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-j",
+  "utility": "DESC",
+  "name": "Elloree – Santee City 46 kV: Rebuild",
+  "event": "cost_changed",
+  "before": "$8,200,000",
+  "after": "$10,294,609",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 36,
+    "quote": "$8,200,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 25,
+    "quote": "$10,294,609"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-p",
+  "utility": "DESC",
+  "name": "Wateree-Hopkins 230kV Line #1: Rebuild",
+  "event": "moved_earlier",
+  "before": "2029-12-31",
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 40,
+    "quote": "2029-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 27,
+    "quote": "2027-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-p",
+  "utility": "DESC",
+  "name": "Wateree-Hopkins 230kV Line #1: Rebuild",
+  "event": "cost_changed",
+  "before": "$19,100,000",
+  "after": "$22,400,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 40,
+    "quote": "$19,100,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 27,
+    "quote": "$22,400,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-i2",
+  "utility": "DESC",
+  "name": "Adams Run – Red House Road 46 kV:  Replace Dawhoo River Crossing and other Structures",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 28,
+    "quote": "Adams Run – Red House Road 46 kV:  Replace Dawhoo River Crossing and other Structures"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-s",
+  "utility": "DESC",
+  "name": "Lyles – Kilbourne Park 115kV: Replace Structure 67 – Kilbourne Park",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-01",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 29,
+    "quote": "Lyles – Kilbourne Park 115kV: Replace Structure 67 – Kilbourne Park"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6388-a",
+  "utility": "DESC",
+  "name": "Williams-Summerville 230kV: Upgrade to SPDC B1272 ACSR",
+  "event": "moved_earlier",
+  "before": "2028-12-31",
+  "after": "2028-05-01",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 30,
+    "quote": "2028-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 31,
+    "quote": "2028-05-01"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6388-a",
+  "utility": "DESC",
+  "name": "Williams-Summerville 230kV: Upgrade to SPDC B1272 ACSR",
+  "event": "cost_changed",
+  "before": "$25,500,000",
+  "after": "$31,100,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 30,
+    "quote": "$25,500,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 31,
+    "quote": "$31,100,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6372-a",
+  "utility": "DESC",
+  "name": "Church Creek - Ritter 230kV - Replace 38 Large Angles and Dead Ends",
+  "event": "slipped",
+  "before": "2025-12-31",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 20,
+    "quote": "2025-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 32,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6854-c",
+  "utility": "DESC",
+  "name": "Jackson 115kV: Construct 115 – 12kV Distribution Substation",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 33,
+    "quote": "Jackson 115kV: Construct 115 – 12kV Distribution Substation"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6005-b",
+  "utility": "DESC",
+  "name": "Harleyville 115KV Transmission Tap – Construct (1.4 miles)",
+  "event": "slipped",
+  "before": "2027-03-31",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 14,
+    "quote": "2027-03-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 34,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-f",
+  "utility": "DESC",
+  "name": "Orangeburg #1 - Cameron Jct 46kV Line Rebuild",
+  "event": "slipped",
+  "before": "2027-12-31",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 41,
+    "quote": "2027-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 35,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-f",
+  "utility": "DESC",
+  "name": "Orangeburg #1 - Cameron Jct 46kV Line Rebuild",
+  "event": "cost_changed",
+  "before": "$4,750,000",
+  "after": "$7,912,400",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 41,
+    "quote": "$4,750,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 35,
+    "quote": "$7,912,400"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-n-o",
+  "utility": "DESC",
+  "name": "VCS1-Denny Terrace 230kV & VCS1-Pineland 230kV: Rebuild Single Circuit Sections",
+  "event": "slipped",
+  "before": "2027-12-31",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 6,
+    "quote": "2027-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 36,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-n-o",
+  "utility": "DESC",
+  "name": "VCS1-Denny Terrace 230kV & VCS1-Pineland 230kV: Rebuild Single Circuit Sections",
+  "event": "cost_changed",
+  "before": "$8,667,157",
+  "after": "$13,285,118",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 6,
+    "quote": "$8,667,157"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 36,
+    "quote": "$13,285,118"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6842-c-d",
+  "utility": "DESC",
+  "name": "Coast Guard 115kV Substation and Tap: Construct",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 37,
+    "quote": "Coast Guard 115kV Substation and Tap: Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6864-d-e",
+  "utility": "DESC",
+  "name": "Millrace 115 kV Tap: Construct",
+  "event": "slipped",
+  "before": "2027-12-31",
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 46,
+    "quote": "2027-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 38,
+    "quote": "2028-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6864-d-e",
+  "utility": "DESC",
+  "name": "Millrace 115 kV Tap: Construct",
+  "event": "cost_changed",
+  "before": "$5,200,000",
+  "after": "$3,200,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 46,
+    "quote": "$5,200,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 38,
+    "quote": "$3,200,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-t",
+  "utility": "DESC",
+  "name": "Cameron Jct – Cameron – St Matthews 46 kV Rebuild",
+  "event": "cost_changed",
+  "before": "$8,550,000",
+  "after": "$11,700,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 38,
+    "quote": "$8,550,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 40,
+    "quote": "$11,700,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-r",
+  "utility": "DESC",
+  "name": "CAE Industrial Park - Springdale Sub 115kV: Replace Laminated Wood Polls.",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 42,
+    "quote": "CAE Industrial Park - Springdale Sub 115kV: Replace Laminated Wood Polls."
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-o",
+  "utility": "DESC",
+  "name": "St. George- Holly Hill 115kV: Rebuild Structures 83-108",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 43,
+    "quote": "St. George- Holly Hill 115kV: Rebuild Structures 83-108"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6076-a",
+  "utility": "DESC",
+  "name": "Canadys-Ritter 115KV: Rebuild SPDC 230/115KV 1272 (Approx 18 Miles)",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 44,
+    "quote": "Canadys-Ritter 115KV: Rebuild SPDC 230/115KV 1272 (Approx 18 Miles)"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-r",
+  "utility": "DESC",
+  "name": "Wateree-Killian 230kV: Rebuild",
+  "event": "slipped",
+  "before": "2028-12-31",
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 7,
+    "quote": "2028-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 45,
+    "quote": "2029-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-r",
+  "utility": "DESC",
+  "name": "Wateree-Killian 230kV: Rebuild",
+  "event": "cost_changed",
+  "before": "$48,224,719",
+  "after": "$44,517,719",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 7,
+    "quote": "$48,224,719"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 45,
+    "quote": "$44,517,719"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6877-a",
+  "utility": "DESC",
+  "name": "Church Creek – Dawson 230 kV: Rebuild from Long Savannah to Dawson",
+  "event": "slipped",
+  "before": "2028-12-31",
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 43,
+    "quote": "2028-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 46,
+    "quote": "2029-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6877-a",
+  "utility": "DESC",
+  "name": "Church Creek – Dawson 230 kV: Rebuild from Long Savannah to Dawson",
+  "event": "cost_changed",
+  "before": "$33,750,000",
+  "after": "$42,375,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 43,
+    "quote": "$33,750,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 46,
+    "quote": "$42,375,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6869-d",
+  "utility": "DESC",
+  "name": "Long Savannah 115 kV Tap: Construct",
+  "event": "slipped",
+  "before": "2028-12-31",
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 47,
+    "quote": "2028-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 47,
+    "quote": "2029-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6869-d",
+  "utility": "DESC",
+  "name": "Long Savannah 115 kV Tap: Construct",
+  "event": "cost_changed",
+  "before": "$6,100,000",
+  "after": "$5,100,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 47,
+    "quote": "$6,100,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 47,
+    "quote": "$5,100,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-m-p48",
+  "utility": "DESC",
+  "name": "Modoc – McCormick 115/46 kV Rebuild",
+  "event": "new",
+  "before": null,
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 48,
+    "quote": "Modoc – McCormick 115/46 kV Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6809-t",
+  "utility": "DESC",
+  "name": "Stevens Creek - Graniteville 115 kV: Rebuild",
+  "event": "new",
+  "before": null,
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 49,
+    "quote": "Stevens Creek - Graniteville 115 kV: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-n",
+  "utility": "DESC",
+  "name": "Calhoun County - North 46 kV Rebuild",
+  "event": "new",
+  "before": null,
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 50,
+    "quote": "Calhoun County - North 46 kV Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-167-c-d",
+  "utility": "DESC",
+  "name": "Union Pier 115-13.8 kV Sub: Tap",
+  "event": "new",
+  "before": null,
+  "after": "2030-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 51,
+    "quote": "Union Pier 115-13.8 kV Sub: Tap"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-v",
+  "utility": "DESC",
+  "name": "Faber Place-Bayfront 115kV: Rebuild North Bridge Terrace to Bayfront Section",
+  "event": "slipped",
+  "before": "2028-12-31",
+  "after": "2030-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 10,
+    "quote": "2028-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 52,
+    "quote": "2030-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6808-v",
+  "utility": "DESC",
+  "name": "Faber Place-Bayfront 115kV: Rebuild North Bridge Terrace to Bayfront Section",
+  "event": "cost_changed",
+  "before": "$13,218,768",
+  "after": "$18,964,478",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 10,
+    "quote": "$13,218,768"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 52,
+    "quote": "$18,964,478"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-147-a-i",
+  "utility": "DESC",
+  "name": "Clements Ferry Rd Sub: 115kV Tap from Cainhoy",
+  "event": "new",
+  "before": null,
+  "after": "2031-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2630",
+    "page": 53,
+    "quote": "Clements Ferry Rd Sub: 115kV Tap from Cainhoy"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-f",
+  "utility": "DESC",
+  "name": "VCS2-Ward 230kV: Rebuild Line",
+  "event": "slipped",
+  "before": "2029-12-31",
+  "after": "2032-12-31",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 21,
+    "quote": "2029-12-31"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 54,
+    "quote": "2032-12-31"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2630-6810-f",
+  "utility": "DESC",
+  "name": "VCS2-Ward 230kV: Rebuild Line",
+  "event": "cost_changed",
+  "before": "$38,275,000",
+  "after": "$18,875,000",
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 21,
+    "quote": "$38,275,000"
+   },
+   {
+    "source_id": "desc-2630",
+    "page": 54,
+    "quote": "$18,875,000"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-167c-d",
+  "utility": "DESC",
+  "name": "Union Pier 115-13.8 kV Sub: Tap",
+  "event": "removed",
+  "before": "2027-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 1,
+    "quote": "Union Pier 115-13.8 kV Sub: Tap"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-k",
+  "utility": "DESC",
+  "name": "Burton-St Helena 115kV: Rebuild Burton-Frogmore Transmission Section",
+  "event": "removed",
+  "before": "2025-04-30",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 4,
+    "quote": "Burton-St Helena 115kV: Rebuild Burton-Frogmore Transmission Section"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-s",
+  "utility": "DESC",
+  "name": "Okatie-Bluffton 115kV: Rebuild",
+  "event": "removed",
+  "before": "2025-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 8,
+    "quote": "Okatie-Bluffton 115kV: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6808-u",
+  "utility": "DESC",
+  "name": "Hopkins-CIP 230kV: Rebuild",
+  "event": "removed",
+  "before": "2025-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 9,
+    "quote": "Hopkins-CIP 230kV: Rebuild"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6805-g",
+  "utility": "DESC",
+  "name": "Edenwood Sub: #1 & #2 230-115kV Autobanks, Replace with 336MVA",
+  "event": "removed",
+  "before": "2025-06-30",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 12,
+    "quote": "Edenwood Sub: #1 & #2 230-115kV Autobanks, Replace with 336MVA"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6076a",
+  "utility": "DESC",
+  "name": "Canadys-Ritter 115KV-Rebld SPDC 230/115KV 1272 (Approx 18 Miles)",
+  "event": "removed",
+  "before": "2028-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 15,
+    "quote": "Canadys-Ritter 115KV-Rebld SPDC 230/115KV 1272 (Approx 18 Miles)"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6367-a-c-h",
+  "utility": "DESC",
+  "name": "Sherwood Tap: Construct Tap",
+  "event": "removed",
+  "before": "2026-05-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 17,
+    "quote": "Sherwood Tap: Construct Tap"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-6810-g",
+  "utility": "DESC",
+  "name": "Goose Creek Reservoir: Rebuild Transmission Line Crossings",
+  "event": "removed",
+  "before": "2025-10-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 22,
+    "quote": "Goose Creek Reservoir: Rebuild Transmission Line Crossings"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-147-c-k",
+  "utility": "DESC",
+  "name": "Cainhoy 115 kV Tap: Construct",
+  "event": "removed",
+  "before": "2028-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 31,
+    "quote": "Cainhoy 115 kV Tap: Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "desc-2529-147-b-j",
+  "utility": "DESC",
+  "name": "Jack Primus 115 kV Tap: Construct",
+  "event": "removed",
+  "before": "2028-12-31",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "desc-2529",
+    "page": 32,
+    "quote": "Jack Primus 115 kV Tap: Construct"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-12016",
+  "utility": "GPC",
+  "name": "ARKWRIGHT - LLOYD SHOALS 115 KV LINE RECONDUCTOR",
+  "event": "cancelled",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "ARKWRIGHT - LLOYD SHOALS 115 KV LINE RECONDUCTOR"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19628",
+  "utility": "GPC",
+  "name": "ARLINGTON PRIMARY - LIZARD LOPE 115KV RECONDUCTOR",
+  "event": "cancelled",
+  "before": "2029-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "ARLINGTON PRIMARY - LIZARD LOPE 115KV RECONDUCTOR"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20477",
+  "utility": "GPC",
+  "name": "BANKS CROSSING - CENTER PRIMARY (BLACK) 230 KV LINE",
+  "event": "cancelled",
+  "before": "2029-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "BANKS CROSSING - CENTER PRIMARY (BLACK) 230 KV LINE"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-12063",
+  "utility": "GPC",
+  "name": "DOUGLASVILLE - POST RD 115KV REBUILD",
+  "event": "cancelled",
+  "before": "2029-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "DOUGLASVILLE - POST RD 115KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19623",
+  "utility": "GPC",
+  "name": "GTC: AUGUSTA CORPORATE PARK - VOGTLE 230KV REBUILD",
+  "event": "cancelled",
+  "before": "2029-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "GTC: AUGUSTA CORPORATE PARK - VOGTLE 230KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20513",
+  "utility": "GPC",
+  "name": "GTC: BIG GROCERY-WESTLAKE ROAD 230KV PROJECTS",
+  "event": "cancelled",
+  "before": "2029-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "GTC: BIG GROCERY-WESTLAKE ROAD 230KV PROJECTS"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-15228",
+  "utility": "GPC",
+  "name": "KRAFT 230/115KV TRANSFORMER RATING INCREASE",
+  "event": "cancelled",
+  "before": "2029-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "KRAFT 230/115KV TRANSFORMER RATING INCREASE"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20000",
+  "utility": "GPC",
+  "name": "YATES 6 AND 7 230KV LIMITING ELEMENT REPLACEMENT",
+  "event": "cancelled",
+  "before": "2029-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "YATES 6 AND 7 230KV LIMITING ELEMENT REPLACEMENT"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20482",
+  "utility": "GPC",
+  "name": "PITTMAN ROAD - WEST POINT DAM (USA) 115KV REBUILD",
+  "event": "cancelled",
+  "before": "2031-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "PITTMAN ROAD - WEST POINT DAM (USA) 115KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20266",
+  "utility": "GPC",
+  "name": "GTC: GOSHEN - VOGTLE 230KV REBUILD",
+  "event": "cancelled",
+  "before": "2031-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 191,
+    "quote": "GTC: GOSHEN - VOGTLE 230KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20017",
+  "utility": "GPC",
+  "name": "ARKWRIGHT - SOUTH MACON (BLACK) 115KV LINE REBUILD",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "ARKWRIGHT - SOUTH MACON (BLACK) 115KV LINE REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18671",
+  "utility": "GPC",
+  "name": "CORN CRIB - LAGRANGE 115KV LINE REBUILD",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "CORN CRIB - LAGRANGE 115KV LINE REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19340",
+  "utility": "GPC",
+  "name": "GTC: MIDDLE FORK STATCOM SYSTEM",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "GTC: MIDDLE FORK STATCOM SYSTEM"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19028",
+  "utility": "GPC",
+  "name": "KINGSLAND BANK C REPLACEMENT",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "KINGSLAND BANK C REPLACEMENT"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18104",
+  "utility": "GPC",
+  "name": "KLONDIKE SWITCH REPLACEMENT",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "KLONDIKE SWITCH REPLACEMENT"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19305",
+  "utility": "GPC",
+  "name": "MCGRAU FORD STATCOM SYSTEM",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "MCGRAU FORD STATCOM SYSTEM"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20006",
+  "utility": "GPC",
+  "name": "NORCROSS 230KV BUS 2-3 SERIES BUS TIE BREAKER INSTALLATION",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "NORCROSS 230KV BUS 2-3 SERIES BUS TIE BREAKER INSTALLATION"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19019",
+  "utility": "GPC",
+  "name": "PINE GROVE PRIMARY BANK B REPLACEMENT",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "PINE GROVE PRIMARY BANK B REPLACEMENT"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-14271",
+  "utility": "GPC",
+  "name": "THOMSON PRI - WARRENTON PRI 115KV WHITE LINE REBUILD",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "THOMSON PRI - WARRENTON PRI 115KV WHITE LINE REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19625",
+  "utility": "GPC",
+  "name": "WARRENTON PRIMARY 230KV SWITCHES AND JUMPER REPLACEMENT",
+  "event": "completed",
+  "before": "2024-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "WARRENTON PRIMARY 230KV SWITCHES AND JUMPER REPLACEMENT"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19341",
+  "utility": "GPC",
+  "name": "GTC: JUDY MOUNTAIN SHUNT REACTOR",
+  "event": "completed",
+  "before": "2024-12-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "GTC: JUDY MOUNTAIN SHUNT REACTOR"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20021",
+  "utility": "GPC",
+  "name": "GTC: UNION CITY 230KV BUS TIE",
+  "event": "completed",
+  "before": "2024-12-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "GTC: UNION CITY 230KV BUS TIE"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20430",
+  "utility": "GPC",
+  "name": "EAST DALTON JUMPER REPLACEMENT",
+  "event": "completed",
+  "before": "2025-06-01",
+  "after": null,
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 192,
+    "quote": "EAST DALTON JUMPER REPLACEMENT"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19523",
+  "utility": "GPC",
+  "name": "SAV: CC - HYUNDAI MOTORS SAVANNAH AKA. PROJECT EA",
+  "event": "new",
+  "before": null,
+  "after": "2025-01-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 231,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18492",
+  "utility": "GPC",
+  "name": "MITCHELL - NORTH TIFTON 230KV RECONDUCTOR",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2025",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 233,
+    "quote": "Project delayed from 2024 to 2025"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19676",
+  "utility": "GPC",
+  "name": "ADAMSVILLE - JACK MCDONOUGH 230KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 234,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19187",
+  "utility": "GPC",
+  "name": "GRID - BREMEN - CROOKED CREEK (APC) 115 KV PROJECT",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 236,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19187",
+  "utility": "GPC",
+  "name": "GRID - BREMEN - CROOKED CREEK (APC) 115 KV PROJECT",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2025",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 236,
+    "quote": "Project delayed from 2024 to 2025"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-11821",
+  "utility": "GPC",
+  "name": "JESUP - LUDOWICI PRIMARY 115KV REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2025",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 240,
+    "quote": "Project delayed from 2024 to 2025"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20464",
+  "utility": "GPC",
+  "name": "NORCROSS 230KV BUS 1-3 SERIES BUS TIE BREAKER INSTALLATION",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 243,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19631",
+  "utility": "GPC",
+  "name": "PINE GROVE PRIMARY 115 KV DUAL STAGE CAPACITOR BANK",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 244,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20067",
+  "utility": "GPC",
+  "name": "SAV: DEPTFORD - MAGNOLIA 115KV RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 245,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20466",
+  "utility": "GPC",
+  "name": "SMART VALVE INSTALLATION",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 246,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21046",
+  "utility": "GPC",
+  "name": "THALMANN AND COLERAIN 23O KV LINE RELAY PANEL UPGRADES",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 214,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20431",
+  "utility": "GPC",
+  "name": "VILLA RICA LOW SIDE BREAKER",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 247,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20684",
+  "utility": "GPC",
+  "name": "CAMDEN INDUSTRIAL PARK (GPC)",
+  "event": "new",
+  "before": null,
+  "after": "2025-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 248,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18889",
+  "utility": "GPC",
+  "name": "JEFFERSON STREET#3 - NORTHWEST (WHITE) 115 KV RECONDUCTOR",
+  "event": "changed",
+  "before": null,
+  "after": "Project advanced from 2030 to 2025",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 250,
+    "quote": "Project advanced from 2030 to 2025"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20326",
+  "utility": "GPC",
+  "name": "ANTHONY SHOALS STATCOM SYSTEM",
+  "event": "new",
+  "before": null,
+  "after": "2025-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 215,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20152",
+  "utility": "GPC",
+  "name": "CC - CASS PINE- HILL VIEW 230 KV LINE- CC IMPROVEMENTS",
+  "event": "new",
+  "before": null,
+  "after": "2025-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 251,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20175",
+  "utility": "GPC",
+  "name": "CC - PROJECT CHRONOS- SK/HYUNDAI",
+  "event": "new",
+  "before": null,
+  "after": "2025-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 252,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-17075",
+  "utility": "GPC",
+  "name": "SAV: LITTLE OGEECHEE 230- 115KV: RELAY MODERNIZATION",
+  "event": "new",
+  "before": null,
+  "after": "2025-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 216,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-17075",
+  "utility": "GPC",
+  "name": "SAV: LITTLE OGEECHEE 230- 115KV: RELAY MODERNIZATION",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed in 2025",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 216,
+    "quote": "Project delayed in 2025"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20018",
+  "utility": "GPC",
+  "name": "CC - QTS FAYETTEVILLE TRANSMISSION NEEDS",
+  "event": "new",
+  "before": null,
+  "after": "2026-04-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 255,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19597",
+  "utility": "GPC",
+  "name": "ADAMSVILLE - BUZZARD ROOST 230KV REBUILD AND JUMPER UPGRADE",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 256,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19597",
+  "utility": "GPC",
+  "name": "ADAMSVILLE - BUZZARD ROOST 230KV REBUILD AND JUMPER UPGRADE",
+  "event": "changed",
+  "before": null,
+  "after": "Project advanced from 2027 to 2026",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 256,
+    "quote": "Project advanced from 2027 to 2026"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20243",
+  "utility": "GPC",
+  "name": "CC - GARRETT ROAD SWITCHING STATION - TRAE LANE",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 258,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20243",
+  "utility": "GPC",
+  "name": "CC - GARRETT ROAD SWITCHING STATION - TRAE LANE",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2025 to 2026",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 258,
+    "quote": "Project delayed from 2025 to 2026"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20216",
+  "utility": "GPC",
+  "name": "CC - STONEWALL TELL ROAD (TA REALTY)",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 259,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20491",
+  "utility": "GPC",
+  "name": "EAST POINT RELAY MODERNIZATION",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 217,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-16007",
+  "utility": "GPC",
+  "name": "FENWICK STREET - SAND BAR FERRY 115KV (RECONDUCTOR/REBUILD)",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 261,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20516",
+  "utility": "GPC",
+  "name": "GOAT ROCK 230KV SWITCH, JUMPER, & LINE TRAP REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 262,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19618",
+  "utility": "GPC",
+  "name": "GORDON-N DUBLIN 115KV (GORDON-ENGL MCI J) REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 263,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21139",
+  "utility": "GPC",
+  "name": "GRADY - MORROW (WHITE) 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 264,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20474",
+  "utility": "GPC",
+  "name": "GRADY 230/115KV RELAY MODERNIZATION",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 218,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19706",
+  "utility": "GPC",
+  "name": "GRID - GAINESVILLE #2 EQUIPMENT REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 265,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19636",
+  "utility": "GPC",
+  "name": "HAMMOND - WEISS DAM 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 271,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20512",
+  "utility": "GPC",
+  "name": "KATHLEEN AREA IMPROVEMENTS",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 272,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20490",
+  "utility": "GPC",
+  "name": "KLONDIKE RELAY MODERNIZATION",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 219,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20300",
+  "utility": "GPC",
+  "name": "MORROW 115KV RELAY UPGRADE",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 220,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18690",
+  "utility": "GPC",
+  "name": "PALMYRA REACTOR REMOVAL",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2026",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 276,
+    "quote": "Project delayed from 2024 to 2026"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20066",
+  "utility": "GPC",
+  "name": "SAV: BOULEVARD - DEPTFORD 115KV RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 277,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19966",
+  "utility": "GPC",
+  "name": "SAV: CC - BIG OGEECHEE 500/230KV (CC NETWORK IMPROVEMENTS)",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 278,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20277",
+  "utility": "GPC",
+  "name": "SAV: MCINTOSH - PURRYSBURG 230KV REACTORS",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 227,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20489",
+  "utility": "GPC",
+  "name": "SCOTTDALE RELAY MODERNIZATION",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 221,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-17900",
+  "utility": "GPC",
+  "name": "UNION CITY - YATES 230 KV WHITE LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2026-04-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 279,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-17900",
+  "utility": "GPC",
+  "name": "UNION CITY - YATES 230 KV WHITE LINE REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Delayed in 2026.",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 279,
+    "quote": "Delayed in 2026."
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20691",
+  "utility": "GPC",
+  "name": "UNION CITY - YATES 230KV (WHITE) SWITCH AND TRAP REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 280,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20223",
+  "utility": "GPC",
+  "name": "CC - PROJECT PAYTON BAINBRIDGE",
+  "event": "new",
+  "before": null,
+  "after": "2026-06-30",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 281,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21022",
+  "utility": "GPC",
+  "name": "OHARA BREAKER REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2026-10-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 225,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20668",
+  "utility": "GPC",
+  "name": "DRESDEN LINE PROTECTIVE RELAYING",
+  "event": "new",
+  "before": null,
+  "after": "2026-12-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 222,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20151",
+  "utility": "GPC",
+  "name": "CC - CASS PINE 230/25 NEW SUB - QCELLS - CC IMPROVEMENTS",
+  "event": "new",
+  "before": null,
+  "after": "2026-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 285,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19287",
+  "utility": "GPC",
+  "name": "GRADY-WEST END 115KV REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2026",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 286,
+    "quote": "Project delayed from 2024 to 2026"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19363",
+  "utility": "GPC",
+  "name": "MORROW - MOUNTAIN VIEW 115 KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2026-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 287,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20509",
+  "utility": "GPC",
+  "name": "CC - EMBLEM RIVERSIDE CUSTOMER SUB (FLEXENTIAL)",
+  "event": "new",
+  "before": null,
+  "after": "2027-03-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 288,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19601",
+  "utility": "GPC",
+  "name": "MORROW - YATES COMMON 115KV LINE UPGRADE",
+  "event": "new",
+  "before": null,
+  "after": "2027-05-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 290,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-15879",
+  "utility": "GPC",
+  "name": "POSSUM BRANCH - YATES COMMON 115KV REBUILD (YATES TO CLEM)",
+  "event": "new",
+  "before": null,
+  "after": "2027-05-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 291,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20771",
+  "utility": "GPC",
+  "name": "CC - GULLATT ROAD TRANSMISSION IMPROVEMENTS",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 292,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18736",
+  "utility": "GPC",
+  "name": "CC - MICROSOFT - SHUGART (CCO06)",
+  "event": "changed",
+  "before": null,
+  "after": "New project",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 293,
+    "quote": "New project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20781",
+  "utility": "GPC",
+  "name": "CC - SUMMER LAKE - VILLA RICA 230KV REBUILD (CC IMPROVMNT)",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 294,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20736",
+  "utility": "GPC",
+  "name": "CC - TA REALTY ELLENWOOD NETWORK IMPROVEMENTS",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 295,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20234",
+  "utility": "GPC",
+  "name": "DOYLE - LG&E MONROE 230KV - JACKS CREEK LOOP IN",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 296,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18668",
+  "utility": "GPC",
+  "name": "JESUP - OFFERMAN 115KV REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2027",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 308,
+    "quote": "Project delayed from 2024 to 2027"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-10143",
+  "utility": "GPC",
+  "name": "LAWRENCEVILLE - WINDER 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 309,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-10481",
+  "utility": "GPC",
+  "name": "LAWRENCEVILLE - WINDER PRIMARY 230KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 310,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-10481",
+  "utility": "GPC",
+  "name": "LAWRENCEVILLE - WINDER PRIMARY 230KV LINE REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Project advanced from 2029 to 2027",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 310,
+    "quote": "Project advanced from 2029 to 2027"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19248",
+  "utility": "GPC",
+  "name": "SANDERSVILLE #1 - WADLEY PRI. 115KV REBUILD/RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 312,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20785",
+  "utility": "GPC",
+  "name": "SAV: GOSHEN (SAV) - KRAFT 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 313,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20065",
+  "utility": "GPC",
+  "name": "SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2027-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 314,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20717",
+  "utility": "GPC",
+  "name": "CC - TOMOCHICHI 500/230KV SOLUTION (CC NETWORK IMPROVEMENTS)",
+  "event": "new",
+  "before": null,
+  "after": "2027-07-15",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 315,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18573",
+  "utility": "GPC",
+  "name": "GRID - ARKWRIGHT - LLOYD SHOALS 115KV",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2027. Previously listed under TEAMS #12016.",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 316,
+    "quote": "Project delayed from 2024 to 2027. Previously listed under TEAMS #12016."
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-17977",
+  "utility": "GPC",
+  "name": "ATHENA - EAST WATKINSVILLE 115 KV (REBUILD)",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 318,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-17977",
+  "utility": "GPC",
+  "name": "ATHENA - EAST WATKINSVILLE 115 KV (REBUILD)",
+  "event": "changed",
+  "before": null,
+  "after": "Delayed from 2026 to 2027",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 318,
+    "quote": "Delayed from 2026 to 2027"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20150",
+  "utility": "GPC",
+  "name": "CC - HILL VIEW & GRASSY HOLLOW SUB - CC IMPROVEMENTS",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 319,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20150",
+  "utility": "GPC",
+  "name": "CC - HILL VIEW & GRASSY HOLLOW SUB - CC IMPROVEMENTS",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2024 to 2027",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 319,
+    "quote": "Project delayed from 2024 to 2027"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20024",
+  "utility": "GPC",
+  "name": "DYER ROAD - EAST ROANOKE 115KV (REBUILD)",
+  "event": "new",
+  "before": null,
+  "after": "2027-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 320,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19997",
+  "utility": "GPC",
+  "name": "AULTMAN ROAD-PERRY 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 321,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20797",
+  "utility": "GPC",
+  "name": "CC - EAST VILLA RICA AREA SWITCHING STATION (CC IMPROVEMENT)",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 322,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20774",
+  "utility": "GPC",
+  "name": "CC - VILLA RICA UPGRADES (CC NETWORK IMPROVEMENTS)",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 323,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21048",
+  "utility": "GPC",
+  "name": "FITZGERALD - PITTS 115 KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 324,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20777",
+  "utility": "GPC",
+  "name": "JACK MCDONOUGH - NORTHWEST (BLACK) 230KV RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 329,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20482",
+  "utility": "GPC",
+  "name": "PITTMAN ROAD - WEST POINT DAM (USA) 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 332,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20482",
+  "utility": "GPC",
+  "name": "PITTMAN ROAD - WEST POINT DAM (USA) 115KV REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Project advanced from 2031 to 2028",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 332,
+    "quote": "Project advanced from 2031 to 2028"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20656",
+  "utility": "GPC",
+  "name": "PLANT YATES BREAKER AND HALF STATION",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 333,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20783",
+  "utility": "GPC",
+  "name": "SAV: COLEMAN - DEAN FOREST 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 334,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20407",
+  "utility": "GPC",
+  "name": "SAV: MAGNOLIA - TRUMAN PARKWAY 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 335,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20407",
+  "utility": "GPC",
+  "name": "SAV: MAGNOLIA - TRUMAN PARKWAY 115KV REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "No Changes",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 335,
+    "quote": "No Changes"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21069",
+  "utility": "GPC",
+  "name": "SMART VALVES AT EAST VILLA RICA SWITCHING STATION",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 336,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20768",
+  "utility": "GPC",
+  "name": "SOUTH MACON 115KV BUSES 1 & 2 REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 337,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20274",
+  "utility": "GPC",
+  "name": "UNION CITY - YATES 230KV (BLACK) LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2028-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 338,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-13166",
+  "utility": "GPC",
+  "name": "FIRST AVENUE - NORTH COLUMBUS 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2028-12-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 339,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21062",
+  "utility": "GPC",
+  "name": "ASHLEY PARK-WANSLEY 500KV",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 341,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-10222",
+  "utility": "GPC",
+  "name": "BLAKELY PRIMARY - HUCKLEBERRY 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 342,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21047",
+  "utility": "GPC",
+  "name": "BROADWAY - ECHECONNEE 115 KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 343,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-16887",
+  "utility": "GPC",
+  "name": "BUTLER - THOMASTON 230KV LINE CONVERSION",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 344,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21036",
+  "utility": "GPC",
+  "name": "BUZZARD ROOST - FACTORY SHOALS 230KV NEW LINE",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 345,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21142",
+  "utility": "GPC",
+  "name": "CONYERS - KLONDIKE 230 KV SECOND LINE",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 346,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21138",
+  "utility": "GPC",
+  "name": "GLENWOOD SPRINGS - PORTERDALE PRIMARY 230KV LINE SWITCH REPL",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 347,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21141",
+  "utility": "GPC",
+  "name": "LLOYD SHOALS - PORTERDALE PRIMARY 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 355,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20285",
+  "utility": "GPC",
+  "name": "LOWER RIVER - WEBB (APC) 115KV RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 356,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20285",
+  "utility": "GPC",
+  "name": "LOWER RIVER - WEBB (APC) 115KV RECONDUCTOR",
+  "event": "changed",
+  "before": null,
+  "after": "Project advanced from 2030 to 2029",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 356,
+    "quote": "Project advanced from 2030 to 2029"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19621",
+  "utility": "GPC",
+  "name": "MCEVER ROAD - SHOAL CREEK 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 357,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20346",
+  "utility": "GPC",
+  "name": "MCMANUS - WEST BRUNSWICK 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 358,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20757",
+  "utility": "GPC",
+  "name": "NORCROSS - NORTH DRUID HILLS 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 361,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21006",
+  "utility": "GPC",
+  "name": "SAV: BOULEVARD - MAGNOLIA 115 KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 362,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21023",
+  "utility": "GPC",
+  "name": "SAV: DEAN FOREST - LITTLE OGEECHEE 230 KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 363,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20989",
+  "utility": "GPC",
+  "name": "SAV: RICE HOPE NEW AUTO TRANSFORMER",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 364,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-13628",
+  "utility": "GPC",
+  "name": "SOUTH BAINBRIDGE - SINAI (FPL) 115KV LINE RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2029-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 365,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20248",
+  "utility": "GPC",
+  "name": "BAY CREEK - CONYERS 230KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2029-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 366,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21129",
+  "utility": "GPC",
+  "name": "ANNISTON - HAMMOND 230KV LINE",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 367,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20764",
+  "utility": "GPC",
+  "name": "ATKINSON - NORTHSIDE DRIVE 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 368,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20761",
+  "utility": "GPC",
+  "name": "ATKINSON - NORTHWEST 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 369,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21130",
+  "utility": "GPC",
+  "name": "CC - NORTH GEORGIA DATA NETWORK UPGRADES",
+  "event": "changed",
+  "before": null,
+  "after": "New project",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 370,
+    "quote": "New project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-10478",
+  "utility": "GPC",
+  "name": "CORNELIA - TALLULAH LODGE 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 371,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21097",
+  "utility": "GPC",
+  "name": "EAST POINT - TRIBUTARY 230KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 373,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20480",
+  "utility": "GPC",
+  "name": "EAST POINT - UNION CITY 230KV BLACK LINE RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 374,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20480",
+  "utility": "GPC",
+  "name": "EAST POINT - UNION CITY 230KV BLACK LINE RECONDUCTOR",
+  "event": "changed",
+  "before": null,
+  "after": "Project advanced from 2031 to 2030",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 374,
+    "quote": "Project advanced from 2031 to 2030"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19627",
+  "utility": "GPC",
+  "name": "ECHECONNEE-WELLSTON 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 375,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21063",
+  "utility": "GPC",
+  "name": "FARLEY (APC)-TAZEWELL 500KV",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 376,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-12120",
+  "utility": "GPC",
+  "name": "GAINESVILLE #2 - MCEVER ROAD 115 KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 377,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20298",
+  "utility": "GPC",
+  "name": "GLENWOOD SPRINGS - LAKE OCONEE 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 378,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20298",
+  "utility": "GPC",
+  "name": "GLENWOOD SPRINGS - LAKE OCONEE 115KV LINE REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Advance to 2030 from 2033.",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 378,
+    "quote": "Advance to 2030 from 2033."
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21128",
+  "utility": "GPC",
+  "name": "GOAT ROCK REACTORS INSTALLATION",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 379,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19996",
+  "utility": "GPC",
+  "name": "GOLDENS CREEK - WARRENTON PRIMARY 230KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 380,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20428",
+  "utility": "GPC",
+  "name": "GORDON-SANDERSVILLE #1 115KV LINE REBUILD (DEEPSTEP-SAND #6)",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 381,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21116",
+  "utility": "GPC",
+  "name": "GOSHEN AREA STRATEGIC SOLUTION",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 382,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20789",
+  "utility": "GPC",
+  "name": "JEFFERSON ROAD - WINDER PRIMARY 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 391,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20284",
+  "utility": "GPC",
+  "name": "KETTLE CREEK PRIMARY - PINE GROVE PRIMARY 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 392,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20284",
+  "utility": "GPC",
+  "name": "KETTLE CREEK PRIMARY - PINE GROVE PRIMARY 115KV REBUILD",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2029 to 2030",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 392,
+    "quote": "Project delayed from 2029 to 2030"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20857",
+  "utility": "GPC",
+  "name": "NEW CAVENDER DRIVE - TRIBUTARY 230KV LINE",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 394,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21093",
+  "utility": "GPC",
+  "name": "NORTH SPA 230KV STRATEGIC PROJECT",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 395,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19995",
+  "utility": "GPC",
+  "name": "TALLULAH LODGE - TOCCOA 115 KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 396,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21098",
+  "utility": "GPC",
+  "name": "TRIBUTARY - THORNTON RD 230KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2030-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 397,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20160",
+  "utility": "GPC",
+  "name": "THOMASTON 230 NEW BUILD SUB",
+  "event": "new",
+  "before": null,
+  "after": "2030-11-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 398,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18848",
+  "utility": "GPC",
+  "name": "BAINBRIDGE TRANSMISSION: EAST RIVER ROAD, EAST BAINBRIDGE",
+  "event": "new",
+  "before": null,
+  "after": "2030-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 399,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19626",
+  "utility": "GPC",
+  "name": "GLENWOOD SPRINGS 115KV CAP BANK",
+  "event": "new",
+  "before": null,
+  "after": "2030-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 400,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19626",
+  "utility": "GPC",
+  "name": "GLENWOOD SPRINGS 115KV CAP BANK",
+  "event": "changed",
+  "before": null,
+  "after": "Project advanced from 2031 to 2030.",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 400,
+    "quote": "Project advanced from 2031 to 2030."
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20690",
+  "utility": "GPC",
+  "name": "EAST POINT - UNION CITY (WHITE) 230KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2031-05-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 401,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-19632",
+  "utility": "GPC",
+  "name": "AVERY - HOPEWELL 115KV RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2031-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 402,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-10811",
+  "utility": "GPC",
+  "name": "BOWEN #10 500/230KV AUTOBANK REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2031-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 403,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20756",
+  "utility": "GPC",
+  "name": "HATCH - WADLEY 500 KV LINE STRATEGIC PROJECT",
+  "event": "new",
+  "before": null,
+  "after": "2031-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 404,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20784",
+  "utility": "GPC",
+  "name": "SAV: COLEMAN - MELDRIM 115KV LINE REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2032-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 407,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20767",
+  "utility": "GPC",
+  "name": "ARKWRIGHT BUS AND JUMPER REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 408,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20758",
+  "utility": "GPC",
+  "name": "BAY CREEK - CONYERS 230KV LIMITING ELEMENT REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 409,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20793",
+  "utility": "GPC",
+  "name": "EVANS PRIMARY - THURMOND DAM (USA) #5 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 410,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20794",
+  "utility": "GPC",
+  "name": "EVANS PRIMARY - THURMOND DAM (USA) #6 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 411,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21053",
+  "utility": "GPC",
+  "name": "MCEVER ROAD - SHOAL CREEK 115KV REBUILD PHASE III",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 417,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-09661",
+  "utility": "GPC",
+  "name": "MCGRAU FORD - MIDDLE FORK 500KV LINE PROJECT",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 418,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20796",
+  "utility": "GPC",
+  "name": "SAV: MELDRIM BANK D REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 419,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-14222",
+  "utility": "GPC",
+  "name": "THOMSON PRIMARY 230/115KV SECOND TRANSFORMER",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 420,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-14222",
+  "utility": "GPC",
+  "name": "THOMSON PRIMARY 230/115KV SECOND TRANSFORMER",
+  "event": "changed",
+  "before": null,
+  "after": "Project delayed from 2031 to 2033",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 420,
+    "quote": "Project delayed from 2031 to 2033"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20759",
+  "utility": "GPC",
+  "name": "WINDER PRIMARY 230KV BUS 1-2 PARALLEL BUS-TIE INSTALLATION",
+  "event": "new",
+  "before": null,
+  "after": "2033-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 421,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-10487",
+  "utility": "GPC",
+  "name": "PINE GROVE PRIMARY - WEST VALDOSTA 115 KV RECONDUCTOR",
+  "event": "new",
+  "before": null,
+  "after": "2033-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 422,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18700",
+  "utility": "GPC",
+  "name": "DAWSON CROSSING - GAINESVILLE #1 115 KV",
+  "event": "new",
+  "before": null,
+  "after": "2034-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 423,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20787",
+  "utility": "GPC",
+  "name": "SAV: LITTLE OGEECHEE 230/115KV BANK REPLACEMENT",
+  "event": "new",
+  "before": null,
+  "after": "2034-06-01",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 424,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-17993",
+  "utility": "GPC",
+  "name": "EVANS PRIMARY - THOMSON PRIMARY 115KV REBUILD",
+  "event": "new",
+  "before": null,
+  "after": "2034-12-31",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 425,
+    "quote": "New Project"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-18800",
+  "utility": "GPC",
+  "name": "ECHECONNEE-WELLSTON 115KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2025",
+  "after": "SERTP 2026: 2030",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 235,
+    "quote": "2025-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 90,
+    "quote": "In-Service Year 2030: ECHECONNEE-WELLSTON 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 81,
+    "quote": "In-Service Year 2030: SOCO: ECHECONNEE - WELLSTON 115 KV LINE REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21139",
+  "utility": "GPC",
+  "name": "GRADY - MORROW (WHITE) 115KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2026",
+  "after": "SERTP 2026: 2029",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 264,
+    "quote": "2026-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 40,
+    "quote": "In-Service Year 2026: GRADY - MORROW (WHITE) 115 KV, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 64,
+    "quote": "In-Service Year 2029: SOCO: GRADY - MORROW (WHITE) 115 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20785",
+  "utility": "GPC",
+  "name": "SAV: GOSHEN (SAV) - KRAFT 115KV LINE REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2027",
+  "after": "SERTP 2026: 2031",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 313,
+    "quote": "2027-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 59,
+    "quote": "In-Service Year 2027: SAV: GOSHEN (SAV) - KRAFT 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 91,
+    "quote": "In-Service Year 2031: SOCO: SAV: GOSHEN (SAV) - KRAFT 115 KV LINE PARTIAL REBUILD (PHASE 2)"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20065",
+  "utility": "GPC",
+  "name": "SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2027",
+  "after": "SERTP 2026: 2028",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 314,
+    "quote": "2027-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 60,
+    "quote": "In-Service Year 2027: SAV: GOSHEN (SAV) - MCINTOSH 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 53,
+    "quote": "In-Service Year 2028: SOCO: SAV: GOSHEN (SAV) - MCINTOSH 115 KV LINE REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20024",
+  "utility": "GPC",
+  "name": "DYER ROAD - EAST ROANOKE 115KV (REBUILD)",
+  "event": "sources_disagree",
+  "before": "IRP 2027",
+  "after": "SERTP 2026: 2028",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 320,
+    "quote": "2027-12-31"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 64,
+    "quote": "In-Service Year 2028: DYER ROAD - EAST ROANOKE 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 47,
+    "quote": "In-Service Year 2028: SOCO: DYER ROAD - EAST ROANOKE 115 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20768",
+  "utility": "GPC",
+  "name": "SOUTH MACON 115KV BUSES 1 & 2 REPLACEMENT",
+  "event": "sources_disagree",
+  "before": "IRP 2028",
+  "after": "SERTP 2026: 2027",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 337,
+    "quote": "2028-06-01"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 39,
+    "quote": "In-Service Year 2027: SOCO: SOUTH MACON 115 KV BUSES 1 & 2 REPLACEMENT"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21047",
+  "utility": "GPC",
+  "name": "BROADWAY - ECHECONNEE 115 KV LINE REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2029",
+  "after": "SERTP 2026: 2030",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 343,
+    "quote": "2029-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 49,
+    "quote": "In-Service Year 2027: BROADWAY - ECHECONNEE 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 79,
+    "quote": "In-Service Year 2030: SOCO: BROADWAY - ECHECONNEE 115 KV LINE REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21141",
+  "utility": "GPC",
+  "name": "LLOYD SHOALS - PORTERDALE PRIMARY 115KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2029",
+  "after": "SERTP 2026: 2028",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 355,
+    "quote": "2029-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 69,
+    "quote": "In-Service Year 2028: LLOYD SHOALS - PORTERDALE PRIMARY 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 50,
+    "quote": "In-Service Year 2028: SOCO: LLOYD SHOALS - PORTERDALE PRIMARY 115 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20248",
+  "utility": "GPC",
+  "name": "BAY CREEK - CONYERS 230KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2029",
+  "after": "SERTP 2026: 2031",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 366,
+    "quote": "2029-12-31"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 109,
+    "quote": "In-Service Year 2033: BAY CREEK - CONYERS 230 KV, LIMITING ELEMENT REPLACEMENT"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 89,
+    "quote": "In-Service Year 2031: SOCO: BAY CREEK - CONYERS 230 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20764",
+  "utility": "GPC",
+  "name": "ATKINSON - NORTHSIDE DRIVE 115KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2030",
+  "after": "SERTP 2026: 2032",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 368,
+    "quote": "2030-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 87,
+    "quote": "In-Service Year 2030: ATKINSON - NORTHSIDE DRIVE 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 92,
+    "quote": "In-Service Year 2032: SOCO: ATKINSON - NORTHSIDE DRIVE 115 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20761",
+  "utility": "GPC",
+  "name": "ATKINSON - NORTHWEST 115KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2030",
+  "after": "SERTP 2026: 2029",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 369,
+    "quote": "2030-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 74,
+    "quote": "In-Service Year 2029: ATKINSON - NORTHWEST 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 61,
+    "quote": "In-Service Year 2029: SOCO: ATKINSON - NORTHWEST 115 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-21128",
+  "utility": "GPC",
+  "name": "GOAT ROCK REACTORS INSTALLATION",
+  "event": "sources_disagree",
+  "before": "IRP 2030",
+  "after": "SERTP 2026: 2029",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 379,
+    "quote": "2030-06-01"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 64,
+    "quote": "In-Service Year 2029: SOCO: GOAT ROCK REACTORS INSTALLATION"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20284",
+  "utility": "GPC",
+  "name": "KETTLE CREEK PRIMARY - PINE GROVE PRIMARY 115KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2030",
+  "after": "SERTP 2026: 2029",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 392,
+    "quote": "2030-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 81,
+    "quote": "In-Service Year 2029: KETTLE CREEK PRIMARY - PINE GROVE PRIMARY 115 KV, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 67,
+    "quote": "In-Service Year 2029: SOCO: KETTLE CREEK PRIMARY - PINE GROVE PRIMARY 115 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20690",
+  "utility": "GPC",
+  "name": "EAST POINT - UNION CITY (WHITE) 230KV REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2031",
+  "after": "SERTP 2026: 2035",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 401,
+    "quote": "2031-05-01"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 100,
+    "quote": "In-Service Year 2035: SOCO: EAST POINT - UNION CITY (WHITE) 230 KV REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20784",
+  "utility": "GPC",
+  "name": "SAV: COLEMAN - MELDRIM 115KV LINE REBUILD",
+  "event": "sources_disagree",
+  "before": "IRP 2032",
+  "after": "SERTP 2026: 2029",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 407,
+    "quote": "2032-06-01"
+   },
+   {
+    "source_id": "sertp-2025",
+    "page": 71,
+    "quote": "In-Service Year 2028: SAV: COLEMAN - MELDRIM 115 KV TRANSMISSION LINE, REBUILD"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 69,
+    "quote": "In-Service Year 2029: SOCO: SAV: COLEMAN - MELDRIM 115 KV LINE REBUILD"
+   }
+  ]
+ },
+ {
+  "project_id": "gpc-20787",
+  "utility": "GPC",
+  "name": "SAV: LITTLE OGEECHEE 230/115KV BANK REPLACEMENT",
+  "event": "sources_disagree",
+  "before": "IRP 2034",
+  "after": "SERTP 2026: 2029",
+  "evidence": [
+   {
+    "source_id": "gpc-irp25-v3",
+    "page": 424,
+    "quote": "2034-06-01"
+   },
+   {
+    "source_id": "sertp-2026",
+    "page": 70,
+    "quote": "In-Service Year 2029: SOCO: SAV: LITTLE OGEECHEE 230/115 KV BANK REPLACEMENT"
+   }
+  ]
+ }
+]

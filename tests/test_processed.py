@@ -43,3 +43,28 @@ def test_quality_report_records_passing_acceptance():
 def test_processed_data_never_contains_redacted_text():
     for path in PROCESSED.glob("*.json"):
         assert "REDACTED" not in path.read_text(), path.name
+
+
+@pytest.fixture(scope="module")
+def changes():
+    return json.loads((PROCESSED / "changes.json").read_text())
+
+
+def test_goshen_mcintosh_irp_vs_sertp_disagreement_is_recorded(changes, opportunities):
+    event = next(c for c in changes if c["project_id"] == LINKS["GPC_3"] and c["event"] == "sources_disagree")
+    pair = next(o for o in opportunities["closest"] if o["id"] == f"{LINKS['DESC_3']}__{LINKS['GPC_3']}")
+
+    assert (event["before"], event["after"]) == ("IRP 2027", "SERTP 2026: 2028")
+    assert "sources_disagree" in pair["flags"]
+
+
+def test_new_desc_tie_into_mcintosh_appears_in_2025_list(changes):
+    new = [c for c in changes if c["event"] == "new" and "Okatie – McIntosh" in c["name"]]
+
+    assert new and new[0]["evidence"][0]["source_id"] == "desc-2529"
+
+
+def test_gpc_cancelled_and_completed_tables_feed_changes(changes):
+    kinds = {c["event"] for c in changes}
+
+    assert {"cancelled", "completed", "slipped", "new"} <= kinds

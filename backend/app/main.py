@@ -12,7 +12,7 @@ from slowapi.util import get_remote_address
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.repository import get_repository
-from app.routes import export, opportunities, projects, sources
+from app.routes import changes, export, opportunities, projects, sources
 from app.schemas import fail, ok
 
 API_PREFIX = "/api"
@@ -59,5 +59,5 @@ def health() -> dict:
                "sources_pinned": sum(1 for s in get_repository().sources if s.get("sha256"))})
 
 
-for module in (sources, projects, opportunities, export):
+for module in (sources, projects, opportunities, changes, export):
     app.include_router(module.router, prefix=API_PREFIX)

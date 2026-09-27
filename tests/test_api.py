@@ -131,3 +131,10 @@ def test_export_csv_uses_sperry_columns_first():
     assert header.startswith("overlap_id,distance_mi,time_gap (day),utility_a,project_id_a,project_name_a,"
                              "utility_b,project_id_b,project_name_b,")
     assert first.startswith("OPP_1,")
+
+
+def test_changes_filter_by_event():
+    body = data("/changes?event=sources_disagree&utility=GPC")
+
+    assert body["meta"]["count"] == len(body["data"]) > 0
+    assert all(c["event"] == "sources_disagree" and c["utility"] == "GPC" for c in body["data"])

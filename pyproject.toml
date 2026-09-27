@@ -20,3 +20,4 @@ known-first-party = ["app", "engine", "pipeline", "ai", "tests"]
 
 [tool.ruff.lint.per-file-ignores]
 "backend/app/brief.py" = ["E501"]  # inline HTML/CSS template
+"tests/*" = ["E501"]  # literal fixtures read better unwrapped

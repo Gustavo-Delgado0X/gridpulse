@@ -9,12 +9,14 @@ import hashlib
 import json
 from pathlib import Path
 
+from engine.changes import desc_changes, gpc_table_changes, sertp_disagreements
 from engine.distance import haversine_mi
 from engine.opportunities import find_opportunities
 from pipeline.locate import OsmIndex, core_name, locate_endpoint
 from pipeline.parse_answer_key import to_engine_projects
 from pipeline.parse_desc import parse_pdf
 from pipeline.parse_gpc import parse_irp
+from pipeline.parse_sertp import parse_sertp
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW, CACHE, OVERRIDES, PROCESSED = (ROOT / "data" / d for d in ("raw", "cache", "overrides", "processed"))
@@ -25,6 +27,8 @@ GPC_IRP = LISTINGS / "Georgia Power" / "2025 IRP Volume 3 PUBLIC DISCLOSURE.pdf"
 MAX_PRECOMPUTED_MILES = 50.0
 COORDINATE_CONFLICT_MI = 0.05
 STATE_OF = {"DESC": "SC", "GPC": "GA"}
+DESC_VERSIONS = (("desc-2529", RAW / "desc_2025-2029.pdf"), ("desc-2630", RAW / "desc_2026-2030.pdf"))
+SERTP = {sid: RAW / f"sertp_{sid[-4:]}_preliminary_non_ceii.pdf" for sid in ("sertp-2025", "sertp-2026")}
 
 
 def _same_facility(a: str, b: str) -> bool:
@@ -149,6 +153,27 @@ def _write(name: str, payload: object) -> None:
     (PROCESSED / name).write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n")
 
 
+def _with_sertp_flags(projects: list[dict], events: list[dict]) -> list[dict]:
+    flagged = {e["project_id"]: e for e in events}
+
+    def flag(p: dict) -> dict:
+        event = flagged.get(p["id"])
+        if event is None:
+            return p
+        disagreement = {"field": "in_service_year", "values": {"irp": event["before"], "sertp": event["after"]}}
+        return {**p, "flags": sorted({*p.get("flags", []), "sources_disagree"}),
+                "disagreements": [*p.get("disagreements", []), disagreement]}
+
+    return [flag(p) for p in projects]
+
+
+def _changes(desc: list[dict], gpc: list[dict], irp: dict) -> tuple[list[dict], list[dict]]:
+    versions = [("desc-2428", desc)] + [(sid, parse_pdf(path, sid)) for sid, path in DESC_VERSIONS]
+    sertp_events = sertp_disagreements(gpc, {sid: parse_sertp(path) for sid, path in SERTP.items()})
+    tables = {"cancelled": irp["cancelled_rows"], "completed": irp["completed_rows"]}
+    return desc_changes(versions) + gpc_table_changes(tables, gpc) + sertp_events, sertp_events
+
+
 def build() -> dict:
     key = json.loads(KEY_FIXTURE.read_text())
     links = {r["key_project_id"]: r["project_id"] for r in _read_csv(OVERRIDES / "answer_key_links.csv")}
@@ -159,10 +184,16 @@ def build() -> dict:
     gpc = [p for p in irp["projects"] if p["utility"] == "GPC"]
     others = [{**p, "state": "GA", "endpoints": []} for p in irp["projects"] if p["utility"] != "GPC"]
 
+    changes, sertp_events = _changes(desc, gpc, irp)
+    gpc = _with_sertp_flags(gpc, sertp_events)
     located = [_locate(p, index) for p in [*desc, *gpc]]
     keyed, discrepancies = apply_answer_key(located, key, links)
     projects = apply_overrides(keyed, _read_csv(OVERRIDES / "locations.csv"))
-    discrepancies += [_date_conflict(p, d) for p in projects for d in p.get("disagreements", [])]
+    discrepancies += [_date_conflict(p, d) for p in projects for d in p.get("disagreements", [])
+                      if d["field"] == "need_date"]
+    discrepancies += [{"kind": "sources_disagree", "project_id": e["project_id"], "values": {"irp": e["before"],
+                       "sertp": e["after"]}, "message": f"{e['name']}: {e['before']} vs {e['after']}"}
+                      for e in sertp_events]
 
     opportunities = {m: find_opportunities(projects, MAX_PRECOMPUTED_MILES, m) for m in ("closest", "center")}
     PROCESSED.mkdir(parents=True, exist_ok=True)
@@ -170,9 +201,9 @@ def build() -> dict:
     _write("opportunities.json", opportunities)
     _write("quality.json", {"coverage": _coverage(projects), "acceptance": _acceptance(key),
                             "discrepancies": discrepancies, "built_at": dt.datetime.now(dt.UTC).isoformat()})
-    _write("gpc_tables.json", {"cancelled": irp["cancelled_rows"], "completed": irp["completed_rows"]})
+    _write("changes.json", changes)
     return {"projects": len(projects), "opportunities": {m: len(v) for m, v in opportunities.items()},
-            "discrepancies": len(discrepancies)}
+            "discrepancies": len(discrepancies), "changes": len(changes)}
 
 
 if __name__ == "__main__":

@@ -5226,8 +5226,18 @@
    "vs_prev_irp": "No Change"
   },
   "detail_need_date": "2025-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2025",
+     "sertp": "SERTP 2026: 2030"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -7789,8 +7799,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2026-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2026",
+     "sertp": "SERTP 2026: 2029"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -11253,8 +11273,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2027-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2027",
+     "sertp": "SERTP 2026: 2031"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -11371,8 +11401,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2027-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2027",
+     "sertp": "SERTP 2026: 2028"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -11954,8 +11994,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2027-12-31",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2027",
+     "sertp": "SERTP 2026: 2028"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -13139,8 +13189,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2028-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2028",
+     "sertp": "SERTP 2026: 2027"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -13675,8 +13735,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2029-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2029",
+     "sertp": "SERTP 2026: 2030"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -14217,8 +14287,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2029-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2029",
+     "sertp": "SERTP 2026: 2028"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -15196,8 +15276,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2029-12-31",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2029",
+     "sertp": "SERTP 2026: 2031"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -15414,8 +15504,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2030-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2030",
+     "sertp": "SERTP 2026: 2032"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -15522,8 +15622,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2030-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2030",
+     "sertp": "SERTP 2026: 2029"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -16499,8 +16609,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2030-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2030",
+     "sertp": "SERTP 2026: 2029"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -17022,8 +17142,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2030-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2030",
+     "sertp": "SERTP 2026: 2029"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -17838,8 +17968,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2031-05-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2031",
+     "sertp": "SERTP 2026: 2035"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -18273,8 +18413,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2032-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2032",
+     "sertp": "SERTP 2026: 2029"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",
@@ -19565,8 +19715,18 @@
    "vs_prev_irp": "New Project"
   },
   "detail_need_date": "2034-06-01",
-  "disagreements": [],
-  "flags": [],
+  "disagreements": [
+   {
+    "field": "in_service_year",
+    "values": {
+     "irp": "IRP 2034",
+     "sertp": "SERTP 2026: 2029"
+    }
+   }
+  ],
+  "flags": [
+   "sources_disagree"
+  ],
   "evidence": [
    {
     "field": "name",

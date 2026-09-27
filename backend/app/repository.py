@@ -17,7 +17,6 @@ class Repository:
     opportunities: dict[str, list[dict]]
     quality: dict
     sources: list[dict]
-    gpc_tables: dict
     changes: list[dict]
 
     def project_ref(self, project_id: str) -> dict:
@@ -50,6 +49,5 @@ def get_repository() -> Repository:
         opportunities=_json("opportunities.json", {"closest": [], "center": []}),
         quality=_json("quality.json", {}),
         sources=sources,
-        gpc_tables=_json("gpc_tables.json", {}),
         changes=_json("changes.json", []),
     )

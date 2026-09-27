@@ -126,7 +126,151 @@
     "detail_page": "2026-06-01"
    },
    "message": "UNION CITY - YATES 230 KV WHITE LINE REBUILD: need date differs between Table 2 and detail page p.279"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-18800",
+   "values": {
+    "irp": "IRP 2025",
+    "sertp": "SERTP 2026: 2030"
+   },
+   "message": "ECHECONNEE-WELLSTON 115KV REBUILD: IRP 2025 vs SERTP 2026: 2030"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-21139",
+   "values": {
+    "irp": "IRP 2026",
+    "sertp": "SERTP 2026: 2029"
+   },
+   "message": "GRADY - MORROW (WHITE) 115KV REBUILD: IRP 2026 vs SERTP 2026: 2029"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20785",
+   "values": {
+    "irp": "IRP 2027",
+    "sertp": "SERTP 2026: 2031"
+   },
+   "message": "SAV: GOSHEN (SAV) - KRAFT 115KV LINE REBUILD: IRP 2027 vs SERTP 2026: 2031"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20065",
+   "values": {
+    "irp": "IRP 2027",
+    "sertp": "SERTP 2026: 2028"
+   },
+   "message": "SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD: IRP 2027 vs SERTP 2026: 2028"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20024",
+   "values": {
+    "irp": "IRP 2027",
+    "sertp": "SERTP 2026: 2028"
+   },
+   "message": "DYER ROAD - EAST ROANOKE 115KV (REBUILD): IRP 2027 vs SERTP 2026: 2028"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20768",
+   "values": {
+    "irp": "IRP 2028",
+    "sertp": "SERTP 2026: 2027"
+   },
+   "message": "SOUTH MACON 115KV BUSES 1 & 2 REPLACEMENT: IRP 2028 vs SERTP 2026: 2027"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-21047",
+   "values": {
+    "irp": "IRP 2029",
+    "sertp": "SERTP 2026: 2030"
+   },
+   "message": "BROADWAY - ECHECONNEE 115 KV LINE REBUILD: IRP 2029 vs SERTP 2026: 2030"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-21141",
+   "values": {
+    "irp": "IRP 2029",
+    "sertp": "SERTP 2026: 2028"
+   },
+   "message": "LLOYD SHOALS - PORTERDALE PRIMARY 115KV REBUILD: IRP 2029 vs SERTP 2026: 2028"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20248",
+   "values": {
+    "irp": "IRP 2029",
+    "sertp": "SERTP 2026: 2031"
+   },
+   "message": "BAY CREEK - CONYERS 230KV REBUILD: IRP 2029 vs SERTP 2026: 2031"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20764",
+   "values": {
+    "irp": "IRP 2030",
+    "sertp": "SERTP 2026: 2032"
+   },
+   "message": "ATKINSON - NORTHSIDE DRIVE 115KV REBUILD: IRP 2030 vs SERTP 2026: 2032"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20761",
+   "values": {
+    "irp": "IRP 2030",
+    "sertp": "SERTP 2026: 2029"
+   },
+   "message": "ATKINSON - NORTHWEST 115KV REBUILD: IRP 2030 vs SERTP 2026: 2029"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-21128",
+   "values": {
+    "irp": "IRP 2030",
+    "sertp": "SERTP 2026: 2029"
+   },
+   "message": "GOAT ROCK REACTORS INSTALLATION: IRP 2030 vs SERTP 2026: 2029"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20284",
+   "values": {
+    "irp": "IRP 2030",
+    "sertp": "SERTP 2026: 2029"
+   },
+   "message": "KETTLE CREEK PRIMARY - PINE GROVE PRIMARY 115KV REBUILD: IRP 2030 vs SERTP 2026: 2029"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20690",
+   "values": {
+    "irp": "IRP 2031",
+    "sertp": "SERTP 2026: 2035"
+   },
+   "message": "EAST POINT - UNION CITY (WHITE) 230KV REBUILD: IRP 2031 vs SERTP 2026: 2035"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20784",
+   "values": {
+    "irp": "IRP 2032",
+    "sertp": "SERTP 2026: 2029"
+   },
+   "message": "SAV: COLEMAN - MELDRIM 115KV LINE REBUILD: IRP 2032 vs SERTP 2026: 2029"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20787",
+   "values": {
+    "irp": "IRP 2034",
+    "sertp": "SERTP 2026: 2029"
+   },
+   "message": "SAV: LITTLE OGEECHEE 230/115KV BANK REPLACEMENT: IRP 2034 vs SERTP 2026: 2029"
   }
  ],
- "built_at": "2026-09-27T04:20:19.567278+00:00"
+ "built_at": "2026-09-27T04:30:01.545795+00:00"
 }
