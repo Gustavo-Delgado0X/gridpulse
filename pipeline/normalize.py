@@ -18,3 +18,20 @@ def facility_name(raw: str) -> str:
 
 def endpoint_id(state: str, raw_name: str) -> str:
     return f"{state.lower()}:{slug(facility_name(raw_name))}"
+
+
+VOLTAGE_TAIL = re.compile(r"\s*\d+(?:\.\d+)?(?:\s*[-/]\s*\d+(?:\.\d+)?)*\s*kV.*$", re.IGNORECASE)
+
+
+def endpoint_names(title: str) -> list[str]:
+    """Facility names from a project title.
+
+    'Hooks - Thurmond 115 kV Tie: Rebuild' -> ['Hooks', 'Thurmond'];
+    'SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD' -> ['GOSHEN', 'MCINTOSH'].
+    """
+    head = ZONE_PREFIX.sub("", title.strip())
+    head = re.sub(r"\s*\([^)]*\)?", "", head)  # qualifiers like (SAV), (USA), unclosed "(..."
+    head = re.split(r"[:,&]|\s/\s?|/(?=[A-Za-z])", head)[0]
+    head = VOLTAGE_TAIL.sub("", head)
+    parts = re.split(r"\s*[-–]\s*", head)
+    return [re.sub(r"\s+", " ", p).strip() for p in parts if p.strip() and not re.fullmatch(r"[\d.]+", p.strip())]

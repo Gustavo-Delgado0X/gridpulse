@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pymupdf
 
-from pipeline.normalize import slug
+from pipeline.normalize import endpoint_names, slug
 
 EXPECTED_COUNTS = {"desc-2428": 44, "desc-2529": 47, "desc-2630": 54}
 HEADERS = ("Project ID", "Project Description", "Project Need", "Project Status",
@@ -117,15 +117,6 @@ def voltage_kv(title: str) -> int | None:
 def work_type(title: str) -> str:
     lowered = title.lower()
     return next((kind for word, kind in WORK_TYPES if word in lowered), "other")
-
-
-def endpoint_names(title: str) -> list[str]:
-    """Facility names from a DESC title: 'Hooks - Thurmond 115 kV Tie: Rebuild' -> ['Hooks', 'Thurmond']."""
-    head = re.split(r"[:/,&(]", title)[0]
-    head = re.split(r"\s\d+(?:\.\d+)?(?:\s*-\s*\d+(?:\.\d+)?)?\s*kV", head, flags=re.IGNORECASE)[0]
-    head = re.sub(r"\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?\s*kV.*$", "", head, flags=re.IGNORECASE)
-    parts = re.split(r"\s*[-–]\s*", head)
-    return [p.strip() for p in parts if p.strip() and not re.fullmatch(r"[\d.]+", p.strip())]
 
 
 def _joined(lines: list[str]) -> str:
