@@ -163,7 +163,7 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent.
 
 ## Disclosures
 
-- **AI assistance:** built with Claude Code (Anthropic) as a pair programmer, mostly test-first. All code is written for this project; no code was copied from other teams. An independent review with the Codex CLI flagged overclaims and data-integrity issues, which were fixed and are covered by tests.
+- **AI assistance:** built with Claude Code (Anthropic) as a pair programmer, with tests written alongside the code (see the commit history). All code is written for this project; no code was copied from other teams. An independent review with the Codex CLI flagged overclaims and data-integrity issues, which were fixed and are covered by tests.
 - **AI features:** the PydanticAI resource-profiler and explainer (plan item P1c) are **not** included in this submission. Explanations are deterministic templates, labelled `TEMPLATE`.
 - **Estimates:** cost/impact figures are illustrative arithmetic, not forecasts. Right-of-way widths, $/acre and mobilization costs are team assumptions (not sourced from either utility), shown and editable in the UI.
 - **Planning documents:** `docs/GRIDPULSE_MASTER_STRATEGY.md` and `docs/GRIDPULSE_CONTRACTS_DRAFT.md`.

@@ -52,7 +52,7 @@ const dots = (pattern: string) => pattern.split("").map((c, i) => <span key={i} 
 const PROBLEMS = [
   { h: "Plans are PDFs, not data", b: "Hundreds of pages of project tables and detail sheets, each utility in its own format, some fields redacted.", p: "101010101" },
   { h: "Neighbours plan blind", b: "DESC and Georgia Power schedule work within a few miles of each other across the Savannah River, on overlapping build windows.", p: "110110000" },
-  { h: "Schedules drift between versions", b: "In-service dates slip and costs move from one edition to the next, and the tables rarely agree with their own detail pages.", p: "100010001" },
+  { h: "Schedules drift between versions", b: "In-service dates slip and costs move from one edition to the next, and a table can disagree with its own detail page.", p: "100010001" },
   { h: "Locations are ambiguous", b: "Substations are named, not placed. The same endpoint can appear with two coordinates a third of a mile apart.", p: "010111010" },
 ];
 

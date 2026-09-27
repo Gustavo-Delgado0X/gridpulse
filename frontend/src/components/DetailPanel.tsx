@@ -48,12 +48,15 @@ function ProjectFacts({ project, mapsLink }: { project: Project; mapsLink: strin
         {project.answer_key_id && <span className="badge-soft">Answer key {project.answer_key_id}</span>}</h4>
       <dl className="dl">
         <dt>In service</dt><dd>{project.in_service_date}</dd>
-        <dt>Build window</dt><dd>{project.window_start ? `${project.window_start} → ${project.window_end}` : "Not published"}</dd>
+        <dt>Build window</dt><dd>{project.window_start ? `${project.window_start} → ${project.window_end}` : "Not published"}
+          {project.window_method === "desc_cost_schedule" && <span className="muted"> · estimated from spend years</span>}
+          {project.window_method === "gpc_start_need" && <span className="muted"> · published start → need date</span>}</dd>
         {project.voltage_kv && <><dt>Voltage</dt><dd>{project.voltage_kv} kV</dd></>}
         {project.status && <><dt>Status</dt><dd>{project.status}</dd></>}
         <dt>Endpoints</dt>
         <dd>{project.endpoints.map((e) => (
-          <span key={e.id} className="endpoint"><PrecisionTag precision={e.precision} /> {e.name_raw}</span>))}</dd>
+          <span key={e.id} className="endpoint"><PrecisionTag precision={e.precision} /> {e.name_raw}
+            {e.precision === "osm_feature" && <span className="muted small">{e.confirmed_by_pdf_context ? " · context confirmed" : " · name match only"}</span>}</span>))}</dd>
       </dl>
       {mapsLink && <a className="link" href={mapsLink} target="_blank" rel="noreferrer">Open in maps ↗</a>}
     </section>

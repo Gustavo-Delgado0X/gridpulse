@@ -30,7 +30,7 @@ export function OpportunitiesToolbar({ items, filters, method, onMethod, distanc
     { key: "t1", value: s.mustCoordinate, label: "must coordinate", active: t1Only, onClick: onMustCoordinate,
       hint: "T1: touching or a shared facility" },
     { key: "overlap", value: s.sameWindow, label: "overlap", active: filters.sameWindowOnly, onClick: onOverlap,
-      hint: "Published build windows overlap" },
+      hint: "Build windows overlap (GPC: published start → need; DESC: estimated from spend years)" },
     { key: "conflicts", value: s.sourcesDisagree, label: "conflicts", active: filters.flags.includes("sources_disagree"),
       onClick: onConflicts, hint: "Source documents disagree on a date", warn: true },
   ];

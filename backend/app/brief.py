@@ -36,6 +36,8 @@ def _money(value: float | None) -> str:
 
 def _project(p: dict) -> str:
     window = f"{p['window_start']} → {p['window_end']}" if p.get("window_start") else "not published"
+    if p.get("window_method") == "desc_cost_schedule":
+        window += " (estimated from spend years)"
     endpoints = ", ".join(f"{escape(e['name_raw'])} ({escape(e['precision'].replace('_', ' '))})" for e in p["endpoints"])
     cost = _money(p["cost_public"]["total_usd"]) if p.get("cost_public") else "redacted in public filing"
     return f"""<div class="card"><span class="tag">{escape(p['utility'])}</span><span class="mono muted">{escape(p['id'])}</span>
@@ -85,7 +87,7 @@ def render_brief(detail: dict) -> str:
 <p class="mono muted">{escape(est['formula'])}</p>
 <dl><dt>Shared corridor</dt><dd class="mono">{inputs['shared_corridor_mi']:.1f} mi (edit in the app)</dd>
 <dt>ROW width</dt><dd class="mono">{inputs['row_width_ft']} ft (team assumption)</dd>
-<dt>Mobilization saved</dt><dd class="mono">{_money(est['mobilization_saved_usd'])}</dd>
+<dt>Mobilization saved (user input)</dt><dd class="mono">{_money(est['mobilization_saved_usd'])}</dd>
 <dt>Illustrative value (only if the corridor is shared)</dt><dd class="mono">{_money(est['total_usd'])}</dd></dl>
 <h2>Evidence</h2>{_evidence(facts)}
 <p class="muted">Sources: DESC $2M+ project lists (scrtp.com), Georgia Power 2025 IRP Vol. 3 public disclosure (unredacted fields only),

@@ -12,7 +12,7 @@ def test_defaults_use_higher_voltage_row_width_and_known_miles():
 
     assert inputs["row_width_ft"] == 125  # 230 kV assumption
     assert inputs["shared_corridor_mi"] == 0.0  # no source says the corridors are shared
-    assert inputs["avoided_mobilizations"] == 1
+    assert inputs["avoided_mobilizations"] == 0  # no evidence of an avoided mobilization either
     assert {a["key"] for a in inputs["assumptions"]} >= {"row_width_ft", "mobilization_usd", "usd_per_acre"}
 
 

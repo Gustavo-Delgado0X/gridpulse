@@ -2,7 +2,7 @@
 from engine.tiers import TIER_LABELS
 
 TIMING_TEXT = {
-    "same_window": "their published build windows overlap",
+    "same_window": "their build windows overlap",
     "within_1y": "their in-service dates are within a year of each other",
     "separate": "their timing is separate",
 }

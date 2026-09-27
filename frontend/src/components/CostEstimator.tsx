@@ -53,7 +53,7 @@ export function CostEstimator({ inputs, draft, onDraft }: Props) {
       <dl className="estimator__out mono">
         <div><dt>Shared ROW</dt><dd>{result.acres.toFixed(1)} acres</dd></div>
         <div><dt>Land value</dt><dd>{formatUsd(result.land)}</dd></div>
-        <div><dt>Mobilization saved</dt><dd>{formatUsd(result.mobilization)}</dd></div>
+        <div><dt>Mobilization saved (your input)</dt><dd>{formatUsd(result.mobilization)}</dd></div>
         <div className="estimator__total"><dt>Illustrative value</dt><dd data-testid="estimate-total">{formatUsd(result.total)}</dd></div>
       </dl>
       <ul className="cost-context">

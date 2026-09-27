@@ -14,7 +14,8 @@ NUMERIC_INPUTS = ("shared_corridor_mi", "row_width_ft", "usd_per_acre", "mobiliz
 ASSUMPTIONS = [
     {"key": "row_width_ft", "text": "Right-of-way width by voltage (69 kV 75 ft, 115 kV 100 ft, 230 kV 125 ft, "
                                     "500 kV 175 ft): team assumption"},
-    {"key": "mobilization_usd", "text": "$250,000 per avoided crew/equipment mobilization: team assumption"},
+    {"key": "mobilization_usd", "text": "$250,000 per avoided crew/equipment mobilization: team assumption. "
+                                        "Avoided mobilizations default to 0; enter how many you expect"},
     {"key": "usd_per_acre", "text": "$5,000 per acre of right-of-way: team assumption"},
     {"key": "shared_corridor_mi", "text": "Shared corridor: 0 by default. No source states that two projects share a "
                                           "corridor; enter a length to explore the arithmetic"},
@@ -38,7 +39,7 @@ def default_inputs(project_a: dict, project_b: dict, dist_closest_mi: float) -> 
         "row_width_ft": row_width_for(max(voltages) if voltages else None),
         "usd_per_acre": DEFAULT_USD_PER_ACRE,
         "mobilization_usd": DEFAULT_MOBILIZATION_USD,
-        "avoided_mobilizations": 1,
+        "avoided_mobilizations": 0,
         "assumptions": ASSUMPTIONS,
         "cost_context": [
             {"utility": p["utility"], "total_usd": (p.get("cost_public") or {}).get("total_usd"),

@@ -1,25 +1,21 @@
 # GridPulse: Session Handoff
 
-## ▶ BUILD STATUS (updated 2026-09-27 ~00:45 EDT). Read this first.
+## ▶ BUILD STATUS (updated 2026-09-27 ~05:30 EDT). Read this first.
 
-**The build is done and all tests pass.** 23 commits on `main`, all authored by **Gustavo Delgado**.
-- Tests: 165 pytest, 18 Vitest and 6 Playwright E2E, all passing. Coverage is 88%.
-- Gate A passes (answer key 6/6), and so does Gate B (the real-data build reproduces all 6).
+**Built, deployed and audited.** `main` is pushed to the private repo https://github.com/Gustavo-Delgado0X/gridpulse (all commits authored by **Gustavo Delgado**) and live at https://gridpulse-five.vercel.app (landing at `/`, workspace at `/app`).
+- Tests: 182 pytest (87% coverage of engine/pipeline/app), 47 Vitest, 13 Playwright E2E — all passing.
+- Gate A (answer key 6/6) and Gate B (real-data build reproduces all 6) pass; `tests/test_evidence_verbatim.py` checks every quoted fact against its PDF page.
+- Current data: 182 projects (102 located), 52 DESC × GPC pairs within 25 mi (2 T1, 2 T3, 48 T4), 317 plan-change events, 41 data-quality issues.
 
-**Done:**
-- WP-01 through WP-06.
-- P1a: cost estimator and printable brief.
-- P1b: plan changes, including DESC versions, GPC tables 3/4 and IRP vs SERTP.
-- Parts of P1d: data-quality view, satellite toggle, DigitalOcean spec (`.do/app.yaml`).
-- README and E2E suite.
-- Code review by 3 agents; all findings fixed.
+**Done:** WP-01–WP-06; P1a estimator + brief; P1b plan changes; P1d data-quality view, satellite layer; production redesign and landing page (design handoffs in `design_handoff_*`); AGPL-3.0 license; Vercel deploy (`vercel.json`, `api/index.py`).
+**Audits:** reviewer agents, a judge-style UI review, and a Codex CLI data-integrity audit. Fixed: SERTP key collisions, reused DESC Project IDs, change↔opportunity linking (`primary_id`), dates quoted as printed, ambiguous locations left unresolved, estimator no longer assumes a shared corridor, parser anomalies reported, UI/README overclaims removed.
+**Ranking list:** opportunities use DESC 2024–28 (the edition Sperry's answer key uses); later DESC lists feed Plan changes and the inspector's "later plan" markers.
 
-**Not done (blockers needing the user):**
-1. **GitHub.** There's no remote yet. SSH auth works as `gustavodelgado00x-AI`. The user must create the repo (or approve creating it), then run `git remote add origin git@github.com:<owner>/gridpulse.git && git push -u origin main`.
-2. **Deploy.** DigitalOcean needs an account, `doctl` and the repo URL. Set `github.repo` in `.do/app.yaml`.
-3. **P1c AI agents.** Cut, since no `OPENROUTER_API_KEY` is available. The README discloses this, and explanations are labelled TEMPLATE.
-4. **LICENSE.** PyMuPDF is AGPL-3.0, so the repo license must be AGPL-compatible. This is the user's choice.
-5. **Devpost.** Screenshots, a demo recording and the submission, due before 11:00 EDT.
+**Still open (user decisions):**
+1. **Repo visibility:** private until the user says to make it public (`gh repo edit --visibility public`; gh is at `~/.local/bin`).
+2. **Devpost:** screenshots, demo recording and submission before 11:00 EDT.
+3. **P1c AI agents:** cut (no API key); explanations are deterministic and labelled TEMPLATE.
+4. **Redeploy after changes:** `npx vercel --prod` from the repo root (Vercel is not git-connected).
 
 **Run it:** `make dev`, then open http://localhost:5173. Other targets: `make test`, `make e2e`, `make pipeline` (rebuilding needs `data/raw` and `data/cache`).
 
