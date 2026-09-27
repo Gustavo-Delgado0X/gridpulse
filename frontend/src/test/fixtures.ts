@@ -25,8 +25,14 @@ export const OPPS: Opportunity[] = [
 
 export const QUALITY: Quality = {
   coverage: { projects: 182, projects_located: 101, projects_unlocated: 81,
-              endpoints_by_precision: { osm_feature: 114, sperry_provided: 16, unresolved: 197 } },
+              endpoints_by_precision: { osm_feature: 123, unresolved: 204 } },
   acceptance: { passed: true, matched: 6, expected: 6, unexpected: 0, details: [
     { overlap_id: "OVL_1", expected_mi: 4.09, got_mi: 4.09, expected_gap: 3074, got_gap: 3074, passed: true }] },
-  discrepancies: [{ kind: "coordinate_conflict", project_id: "gpc-20065", message: "MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi" }],
+  independent: { found: 2, expected: 2, details: [
+    { overlap_id: "OVL_1", expected_mi: 4.09, got_center_mi: 4.09, tier: "T1", touching: true, got_closest_mi: 0,
+      expected_gap: 3074, got_gap: 3074, found: true },
+    { overlap_id: "OVL_5", expected_mi: 14.34, got_center_mi: 20.46, tier: "T4", touching: false, got_closest_mi: 20.49,
+      expected_gap: 365, got_gap: 365, found: true }] },
+  discrepancies: [{ kind: "coordinate_conflict", project_id: "gpc-20065", message: "MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi; GridPulse uses OpenStreetMap",
+    endpoint: "MCINTOSH", values: { osm: [32.35, -81.17], answer_key: [32.35, -81.18] } }],
 };

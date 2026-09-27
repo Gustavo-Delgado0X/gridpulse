@@ -151,3 +151,6 @@
   .lp-section, .lp-band, .lp-dark, .lp-cta { padding: 64px 0; }
 }
 @media (prefers-reduced-motion: reduce) { .landing { scroll-behavior: auto; } .lp-btn:hover { transform: none; } }
+.lp-tables { display: grid; gap: 28px; align-content: start; }
+.lp-table caption { caption-side: top; text-align: left; padding-bottom: 6px; font: 500 12px/1.4 var(--font-mono, monospace); color: #666;
+  text-transform: uppercase; letter-spacing: 0.04em; }

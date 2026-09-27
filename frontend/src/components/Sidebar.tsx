@@ -89,7 +89,7 @@ export function Sidebar({ view, onView, counts, collapsed, onCollapse, query, on
       <div className="sidebar__foot">
         {acceptance && (
           <button type="button" className={`sidebar__item validated ${acceptance.passed ? "is-ok" : "is-fail"}`} onClick={() => onView("quality")}
-                  title="Sperry's six answer-key overlaps reproduced to ±0.01 mi">
+                  title="Distance math reproduces Sperry's answer-key distances to ±0.01 mi (checked on the key's coordinates; never used as locations)">
             <span className="dot" aria-hidden="true" />
             <span className="sidebar__text">{acceptance.passed ? "Validated" : "Validation failed"}</span>{" "}
             <span className={collapsed ? "sr-only" : ""}>{acceptance.matched}/{acceptance.expected}</span>

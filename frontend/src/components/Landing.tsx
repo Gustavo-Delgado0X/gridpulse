@@ -7,6 +7,7 @@ export interface LandingStats {
   pairs: number | null;
   changes: number | null;
   acceptance: Quality["acceptance"] | null;
+  independent: Quality["independent"] | null;
 }
 
 export interface SourceFact {
@@ -58,7 +59,7 @@ const PROBLEMS = [
 
 const STEPS = [
   { n: "01", h: "Detect plan changes", b: "Compare plan editions project by project: slipped dates, cost changes, renames, and tables that disagree with their detail pages." },
-  { n: "02", h: "Validate the data", b: "Resolve endpoints conservatively — Sperry-confirmed, OSM-resolved, or unresolved — and benchmark distances against the answer key." },
+  { n: "02", h: "Validate the data", b: "Place endpoints from OpenStreetMap only, leave ambiguous ones unresolved, and check the result against Sperry's answer key without borrowing its coordinates." },
   { n: "03", h: "Rank opportunities", b: "Measure every DESC × GPC pair at closest points and centers, tier it from touching to under 25 mi, and weigh build-window overlap." },
   { n: "04", h: "Trace to evidence", b: "Open any pair to see the rationale, the timeline, and each quoted field with its source document and page." },
 ];
@@ -79,9 +80,9 @@ function layers(pair: Opportunity | null, fact: SourceFact | null | undefined) {
 
 const fmt = (n: number | null | undefined) => (n == null ? PENDING : String(n));
 
-function Schematic() {
+function Schematic({ miles }: { miles: string }) {
   return (
-    <svg className="schematic" viewBox="0 0 540 460" role="img" aria-label="Schematic: the Jasper–Okatie DESC line and the Goshen–McIntosh GPC line, 3.40 miles apart across the Savannah River">
+    <svg className="schematic" viewBox="0 0 540 460" role="img" aria-label={`Schematic: the Jasper–Okatie DESC line and the Goshen–McIntosh GPC line, ${miles} apart across the Savannah River`}>
       <defs>
         <pattern id="lp-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="var(--line-soft)" /></pattern>
       </defs>
@@ -94,12 +95,13 @@ function Schematic() {
       </g>
       <line x1="221" y1="178" x2="198" y2="340" stroke="var(--text-primary)" strokeWidth="2" />
       <line x1="268" y1="171" x2="338" y2="191" stroke="var(--text-primary)" strokeWidth="2" />
-      <line x1="338" y1="191" x2="415" y2="211" stroke="var(--text-primary)" strokeWidth="2" />
+      <line x1="338" y1="191" x2="415" y2="211" stroke="var(--text-primary)" strokeWidth="2" strokeDasharray="2 4" />
       <line x1="221" y1="178" x2="268" y2="171" stroke="var(--text-primary)" strokeWidth="1.5" strokeDasharray="4 3" />
       <rect x="215" y="172" width="12" height="12" fill="var(--text-primary)" /><rect x="192" y="334" width="12" height="12" fill="var(--text-primary)" />
-      <circle cx="268" cy="171" r="6" fill="var(--text-primary)" /><circle cx="338" cy="191" r="4" fill="var(--text-primary)" /><circle cx="415" cy="211" r="6" fill="var(--text-primary)" />
-      <rect x="233" y="141" width="54" height="20" rx="3" fill="var(--text-primary)" /><text x="260" y="155" textAnchor="middle" className="schematic__pill">3.40 mi</text>
-      <text x="152" y="162" className="schematic__label">McIntosh</text><text x="272" y="200" className="schematic__label">Okatie</text>
+      <circle cx="268" cy="171" r="6" fill="var(--text-primary)" /><circle cx="338" cy="191" r="4" fill="var(--text-primary)" /><circle cx="415" cy="211" r="5" fill="var(--bg-surface, #fff)" stroke="var(--text-primary)" strokeWidth="1.5" />
+      <rect x="233" y="141" width="54" height="20" rx="3" fill="var(--text-primary)" /><text x="260" y="155" textAnchor="middle" className="schematic__pill">{miles.replace(" miles", " mi")}</text>
+      <text x="152" y="162" className="schematic__label">McIntosh</text><text x="272" y="200" className="schematic__label">Jasper</text>
+      <text x="360" y="240" className="schematic__label">Okatie · not located</text>
       <text x="152" y="358" className="schematic__label">Goshen</text>
       <circle cx="21" cy="422" r="3.5" fill="var(--text-primary)" /><text x="30" y="426" className="schematic__legend">DESC</text>
       <rect x="17.5" y="438" width="7" height="7" fill="var(--text-primary)" /><text x="30" y="445" className="schematic__legend">Georgia Power</text>
@@ -113,13 +115,16 @@ export function Landing({ stats, featured, quality, conflict, sourceFact }: Prop
   const studyHref = `${WORKSPACE_PATH}${toHash({ pair: pair?.id ?? FEATURED_ID, method: "closest", d: 25 })}`;
   const precision = quality?.coverage.endpoints_by_precision;
   const count = (key: string) => (precision ? String(precision[key] ?? 0) : PENDING);
+  const independent = stats.independent;
   const bench = acceptance?.details.map((d) => ({ id: d.overlap_id, expected: d.expected_mi, got: d.got_mi, gap: d.got_gap, passed: d.passed })) ?? [];
+  const closest = pair ? (pair.touching ? "touching" : `${pair.dist_closest_mi.toFixed(2)} mi`) : PENDING;
+  const schematicMiles = pair ? (pair.touching ? "touching" : `${pair.dist_closest_mi.toFixed(2)} miles`) : "a few miles";
   const overlap = overlapRange(pair);
   const proof = [
     { n: fmt(stats.projects), l: "projects parsed from public plans" },
     { n: fmt(stats.pairs), l: "DESC × GPC pairs within 25 mi" },
     { n: fmt(stats.changes), l: "changes detected between plan versions" },
-    { n: acceptance ? `${acceptance.matched} / ${acceptance.expected}` : PENDING, l: "Sperry answer-key overlaps reproduced" },
+    { n: independent ? `${independent.found} / ${independent.expected}` : PENDING, l: "answer-key pairs found with our own locations" },
   ];
 
   return (
@@ -199,7 +204,7 @@ export function Landing({ stats, featured, quality, conflict, sourceFact }: Prop
           </div>
           <div className="lp-split">
             <div className="lp-schematic">
-              <Schematic />
+              <Schematic miles={schematicMiles} />
               <div className="lp-card lp-card--float"><p className="lp-card__title">Build windows overlap · {pair?.window_overlap_days ?? PENDING} days</p>
                 <p className="lp-muted">{overlap ?? PENDING}. Shared staging and outages worth reviewing.</p></div>
             </div>
@@ -210,9 +215,9 @@ export function Landing({ stats, featured, quality, conflict, sourceFact }: Prop
           <div className="lp-views">
             <article>
               <div className="lp-mini">
-                <p className="lp-muted small">#04 <span className="lp-badge">T3</span> &lt; 5 mi · Share logistics</p>
+                <p className="lp-muted small">#{pair ? String(pair.rank).padStart(2, "0") : PENDING} <span className="lp-badge">{pair?.tier ?? PENDING}</span> &lt; 5 mi · Share logistics</p>
                 <p><span className="lp-code">DESC</span> Jasper – Okatie 230 kV #2</p><p><span className="lp-code">GPC</span> SAV: Goshen – McIntosh 115 kV</p>
-                <p><strong>3.40 mi</strong> <span className="lp-muted">closest · 213-day overlap</span></p>
+                <p><strong>{closest}</strong> <span className="lp-muted">closest · {pair?.window_overlap_days ?? PENDING}-day overlap</span></p>
                 <p className="lp-warn small">▲ Source conflict · IRP and SERTP disagree on a date</p>
               </div>
               <h3>Opportunities</h3>
@@ -231,10 +236,9 @@ export function Landing({ stats, featured, quality, conflict, sourceFact }: Prop
             <article>
               <div className="lp-mini">
                 <div className="lp-bar" aria-hidden="true">
-                  <span style={{ flexGrow: precision?.sperry_provided ?? 0 }} className="ok" /><span style={{ flexGrow: precision?.osm_feature ?? 0 }} className="ink" />
+                  <span style={{ flexGrow: precision?.osm_feature ?? 0 }} className="ink" />
                   <span style={{ flexGrow: precision?.unresolved ?? 0 }} className="none" />
                 </div>
-                <p className="lp-row"><span>Sperry-confirmed</span><strong>{count("sperry_provided")}</strong></p>
                 <p className="lp-row"><span>OSM-resolved</span><strong>{count("osm_feature")}</strong></p>
                 <p className="lp-row"><span className="lp-muted">Unresolved — not guessed</span><strong>{count("unresolved")}</strong></p>
               </div>
@@ -265,22 +269,39 @@ export function Landing({ stats, featured, quality, conflict, sourceFact }: Prop
         <section id="validation" className="lp-wrap lp-section lp-split">
           <div>
             <p className="lp-eyebrow">Validation</p>
-            <h2 className="lp-h2">Checked against the answer key. {acceptance && !acceptance.passed ? "Not yet six for six." : "Six for six."}</h2>
-            <p className="lp-lede">GridPulse reproduces every overlap in Sperry's answer key to within ±0.01 mi using the center method, matches every in-service gap,
-              and leaves the three control projects unflagged.</p>
-            <p className="lp-muted">And where the data is thin, it says so. Ambiguous or unmatched endpoints are left unresolved rather than guessed — {quality ? `${quality.coverage.projects_unlocated} of ${quality.coverage.projects}` : PENDING} projects are listed but not mapped.</p>
+            <h2 className="lp-h2">Checked against the answer key, not built from it.</h2>
+            <p className="lp-lede">Sperry's answer key is a benchmark only: no coordinate from it is used to place a project.
+              {acceptance ? ` With the key's own coordinates, GridPulse's distance math reproduces ${acceptance.matched} of ${acceptance.expected} distances to within ±0.01 mi.` : ""}
+              {independent ? ` With its own OpenStreetMap locations, it finds ${independent.found} of ${independent.expected} answer-key pairs and matches every in-service gap.` : ""}</p>
+            <p className="lp-muted">Where the data is thin, it says so. Ambiguous or unmatched endpoints are left unresolved rather than guessed — Okatie is not in
+              OpenStreetMap, so centers that depend on it differ from the key — and {quality ? `${quality.coverage.projects_unlocated} of ${quality.coverage.projects}` : PENDING} projects are listed but not mapped.</p>
           </div>
-          <table className="lp-table" aria-label="Sperry answer-key benchmark">
-            <thead><tr><th scope="col">Case</th><th scope="col" className="num">Answer key</th><th scope="col" className="num">GridPulse</th>
-              <th scope="col" className="num">Gap</th><th scope="col" className="num">Result</th></tr></thead>
-            <tbody>
-              {bench.map((b) => (
-                <tr key={b.id}><td className="lp-mono">{b.id}</td><td className="num">{b.expected.toFixed(2)} mi</td>
-                  <td className="num">{b.got != null ? `${b.got.toFixed(2)} mi` : "—"}</td><td className="num lp-muted">{b.gap ?? "—"} d</td>
-                  <td className={`num ${b.passed ? "" : "lp-fail"}`}>{b.passed ? "Pass" : "Fail"}</td></tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="lp-tables">
+            <table className="lp-table" aria-label="Distance math on Sperry's coordinates">
+              <caption>Distance math · key coordinates</caption>
+              <thead><tr><th scope="col">Case</th><th scope="col" className="num">Answer key</th><th scope="col" className="num">GridPulse</th>
+                <th scope="col" className="num">Gap</th><th scope="col" className="num">Result</th></tr></thead>
+              <tbody>
+                {bench.map((b) => (
+                  <tr key={b.id}><td className="lp-mono">{b.id}</td><td className="num">{b.expected.toFixed(2)} mi</td>
+                    <td className="num">{b.got != null ? `${b.got.toFixed(2)} mi` : "—"}</td><td className="num lp-muted">{b.gap ?? "—"} d</td>
+                    <td className={`num ${b.passed ? "" : "lp-fail"}`}>{b.passed ? "Pass" : "Fail"}</td></tr>
+                ))}
+              </tbody>
+            </table>
+            <table className="lp-table" aria-label="Answer-key pairs found with GridPulse locations">
+              <caption>Our own locations · OpenStreetMap</caption>
+              <thead><tr><th scope="col">Case</th><th scope="col" className="num">Key centers</th><th scope="col" className="num">Our centers</th>
+                <th scope="col" className="num">Tier</th><th scope="col" className="num">Result</th></tr></thead>
+              <tbody>
+                {(independent?.details ?? []).map((d) => (
+                  <tr key={d.overlap_id}><td className="lp-mono">{d.overlap_id}</td><td className="num">{d.expected_mi.toFixed(2)} mi</td>
+                    <td className="num">{d.got_center_mi != null ? `${d.got_center_mi.toFixed(2)} mi` : "—"}</td><td className="num">{d.tier ?? "—"}</td>
+                    <td className={`num ${d.found ? "" : "lp-fail"}`}>{d.found ? "Found" : "Not found"}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
 
         <section className="lp-cta">

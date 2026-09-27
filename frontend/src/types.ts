@@ -144,6 +144,15 @@ export interface Quality {
     unexpected: number;
     details: { overlap_id: string; expected_mi: number; got_mi: number; expected_gap: number; got_gap: number; passed: boolean }[];
   };
+  /** The answer-key pairs as GridPulse finds them with its own locations (OSM + reviewed overrides, no key coordinates). */
+  independent: {
+    found: number;
+    expected: number;
+    details: {
+      overlap_id: string; expected_mi: number; got_center_mi: number | null; tier: Tier | null; touching: boolean;
+      got_closest_mi: number | null; expected_gap: number; got_gap: number | null; found: boolean;
+    }[];
+  };
   discrepancies: Discrepancy[];
 }
 

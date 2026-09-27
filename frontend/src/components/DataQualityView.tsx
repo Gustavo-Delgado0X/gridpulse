@@ -3,7 +3,6 @@ import { pairsFor } from "../filters";
 import type { Opportunity, Quality } from "../types";
 
 const PROVENANCE: { key: string; label: string; tag: string; tone: "ok" | "neutral" | "warn" | "muted"; help: string }[] = [
-  { key: "sperry_provided", label: "Sperry-confirmed", tag: "Confirmed", tone: "ok", help: "Matches the Sperry answer key" },
   { key: "osm_feature", label: "OSM-resolved", tag: "Resolved", tone: "neutral", help: "Matched to a named OpenStreetMap substation" },
   { key: "approximate", label: "Approximate", tag: "Approximate", tone: "warn", help: "Endpoint proxy or regional approximation" },
   { key: "unresolved", label: "Unresolved", tag: "Unresolved", tone: "muted", help: "No safe match — intentionally not guessed" },
@@ -18,7 +17,7 @@ const ISSUE_LABEL: Record<string, { text: string; warn: boolean }> = {
   id_reused: { text: "≠ Project ID reused", warn: true },
 };
 const USES: Record<string, string> = {
-  coordinate_conflict: "Sperry answer key", cost_table_mismatch: "The Total column", date_normalized: "The normalized date shown",
+  coordinate_conflict: "OpenStreetMap", cost_table_mismatch: "The Total column", date_normalized: "The normalized date shown",
   id_reused: "Not linked as a change",
 };
 type IssueFilter = keyof typeof ISSUE_TYPES;
@@ -48,7 +47,7 @@ const VALUE_LABEL: Record<string, string> = { osm: "OpenStreetMap", answer_key: 
   printed: "Printed", used: "Normalized to", before: "Earlier project", after: "Later project" };
 
 export function DataQualityView({ quality, opportunities = [], onOpenOpportunity }: Props) {
-  const { coverage, acceptance, discrepancies } = quality;
+  const { coverage, acceptance, independent, discrepancies } = quality;
   const [filter, setFilter] = useState<IssueFilter>("all");
   const [query, setQuery] = useState("");
   const [expanded, setExpanded] = useState<number | null>(null);
@@ -72,6 +71,8 @@ export function DataQualityView({ quality, opportunities = [], onOpenOpportunity
           <div><dd>{coverage.projects_located} <span className="muted small">· {locatedPct}%</span></dd><dt>Located</dt></div>
           <div><dd>{coverage.projects_unlocated}</dd><dt>Not located · listed, not mapped</dt></div>
           <div className={acceptance.passed ? "is-ok" : "is-danger"}><dd>{acceptance.matched}/{acceptance.expected}</dd><dt>Validation passed</dt></div>
+          {independent && <div className={independent.found === independent.expected ? "is-ok" : "is-warn"}>
+            <dd>{independent.found}/{independent.expected}</dd><dt>Found · own locations</dt></div>}
           <div className="is-warn"><dd>{discrepancies.length}</dd><dt>Open issues</dt></div>
         </dl>
       </section>
@@ -94,10 +95,12 @@ export function DataQualityView({ quality, opportunities = [], onOpenOpportunity
             <p className="muted small">Ambiguous or unmatched endpoints are left unresolved rather than guessed. Projects with no located endpoint remain listed but are not mapped — {coverage.projects_unlocated} of {coverage.projects} today.</p>
           </section>
           <section className="block">
-            <header className="block__head"><h2 className="panel-title">Sperry validation benchmark</h2>
-              <span className={acceptance.passed ? "tone-text--ok" : "tone-text--danger"}><strong>{acceptance.matched} / {acceptance.expected} passed</strong></span></header>
-            <p className="muted small">Project-center distances calculated by GridPulse, compared against the Sperry answer key. Tolerance ±0.01 mi.</p>
-            <table className="mini-table">
+            <header className="block__head"><h2 className="panel-title">Sperry answer-key benchmark</h2></header>
+            <p className="muted small">The answer key is used only to check GridPulse, never as a location source.</p>
+            <h3 className="section-title">Distance math <span className={acceptance.passed ? "tone-text--ok" : "tone-text--danger"}>
+              {acceptance.matched} / {acceptance.expected} passed</span></h3>
+            <p className="muted small">Center-to-center distances computed from the key's own coordinates. Tolerance ±0.01 mi.</p>
+            <table className="mini-table" aria-label="Distance math on Sperry's coordinates">
               <thead><tr><th scope="col">Case</th><th scope="col" className="num">Expected</th><th scope="col" className="num">GridPulse</th>
                 <th scope="col" className="num">Difference</th><th scope="col" className="num">In-service gap</th><th scope="col">Result</th></tr></thead>
               <tbody>
@@ -112,6 +115,29 @@ export function DataQualityView({ quality, opportunities = [], onOpenOpportunity
                 ))}
               </tbody>
             </table>
+            {independent && (
+              <>
+                <h3 className="section-title">With our own locations <span className={independent.found === independent.expected ? "tone-text--ok" : "tone-text--warn"}>
+                  {independent.found} / {independent.expected} found</span></h3>
+                <p className="muted small">The same pairs, measured on GridPulse's OpenStreetMap locations. Centers differ where an endpoint
+                  (such as Okatie) is not in OpenStreetMap and stays unresolved.</p>
+                <table className="mini-table" aria-label="Answer-key pairs found with GridPulse locations">
+                  <thead><tr><th scope="col">Case</th><th scope="col" className="num">Key centers</th><th scope="col" className="num">Our centers</th>
+                    <th scope="col" className="num">Our closest</th><th scope="col">Tier</th><th scope="col" className="num">In-service gap</th><th scope="col">Result</th></tr></thead>
+                  <tbody>
+                    {independent.details.map((d) => (
+                      <tr key={d.overlap_id}>
+                        <td className="mono">{d.overlap_id}</td><td className="num">{d.expected_mi.toFixed(2)} mi</td>
+                        <td className="num">{d.got_center_mi != null ? `${d.got_center_mi.toFixed(2)} mi` : "—"}</td>
+                        <td className="num">{d.touching ? "Touching" : d.got_closest_mi != null ? `${d.got_closest_mi.toFixed(2)} mi` : "—"}</td>
+                        <td>{d.tier ?? "—"}</td><td className="num">{d.got_gap ?? "—"} d</td>
+                        <td>{d.found ? <span className="tone-text--ok">✓ Found</span> : <span className="tone-text--danger">✗ Not found</span>}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
+            )}
           </section>
         </div>
         <section className="issues" aria-label="Issues">

@@ -11,37 +11,47 @@ test("landing route: / without a pair hash; everything else is the workspace", (
 });
 
 test("landing shows the headline, live proof numbers and links into the workspace", () => {
-  render(<Landing stats={{ projects: 182, pairs: OPPS.length, changes: 322, acceptance: QUALITY.acceptance }}
+  render(<Landing stats={{ projects: 182, pairs: OPPS.length, changes: 322, acceptance: QUALITY.acceptance, independent: QUALITY.independent }}
                   featured={OPPS[1]} quality={QUALITY} />);
   expect(screen.getByRole("heading", { level: 1, name: /GridPulse finds where transmission plans meet/ })).toBeInTheDocument();
   const proof = screen.getByRole("region", { name: "At a glance" });
   expect(within(proof).getByText("182")).toBeInTheDocument();
   expect(within(proof).getByText(String(OPPS.length))).toBeInTheDocument();
-  expect(within(proof).getByText("6 / 6")).toBeInTheDocument();
+  expect(within(proof).getByText(`${QUALITY.independent.found} / ${QUALITY.independent.expected}`)).toBeInTheDocument();
   expect(screen.getAllByRole("link", { name: /Open the workspace/ })[0]).toHaveAttribute("href", "/app");
   expect(screen.getByRole("link", { name: "Open the Savannah / Augusta study" })).toHaveAttribute("href", expect.stringContaining("/app#pair="));
 });
 
 test("featured pair card uses the real opportunity values", () => {
-  render(<Landing stats={{ projects: 182, pairs: 52, changes: 322, acceptance: QUALITY.acceptance }} featured={OPPS[1]} quality={QUALITY} />);
+  render(<Landing stats={{ projects: 182, pairs: 52, changes: 322, acceptance: QUALITY.acceptance, independent: QUALITY.independent }} featured={OPPS[1]} quality={QUALITY} />);
   const card = screen.getByRole("figure", { name: "Example opportunity" });
   expect(card).toHaveTextContent("2.99 mi");
   expect(card).toHaveTextContent("5.65 mi");
   expect(card).toHaveTextContent("152 d");
 });
 
-test("validation table renders every answer-key case", () => {
-  render(<Landing stats={{ projects: 182, pairs: 52, changes: 322, acceptance: QUALITY.acceptance }} quality={QUALITY} />);
-  const table = screen.getByRole("table", { name: "Sperry answer-key benchmark" });
-  expect(within(table).getByText("OVL_1")).toBeInTheDocument();
-  expect(within(table).getAllByText("Pass")).toHaveLength(QUALITY.acceptance.details.length);
+test("validation shows distance math and the pairs found with our own locations, separately", () => {
+  render(<Landing stats={{ projects: 182, pairs: 52, changes: 322, acceptance: QUALITY.acceptance, independent: QUALITY.independent }} quality={QUALITY} />);
+  const math = screen.getByRole("table", { name: "Distance math on Sperry's coordinates" });
+  expect(within(math).getAllByText("Pass")).toHaveLength(QUALITY.acceptance.details.length);
+  const ours = screen.getByRole("table", { name: "Answer-key pairs found with GridPulse locations" });
+  expect(within(ours).getAllByText("Found")).toHaveLength(QUALITY.independent.details.length);
+  expect(screen.queryByText("Sperry-confirmed")).not.toBeInTheDocument();
+});
+
+test("landing never shows a hardcoded distance: example cards and schematic use the featured pair", () => {
+  render(<Landing stats={{ projects: 182, pairs: 52, changes: 322, acceptance: QUALITY.acceptance, independent: QUALITY.independent }}
+                  featured={OPPS[1]} quality={QUALITY} />);
+  expect(document.body).not.toHaveTextContent("3.40");
+  expect(screen.getByRole("img", { name: /Schematic/ })).toHaveAccessibleName(/2\.99 miles apart/);
+  expect(screen.getAllByText(/2\.99 mi/).length).toBeGreaterThanOrEqual(3); // hero card, schematic pill, views card
 });
 
 test("landing derives the overlap window and source fact from the featured pair", () => {
   const featured = { ...OPPS[1], window_overlap_days: 213,
     a: { ...OPPS[1].a, window_start: "2024-01-01", window_end: "2025-12-31" },
     b: { ...OPPS[1].b, window_start: "2025-06-01", window_end: "2027-06-01" } };
-  render(<Landing stats={{ projects: 182, pairs: 52, changes: 317, acceptance: QUALITY.acceptance }} featured={featured} quality={QUALITY}
+  render(<Landing stats={{ projects: 182, pairs: 52, changes: 317, acceptance: QUALITY.acceptance, independent: QUALITY.independent }} featured={featured} quality={QUALITY}
                   sourceFact={{ name: "Jasper – Okatie 230 kV #2: Construct", printed: "12/31/25", source_id: "desc-2428", page: 23 }} />);
   expect(screen.getByText(/Jun 2025 → Dec 2025/)).toBeInTheDocument();
   expect(screen.getByText(/planned in-service: 12\/31\/25/)).toBeInTheDocument();
@@ -49,7 +59,7 @@ test("landing derives the overlap window and source fact from the featured pair"
 });
 
 test("landing shows placeholders, never stale numbers, while data loads", () => {
-  render(<Landing stats={{ projects: null, pairs: null, changes: null, acceptance: null }} />);
+  render(<Landing stats={{ projects: null, pairs: null, changes: null, acceptance: null, independent: null }} />);
   const proof = screen.getByRole("region", { name: "At a glance" });
   expect(within(proof).queryByText("182")).not.toBeInTheDocument();
   expect(within(proof).getAllByText("—").length).toBeGreaterThan(0);

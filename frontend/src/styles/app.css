@@ -358,6 +358,7 @@ kbd { font: 500 11px/1 var(--font-data); padding: 2px 5px; border: 1px solid var
 .refs { display: flex; flex-direction: column; font-size: 11.5px; color: var(--text-muted); }
 .page--changes .toolbar > div:first-child { flex-shrink: 1; min-width: 0; }
 .page--changes .toolbar .muted { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page--quality .toolbar > div:first-child { flex-shrink: 1; min-width: 240px; } /* the subtitle wraps; the health figures stay whole */
 .delta { display: flex; flex-direction: column; font-size: 12.5px; }
 .delta strong { font-weight: 600; }
 .delta span { font-size: 11.5px; color: var(--text-muted); }
@@ -370,7 +371,7 @@ kbd { font: 500 11px/1 var(--font-data); padding: 2px 5px; border: 1px solid var
 .plain-list .link-btn { white-space: normal; text-align: left; font-size: 12.5px; }
 
 .health { display: flex; margin: 0; }
-.health > div { display: flex; flex-direction: column; justify-content: center; padding: 0 16px; border-left: 1px solid var(--line-hairline); }
+.health > div { display: flex; flex-direction: column; justify-content: center; padding: 0 12px; border-left: 1px solid var(--line-hairline); }
 .health dd { margin: 0; font-size: 17px; font-weight: 600; }
 .health dt { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
 .health .is-ok dd { color: var(--status-ok); }

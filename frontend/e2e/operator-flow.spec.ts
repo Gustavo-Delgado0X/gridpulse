@@ -76,7 +76,7 @@ test("data quality issue expands to a source comparison", async ({ page }) => {
   await page.goto("/app");
   await page.getByRole("button", { name: /Data quality/ }).click();
   await page.getByRole("button", { name: /MCINTOSH OSM and Sperry/ }).click();
-  await expect(page.getByText("GridPulse uses")).toBeVisible();
+  await expect(page.locator(".compare__cell--used")).toContainText("GridPulse usesOpenStreetMap");
   await expect(page.getByText("Sperry answer key", { exact: true }).first()).toBeVisible();
 });
 
@@ -105,11 +105,13 @@ test("brief and CSV exports are served", async ({ request }) => {
   expect((await csv.text()).split("\n")[0]).toContain("overlap_id,distance_mi,time_gap (day)");
 });
 
-test("landing page shows live proof numbers and opens the study", async ({ page }) => {
+test("landing page shows live proof numbers and opens the study", async ({ page, request }) => {
+  const featured = (await (await request.get("/api/opportunities?d=25&method=closest")).json()).data
+    .find((o: { id: string }) => o.id === "desc-2428-6367-d-g__gpc-20065");
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1, name: /GridPulse finds where transmission plans meet/ })).toBeVisible();
   await expect(page.getByRole("region", { name: "At a glance" })).toContainText("6 / 6");
-  await expect(page.getByRole("figure", { name: "Example opportunity" })).toContainText("3.40 mi");
+  await expect(page.getByRole("figure", { name: "Example opportunity" })).toContainText(`${featured.dist_closest_mi.toFixed(2)} mi`);
   await page.getByRole("link", { name: "Open the Savannah / Augusta study" }).click();
   await expect(page).toHaveURL(/\/app#pair=desc-2428-6367-d-g__gpc-20065/);
   await expect(page.getByRole("region", { name: "Selected opportunity" })).toContainText("SAV: GOSHEN (SAV) - MCINTOSH");

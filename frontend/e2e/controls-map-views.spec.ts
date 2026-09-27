@@ -235,7 +235,7 @@ test.describe("data quality", () => {
     const row = page.getByRole("button", { name: /MCINTOSH OSM and Sperry/ }).first();
     await row.click();
     await expect(row).toHaveAttribute("aria-expanded", "true");
-    await expect(page.getByText("GridPulse uses")).toBeVisible();
+    await expect(page.locator(".compare__cell--used")).toContainText("GridPulse usesOpenStreetMap");
     await row.click();
     await expect(row).toHaveAttribute("aria-expanded", "false");
     await row.click();
@@ -245,12 +245,22 @@ test.describe("data quality", () => {
     await expect(pairPanel(page)).toContainText(`#${rank.padStart(2, "0")}`);
   });
 
-  test("validation benchmark lists every answer-key case as passed", async ({ page, request }) => {
-    const quality = await apiData<{ acceptance: { details: { overlap_id: string; passed: boolean }[] } }>(request, "/quality");
+  test("benchmark shows distance math on the key's coordinates and the pairs found with our own locations", async ({ page, request }) => {
+    type Q = { acceptance: { details: { overlap_id: string; passed: boolean }[] };
+               independent: { found: number; expected: number; details: { overlap_id: string; found: boolean; tier: string | null }[] } };
+    const quality = await apiData<Q>(request, "/quality");
     await openQuality(page);
+    const math = page.getByRole("table", { name: "Distance math on Sperry's coordinates" });
     for (const d of quality.acceptance.details) {
-      await expect(page.getByRole("row").filter({ hasText: d.overlap_id })).toContainText(d.passed ? "✓ Pass" : "✗ Fail");
+      await expect(math.getByRole("row").filter({ hasText: d.overlap_id })).toContainText(d.passed ? "✓ Pass" : "✗ Fail");
     }
+    const ours = page.getByRole("table", { name: "Answer-key pairs found with GridPulse locations" });
+    for (const d of quality.independent.details) {
+      const row = ours.getByRole("row").filter({ hasText: d.overlap_id });
+      await expect(row).toContainText(d.found ? "✓ Found" : "✗ Not found");
+      if (d.tier) await expect(row.getByRole("cell").nth(4)).toHaveText(d.tier);
+    }
+    await expect(page.getByText(`${quality.independent.found} / ${quality.independent.expected} found`)).toBeVisible();
   });
 });
 

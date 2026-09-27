@@ -136,9 +136,29 @@ test("data quality shows the validation benchmark, provenance and issues", async
   render(<DataQualityView quality={QUALITY} opportunities={OPPS} />);
   expect(screen.getByRole("heading", { level: 1, name: "Data quality" })).toBeInTheDocument();
   expect(screen.getByText("Validation passed")).toBeInTheDocument();
-  expect(screen.getByText("Sperry-confirmed")).toBeInTheDocument();
+  expect(screen.queryByText("Sperry-confirmed")).not.toBeInTheDocument(); // no location comes from the answer key
   expect(screen.getByText(/differ by 0.41 mi/)).toBeInTheDocument();
   expect(screen.getByText("Status · proposed")).toBeInTheDocument();
+});
+
+test("data quality separates distance math on Sperry's coordinates from pairs found with our own locations", async () => {
+  render(<DataQualityView quality={QUALITY} opportunities={OPPS} />);
+  const math = screen.getByRole("table", { name: "Distance math on Sperry's coordinates" });
+  expect(within(math).getByText("OVL_1")).toBeInTheDocument();
+  const ours = screen.getByRole("table", { name: "Answer-key pairs found with GridPulse locations" });
+  const ovl5 = within(ours).getByText("OVL_5").closest("tr")!;
+  expect(ovl5).toHaveTextContent("14.34 mi");
+  expect(ovl5).toHaveTextContent("20.46 mi");
+  expect(ovl5).toHaveTextContent("T4");
+  expect(ovl5).toHaveTextContent("Found");
+  expect(screen.getByText("2 / 2 found")).toBeInTheDocument();
+});
+
+test("a coordinate conflict says GridPulse uses OpenStreetMap", async () => {
+  render(<DataQualityView quality={QUALITY} opportunities={OPPS} />);
+  await userEvent.click(screen.getByRole("button", { name: /MCINTOSH/ }));
+  const used = screen.getByText("GridPulse uses").closest(".compare__cell")!;
+  expect(used).toHaveTextContent("OpenStreetMap");
 });
 
 test("issue messages split into entity and finding even when names contain colons", async () => {

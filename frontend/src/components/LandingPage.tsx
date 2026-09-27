@@ -30,7 +30,8 @@ export function LandingPage() {
   const sourceFact: SourceFact | null = detail && dateQuote
     ? { name: detail.project_a.name, printed: dateQuote.quote, source_id: dateQuote.source_id, page: dateQuote.page } : null;
   return (
-    <Landing stats={{ projects: quality?.coverage.projects ?? null, pairs: opps?.length ?? null, changes, acceptance: quality?.acceptance ?? null }}
+    <Landing stats={{ projects: quality?.coverage.projects ?? null, pairs: opps?.length ?? null, changes, acceptance: quality?.acceptance ?? null,
+                    independent: quality?.independent ?? null }}
              featured={opps?.find((o) => o.id === FEATURED_ID) ?? null} quality={quality}
              conflict={conflict ? { message: conflict.message, project_id: conflict.project_id } : null} sourceFact={sourceFact} />
   );
