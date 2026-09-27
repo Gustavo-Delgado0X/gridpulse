@@ -4883,6 +4883,7 @@
    "CC",
    "HYUNDAI MOTORS SAVANNAH AKA. PROJECT EA"
   ],
+  "voltage_kv": null,
   "line_miles": 12.0,
   "cost_public": null,
   "change_notes": {
@@ -5005,6 +5006,7 @@
    "MITCHELL",
    "NORTH TIFTON"
   ],
+  "voltage_kv": 230,
   "line_miles": 35.21,
   "cost_public": null,
   "change_notes": {
@@ -5067,15 +5069,29 @@
   "state": "GA",
   "endpoints": [
    {
-    "id": "ga:mitchell",
+    "id": "osm:way/656743294",
     "name_raw": "MITCHELL",
+    "osm_name": "Mitchell Substation (230kV)",
+    "osm_operator": "Georgia Power",
     "lat": 31.447121,
     "lon": -84.133843,
     "precision": "sperry_provided",
     "method": "Sperry answer key GPC_4",
     "source": "Projects_Overlaps.xlsx",
     "confirmed_by_pdf_context": true,
-    "alternatives": [],
+    "alternatives": [
+     {
+      "id": "osm:way/1039823943",
+      "lat": 31.44391,
+      "lon": -84.1350948
+     },
+     {
+      "id": "osm:way/656743294",
+      "lat": 31.4471208,
+      "lon": -84.1338426,
+      "precision": "osm_feature"
+     }
+    ],
     "reviewer": null
    },
    {
@@ -5117,6 +5133,7 @@
    "ADAMSVILLE",
    "JACK MCDONOUGH"
   ],
+  "voltage_kv": 230,
   "line_miles": 6.1,
   "cost_public": null,
   "change_notes": {
@@ -5228,6 +5245,7 @@
    "ECHECONNEE",
    "WELLSTON"
   ],
+  "voltage_kv": 115,
   "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
@@ -5340,6 +5358,7 @@
    "BREMEN",
    "CROOKED CREEK"
   ],
+  "voltage_kv": 115,
   "line_miles": 14.0,
   "cost_public": null,
   "change_notes": {
@@ -5465,6 +5484,7 @@
    "JESUP",
    "LUDOWICI PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": 7.5,
   "cost_public": null,
   "change_notes": {
@@ -5594,6 +5614,7 @@
   "endpoint_names": [
    "NORCROSS"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -5694,6 +5715,7 @@
   "endpoint_names": [
    "PINE GROVE PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -5795,6 +5817,7 @@
    "DEPTFORD",
    "MAGNOLIA"
   ],
+  "voltage_kv": 115,
   "line_miles": 5.0,
   "cost_public": null,
   "change_notes": {
@@ -5909,6 +5932,7 @@
   "endpoint_names": [
    "SMART VALVE INSTALLATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -6007,6 +6031,7 @@
   "endpoint_names": [
    "THALMANN AND COLERAIN 23O KV LINE RELAY PANEL UPGRADES"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -6105,6 +6130,7 @@
   "endpoint_names": [
    "VILLA RICA LOW SIDE BREAKER"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -6203,6 +6229,7 @@
   "endpoint_names": [
    "CAMDEN INDUSTRIAL PARK"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -6312,6 +6339,7 @@
    "JEFFERSON STREET#3",
    "NORTHWEST"
   ],
+  "voltage_kv": 115,
   "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
@@ -6422,6 +6450,7 @@
   "endpoint_names": [
    "ANTHONY SHOALS STATCOM SYSTEM"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -6524,6 +6553,7 @@
    "CASS PINE",
    "HILL VIEW"
   ],
+  "voltage_kv": 230,
   "line_miles": 7.58,
   "cost_public": null,
   "change_notes": {
@@ -6648,6 +6678,7 @@
    "PROJECT CHRONOS",
    "SK"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -6770,6 +6801,7 @@
   "endpoint_names": [
    "LITTLE OGEECHEE"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -6871,6 +6903,7 @@
    "CC",
    "QTS FAYETTEVILLE TRANSMISSION NEEDS"
   ],
+  "voltage_kv": null,
   "line_miles": 6.0,
   "cost_public": null,
   "change_notes": {
@@ -6982,6 +7015,7 @@
    "ADAMSVILLE",
    "BUZZARD ROOST"
   ],
+  "voltage_kv": 230,
   "line_miles": 8.08,
   "cost_public": null,
   "change_notes": {
@@ -7093,6 +7127,7 @@
    "BLANKETS CREEK",
    "WOODSTOCK"
   ],
+  "voltage_kv": 115,
   "line_miles": 7.1,
   "cost_public": null,
   "change_notes": {
@@ -7209,6 +7244,7 @@
    "GARRETT ROAD SWITCHING STATION",
    "TRAE LANE"
   ],
+  "voltage_kv": null,
   "line_miles": 8.6,
   "cost_public": null,
   "change_notes": {
@@ -7332,6 +7368,7 @@
    "CC",
    "STONEWALL TELL ROAD"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -7442,6 +7479,7 @@
   "endpoint_names": [
    "EAST POINT RELAY MODERNIZATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -7541,6 +7579,7 @@
    "FENWICK STREET",
    "SAND BAR FERRY"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.72,
   "cost_public": null,
   "change_notes": {
@@ -7651,6 +7690,7 @@
   "endpoint_names": [
    "GOAT ROCK"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -7750,6 +7790,7 @@
    "GORDON",
    "N DUBLIN"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.81,
   "cost_public": null,
   "change_notes": {
@@ -7863,6 +7904,7 @@
    "GRADY",
    "MORROW"
   ],
+  "voltage_kv": 115,
   "line_miles": 0.72,
   "cost_public": null,
   "change_notes": {
@@ -7985,6 +8027,7 @@
   "endpoint_names": [
    "GRADY"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -8084,6 +8127,7 @@
    "GRID",
    "GAINESVILLE #2 EQUIPMENT REPLACEMENT"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -8197,6 +8241,7 @@
    "HAMMOND",
    "WEISS DAM"
   ],
+  "voltage_kv": 115,
   "line_miles": 11.2,
   "cost_public": null,
   "change_notes": {
@@ -8307,6 +8352,7 @@
   "endpoint_names": [
    "KATHLEEN AREA IMPROVEMENTS"
   ],
+  "voltage_kv": null,
   "line_miles": 1.5,
   "cost_public": null,
   "change_notes": {
@@ -8405,6 +8451,7 @@
   "endpoint_names": [
    "KLONDIKE RELAY MODERNIZATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -8505,6 +8552,7 @@
   "endpoint_names": [
    "MORROW"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -8605,6 +8653,7 @@
   "endpoint_names": [
    "PALMYRA REACTOR REMOVAL"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -8704,6 +8753,7 @@
    "BOULEVARD",
    "DEPTFORD"
   ],
+  "voltage_kv": 115,
   "line_miles": 8.0,
   "cost_public": null,
   "change_notes": {
@@ -8819,6 +8869,7 @@
    "CC",
    "BIG OGEECHEE"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -8930,6 +8981,7 @@
    "MCINTOSH",
    "PURRYSBURG"
   ],
+  "voltage_kv": 230,
   "line_miles": 0.1,
   "cost_public": null,
   "change_notes": {
@@ -9050,6 +9102,7 @@
   "endpoint_names": [
    "SCOTTDALE RELAY MODERNIZATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -9149,6 +9202,7 @@
    "UNION CITY",
    "YATES"
   ],
+  "voltage_kv": 230,
   "line_miles": 23.4,
   "cost_public": null,
   "change_notes": {
@@ -9272,6 +9326,7 @@
    "UNION CITY",
    "YATES"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -9385,6 +9440,7 @@
    "CC",
    "PROJECT PAYTON BAINBRIDGE"
   ],
+  "voltage_kv": null,
   "line_miles": 8.5,
   "cost_public": null,
   "change_notes": {
@@ -9495,6 +9551,7 @@
   "endpoint_names": [
    "OHARA BREAKER REPLACEMENT"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -9593,6 +9650,7 @@
   "endpoint_names": [
    "DRESDEN LINE PROTECTIVE RELAYING"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -9694,6 +9752,7 @@
    "QCELLS",
    "CC IMPROVEMENTS"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -9829,6 +9888,7 @@
    "GRADY",
    "WEST END"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.6,
   "cost_public": null,
   "change_notes": {
@@ -9940,6 +10000,7 @@
    "MORROW",
    "MOUNTAIN VIEW"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -10053,6 +10114,7 @@
    "CC",
    "EMBLEM RIVERSIDE CUSTOMER SUB"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -10164,6 +10226,7 @@
    "MORROW",
    "YATES COMMON"
   ],
+  "voltage_kv": 115,
   "line_miles": 5.8,
   "cost_public": null,
   "change_notes": {
@@ -10279,6 +10342,7 @@
    "POSSUM BRANCH",
    "YATES COMMON"
   ],
+  "voltage_kv": 115,
   "line_miles": 11.2,
   "cost_public": null,
   "change_notes": {
@@ -10392,6 +10456,7 @@
    "CC",
    "GULLATT ROAD TRANSMISSION IMPROVEMENTS"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -10504,6 +10569,7 @@
    "MICROSOFT",
    "SHUGART"
   ],
+  "voltage_kv": null,
   "line_miles": 0.3,
   "cost_public": null,
   "change_notes": {
@@ -10628,6 +10694,7 @@
    "SUMMER LAKE",
    "VILLA RICA"
   ],
+  "voltage_kv": 230,
   "line_miles": 2.5,
   "cost_public": null,
   "change_notes": {
@@ -10753,6 +10820,7 @@
    "CC",
    "TA REALTY ELLENWOOD NETWORK IMPROVEMENTS"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -10864,6 +10932,7 @@
    "DOYLE",
    "LG"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -10977,6 +11046,7 @@
    "JESUP",
    "OFFERMAN"
   ],
+  "voltage_kv": 115,
   "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
@@ -11092,6 +11162,7 @@
    "LAWRENCEVILLE",
    "WINDER"
   ],
+  "voltage_kv": 115,
   "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
@@ -11205,6 +11276,7 @@
    "LAWRENCEVILLE",
    "WINDER PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": 15.4,
   "cost_public": null,
   "change_notes": {
@@ -11318,6 +11390,7 @@
    "SANDERSVILLE #1",
    "WADLEY PRI."
   ],
+  "voltage_kv": 115,
   "line_miles": 24.3,
   "cost_public": null,
   "change_notes": {
@@ -11433,6 +11506,7 @@
    "GOSHEN",
    "KRAFT"
   ],
+  "voltage_kv": 115,
   "line_miles": 9.3,
   "cost_public": null,
   "change_notes": {
@@ -11564,6 +11638,7 @@
    "GOSHEN",
    "MCINTOSH"
   ],
+  "voltage_kv": 115,
   "line_miles": 6.7,
   "cost_public": null,
   "change_notes": {
@@ -11709,6 +11784,7 @@
    "CC",
    "TOMOCHICHI"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -11821,6 +11897,7 @@
    "ARKWRIGHT",
    "LLOYD SHOALS"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -11946,6 +12023,7 @@
    "ATHENA",
    "EAST WATKINSVILLE"
   ],
+  "voltage_kv": 115,
   "line_miles": 8.47,
   "cost_public": null,
   "change_notes": {
@@ -12061,6 +12139,7 @@
    "CC",
    "HILL VIEW"
   ],
+  "voltage_kv": null,
   "line_miles": 8.5,
   "cost_public": null,
   "change_notes": {
@@ -12172,6 +12251,7 @@
    "DYER ROAD",
    "EAST ROANOKE"
   ],
+  "voltage_kv": 115,
   "line_miles": 20.7,
   "cost_public": null,
   "change_notes": {
@@ -12293,6 +12373,7 @@
    "AULTMAN ROAD",
    "PERRY"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -12404,6 +12485,7 @@
    "CC",
    "EAST VILLA RICA AREA SWITCHING STATION"
   ],
+  "voltage_kv": null,
   "line_miles": 2.5,
   "cost_public": null,
   "change_notes": {
@@ -12515,6 +12597,7 @@
    "CC",
    "VILLA RICA UPGRADES"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -12628,6 +12711,7 @@
    "FITZGERALD",
    "PITTS"
   ],
+  "voltage_kv": 115,
   "line_miles": 26.14,
   "cost_public": null,
   "change_notes": {
@@ -12741,6 +12825,7 @@
    "JACK MCDONOUGH",
    "NORTHWEST"
   ],
+  "voltage_kv": 230,
   "line_miles": 4.59,
   "cost_public": null,
   "change_notes": {
@@ -12852,6 +12937,7 @@
    "PITTMAN ROAD",
    "WEST POINT DAM"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
@@ -12962,6 +13048,7 @@
   "endpoint_names": [
    "PLANT YATES BREAKER AND HALF STATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -13061,6 +13148,7 @@
    "COLEMAN",
    "DEAN FOREST"
   ],
+  "voltage_kv": 115,
   "line_miles": 6.67,
   "cost_public": null,
   "change_notes": {
@@ -13174,6 +13262,7 @@
    "MAGNOLIA",
    "TRUMAN PARKWAY"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
@@ -13286,6 +13375,7 @@
   "endpoint_names": [
    "SMART VALVES AT EAST VILLA RICA SWITCHING STATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -13384,6 +13474,7 @@
   "endpoint_names": [
    "SOUTH MACON"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -13495,6 +13586,7 @@
    "UNION CITY",
    "YATES"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -13608,6 +13700,7 @@
    "FIRST AVENUE",
    "NORTH COLUMBUS"
   ],
+  "voltage_kv": 115,
   "line_miles": 0.9,
   "cost_public": null,
   "change_notes": {
@@ -13719,6 +13812,7 @@
    "ASHLEY PARK",
    "WANSLEY"
   ],
+  "voltage_kv": 500,
   "line_miles": 35.0,
   "cost_public": null,
   "change_notes": {
@@ -13832,6 +13926,7 @@
    "BLAKELY PRIMARY",
    "HUCKLEBERRY"
   ],
+  "voltage_kv": 115,
   "line_miles": 13.5,
   "cost_public": null,
   "change_notes": {
@@ -13945,6 +14040,7 @@
    "BROADWAY",
    "ECHECONNEE"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -14056,6 +14152,7 @@
    "BUTLER",
    "THOMASTON"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -14167,6 +14264,7 @@
    "BUZZARD ROOST",
    "FACTORY SHOALS"
   ],
+  "voltage_kv": 230,
   "line_miles": 2.0,
   "cost_public": null,
   "change_notes": {
@@ -14278,6 +14376,7 @@
    "CONYERS",
    "KLONDIKE"
   ],
+  "voltage_kv": 230,
   "line_miles": 6.56,
   "cost_public": null,
   "change_notes": {
@@ -14391,6 +14490,7 @@
    "GLENWOOD SPRINGS",
    "PORTERDALE PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -14502,6 +14602,7 @@
    "LLOYD SHOALS",
    "PORTERDALE PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": 15.8,
   "cost_public": null,
   "change_notes": {
@@ -14625,6 +14726,7 @@
    "LOWER RIVER",
    "WEBB"
   ],
+  "voltage_kv": 115,
   "line_miles": 0.97,
   "cost_public": null,
   "change_notes": {
@@ -14736,6 +14838,7 @@
    "MCEVER ROAD",
    "SHOAL CREEK"
   ],
+  "voltage_kv": 115,
   "line_miles": 1.0,
   "cost_public": null,
   "change_notes": {
@@ -14849,6 +14952,7 @@
    "MCMANUS",
    "WEST BRUNSWICK"
   ],
+  "voltage_kv": 115,
   "line_miles": 5.7,
   "cost_public": null,
   "change_notes": {
@@ -14964,6 +15068,7 @@
    "NORCROSS",
    "NORTH DRUID HILLS"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.9,
   "cost_public": null,
   "change_notes": {
@@ -15077,6 +15182,7 @@
    "BOULEVARD",
    "MAGNOLIA"
   ],
+  "voltage_kv": 115,
   "line_miles": 4.56,
   "cost_public": null,
   "change_notes": {
@@ -15192,6 +15298,7 @@
    "DEAN FOREST",
    "LITTLE OGEECHEE"
   ],
+  "voltage_kv": 230,
   "line_miles": 8.0,
   "cost_public": null,
   "change_notes": {
@@ -15306,6 +15413,7 @@
   "endpoint_names": [
    "RICE HOPE NEW AUTO TRANSFORMER"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -15405,6 +15513,7 @@
    "SOUTH BAINBRIDGE",
    "SINAI"
   ],
+  "voltage_kv": 115,
   "line_miles": 9.8,
   "cost_public": null,
   "change_notes": {
@@ -15518,6 +15627,7 @@
    "BAY CREEK",
    "CONYERS"
   ],
+  "voltage_kv": 230,
   "line_miles": 15.29,
   "cost_public": null,
   "change_notes": {
@@ -15641,6 +15751,7 @@
    "ANNISTON",
    "HAMMOND"
   ],
+  "voltage_kv": 230,
   "line_miles": 28.12,
   "cost_public": null,
   "change_notes": {
@@ -15752,6 +15863,7 @@
    "ATKINSON",
    "NORTHSIDE DRIVE"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.2,
   "cost_public": null,
   "change_notes": {
@@ -15873,6 +15985,7 @@
    "ATKINSON",
    "NORTHWEST"
   ],
+  "voltage_kv": 115,
   "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
@@ -15994,6 +16107,7 @@
    "CC",
    "NORTH GEORGIA DATA NETWORK UPGRADES"
   ],
+  "voltage_kv": null,
   "line_miles": 7.0,
   "cost_public": null,
   "change_notes": {
@@ -16105,6 +16219,7 @@
    "CORNELIA",
    "TALLULAH LODGE"
   ],
+  "voltage_kv": 115,
   "line_miles": 9.7,
   "cost_public": null,
   "change_notes": {
@@ -16216,6 +16331,7 @@
    "EAST POINT",
    "TRIBUTARY"
   ],
+  "voltage_kv": 230,
   "line_miles": 2.9,
   "cost_public": null,
   "change_notes": {
@@ -16327,6 +16443,7 @@
    "EAST POINT",
    "UNION CITY"
   ],
+  "voltage_kv": 230,
   "line_miles": 1.5,
   "cost_public": null,
   "change_notes": {
@@ -16438,6 +16555,7 @@
    "ECHECONNEE",
    "WELLSTON"
   ],
+  "voltage_kv": 115,
   "line_miles": 11.8,
   "cost_public": null,
   "change_notes": {
@@ -16549,6 +16667,7 @@
    "FARLEY",
    "TAZEWELL"
   ],
+  "voltage_kv": 500,
   "line_miles": 120.0,
   "cost_public": null,
   "change_notes": {
@@ -16660,6 +16779,7 @@
    "GAINESVILLE #2",
    "MCEVER ROAD"
   ],
+  "voltage_kv": 115,
   "line_miles": 5.3,
   "cost_public": null,
   "change_notes": {
@@ -16775,6 +16895,7 @@
    "GLENWOOD SPRINGS",
    "LAKE OCONEE"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -16887,6 +17008,7 @@
   "endpoint_names": [
    "GOAT ROCK REACTORS INSTALLATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -16996,6 +17118,7 @@
    "GOLDENS CREEK",
    "WARRENTON PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": 0.34,
   "cost_public": null,
   "change_notes": {
@@ -17109,6 +17232,7 @@
    "GORDON",
    "SANDERSVILLE #1"
   ],
+  "voltage_kv": 115,
   "line_miles": 7.6,
   "cost_public": null,
   "change_notes": {
@@ -17223,6 +17347,7 @@
   "endpoint_names": [
    "GOSHEN AREA STRATEGIC SOLUTION"
   ],
+  "voltage_kv": null,
   "line_miles": 12.3,
   "cost_public": null,
   "change_notes": {
@@ -17322,6 +17447,7 @@
    "JEFFERSON ROAD",
    "WINDER PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": 11.0,
   "cost_public": null,
   "change_notes": {
@@ -17435,6 +17561,7 @@
    "KETTLE CREEK PRIMARY",
    "PINE GROVE PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": 38.04,
   "cost_public": null,
   "change_notes": {
@@ -17558,6 +17685,7 @@
    "NEW CAVENDER DRIVE",
    "TRIBUTARY"
   ],
+  "voltage_kv": 230,
   "line_miles": 4.0,
   "cost_public": null,
   "change_notes": {
@@ -17668,6 +17796,7 @@
   "endpoint_names": [
    "NORTH SPA"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -17767,6 +17896,7 @@
    "TALLULAH LODGE",
    "TOCCOA"
   ],
+  "voltage_kv": 115,
   "line_miles": 10.3,
   "cost_public": null,
   "change_notes": {
@@ -17878,6 +18008,7 @@
    "TRIBUTARY",
    "THORNTON RD"
   ],
+  "voltage_kv": 230,
   "line_miles": 2.8,
   "cost_public": null,
   "change_notes": {
@@ -17988,6 +18119,7 @@
   "endpoint_names": [
    "THOMASTON 230 NEW BUILD SUB"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -18086,6 +18218,7 @@
   "endpoint_names": [
    "BAINBRIDGE TRANSMISSION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -18186,6 +18319,7 @@
   "endpoint_names": [
    "GLENWOOD SPRINGS"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -18285,6 +18419,7 @@
    "EAST POINT",
    "UNION CITY"
   ],
+  "voltage_kv": 230,
   "line_miles": 5.49,
   "cost_public": null,
   "change_notes": {
@@ -18406,6 +18541,7 @@
    "AVERY",
    "HOPEWELL"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.3,
   "cost_public": null,
   "change_notes": {
@@ -18520,6 +18656,7 @@
   "endpoint_names": [
    "BOWEN #10"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -18621,6 +18758,7 @@
    "HATCH",
    "WADLEY"
   ],
+  "voltage_kv": 500,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -18734,6 +18872,7 @@
    "COLEMAN",
    "MELDRIM"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
@@ -18856,6 +18995,7 @@
   "endpoint_names": [
    "ARKWRIGHT BUS AND JUMPER REPLACEMENT"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -18955,6 +19095,7 @@
    "BAY CREEK",
    "CONYERS"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -19068,6 +19209,7 @@
    "EVANS PRIMARY",
    "THURMOND DAM #5"
   ],
+  "voltage_kv": 115,
   "line_miles": 5.45,
   "cost_public": null,
   "change_notes": {
@@ -19198,6 +19340,7 @@
    "EVANS PRIMARY",
    "THURMOND DAM #6"
   ],
+  "voltage_kv": 115,
   "line_miles": 8.9,
   "cost_public": null,
   "change_notes": {
@@ -19313,6 +19456,7 @@
    "MCEVER ROAD",
    "SHOAL CREEK"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.9,
   "cost_public": null,
   "change_notes": {
@@ -19426,6 +19570,7 @@
    "MCGRAU FORD",
    "MIDDLE FORK"
   ],
+  "voltage_kv": 500,
   "line_miles": 64.0,
   "cost_public": null,
   "change_notes": {
@@ -19538,6 +19683,7 @@
   "endpoint_names": [
    "MELDRIM BANK D REPLACEMENT"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -19638,6 +19784,7 @@
   "endpoint_names": [
    "THOMSON PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -19738,6 +19885,7 @@
   "endpoint_names": [
    "WINDER PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -19839,6 +19987,7 @@
    "PINE GROVE PRIMARY",
    "WEST VALDOSTA"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.7,
   "cost_public": null,
   "change_notes": {
@@ -19952,6 +20101,7 @@
    "DAWSON CROSSING",
    "GAINESVILLE #1"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -20064,6 +20214,7 @@
   "endpoint_names": [
    "LITTLE OGEECHEE"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -20175,6 +20326,7 @@
    "EVANS PRIMARY",
    "THOMSON PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": 5.28,
   "cost_public": null,
   "change_notes": {
@@ -20290,6 +20442,7 @@
    "BANKS CROSSING",
    "POND FORK"
   ],
+  "voltage_kv": 115,
   "line_miles": 3.0,
   "cost_public": null,
   "change_notes": {
@@ -20376,6 +20529,7 @@
    "BONAIRE PRI",
    "ECHECONNEE"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.3,
   "cost_public": null,
   "change_notes": {
@@ -20461,6 +20615,7 @@
   "endpoint_names": [
    "CAMDEN INDUSTRIAL PARK"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -20547,6 +20702,7 @@
    "EATONTON PRIMARY",
    "LICK CREEK"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -20633,6 +20789,7 @@
    "ALCOVY ROAD",
    "SKC"
   ],
+  "voltage_kv": 115,
   "line_miles": 0.53,
   "cost_public": null,
   "change_notes": {
@@ -20719,6 +20876,7 @@
    "AULTMAN ROAD",
    "BONAIRE PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": 1.99,
   "cost_public": null,
   "change_notes": {
@@ -20805,6 +20963,7 @@
    "HEARD COUNTY",
    "TENASKA"
   ],
+  "voltage_kv": 500,
   "line_miles": 0.8,
   "cost_public": null,
   "change_notes": {
@@ -20891,6 +21050,7 @@
    "ANTHONY SHOALS",
    "WASHINGTON"
   ],
+  "voltage_kv": 115,
   "line_miles": 21.0,
   "cost_public": null,
   "change_notes": {
@@ -20977,6 +21137,7 @@
    "LIZARD LOPE",
    "WESTOVER"
   ],
+  "voltage_kv": 115,
   "line_miles": 19.8,
   "cost_public": null,
   "change_notes": {
@@ -21063,6 +21224,7 @@
    "EAST DALTON",
    "OOSTANAULA"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -21149,6 +21311,7 @@
    "CONYERS",
    "CORNISH MOUNTAIN"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -21235,6 +21398,7 @@
    "LAGRANGE",
    "NORTH OPELIKA"
   ],
+  "voltage_kv": 230,
   "line_miles": 29.4,
   "cost_public": null,
   "change_notes": {
@@ -21320,6 +21484,7 @@
   "endpoint_names": [
    "MORNING HORNET 2ND"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.4,
   "cost_public": null,
   "change_notes": {
@@ -21405,6 +21570,7 @@
   "endpoint_names": [
    "ROBINS SPRING BUS REPLACEMENT"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -21490,6 +21656,7 @@
   "endpoint_names": [
    "ROBINS SPRING CAPACITOR BANK INSTALLATION"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -21576,6 +21743,7 @@
    "DRESDEN",
    "LAGRANGE PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -21662,6 +21830,7 @@
    "RAY PLACE RD",
    "WASHINGTON #3"
   ],
+  "voltage_kv": null,
   "line_miles": 17.4,
   "cost_public": null,
   "change_notes": {
@@ -21748,6 +21917,7 @@
    "RAY PLACE RD",
    "WASHINGTON"
   ],
+  "voltage_kv": null,
   "line_miles": 1.2,
   "cost_public": null,
   "change_notes": {
@@ -21834,6 +22004,7 @@
    "BARNESVILLE PRIMARY",
    "BARNESVILLE #1"
   ],
+  "voltage_kv": 115,
   "line_miles": 4.53,
   "cost_public": null,
   "change_notes": {
@@ -21919,6 +22090,7 @@
   "endpoint_names": [
    "DRESDEN"
   ],
+  "voltage_kv": 500,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -22005,6 +22177,7 @@
    "GORDON",
    "SANDERSVILLE #1"
   ],
+  "voltage_kv": 115,
   "line_miles": 1.87,
   "cost_public": null,
   "change_notes": {
@@ -22090,6 +22263,7 @@
   "endpoint_names": [
    "FORTSON"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -22176,6 +22350,7 @@
    "HICKORY LEVEL",
    "VILLA RICA"
   ],
+  "voltage_kv": 230,
   "line_miles": 8.6,
   "cost_public": null,
   "change_notes": {
@@ -22262,6 +22437,7 @@
    "ADAMSVILLE",
    "BUZZARD ROOST"
   ],
+  "voltage_kv": 230,
   "line_miles": 5.0,
   "cost_public": null,
   "change_notes": {
@@ -22348,6 +22524,7 @@
    "DOUGLASVILLE",
    "VILLA RICA"
   ],
+  "voltage_kv": 230,
   "line_miles": 2.5,
   "cost_public": null,
   "change_notes": {
@@ -22434,6 +22611,7 @@
    "DOYLE",
    "WINDER PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -22520,6 +22698,7 @@
    "EAST MOULTRIE",
    "HIGHWAY 112"
   ],
+  "voltage_kv": 230,
   "line_miles": 27.0,
   "cost_public": null,
   "change_notes": {
@@ -22605,6 +22784,7 @@
   "endpoint_names": [
    "EAST WALTON"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -22691,6 +22871,7 @@
    "GARRETT RD",
    "V. RICA"
   ],
+  "voltage_kv": 230,
   "line_miles": 11.5,
   "cost_public": null,
   "change_notes": {
@@ -22776,6 +22957,7 @@
   "endpoint_names": [
    "RIDDLEVILLE BUS REPLACEMENT"
   ],
+  "voltage_kv": null,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -22861,6 +23043,7 @@
   "endpoint_names": [
    "SKC"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -22947,6 +23130,7 @@
    "SOUTH HAZLEHURST",
    "NEW LACY"
   ],
+  "voltage_kv": 230,
   "line_miles": 25.0,
   "cost_public": null,
   "change_notes": {
@@ -23033,6 +23217,7 @@
    "SWITCH WAY",
    "THORNTON ROAD"
   ],
+  "voltage_kv": 230,
   "line_miles": 1.3,
   "cost_public": null,
   "change_notes": {
@@ -23119,6 +23304,7 @@
    "RAY PLACE RD",
    "WARRENTON PRIMARY"
   ],
+  "voltage_kv": null,
   "line_miles": 10.0,
   "cost_public": null,
   "change_notes": {
@@ -23205,6 +23391,7 @@
    "EATONTON PRIMARY",
    "LICK CREEK"
   ],
+  "voltage_kv": 115,
   "line_miles": 7.5,
   "cost_public": null,
   "change_notes": {
@@ -23291,6 +23478,7 @@
    "BARNESVILLE",
    "SOUTH GRIFFIN"
   ],
+  "voltage_kv": 230,
   "line_miles": 19.0,
   "cost_public": null,
   "change_notes": {
@@ -23377,6 +23565,7 @@
    "BARNEYVILLE",
    "EAST MOULTRIE"
   ],
+  "voltage_kv": 115,
   "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
@@ -23462,6 +23651,7 @@
   "endpoint_names": [
    "BONAIRE PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -23548,6 +23738,7 @@
    "BOSTWICK",
    "EAST SOCIAL CIRCLE"
   ],
+  "voltage_kv": 230,
   "line_miles": 10.8,
   "cost_public": null,
   "change_notes": {
@@ -23634,6 +23825,7 @@
    "BRUMBLEY CREEK",
    "SOUTH BAINBRIDGE"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.1,
   "cost_public": null,
   "change_notes": {
@@ -23719,6 +23911,7 @@
   "endpoint_names": [
    "THOMASVILLE"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -23804,6 +23997,7 @@
   "endpoint_names": [
    "NORTH DUBLIN"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -23890,6 +24084,7 @@
    "BARNESVILLE PRIMARY",
    "THOMASTON"
   ],
+  "voltage_kv": 230,
   "line_miles": 13.24,
   "cost_public": null,
   "change_notes": {
@@ -23975,6 +24170,7 @@
   "endpoint_names": [
    "BAY CREEK"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -24061,6 +24257,7 @@
    "BONAIRE PRIMARY",
    "EASTMAN PRIMARY"
   ],
+  "voltage_kv": 115,
   "line_miles": 41.08,
   "cost_public": null,
   "change_notes": {
@@ -24147,6 +24344,7 @@
    "CLIFTONDALE",
    "LINE CREEK"
   ],
+  "voltage_kv": 230,
   "line_miles": 11.6,
   "cost_public": null,
   "change_notes": {
@@ -24233,6 +24431,7 @@
    "DRESDEN",
    "TALBOT"
   ],
+  "voltage_kv": 500,
   "line_miles": 75.0,
   "cost_public": null,
   "change_notes": {
@@ -24318,6 +24517,7 @@
   "endpoint_names": [
    "HOPEWELL"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -24404,6 +24604,7 @@
    "TENASKA",
    "WANSLEY"
   ],
+  "voltage_kv": 500,
   "line_miles": 5.0,
   "cost_public": null,
   "change_notes": {
@@ -24490,6 +24691,7 @@
    "AULTMAN ROAD",
    "FORT VALLEY #1"
   ],
+  "voltage_kv": 115,
   "line_miles": 8.0,
   "cost_public": null,
   "change_notes": {
@@ -24576,6 +24778,7 @@
    "SLAPPEY DRIVE",
    "WESTOVER"
   ],
+  "voltage_kv": 115,
   "line_miles": 2.92,
   "cost_public": null,
   "change_notes": {
@@ -24662,6 +24865,7 @@
    "DAWSON CROSSING",
    "NELSON"
   ],
+  "voltage_kv": 115,
   "line_miles": 15.7,
   "cost_public": null,
   "change_notes": {
@@ -24748,6 +24952,7 @@
    "BIG SMARR",
    "TOMOCHICHI"
   ],
+  "voltage_kv": 500,
   "line_miles": 36.0,
   "cost_public": null,
   "change_notes": {
@@ -24834,6 +25039,7 @@
    "BUZZARD ROOST",
    "CAVENDER DRIVE"
   ],
+  "voltage_kv": 230,
   "line_miles": 7.0,
   "cost_public": null,
   "change_notes": {
@@ -24919,6 +25125,7 @@
   "endpoint_names": [
    "CAVENDER DRIVE"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -25004,6 +25211,7 @@
   "endpoint_names": [
    "EAST WATKINSVILLE"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -25090,6 +25298,7 @@
    "HARTWELL DAM",
    "HARTWELL ENERGY"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -25176,6 +25385,7 @@
    "HARTWELL ENERGY",
    "MIDDLE FORK"
   ],
+  "voltage_kv": 230,
   "line_miles": 35.0,
   "cost_public": null,
   "change_notes": {
@@ -25262,6 +25472,7 @@
    "POND FORK",
    "MIDWAY"
   ],
+  "voltage_kv": 115,
   "line_miles": 6.0,
   "cost_public": null,
   "change_notes": {
@@ -25349,6 +25560,7 @@
    "TIGER CREEK",
    "WARTHEN"
   ],
+  "voltage_kv": 500,
   "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
@@ -25435,6 +25647,7 @@
    "TALLBOT #2",
    "TAZEWELL"
   ],
+  "voltage_kv": 500,
   "line_miles": 20.0,
   "cost_public": null,
   "change_notes": {
@@ -25522,6 +25735,7 @@
    "ROCKVILLE",
    "NORTH SPA"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -25608,6 +25822,7 @@
    "ATHENA",
    "WARRENTON"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -25693,6 +25908,7 @@
   "endpoint_names": [
    "PIO NONO"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -25778,6 +25994,7 @@
   "endpoint_names": [
    "SOUTH GRIFFIN"
   ],
+  "voltage_kv": 115,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -25864,6 +26081,7 @@
    "CENTER PRIMARY",
    "CLARKSBORO"
   ],
+  "voltage_kv": 230,
   "line_miles": 8.3,
   "cost_public": null,
   "change_notes": {
@@ -25950,6 +26168,7 @@
    "CLARKSBORO",
    "WINDER PRIMARY"
   ],
+  "voltage_kv": 230,
   "line_miles": 14.0,
   "cost_public": null,
   "change_notes": {
@@ -26036,6 +26255,7 @@
    "EAST SOCIAL CIRCLE",
    "SNELLVILLE"
   ],
+  "voltage_kv": 230,
   "line_miles": null,
   "cost_public": null,
   "change_notes": {
@@ -26122,6 +26342,7 @@
    "EAST WALTON",
    "MIDDLE FORK"
   ],
+  "voltage_kv": 500,
   "line_miles": 45.0,
   "cost_public": null,
   "change_notes": {
@@ -26208,6 +26429,7 @@
    "SHOAL CREEK",
    "SOUTH HALL"
   ],
+  "voltage_kv": 230,
   "line_miles": 7.9,
   "cost_public": null,
   "change_notes": {

@@ -140,3 +140,11 @@ def test_real_gpc_line_miles_come_from_description(irp):
     reactors = next(p for p in irp["projects"] if p["teams"] == "20277")
 
     assert reactors["line_miles"] == 0.1
+
+
+def test_real_gpc_projects_carry_voltage_from_their_name(irp):
+    projects = {p["teams"]: p for p in irp["projects"]}
+
+    assert projects["20277"]["voltage_kv"] == 230  # MCINTOSH - PURRYSBURG 230KV REACTORS
+    assert projects["20065"]["voltage_kv"] == 115  # GOSHEN - MCINTOSH 115KV LINE REBUILD
+    assert all("voltage_kv" in p for p in irp["projects"])

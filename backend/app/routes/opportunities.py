@@ -18,7 +18,7 @@ router = APIRouter()
 Method = Literal["closest", "center"]
 Tier = Literal["T1", "T2", "T3", "T4"]
 Timeline = Literal["same_window", "within_1y", "any"]
-MIN_D, MAX_D, DEFAULT_D = 5.0, 50.0, 25.0
+MIN_D, MAX_D, DEFAULT_D = 1.0, 50.0, 25.0
 
 
 def within(opportunity: dict, d: float, method: str) -> bool:
