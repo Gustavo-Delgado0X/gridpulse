@@ -1,12 +1,15 @@
 """GET /opportunities, /opportunities/{id}."""
 from typing import Literal
+from urllib.error import HTTPError, URLError
 from urllib.parse import quote
 
-from fastapi import APIRouter, HTTPException, Query
-from fastapi.responses import HTMLResponse
+from fastapi import APIRouter, HTTPException, Query, Request
+from fastapi.responses import HTMLResponse, Response
 
+from app import voice
 from app.brief import render_brief
 from app.evidence import build_evidence
+from app.limits import VOICE_RATE_LIMIT, limiter
 from app.repository import Repository, get_repository
 from app.schemas import ok
 from engine.estimate import default_inputs, estimate
@@ -99,3 +102,25 @@ def brief(opportunity_id: str, method: Method = "closest",
                                "avoided_mobilizations": avoided_mobilizations}.items() if v is not None}
     inputs = {**base["estimator"]["inputs"], **edits}
     return HTMLResponse(render_brief({**base, "estimator": {"inputs": inputs, "result": estimate(inputs)}}))
+
+
+@router.get("/opportunities/{opportunity_id}/brief/script")
+def brief_script(opportunity_id: str, method: Method = "closest") -> dict:
+    """The exact words the voice briefing speaks (shown as a transcript)."""
+    return ok({"text": voice.brief_script(detail(get_repository(), opportunity_id, method))})
+
+
+@router.get("/opportunities/{opportunity_id}/brief/audio", response_class=Response)
+@limiter.limit(VOICE_RATE_LIMIT)
+def brief_audio(request: Request, opportunity_id: str, method: Method = "closest") -> Response:
+    """The briefing read aloud by ElevenLabs (MP3). 503 when no ElevenLabs key is configured."""
+    text = voice.brief_script(detail(get_repository(), opportunity_id, method))
+    try:
+        audio = voice.synthesize(text)
+    except voice.VoiceError as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from None
+    except HTTPError as exc:
+        raise HTTPException(status_code=502, detail=f"voice service error ({exc.code})") from None
+    except (URLError, TimeoutError):
+        raise HTTPException(status_code=504, detail="voice service unreachable") from None
+    return Response(audio, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=86400"})
