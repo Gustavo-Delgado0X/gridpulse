@@ -128,3 +128,25 @@ def test_health_reports_whether_voice_is_configured(monkeypatch):
     assert client.get("/api/health").json()["data"]["voice"] == "unavailable"
     monkeypatch.setenv("ELEVENLABS_API_KEY", "k")
     assert client.get("/api/health").json()["data"]["voice"] == "available"
+
+
+def test_upstream_reason_is_reported_without_the_key(monkeypatch):
+    body = b'{"detail":{"status":"missing_permissions","message":"key test-key-123 lacks text_to_speech"}}'
+
+    def failing(request, timeout):
+        raise urllib.error.HTTPError(request.full_url, 401, "Unauthorized", {}, io.BytesIO(body))
+
+    monkeypatch.setenv("ELEVENLABS_API_KEY", " test-key-123\n")  # pasted with stray whitespace
+    monkeypatch.setattr(voice, "urlopen", failing)
+
+    res = client.get(f"/api/opportunities/{THURMOND}/brief/audio")
+
+    assert res.json()["error"]["message"] == "voice service error (401: missing_permissions)"
+    assert "test-key-123" not in res.text
+
+
+def test_api_key_ignores_surrounding_whitespace(monkeypatch):
+    monkeypatch.setenv("ELEVENLABS_API_KEY", "  abc123 \n")
+    assert voice.api_key() == "abc123"
+    monkeypatch.setenv("ELEVENLABS_API_KEY", "   ")
+    assert voice.api_key() is None

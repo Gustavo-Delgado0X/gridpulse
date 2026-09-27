@@ -120,7 +120,9 @@ def brief_audio(request: Request, opportunity_id: str, method: Method = "closest
     except voice.VoiceError as exc:
         raise HTTPException(status_code=503, detail=str(exc)) from None
     except HTTPError as exc:
-        raise HTTPException(status_code=502, detail=f"voice service error ({exc.code})") from None
+        reason = voice.upstream_reason(exc.read())
+        status = f"{exc.code}: {reason}" if reason else str(exc.code)
+        raise HTTPException(status_code=502, detail=f"voice service error ({status})") from None
     except (URLError, TimeoutError):
         raise HTTPException(status_code=504, detail="voice service unreachable") from None
     return Response(audio, media_type="audio/mpeg", headers={"Cache-Control": "public, max-age=86400"})

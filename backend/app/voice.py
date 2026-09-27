@@ -31,7 +31,7 @@ _cache: OrderedDict[tuple, bytes] = OrderedDict()
 
 
 def api_key() -> str | None:
-    return os.environ.get("ELEVENLABS_API_KEY") or None
+    return (os.environ.get("ELEVENLABS_API_KEY") or "").strip() or None
 
 
 def voice_id() -> str:
@@ -85,6 +85,16 @@ def brief_script(detail: dict) -> str:
         "This is a candidate for human review, not a decision.",
     ]
     return " ".join(parts)[:MAX_CHARS]
+
+
+def upstream_reason(body: bytes) -> str | None:
+    """ElevenLabs' short error status (e.g. 'missing_permissions'), safe to show: only [a-z_] words pass."""
+    try:
+        detail = json.loads(body).get("detail")
+    except (ValueError, AttributeError):
+        return None
+    status = detail.get("status") if isinstance(detail, dict) else None
+    return status if isinstance(status, str) and re.fullmatch(r"[a-z_]{1,40}", status) else None
 
 
 class VoiceError(Exception):
