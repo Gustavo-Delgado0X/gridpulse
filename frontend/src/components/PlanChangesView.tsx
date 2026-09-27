@@ -14,6 +14,7 @@ export function PlanChangesView({ changes }: { changes: Change[] }) {
 
   return (
     <section className="view" aria-label="Plan changes">
+      <h1 className="view-title view-title--page">Plan changes</h1>
       <div className="panel">
         <header className="section-head">
           <h2 className="panel-title">What changed between plan versions</h2>

@@ -68,7 +68,7 @@ export function DetailPanel({ detail, triage, onTriage }: Props) {
         <ProjectCard project={detail.project_b} mapsLink={detail.maps_links.b} />
       </div>
       <TimelineStrip opportunity={detail} />
-      <CostEstimator inputs={detail.estimator.inputs} />
+      <CostEstimator key={detail.id} inputs={detail.estimator.inputs} />
       <section aria-label="Evidence">
         <header className="section-head"><span className="tag">EVIDENCE</span><span className="muted small">verbatim quotes with source page</span></header>
         <ul className="evidence-list">{facts.map((e) => <EvidenceItem key={e.id} item={e} />)}</ul>

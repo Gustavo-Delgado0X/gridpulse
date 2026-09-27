@@ -199,3 +199,4 @@
 .detail .segmented { display: grid; grid-template-columns: repeat(4, 1fr); }
 .detail .segmented__item { padding: 0 4px; font-size: 11px; letter-spacing: 0.06em; }
 .pair { max-width: 300px; }
+.view-title--page { margin-bottom: 16px; }

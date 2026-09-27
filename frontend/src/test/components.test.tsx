@@ -90,3 +90,20 @@ test("data quality shows the answer-key check and discrepancies", () => {
   expect(screen.getByText("ANSWER KEY 6/6 ✓")).toBeInTheDocument();
   expect(screen.getByText(/differ by 0.41 mi/)).toBeInTheDocument();
 });
+
+test("radio groups support arrow keys with a roving tab stop", () => {
+  const onChange = vi.fn();
+  render(<TriageControl value="reviewed" onChange={onChange} />);
+  const reviewed = screen.getByRole("radio", { name: "REVIEWED" });
+  expect(reviewed).toHaveAttribute("tabindex", "0");
+  expect(screen.getByRole("radio", { name: "NEW" })).toHaveAttribute("tabindex", "-1");
+  fireEvent.keyDown(reviewed, { key: "ArrowRight" });
+  expect(onChange).toHaveBeenLastCalledWith("contacted");
+  fireEvent.keyDown(reviewed, { key: "ArrowLeft" });
+  expect(onChange).toHaveBeenLastCalledWith("new");
+});
+
+test("every view has a level-one heading", () => {
+  render(<DataQualityView quality={QUALITY} />);
+  expect(screen.getByRole("heading", { level: 1, name: "Data quality" })).toBeInTheDocument();
+});

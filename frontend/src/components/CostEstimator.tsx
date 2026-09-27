@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { computeEstimate, formatUsd, type EstimateValues } from "../format";
 import type { EstimatorInputs } from "../types";
 import { UtilityChip } from "./UtilityChip";
@@ -15,9 +15,9 @@ function initial(inputs: EstimatorInputs): Record<keyof EstimateValues, string> 
   return Object.fromEntries(FIELDS.map((f) => [f.key, String(inputs[f.key])])) as Record<keyof EstimateValues, string>;
 }
 
+/** Mount with a `key` per opportunity so edits never leak between pairs. */
 export function CostEstimator({ inputs }: { inputs: EstimatorInputs }) {
   const [values, setValues] = useState(() => initial(inputs));
-  useEffect(() => setValues(initial(inputs)), [inputs]);
 
   const numbers = Object.fromEntries(
     FIELDS.map((f) => [f.key, Math.max(0, Number(values[f.key]) || 0)]),

@@ -86,7 +86,7 @@ def test_opportunities_filters():
 
     assert t1 and all(o["tier"] == "T1" for o in t1)
     assert all(o["touching"] or o["dist_closest_mi"] <= 5 for o in near)
-    assert all(o["dist_center_mi"] < 25 for o in center)
+    assert all(o["dist_center_mi"] <= 25 for o in center)
 
 
 def test_opportunities_timeline_filter():
@@ -138,3 +138,16 @@ def test_changes_filter_by_event():
 
     assert body["meta"]["count"] == len(body["data"]) > 0
     assert all(c["event"] == "sources_disagree" and c["utility"] == "GPC" for c in body["data"])
+
+
+def test_within_one_year_filter_means_in_service_dates_within_365_days():
+    items = data("/opportunities?timeline=within_1y&d=50")["data"]
+
+    assert items and all(o["in_service_gap_days"] <= 365 for o in items)
+
+
+def test_threshold_is_inclusive_for_both_methods():
+    from app.routes.opportunities import within
+
+    edge = {"touching": False, "dist_closest_mi": 25.0, "dist_center_mi": 25.0}
+    assert within(edge, 25, "closest") and within(edge, 25, "center")

@@ -60,7 +60,8 @@ export default function App() {
 
   const items = opps.status === "ok" ? opps.data : [];
   useEffect(() => {
-    if (opps.status === "ok" && opps.data.length && !opps.data.some((o) => o.id === selectedId)) setSelectedId(opps.data[0].id);
+    if (opps.status !== "ok" || opps.data.some((o) => o.id === selectedId)) return;
+    setSelectedId(opps.data[0]?.id ?? null);
   }, [opps, selectedId]);
 
   const selected = items.find((o) => o.id === selectedId);

@@ -1,4 +1,35 @@
-# DigitalOcean App Platform spec — scaffold placeholder (P1d). Fill at deploy time.
-# static_sites: frontend (npm ci && npm run build, output_dir: dist, catchall_document: index.html)
-# services: api (source_dir: backend, uvicorn --proxy-headers, http_port 8080, Python 3.12 pinned)
-# ingress.rules: /api -> api (preserve_path_prefix: true), / -> frontend
+# DigitalOcean App Platform spec. Deploy: doctl apps create --spec .do/app.yaml
+# Set github.repo below to the pushed repository first.
+name: gridpulse
+region: nyc
+services:
+  - name: api
+    github: { repo: OWNER/gridpulse, branch: main, deploy_on_push: true }
+    source_dir: /
+    environment_slug: python
+    build_command: pip install -r requirements.txt
+    # --proxy-headers makes request.client the real visitor (X-Forwarded-For), so rate limits are per client.
+    run_command: >-
+      uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port 8080
+      --proxy-headers --forwarded-allow-ips='*'
+    http_port: 8080
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    instance_count: 1
+    health_check: { http_path: /api/health }
+    envs:
+      - { key: DATA_MODE, value: seed }
+      - { key: RATE_LIMIT, value: 120/minute }
+      - { key: CORS_ORIGIN, value: "${APP_URL}" }
+static_sites:
+  - name: web
+    github: { repo: OWNER/gridpulse, branch: main, deploy_on_push: true }
+    source_dir: frontend
+    build_command: npm ci && npm run build
+    output_dir: dist
+    catchall_document: index.html
+ingress:
+  rules:
+    - match: { path: { prefix: /api } }
+      component: { name: api, preserve_path_prefix: true }
+    - match: { path: { prefix: / } }
+      component: { name: web }

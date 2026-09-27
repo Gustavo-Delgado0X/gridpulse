@@ -1,4 +1,7 @@
 import type { Method } from "../types";
+import { radioProps } from "../useRovingRadio";
+
+const METHODS: readonly Method[] = ["center", "closest"];
 
 export type View = "opportunities" | "changes" | "quality";
 
@@ -32,8 +35,8 @@ export function TopBar({ view, onView, method, onMethod, distance, onDistance, d
       </nav>
       <div className="controls">
         <div className="segmented" role="radiogroup" aria-label="Distance method">
-          <button type="button" role="radio" aria-checked={method === "center"} className="segmented__item" onClick={() => onMethod("center")}>CENTERS</button>
-          <button type="button" role="radio" aria-checked={method === "closest"} className="segmented__item" onClick={() => onMethod("closest")}>CLOSEST</button>
+          <button type="button" className="segmented__item" {...radioProps(METHODS, method, onMethod, "center")}>CENTERS</button>
+          <button type="button" className="segmented__item" {...radioProps(METHODS, method, onMethod, "closest")}>CLOSEST</button>
         </div>
         <label className="slider">
           <span className="field__label">Within</span>

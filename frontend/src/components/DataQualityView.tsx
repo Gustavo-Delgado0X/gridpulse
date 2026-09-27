@@ -8,6 +8,7 @@ export function DataQualityView({ quality }: { quality: Quality }) {
   const { coverage, acceptance, discrepancies } = quality;
   return (
     <section className="view quality" aria-label="Data quality">
+      <h1 className="view-title view-title--page">Data quality</h1>
       <div className="inverse-strip">
         <div><span className="strip__num mono">{coverage.projects}</span><span className="strip__label">PROJECTS PARSED</span></div>
         <div><span className="strip__num mono">{coverage.projects_located}</span><span className="strip__label">LOCATED</span></div>

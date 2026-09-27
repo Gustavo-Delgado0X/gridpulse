@@ -11,6 +11,7 @@ from app.repository import Repository, get_repository
 from app.schemas import ok
 from engine.estimate import default_inputs, estimate
 from engine.rank import rank
+from engine.timeline import WITHIN_ONE_YEAR_DAYS
 
 router = APIRouter()
 
@@ -22,7 +23,7 @@ MIN_D, MAX_D, DEFAULT_D = 5.0, 50.0, 25.0
 
 def within(opportunity: dict, d: float, method: str) -> bool:
     if method == "center":
-        return opportunity["dist_center_mi"] < d
+        return opportunity["dist_center_mi"] <= d
     return opportunity["touching"] or opportunity["dist_closest_mi"] <= d
 
 
@@ -39,7 +40,7 @@ def select(repo: Repository, d: float, method: str, tier: str | None = None, tim
     if timeline == "same_window":
         items = [o for o in items if o["timeline_label"] == "same_window"]
     elif timeline == "within_1y":
-        items = [o for o in items if o["timeline_label"] in ("same_window", "within_1y")]
+        items = [o for o in items if o["in_service_gap_days"] <= WITHIN_ONE_YEAR_DAYS]
     return [enrich(repo, o) for o in rank(items)]
 
 

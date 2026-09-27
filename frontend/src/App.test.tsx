@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 import { OPPS, QUALITY } from "./test/fixtures";
 
@@ -26,4 +26,14 @@ test("renders the ranked opportunities from the API", async () => {
   expect(await screen.findByText(/SAV: MCINTOSH - PURRYSBURG/)).toBeInTheDocument();
   expect(screen.getByRole("radio", { name: "CLOSEST" })).toHaveAttribute("aria-checked", "true");
   expect(screen.getByText("SEED")).toBeInTheDocument();
+});
+
+test("clears the detail panel when the threshold leaves no opportunities", async () => {
+  const { rerender } = render(<App />);
+  expect(await screen.findByText(/SAV: MCINTOSH - PURRYSBURG/)).toBeInTheDocument();
+  responses["/api/opportunities"] = [];
+  fireEvent.change(screen.getByRole("slider"), { target: { value: "5" } });
+  rerender(<App />);
+  expect(await screen.findByText("NO OVERLAPS AT THIS THRESHOLD")).toBeInTheDocument();
+  expect(screen.queryByRole("region", { name: "Selected opportunity" })).not.toBeInTheDocument();
 });
