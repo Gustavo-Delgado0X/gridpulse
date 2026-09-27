@@ -1,0 +1,6 @@
+# Offline data build (python -m pipeline.build)
+-r requirements.txt
+shapely==2.1.2
+pyproj==3.8.0
+pymupdf==1.28.2
+openpyxl==3.1.5

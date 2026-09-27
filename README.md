@@ -84,7 +84,7 @@ data/raw PDFs ──► pipeline/ parse ──► locate (OSM) ──► answer 
 Requires Python 3.12 (pinned in `.python-version`) and Node 22.
 
 ```bash
-make setup      # venv + pip install -r requirements-dev.txt + npm ci
+make setup      # venv + pip install -r requirements-dev.txt + npm ci  (API-only deps: requirements.txt)
 make dev        # API on :8000 and web on :5173 (Vite proxies /api)
 ```
 
@@ -97,6 +97,15 @@ Rebuilding the data needs the source files. They're gitignored and pinned by SHA
 # data/raw/          <- desc_2025-2029.pdf, desc_2026-2030.pdf, sertp_2025/2026_preliminary_non_ceii.pdf
 .venv/bin/python -m pipeline.fetch_sources   # OSM substations -> data/cache/ (once)
 make pipeline                                # -> data/processed/*.json
+```
+
+## Deploy (Vercel)
+
+`vercel.json` builds the frontend to static files and serves the API from one Python function (`api/index.py`), which is bundled with `data/processed`. From the repo root:
+
+```bash
+npx vercel login     # once per machine
+npx vercel --prod
 ```
 
 ## Tests
@@ -146,7 +155,7 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent.
 - us-atlas and topojson-client (ISC)
 - IBM Plex fonts (OFL-1.1)
 
-Because PyMuPDF is AGPL-licensed, the repository's own license must be AGPL-compatible if the pipeline is distributed.
+**GridPulse is licensed under the GNU AGPL-3.0** (see `LICENSE`), which keeps the repository compatible with PyMuPDF's AGPL license.
 
 ## Disclosures
 
