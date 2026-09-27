@@ -6,27 +6,29 @@ export const STUDY_AREA = { south: 31.9, north: 34.3, west: -83.2, east: -80.6 }
 
 const lonLat = ([lat, lon]: LatLon): [number, number] => [lon, lat];
 
-export function projectLines(projects: Project[]): FeatureCollection<LineString> {
+export function projectLines(projects: Project[], focus: ReadonlySet<string> = new Set()): FeatureCollection<LineString> {
   const features: Feature<LineString>[] = [];
   for (const p of projects) {
     const pts = p.endpoints.filter((e) => e.lat != null && e.lon != null).map((e) => [e.lon!, e.lat!] as [number, number]);
     if (pts.length >= 2) {
-      features.push({ type: "Feature", properties: { id: p.id, utility: p.utility, name: p.name }, geometry: { type: "LineString", coordinates: pts } });
+      features.push({ type: "Feature", properties: { id: p.id, utility: p.utility, name: p.name, focus: focus.has(p.id) },
+        geometry: { type: "LineString", coordinates: pts } });
     }
   }
   return { type: "FeatureCollection", features };
 }
 
-export function projectPoints(projects: Project[]): FeatureCollection<Point> {
+export function projectPoints(projects: Project[], focus: ReadonlySet<string> = new Set()): FeatureCollection<Point> {
   const seen = new Set<string>();
   const features: Feature<Point>[] = [];
   for (const p of projects) {
     for (const e of p.endpoints) {
       if (e.lat == null || e.lon == null) continue;
-      const key = `${p.utility}:${e.id}`;
+      const key = `${p.utility}:${e.id}:${focus.has(p.id)}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      features.push({ type: "Feature", properties: { id: e.id, project: p.id, utility: p.utility, precision: e.precision, name: e.name_raw },
+      features.push({ type: "Feature", properties: { id: e.id, project: p.id, utility: p.utility, precision: e.precision, name: e.name_raw,
+        focus: focus.has(p.id) },
         geometry: { type: "Point", coordinates: [e.lon, e.lat] } });
     }
   }
@@ -97,3 +99,14 @@ export const PLACES: { name: string; lat: number; lon: number; kind: "state" | "
   { name: "Columbia", lat: 34.0, lon: -81.03, kind: "city" },
   { name: "Beaufort", lat: 32.43, lon: -80.67, kind: "city" },
 ];
+
+/** Dashed connector for the selected pair: between closest points, or centers in center mode, with a pill label. */
+export function connector(o: Opportunity, method: Method): { line: Feature<LineString>; mid: [number, number]; label: string } {
+  const [a, b] = overlapEnds(o, method);
+  const touching = method === "closest" && o.touching;
+  return {
+    line: { type: "Feature", properties: { id: o.id }, geometry: { type: "LineString", coordinates: [lonLat(a), lonLat(b)] } },
+    mid: [(a[1] + b[1]) / 2, (a[0] + b[0]) / 2],
+    label: touching ? "touching" : `${(method === "center" ? o.dist_center_mi : o.dist_closest_mi).toFixed(2)} mi`,
+  };
+}

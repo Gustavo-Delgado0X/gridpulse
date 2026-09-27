@@ -1,4 +1,4 @@
-import { allBounds, overlapLines, pairBounds, projectLines, projectPoints, touchPoints } from "../mapData";
+import { allBounds, connector, overlapLines, pairBounds, projectLines, projectPoints, touchPoints } from "../mapData";
 import type { Project } from "../types";
 import { OPPS } from "./fixtures";
 
@@ -49,4 +49,19 @@ test("overview bounds cover every pair's endpoints", () => {
 test("overlap features carry hover state for highlighting", () => {
   const [first] = overlapLines(OPPS, "closest", "closest", 1, null, OPPS[0].id).features;
   expect(first.properties?.hovered).toBe(true);
+});
+
+test("project features carry focus for the selected pair", () => {
+  const ps = [project("a", "DESC", [[32, -81], [33, -81]]), project("b", "GPC", [[32, -82], [32.5, -82]])];
+  const lines = projectLines(ps, new Set(["a"])).features;
+  expect(lines.map((f) => f.properties?.focus)).toEqual([true, false]);
+  expect(projectPoints(ps, new Set(["b"])).features.filter((f) => f.properties?.focus)).toHaveLength(2);
+});
+
+test("connector joins the active method's end points and labels the midpoint", () => {
+  const c = connector(OPPS[1], "closest");
+  expect(c.line.geometry.coordinates).toHaveLength(2);
+  expect(c.label).toBe("2.99 mi");
+  expect(connector(OPPS[0], "closest").label).toBe("touching");
+  expect(connector(OPPS[0], "center").label).toBe("4.09 mi");
 });
