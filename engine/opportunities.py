@@ -10,11 +10,12 @@ from itertools import combinations
 from engine.distance import closest, haversine_mi, shared_facility
 from engine.geometry import LatLon, build_geometry, center_point
 from engine.rank import rank
-from engine.tiers import DEFAULT_MAX_MILES, passes_gate, tier_for
+from engine.tiers import DEFAULT_MAX_MILES, T4_MAX_MILES, passes_gate, tier_for
 from engine.timeline import gap_days, timing_label, window_overlap_days
 
 LOW_CONFIDENCE = {"endpoint_proxy", "regional_approximation"}
 METHODS = ("closest", "center")
+SPERRY_MILES = T4_MAX_MILES  # the guide's fixed center-to-center rule: < 25 mi
 
 
 def _date(value: str | None) -> dt.date | None:
@@ -54,7 +55,7 @@ def _evaluate(pa: dict, pb: dict, max_miles: float, method: str) -> dict | None:
     touching = near.miles == 0 or shared_facility(a["endpoints"], b["endpoints"])
     dist_closest = 0.0 if touching else near.miles
     dist_center = haversine_mi(pa["center"], pb["center"])
-    in_sperry = dist_center < max_miles
+    in_sperry = dist_center < SPERRY_MILES
 
     gate_touching, gate_miles = (touching, dist_closest) if method == "closest" else (False, dist_center)
     if not passes_gate(a["utility"], b["utility"], gate_touching, gate_miles, max_miles):
@@ -68,7 +69,7 @@ def _evaluate(pa: dict, pb: dict, max_miles: float, method: str) -> dict | None:
         "a": a["id"],
         "b": b["id"],
         "method": method,
-        "tier": tier_for(gate_touching, gate_miles, max_miles),
+        "tier": tier_for(gate_touching, gate_miles),
         "touching": touching,
         "dist_closest_mi": round(dist_closest, 3),
         "dist_center_mi": round(dist_center, 3),
@@ -78,7 +79,7 @@ def _evaluate(pa: dict, pb: dict, max_miles: float, method: str) -> dict | None:
         "window_overlap_days": overlap,
         "in_service_gap_days": gap,
         "timeline_label": timing_label(overlap, gap),
-        "flags": _flags(a, b, in_sperry, touching or dist_closest <= max_miles),
+        "flags": _flags(a, b, in_sperry, touching or dist_closest <= SPERRY_MILES),
     }
 
 

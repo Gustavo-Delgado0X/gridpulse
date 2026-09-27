@@ -12,7 +12,8 @@ TIER_LABELS = {
 }
 
 
-def tier_for(touching: bool, miles: float | None, max_miles: float = T4_MAX_MILES) -> str | None:
+def tier_for(touching: bool, miles: float | None) -> str | None:
+    """Fixed tier table (contracts §2.3). Pairs past 25 mi can pass a wider gate but carry no tier."""
     if touching or miles == 0:
         return "T1"
     if miles is None:
@@ -21,7 +22,7 @@ def tier_for(touching: bool, miles: float | None, max_miles: float = T4_MAX_MILE
         return "T2"
     if miles < T3_MAX_MILES:
         return "T3"
-    if miles <= max(max_miles, T4_MAX_MILES):
+    if miles <= T4_MAX_MILES:
         return "T4"
     return None
 

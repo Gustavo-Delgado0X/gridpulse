@@ -38,3 +38,7 @@ def test_gate_respects_threshold_and_touching():
 def test_tier_labels_name_the_shared_resource():
     assert TIER_LABELS["T1"] == "MUST COORDINATE"
     assert TIER_LABELS["T4"] == "SHARE CREWS"
+
+
+def test_tier_boundaries_do_not_move_with_the_gate():
+    assert tier_for(False, 30.0) is None

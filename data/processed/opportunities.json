@@ -181,150 +181,6 @@
    "rank": 5
   },
   {
-   "id": "desc-2428-6367-d-g__gpc-17075",
-   "a": "desc-2428-6367-d-g",
-   "b": "gpc-17075",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.357098414725876,
-     -81.11724608814652
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.346439000000004,
-     -81.0785475
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 6
-  },
-  {
-   "id": "desc-2428-6359__gpc-20277",
-   "a": "desc-2428-6359",
-   "b": "gpc-20277",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 29.941,
-   "dist_center_mi": 29.97,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 882,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 7
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-17075",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-17075",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 8
-  },
-  {
-   "id": "desc-2428-6359__gpc-20066",
-   "a": "desc-2428-6359",
-   "b": "gpc-20066",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 44.772,
-   "dist_center_mi": 46.481,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 9
-  },
-  {
    "id": "desc-2428-6367-d-g__gpc-20066",
    "a": "desc-2428-6367-d-g",
    "b": "gpc-20066",
@@ -358,115 +214,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 10
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20277",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20277",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.177,
-   "dist_center_mi": 27.127,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 11
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20067",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20067",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 33.795,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 12
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20066",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20066",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 34.345,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 13
+   "rank": 6
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20067",
@@ -502,155 +250,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 14
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-17075",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-17075",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.321091315383846,
-     -81.00946067177087
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 517,
-   "in_service_gap_days": 213,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 15
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20067",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20067",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 33.795,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 517,
-   "in_service_gap_days": 213,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 16
-  },
-  {
-   "id": "desc-2428-6810-o__gpc-19248",
-   "a": "desc-2428-6810-o",
-   "b": "gpc-19248",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.786,
-   "dist_center_mi": 52.731,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     32.884657100000005,
-     -82.41587240000001
-    ]
-   ],
-   "centers": [
-    [
-     33.4328703,
-     -81.9110807
-    ],
-    [
-     32.9415671,
-     -82.60890520000001
-    ]
-   ],
-   "window_overlap_days": 151,
-   "in_service_gap_days": 213,
-   "timeline_label": "same_window",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 17
-  },
-  {
-   "id": "desc-2428-6852__gpc-19248",
-   "a": "desc-2428-6852",
-   "b": "gpc-19248",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.786,
-   "dist_center_mi": 60.359,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     32.884657100000005,
-     -82.41587240000001
-    ]
-   ],
-   "centers": [
-    [
-     33.4837512,
-     -81.79020395
-    ],
-    [
-     32.9415671,
-     -82.60890520000001
-    ]
-   ],
-   "window_overlap_days": 954,
-   "in_service_gap_days": 293,
-   "timeline_label": "same_window",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 18
+   "rank": 7
   },
   {
    "id": "desc-2428-6808-s__gpc-20277",
@@ -686,223 +286,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 19
-  },
-  {
-   "id": "desc-2428-6359__gpc-20065",
-   "a": "desc-2428-6359",
-   "b": "gpc-20065",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 30.191,
-   "dist_center_mi": 33.568,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 20
-  },
-  {
-   "id": "desc-2428-6810-a__gpc-20326",
-   "a": "desc-2428-6810-a",
-   "b": "gpc-20326",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 34.586,
-   "dist_center_mi": 34.586,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.660126999999996,
-     -82.195931
-    ],
-    [
-     34.00183239999999,
-     -82.6362788
-    ]
-   ],
-   "centers": [
-    [
-     33.660127,
-     -82.195931
-    ],
-    [
-     34.0018324,
-     -82.6362788
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 21
-  },
-  {
-   "id": "desc-2428-6359__gpc-20785",
-   "a": "desc-2428-6359",
-   "b": "gpc-20785",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.929,
-   "dist_center_mi": 39.036,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.248701199999985,
-     -81.2094724
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 22
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-17075",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-17075",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 23
-  },
-  {
-   "id": "desc-2428-6359__gpc-20067",
-   "a": "desc-2428-6359",
-   "b": "gpc-20067",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 44.772,
-   "dist_center_mi": 46.633,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 517,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 24
-  },
-  {
-   "id": "desc-2428-6809-e__gpc-20326",
-   "a": "desc-2428-6809-e",
-   "b": "gpc-20326",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.272,
-   "dist_center_mi": 45.27,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     34.00183239999999,
-     -82.6362788
-    ]
-   ],
-   "centers": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     34.0018324,
-     -82.6362788
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 25
+   "rank": 8
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20785",
@@ -938,115 +322,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 26
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20277",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20277",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.177,
-   "dist_center_mi": 27.127,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 27
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20065",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20065",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 28
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20785",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20785",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.3,
-   "dist_center_mi": 31.333,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.22602515787742,
-     -81.19513976793566
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 578,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 29
+   "rank": 9
   },
   {
    "id": "desc-2428-6808-s__gpc-20785",
@@ -1082,115 +358,7 @@
    "in_service_gap_days": 730,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 30
-  },
-  {
-   "id": "desc-2428-6359__gpc-20783",
-   "a": "desc-2428-6359",
-   "b": "gpc-20783",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.845,
-   "dist_center_mi": 46.172,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.0956148,
-     -81.20781715
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 731,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 31
-  },
-  {
-   "id": "desc-2428-6359__gpc-20407",
-   "a": "desc-2428-6359",
-   "b": "gpc-20407",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 48.278,
-   "dist_center_mi": 48.393,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 731,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 32
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20785",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20785",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.3,
-   "dist_center_mi": 31.333,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.22602515787742,
-     -81.19513976793566
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 882,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 33
+   "rank": 10
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20783",
@@ -1226,7 +394,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 34
+   "rank": 11
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20407",
@@ -1262,299 +430,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 35
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20407",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20407",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 35.679,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 883,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 36
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20783",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20783",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 36.927,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0956148,
-     -81.20781715
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 883,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 37
-  },
-  {
-   "id": "desc-2428-6359__gpc-21023",
-   "a": "desc-2428-6359",
-   "b": "gpc-21023",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 46.372,
-   "dist_center_mi": 49.654,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 151,
-   "in_service_gap_days": 1096,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 38
-  },
-  {
-   "id": "desc-2428-6810-f__gpc-20793",
-   "a": "desc-2428-6810-f",
-   "b": "gpc-20793",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 32.187,
-   "dist_center_mi": 33.519,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.87217999999999,
-     -81.6977228
-    ],
-    [
-     33.660126999999996,
-     -82.195931
-    ]
-   ],
-   "centers": [
-    [
-     33.87218,
-     -81.6977228
-    ],
-    [
-     33.6020605,
-     -82.1822895
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 1248,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 39
-  },
-  {
-   "id": "desc-2428-6810-o__gpc-20756",
-   "a": "desc-2428-6810-o",
-   "b": "gpc-20756",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.786,
-   "dist_center_mi": 75.786,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     32.884657100000005,
-     -82.41587240000001
-    ]
-   ],
-   "centers": [
-    [
-     33.4328703,
-     -81.9110807
-    ],
-    [
-     32.40965695,
-     -82.3817849
-    ]
-   ],
-   "window_overlap_days": 364,
-   "in_service_gap_days": 1248,
-   "timeline_label": "same_window",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 40
-  },
-  {
-   "id": "desc-2428-6852__gpc-20756",
-   "a": "desc-2428-6852",
-   "b": "gpc-20756",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.786,
-   "dist_center_mi": 81.757,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     32.884657100000005,
-     -82.41587240000001
-    ]
-   ],
-   "centers": [
-    [
-     33.4837512,
-     -81.79020395
-    ],
-    [
-     32.40965695,
-     -82.3817849
-    ]
-   ],
-   "window_overlap_days": 770,
-   "in_service_gap_days": 1754,
-   "timeline_label": "same_window",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 41
-  },
-  {
-   "id": "desc-2428-6810-o__gpc-14222",
-   "a": "desc-2428-6810-o",
-   "b": "gpc-14222",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 29.106,
-   "dist_center_mi": 29.045,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.453954999999986,
-     -82.414219
-    ]
-   ],
-   "centers": [
-    [
-     33.4328703,
-     -81.9110807
-    ],
-    [
-     33.453955,
-     -82.414219
-    ]
-   ],
-   "window_overlap_days": 364,
-   "in_service_gap_days": 1979,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 42
-  },
-  {
-   "id": "desc-2428-6852__gpc-14222",
-   "a": "desc-2428-6852",
-   "b": "gpc-14222",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 29.106,
-   "dist_center_mi": 36.025,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.453954999999986,
-     -82.414219
-    ]
-   ],
-   "centers": [
-    [
-     33.4837512,
-     -81.79020395
-    ],
-    [
-     33.453955,
-     -82.414219
-    ]
-   ],
-   "window_overlap_days": 376,
-   "in_service_gap_days": 2485,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 43
+   "rank": 12
   },
   {
    "id": "desc-2428-6808-s__gpc-20066",
@@ -1590,43 +466,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "within_1y",
    "flags": [],
-   "rank": 44
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20066",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20066",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 34.345,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 517,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 45
+   "rank": 13
   },
   {
    "id": "desc-2428-6808-s__gpc-20065",
@@ -1662,79 +502,7 @@
    "in_service_gap_days": 730,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 46
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20065",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20065",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 882,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 47
-  },
-  {
-   "id": "desc-2428-6810-o__gpc-19996",
-   "a": "desc-2428-6810-o",
-   "b": "gpc-19996",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.011,
-   "dist_center_mi": 44.917,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.38050069999999,
-     -82.687296
-    ]
-   ],
-   "centers": [
-    [
-     33.4328703,
-     -81.9110807
-    ],
-    [
-     33.3805007,
-     -82.687296
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 883,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 48
+   "rank": 14
   },
   {
    "id": "desc-2428-6808-s__gpc-20783",
@@ -1770,7 +538,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 49
+   "rank": 15
   },
   {
    "id": "desc-2428-6808-s__gpc-20407",
@@ -1806,43 +574,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 50
-  },
-  {
-   "id": "desc-2428-6359__gpc-21006",
-   "a": "desc-2428-6359",
-   "b": "gpc-21006",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 48.102,
-   "dist_center_mi": 48.266,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.041230799999994,
-     -81.1444637
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1096,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 51
+   "rank": 16
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21023",
@@ -1878,7 +610,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 52
+   "rank": 17
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21006",
@@ -1914,225 +646,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 53
-  },
-  {
-   "id": "desc-2428-6810-f__gpc-20794",
-   "a": "desc-2428-6810-f",
-   "b": "gpc-20794",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 32.187,
-   "dist_center_mi": 33.519,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.87217999999999,
-     -81.6977228
-    ],
-    [
-     33.6601273,
-     -82.19593070000002
-    ]
-   ],
-   "centers": [
-    [
-     33.87218,
-     -81.6977228
-    ],
-    [
-     33.60206075,
-     -82.1822894
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 54
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20407",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20407",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 35.679,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 55
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-21006",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-21006",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 36.226,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 56
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20783",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20783",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 36.927,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0956148,
-     -81.20781715
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 57
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-21023",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-21023",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 39.808,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 58
-  },
-  {
-   "id": "desc-2428-6852__gpc-19996",
-   "a": "desc-2428-6852",
-   "b": "gpc-19996",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.011,
-   "dist_center_mi": 52.217,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.38050069999999,
-     -82.687296
-    ]
-   ],
-   "centers": [
-    [
-     33.4837512,
-     -81.79020395
-    ],
-    [
-     33.3805007,
-     -82.687296
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1389,
-   "timeline_label": "separate",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 59
+   "rank": 18
   },
   {
    "id": "desc-2428-6808-s__gpc-21023",
@@ -2168,7 +682,7 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 60
+   "rank": 19
   },
   {
    "id": "desc-2428-6808-s__gpc-21006",
@@ -2204,187 +718,7 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 61
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-21006",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-21006",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 36.226,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 62
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-21023",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-21023",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 39.808,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 63
-  },
-  {
-   "id": "desc-2428-6810-f__gpc-17993",
-   "a": "desc-2428-6810-f",
-   "b": "gpc-17993",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.319,
-   "dist_center_mi": 42.779,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.87217999999999,
-     -81.6977228
-    ],
-    [
-     33.54399419999999,
-     -82.1686481
-    ]
-   ],
-   "centers": [
-    [
-     33.87218,
-     -81.6977228
-    ],
-    [
-     33.4989746,
-     -82.29143355
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1826,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 64
-  },
-  {
-   "id": "desc-2428-6810-a__gpc-19996",
-   "a": "desc-2428-6810-a",
-   "b": "gpc-19996",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 34.292,
-   "dist_center_mi": 34.27,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.660126999999996,
-     -82.195931
-    ],
-    [
-     33.38050069999999,
-     -82.687296
-    ]
-   ],
-   "centers": [
-    [
-     33.660127,
-     -82.195931
-    ],
-    [
-     33.3805007,
-     -82.687296
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1978,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 65
-  },
-  {
-   "id": "desc-2428-6809-e__gpc-19996",
-   "a": "desc-2428-6809-e",
-   "b": "gpc-19996",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 38.815,
-   "dist_center_mi": 38.752,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     33.38050069999999,
-     -82.687296
-    ]
-   ],
-   "centers": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     33.3805007,
-     -82.687296
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1978,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 66
+   "rank": 20
   },
   {
    "id": "desc-2428-6810-o__gpc-20793",
@@ -2420,7 +754,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 67
+   "rank": 21
   },
   {
    "id": "desc-2428-6810-o__gpc-20794",
@@ -2456,43 +790,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 68
-  },
-  {
-   "id": "desc-2428-6359__gpc-20784",
-   "a": "desc-2428-6359",
-   "b": "gpc-20784",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.845,
-   "dist_center_mi": 46.576,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.131501,
-     -81.29764449999999
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2192,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 69
+   "rank": 22
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20784",
@@ -2528,43 +826,7 @@
    "in_service_gap_days": 2344,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 70
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20784",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20784",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 37.286,
-   "dist_center_mi": 39.731,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.131501,
-     -81.29764449999999
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2344,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 71
+   "rank": 23
   },
   {
    "id": "desc-2428-6852__gpc-20793",
@@ -2600,7 +862,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 72
+   "rank": 24
   },
   {
    "id": "desc-2428-6852__gpc-20794",
@@ -2636,7 +898,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 73
+   "rank": 25
   },
   {
    "id": "desc-2428-6810-o__gpc-17993",
@@ -2672,7 +934,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 74
+   "rank": 26
   },
   {
    "id": "desc-2428-6808-s__gpc-20784",
@@ -2708,43 +970,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 75
-  },
-  {
-   "id": "desc-2428-6359__gpc-20796",
-   "a": "desc-2428-6359",
-   "b": "gpc-20796",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.594,
-   "dist_center_mi": 47.636,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2557,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 76
+   "rank": 27
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20796",
@@ -2780,223 +1006,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 77
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20784",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20784",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 37.286,
-   "dist_center_mi": 39.731,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.131501,
-     -81.29764449999999
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 78
-  },
-  {
-   "id": "desc-2428-6809-n__gpc-20793",
-   "a": "desc-2428-6809-n",
-   "b": "gpc-20793",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 40.319,
-   "dist_center_mi": 41.505,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.91348669999999,
-     -81.5644353
-    ],
-    [
-     33.660126999999996,
-     -82.195931
-    ]
-   ],
-   "centers": [
-    [
-     33.9134867,
-     -81.5644353
-    ],
-    [
-     33.6020605,
-     -82.1822895
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 79
-  },
-  {
-   "id": "desc-2428-6809-n__gpc-20794",
-   "a": "desc-2428-6809-n",
-   "b": "gpc-20794",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 40.319,
-   "dist_center_mi": 41.505,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.91348669999999,
-     -81.5644353
-    ],
-    [
-     33.6601273,
-     -82.19593070000002
-    ]
-   ],
-   "centers": [
-    [
-     33.9134867,
-     -81.5644353
-    ],
-    [
-     33.60206075,
-     -82.1822894
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 80
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20796",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20796",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.555,
-   "dist_center_mi": 42.509,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 81
-  },
-  {
-   "id": "desc-2428-6371-d__gpc-20793",
-   "a": "desc-2428-6371-d",
-   "b": "gpc-20793",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.176,
-   "dist_center_mi": 47.392,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.65011189999999,
-     -81.3605659
-    ],
-    [
-     33.543994,
-     -82.168648
-    ]
-   ],
-   "centers": [
-    [
-     33.6501119,
-     -81.3605659
-    ],
-    [
-     33.6020605,
-     -82.1822895
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 82
-  },
-  {
-   "id": "desc-2428-6371-d__gpc-20794",
-   "a": "desc-2428-6371-d",
-   "b": "gpc-20794",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.176,
-   "dist_center_mi": 47.392,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.65011189999999,
-     -81.3605659
-    ],
-    [
-     33.54399419999999,
-     -82.1686481
-    ]
-   ],
-   "centers": [
-    [
-     33.6501119,
-     -81.3605659
-    ],
-    [
-     33.60206075,
-     -82.1822894
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 83
+   "rank": 28
   },
   {
    "id": "desc-2428-6808-s__gpc-20796",
@@ -3007,7 +1017,7 @@
    "touching": false,
    "dist_closest_mi": 23.197,
    "dist_center_mi": 26.42,
-   "in_sperry_method": true,
+   "in_sperry_method": false,
    "closest_points": [
     [
      32.333757999999996,
@@ -3031,8 +1041,10 @@
    "window_overlap_days": 0,
    "in_service_gap_days": 2922,
    "timeline_label": "separate",
-   "flags": [],
-   "rank": 84
+   "flags": [
+    "method_disagree"
+   ],
+   "rank": 29
   },
   {
    "id": "desc-2428-6852__gpc-17993",
@@ -3043,7 +1055,7 @@
    "touching": false,
    "dist_closest_mi": 16.73,
    "dist_center_mi": 28.901,
-   "in_sperry_method": true,
+   "in_sperry_method": false,
    "closest_points": [
     [
      33.43287029999998,
@@ -3067,8 +1079,10 @@
    "window_overlap_days": 0,
    "in_service_gap_days": 3063,
    "timeline_label": "separate",
-   "flags": [],
-   "rank": 85
+   "flags": [
+    "method_disagree"
+   ],
+   "rank": 30
   },
   {
    "id": "desc-2428-6809-e__gpc-20793",
@@ -3104,7 +1118,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 86
+   "rank": 31
   },
   {
    "id": "desc-2428-6809-e__gpc-20794",
@@ -3140,7 +1154,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 87
+   "rank": 32
   },
   {
    "id": "desc-2428-6810-a__gpc-14222",
@@ -3176,7 +1190,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 88
+   "rank": 33
   },
   {
    "id": "desc-2428-6809-e__gpc-14222",
@@ -3212,263 +1226,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 89
-  },
-  {
-   "id": "desc-2428-6367-d-g__gpc-20787",
-   "a": "desc-2428-6367-d-g",
-   "b": "gpc-20787",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.357098414725876,
-     -81.11724608814652
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.346439000000004,
-     -81.0785475
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 90
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20796",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20796",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.555,
-   "dist_center_mi": 42.509,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 91
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20787",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20787",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 92
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-20787",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-20787",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.321091315383846,
-     -81.00946067177087
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3287,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 93
-  },
-  {
-   "id": "desc-2428-6809-n__gpc-17993",
-   "a": "desc-2428-6809-n",
-   "b": "gpc-17993",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 43.118,
-   "dist_center_mi": 50.66,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     33.91348669999999,
-     -81.5644353
-    ],
-    [
-     33.54399419999999,
-     -82.1686481
-    ]
-   ],
-   "centers": [
-    [
-     33.9134867,
-     -81.5644353
-    ],
-    [
-     33.4989746,
-     -82.29143355
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3287,
-   "timeline_label": "separate",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 94
-  },
-  {
-   "id": "desc-2428-6371-d__gpc-17993",
-   "a": "desc-2428-6371-d",
-   "b": "gpc-17993",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.176,
-   "dist_center_mi": 54.595,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     33.65011189999999,
-     -81.3605659
-    ],
-    [
-     33.54399419999999,
-     -82.1686481
-    ]
-   ],
-   "centers": [
-    [
-     33.6501119,
-     -81.3605659
-    ],
-    [
-     33.4989746,
-     -82.29143355
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3287,
-   "timeline_label": "separate",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 95
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20787",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20787",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3439,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 96
+   "rank": 34
   },
   {
    "id": "desc-2428-6809-e__gpc-17993",
@@ -3504,7 +1262,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 97
+   "rank": 35
   },
   {
    "id": "desc-2428-6810-a__gpc-17993",
@@ -3538,6 +1296,2238 @@
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 3652,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 36
+  },
+  {
+   "id": "desc-2428-6367-d-g__gpc-17075",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-17075",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.418,
+   "dist_center_mi": 25.593,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.357098414725876,
+     -81.11724608814652
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.346439000000004,
+     -81.0785475
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 37
+  },
+  {
+   "id": "desc-2428-6359__gpc-20277",
+   "a": "desc-2428-6359",
+   "b": "gpc-20277",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 29.941,
+   "dist_center_mi": 29.97,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 882,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 38
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-17075",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-17075",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 39
+  },
+  {
+   "id": "desc-2428-6359__gpc-20066",
+   "a": "desc-2428-6359",
+   "b": "gpc-20066",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 44.772,
+   "dist_center_mi": 46.481,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 40
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20277",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20277",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 27.127,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 41
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20067",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20067",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 33.795,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 42
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20066",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20066",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 34.345,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 43
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-17075",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-17075",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.943,
+   "dist_center_mi": 26.406,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.321091315383846,
+     -81.00946067177087
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.2843925,
+     -80.9429395
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 517,
+   "in_service_gap_days": 213,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 44
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20067",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20067",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 33.795,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 517,
+   "in_service_gap_days": 213,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 45
+  },
+  {
+   "id": "desc-2428-6810-o__gpc-19248",
+   "a": "desc-2428-6810-o",
+   "b": "gpc-19248",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.786,
+   "dist_center_mi": 52.731,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     32.884657100000005,
+     -82.41587240000001
+    ]
+   ],
+   "centers": [
+    [
+     33.4328703,
+     -81.9110807
+    ],
+    [
+     32.9415671,
+     -82.60890520000001
+    ]
+   ],
+   "window_overlap_days": 151,
+   "in_service_gap_days": 213,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 46
+  },
+  {
+   "id": "desc-2428-6852__gpc-19248",
+   "a": "desc-2428-6852",
+   "b": "gpc-19248",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.786,
+   "dist_center_mi": 60.359,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     32.884657100000005,
+     -82.41587240000001
+    ]
+   ],
+   "centers": [
+    [
+     33.4837512,
+     -81.79020395
+    ],
+    [
+     32.9415671,
+     -82.60890520000001
+    ]
+   ],
+   "window_overlap_days": 954,
+   "in_service_gap_days": 293,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 47
+  },
+  {
+   "id": "desc-2428-6359__gpc-20065",
+   "a": "desc-2428-6359",
+   "b": "gpc-20065",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 30.191,
+   "dist_center_mi": 33.568,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 48
+  },
+  {
+   "id": "desc-2428-6810-a__gpc-20326",
+   "a": "desc-2428-6810-a",
+   "b": "gpc-20326",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 34.586,
+   "dist_center_mi": 34.586,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.660126999999996,
+     -82.195931
+    ],
+    [
+     34.00183239999999,
+     -82.6362788
+    ]
+   ],
+   "centers": [
+    [
+     33.660127,
+     -82.195931
+    ],
+    [
+     34.0018324,
+     -82.6362788
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 49
+  },
+  {
+   "id": "desc-2428-6359__gpc-20785",
+   "a": "desc-2428-6359",
+   "b": "gpc-20785",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.929,
+   "dist_center_mi": 39.036,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.248701199999985,
+     -81.2094724
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 50
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-17075",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-17075",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 51
+  },
+  {
+   "id": "desc-2428-6359__gpc-20067",
+   "a": "desc-2428-6359",
+   "b": "gpc-20067",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 44.772,
+   "dist_center_mi": 46.633,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 517,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 52
+  },
+  {
+   "id": "desc-2428-6809-e__gpc-20326",
+   "a": "desc-2428-6809-e",
+   "b": "gpc-20326",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.272,
+   "dist_center_mi": 45.27,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.00183239999999,
+     -82.6362788
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.0018324,
+     -82.6362788
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 53
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20277",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20277",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 27.127,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 54
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20065",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20065",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.576,
+   "dist_center_mi": 29.259,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 55
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20785",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20785",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.3,
+   "dist_center_mi": 31.333,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.22602515787742,
+     -81.19513976793566
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 578,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 56
+  },
+  {
+   "id": "desc-2428-6359__gpc-20783",
+   "a": "desc-2428-6359",
+   "b": "gpc-20783",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.845,
+   "dist_center_mi": 46.172,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 731,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 57
+  },
+  {
+   "id": "desc-2428-6359__gpc-20407",
+   "a": "desc-2428-6359",
+   "b": "gpc-20407",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 48.278,
+   "dist_center_mi": 48.393,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 731,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 58
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20785",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20785",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.3,
+   "dist_center_mi": 31.333,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.22602515787742,
+     -81.19513976793566
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 882,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 59
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20407",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20407",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 35.679,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 883,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 60
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20783",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20783",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 36.927,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 883,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 61
+  },
+  {
+   "id": "desc-2428-6359__gpc-21023",
+   "a": "desc-2428-6359",
+   "b": "gpc-21023",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 46.372,
+   "dist_center_mi": 49.654,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 151,
+   "in_service_gap_days": 1096,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 62
+  },
+  {
+   "id": "desc-2428-6810-f__gpc-20793",
+   "a": "desc-2428-6810-f",
+   "b": "gpc-20793",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 32.187,
+   "dist_center_mi": 33.519,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.87217999999999,
+     -81.6977228
+    ],
+    [
+     33.660126999999996,
+     -82.195931
+    ]
+   ],
+   "centers": [
+    [
+     33.87218,
+     -81.6977228
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 1248,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 63
+  },
+  {
+   "id": "desc-2428-6810-o__gpc-20756",
+   "a": "desc-2428-6810-o",
+   "b": "gpc-20756",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.786,
+   "dist_center_mi": 75.786,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     32.884657100000005,
+     -82.41587240000001
+    ]
+   ],
+   "centers": [
+    [
+     33.4328703,
+     -81.9110807
+    ],
+    [
+     32.40965695,
+     -82.3817849
+    ]
+   ],
+   "window_overlap_days": 364,
+   "in_service_gap_days": 1248,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 64
+  },
+  {
+   "id": "desc-2428-6852__gpc-20756",
+   "a": "desc-2428-6852",
+   "b": "gpc-20756",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.786,
+   "dist_center_mi": 81.757,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     32.884657100000005,
+     -82.41587240000001
+    ]
+   ],
+   "centers": [
+    [
+     33.4837512,
+     -81.79020395
+    ],
+    [
+     32.40965695,
+     -82.3817849
+    ]
+   ],
+   "window_overlap_days": 770,
+   "in_service_gap_days": 1754,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 65
+  },
+  {
+   "id": "desc-2428-6810-o__gpc-14222",
+   "a": "desc-2428-6810-o",
+   "b": "gpc-14222",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 29.106,
+   "dist_center_mi": 29.045,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.453954999999986,
+     -82.414219
+    ]
+   ],
+   "centers": [
+    [
+     33.4328703,
+     -81.9110807
+    ],
+    [
+     33.453955,
+     -82.414219
+    ]
+   ],
+   "window_overlap_days": 364,
+   "in_service_gap_days": 1979,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 66
+  },
+  {
+   "id": "desc-2428-6852__gpc-14222",
+   "a": "desc-2428-6852",
+   "b": "gpc-14222",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 29.106,
+   "dist_center_mi": 36.025,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.453954999999986,
+     -82.414219
+    ]
+   ],
+   "centers": [
+    [
+     33.4837512,
+     -81.79020395
+    ],
+    [
+     33.453955,
+     -82.414219
+    ]
+   ],
+   "window_overlap_days": 376,
+   "in_service_gap_days": 2485,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 67
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20066",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20066",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 34.345,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 517,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 68
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20065",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20065",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.576,
+   "dist_center_mi": 29.259,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 882,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 69
+  },
+  {
+   "id": "desc-2428-6810-o__gpc-19996",
+   "a": "desc-2428-6810-o",
+   "b": "gpc-19996",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.011,
+   "dist_center_mi": 44.917,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.4328703,
+     -81.9110807
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 883,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 70
+  },
+  {
+   "id": "desc-2428-6359__gpc-21006",
+   "a": "desc-2428-6359",
+   "b": "gpc-21006",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 48.102,
+   "dist_center_mi": 48.266,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.041230799999994,
+     -81.1444637
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1096,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 71
+  },
+  {
+   "id": "desc-2428-6810-f__gpc-20794",
+   "a": "desc-2428-6810-f",
+   "b": "gpc-20794",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 32.187,
+   "dist_center_mi": 33.519,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.87217999999999,
+     -81.6977228
+    ],
+    [
+     33.6601273,
+     -82.19593070000002
+    ]
+   ],
+   "centers": [
+    [
+     33.87218,
+     -81.6977228
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 72
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20407",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20407",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 35.679,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 73
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-21006",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-21006",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 36.226,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 74
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20783",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20783",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 36.927,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 75
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-21023",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-21023",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 39.808,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 76
+  },
+  {
+   "id": "desc-2428-6852__gpc-19996",
+   "a": "desc-2428-6852",
+   "b": "gpc-19996",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.011,
+   "dist_center_mi": 52.217,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.4837512,
+     -81.79020395
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1389,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 77
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-21006",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-21006",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 36.226,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 78
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-21023",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-21023",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 39.808,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 79
+  },
+  {
+   "id": "desc-2428-6810-f__gpc-17993",
+   "a": "desc-2428-6810-f",
+   "b": "gpc-17993",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.319,
+   "dist_center_mi": 42.779,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.87217999999999,
+     -81.6977228
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.87218,
+     -81.6977228
+    ],
+    [
+     33.4989746,
+     -82.29143355
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1826,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 80
+  },
+  {
+   "id": "desc-2428-6810-a__gpc-19996",
+   "a": "desc-2428-6810-a",
+   "b": "gpc-19996",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 34.292,
+   "dist_center_mi": 34.27,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.660126999999996,
+     -82.195931
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.660127,
+     -82.195931
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1978,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 81
+  },
+  {
+   "id": "desc-2428-6809-e__gpc-19996",
+   "a": "desc-2428-6809-e",
+   "b": "gpc-19996",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 38.815,
+   "dist_center_mi": 38.752,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1978,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 82
+  },
+  {
+   "id": "desc-2428-6359__gpc-20784",
+   "a": "desc-2428-6359",
+   "b": "gpc-20784",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.845,
+   "dist_center_mi": 46.576,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2192,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 83
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20784",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20784",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 37.286,
+   "dist_center_mi": 39.731,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2344,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 84
+  },
+  {
+   "id": "desc-2428-6359__gpc-20796",
+   "a": "desc-2428-6359",
+   "b": "gpc-20796",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.594,
+   "dist_center_mi": 47.636,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2557,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 85
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20784",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20784",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 37.286,
+   "dist_center_mi": 39.731,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 86
+  },
+  {
+   "id": "desc-2428-6809-n__gpc-20793",
+   "a": "desc-2428-6809-n",
+   "b": "gpc-20793",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 40.319,
+   "dist_center_mi": 41.505,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.91348669999999,
+     -81.5644353
+    ],
+    [
+     33.660126999999996,
+     -82.195931
+    ]
+   ],
+   "centers": [
+    [
+     33.9134867,
+     -81.5644353
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 87
+  },
+  {
+   "id": "desc-2428-6809-n__gpc-20794",
+   "a": "desc-2428-6809-n",
+   "b": "gpc-20794",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 40.319,
+   "dist_center_mi": 41.505,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.91348669999999,
+     -81.5644353
+    ],
+    [
+     33.6601273,
+     -82.19593070000002
+    ]
+   ],
+   "centers": [
+    [
+     33.9134867,
+     -81.5644353
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 88
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20796",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20796",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.555,
+   "dist_center_mi": 42.509,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 89
+  },
+  {
+   "id": "desc-2428-6371-d__gpc-20793",
+   "a": "desc-2428-6371-d",
+   "b": "gpc-20793",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.176,
+   "dist_center_mi": 47.392,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.65011189999999,
+     -81.3605659
+    ],
+    [
+     33.543994,
+     -82.168648
+    ]
+   ],
+   "centers": [
+    [
+     33.6501119,
+     -81.3605659
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 90
+  },
+  {
+   "id": "desc-2428-6371-d__gpc-20794",
+   "a": "desc-2428-6371-d",
+   "b": "gpc-20794",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.176,
+   "dist_center_mi": 47.392,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.65011189999999,
+     -81.3605659
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.6501119,
+     -81.3605659
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 91
+  },
+  {
+   "id": "desc-2428-6367-d-g__gpc-20787",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-20787",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.418,
+   "dist_center_mi": 25.593,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.357098414725876,
+     -81.11724608814652
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.346439000000004,
+     -81.0785475
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 92
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20796",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20796",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.555,
+   "dist_center_mi": 42.509,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 93
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20787",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20787",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 94
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-20787",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-20787",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.943,
+   "dist_center_mi": 26.406,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.321091315383846,
+     -81.00946067177087
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.2843925,
+     -80.9429395
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3287,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 95
+  },
+  {
+   "id": "desc-2428-6809-n__gpc-17993",
+   "a": "desc-2428-6809-n",
+   "b": "gpc-17993",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 43.118,
+   "dist_center_mi": 50.66,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.91348669999999,
+     -81.5644353
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.9134867,
+     -81.5644353
+    ],
+    [
+     33.4989746,
+     -82.29143355
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3287,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 96
+  },
+  {
+   "id": "desc-2428-6371-d__gpc-17993",
+   "a": "desc-2428-6371-d",
+   "b": "gpc-17993",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.176,
+   "dist_center_mi": 54.595,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.65011189999999,
+     -81.3605659
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.6501119,
+     -81.3605659
+    ],
+    [
+     33.4989746,
+     -82.29143355
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3287,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 97
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20787",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20787",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3439,
    "timeline_label": "separate",
    "flags": [],
    "rank": 98
@@ -3653,150 +3643,6 @@
    "rank": 3
   },
   {
-   "id": "desc-2428-6367-d-g__gpc-17075",
-   "a": "desc-2428-6367-d-g",
-   "b": "gpc-17075",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.357098414725876,
-     -81.11724608814652
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.346439000000004,
-     -81.0785475
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 4
-  },
-  {
-   "id": "desc-2428-6359__gpc-20277",
-   "a": "desc-2428-6359",
-   "b": "gpc-20277",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 29.941,
-   "dist_center_mi": 29.97,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 882,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 5
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-17075",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-17075",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 6
-  },
-  {
-   "id": "desc-2428-6359__gpc-20066",
-   "a": "desc-2428-6359",
-   "b": "gpc-20066",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 44.772,
-   "dist_center_mi": 46.481,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 0,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 7
-  },
-  {
    "id": "desc-2428-6367-d-g__gpc-20277",
    "a": "desc-2428-6367-d-g",
    "b": "gpc-20277",
@@ -3830,7 +3676,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 8
+   "rank": 4
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20066",
@@ -3866,115 +3712,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 9
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20277",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20277",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.177,
-   "dist_center_mi": 27.127,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 10
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20067",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20067",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 33.795,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 11
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20066",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20066",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 34.345,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 12
+   "rank": 5
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20067",
@@ -4010,79 +3748,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 13
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-17075",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-17075",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.321091315383846,
-     -81.00946067177087
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 517,
-   "in_service_gap_days": 213,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 14
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20067",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20067",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 33.795,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 517,
-   "in_service_gap_days": 213,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 15
+   "rank": 6
   },
   {
    "id": "desc-2428-6808-s__gpc-20277",
@@ -4118,223 +3784,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 16
-  },
-  {
-   "id": "desc-2428-6359__gpc-20065",
-   "a": "desc-2428-6359",
-   "b": "gpc-20065",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 30.191,
-   "dist_center_mi": 33.568,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 17
-  },
-  {
-   "id": "desc-2428-6810-a__gpc-20326",
-   "a": "desc-2428-6810-a",
-   "b": "gpc-20326",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 34.586,
-   "dist_center_mi": 34.586,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.660126999999996,
-     -82.195931
-    ],
-    [
-     34.00183239999999,
-     -82.6362788
-    ]
-   ],
-   "centers": [
-    [
-     33.660127,
-     -82.195931
-    ],
-    [
-     34.0018324,
-     -82.6362788
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 18
-  },
-  {
-   "id": "desc-2428-6359__gpc-20785",
-   "a": "desc-2428-6359",
-   "b": "gpc-20785",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.929,
-   "dist_center_mi": 39.036,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.248701199999985,
-     -81.2094724
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 19
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-17075",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-17075",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 20
-  },
-  {
-   "id": "desc-2428-6359__gpc-20067",
-   "a": "desc-2428-6359",
-   "b": "gpc-20067",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 44.772,
-   "dist_center_mi": 46.633,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 517,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 21
-  },
-  {
-   "id": "desc-2428-6809-e__gpc-20326",
-   "a": "desc-2428-6809-e",
-   "b": "gpc-20326",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.272,
-   "dist_center_mi": 45.27,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     34.00183239999999,
-     -82.6362788
-    ]
-   ],
-   "centers": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     34.0018324,
-     -82.6362788
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 22
+   "rank": 7
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20065",
@@ -4370,7 +3820,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 23
+   "rank": 8
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20785",
@@ -4406,115 +3856,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 24
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20277",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20277",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.177,
-   "dist_center_mi": 27.127,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 25
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20065",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20065",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 26
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20785",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20785",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.3,
-   "dist_center_mi": 31.333,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.22602515787742,
-     -81.19513976793566
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 578,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 27
+   "rank": 9
   },
   {
    "id": "desc-2428-6808-s__gpc-20785",
@@ -4550,115 +3892,7 @@
    "in_service_gap_days": 730,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 28
-  },
-  {
-   "id": "desc-2428-6359__gpc-20783",
-   "a": "desc-2428-6359",
-   "b": "gpc-20783",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.845,
-   "dist_center_mi": 46.172,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.0956148,
-     -81.20781715
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 731,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 29
-  },
-  {
-   "id": "desc-2428-6359__gpc-20407",
-   "a": "desc-2428-6359",
-   "b": "gpc-20407",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 48.278,
-   "dist_center_mi": 48.393,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 731,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 30
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20785",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20785",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.3,
-   "dist_center_mi": 31.333,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.22602515787742,
-     -81.19513976793566
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 882,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 31
+   "rank": 10
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20783",
@@ -4694,7 +3928,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 32
+   "rank": 11
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20407",
@@ -4730,223 +3964,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 33
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20407",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20407",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 35.679,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 883,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 34
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20783",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20783",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 36.927,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0956148,
-     -81.20781715
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 883,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 35
-  },
-  {
-   "id": "desc-2428-6359__gpc-21023",
-   "a": "desc-2428-6359",
-   "b": "gpc-21023",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 46.372,
-   "dist_center_mi": 49.654,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 151,
-   "in_service_gap_days": 1096,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 36
-  },
-  {
-   "id": "desc-2428-6810-f__gpc-20793",
-   "a": "desc-2428-6810-f",
-   "b": "gpc-20793",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 32.187,
-   "dist_center_mi": 33.519,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.87217999999999,
-     -81.6977228
-    ],
-    [
-     33.660126999999996,
-     -82.195931
-    ]
-   ],
-   "centers": [
-    [
-     33.87218,
-     -81.6977228
-    ],
-    [
-     33.6020605,
-     -82.1822895
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 1248,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 37
-  },
-  {
-   "id": "desc-2428-6810-o__gpc-14222",
-   "a": "desc-2428-6810-o",
-   "b": "gpc-14222",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 29.106,
-   "dist_center_mi": 29.045,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.453954999999986,
-     -82.414219
-    ]
-   ],
-   "centers": [
-    [
-     33.4328703,
-     -81.9110807
-    ],
-    [
-     33.453955,
-     -82.414219
-    ]
-   ],
-   "window_overlap_days": 364,
-   "in_service_gap_days": 1979,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 38
-  },
-  {
-   "id": "desc-2428-6852__gpc-14222",
-   "a": "desc-2428-6852",
-   "b": "gpc-14222",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 29.106,
-   "dist_center_mi": 36.025,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.453954999999986,
-     -82.414219
-    ]
-   ],
-   "centers": [
-    [
-     33.4837512,
-     -81.79020395
-    ],
-    [
-     33.453955,
-     -82.414219
-    ]
-   ],
-   "window_overlap_days": 376,
-   "in_service_gap_days": 2485,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 39
+   "rank": 12
   },
   {
    "id": "desc-2428-6808-s__gpc-20066",
@@ -4982,43 +4000,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "within_1y",
    "flags": [],
-   "rank": 40
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20066",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20066",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 31.878,
-   "dist_center_mi": 34.345,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 517,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 41
+   "rank": 13
   },
   {
    "id": "desc-2428-6808-s__gpc-20065",
@@ -5054,79 +4036,7 @@
    "in_service_gap_days": 730,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 42
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20065",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20065",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 882,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 43
-  },
-  {
-   "id": "desc-2428-6810-o__gpc-19996",
-   "a": "desc-2428-6810-o",
-   "b": "gpc-19996",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.011,
-   "dist_center_mi": 44.917,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.38050069999999,
-     -82.687296
-    ]
-   ],
-   "centers": [
-    [
-     33.4328703,
-     -81.9110807
-    ],
-    [
-     33.3805007,
-     -82.687296
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 883,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 44
+   "rank": 14
   },
   {
    "id": "desc-2428-6808-s__gpc-20783",
@@ -5162,7 +4072,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 45
+   "rank": 15
   },
   {
    "id": "desc-2428-6808-s__gpc-20407",
@@ -5198,43 +4108,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 46
-  },
-  {
-   "id": "desc-2428-6359__gpc-21006",
-   "a": "desc-2428-6359",
-   "b": "gpc-21006",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 48.102,
-   "dist_center_mi": 48.266,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.041230799999994,
-     -81.1444637
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1096,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 47
+   "rank": 16
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21023",
@@ -5270,7 +4144,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 48
+   "rank": 17
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21006",
@@ -5306,187 +4180,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 49
-  },
-  {
-   "id": "desc-2428-6810-f__gpc-20794",
-   "a": "desc-2428-6810-f",
-   "b": "gpc-20794",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 32.187,
-   "dist_center_mi": 33.519,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.87217999999999,
-     -81.6977228
-    ],
-    [
-     33.6601273,
-     -82.19593070000002
-    ]
-   ],
-   "centers": [
-    [
-     33.87218,
-     -81.6977228
-    ],
-    [
-     33.60206075,
-     -82.1822894
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 50
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20407",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20407",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 35.679,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 51
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-21006",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-21006",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 36.226,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 52
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20783",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20783",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 36.927,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0956148,
-     -81.20781715
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 53
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-21023",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-21023",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 39.808,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 54
+   "rank": 18
   },
   {
    "id": "desc-2428-6808-s__gpc-21023",
@@ -5522,7 +4216,7 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 55
+   "rank": 19
   },
   {
    "id": "desc-2428-6808-s__gpc-21006",
@@ -5558,187 +4252,7 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 56
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-21006",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-21006",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.642,
-   "dist_center_mi": 36.226,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 57
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-21023",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-21023",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 36.625,
-   "dist_center_mi": 39.808,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 58
-  },
-  {
-   "id": "desc-2428-6810-f__gpc-17993",
-   "a": "desc-2428-6810-f",
-   "b": "gpc-17993",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 35.319,
-   "dist_center_mi": 42.779,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.87217999999999,
-     -81.6977228
-    ],
-    [
-     33.54399419999999,
-     -82.1686481
-    ]
-   ],
-   "centers": [
-    [
-     33.87218,
-     -81.6977228
-    ],
-    [
-     33.4989746,
-     -82.29143355
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1826,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 59
-  },
-  {
-   "id": "desc-2428-6810-a__gpc-19996",
-   "a": "desc-2428-6810-a",
-   "b": "gpc-19996",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 34.292,
-   "dist_center_mi": 34.27,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.660126999999996,
-     -82.195931
-    ],
-    [
-     33.38050069999999,
-     -82.687296
-    ]
-   ],
-   "centers": [
-    [
-     33.660127,
-     -82.195931
-    ],
-    [
-     33.3805007,
-     -82.687296
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1978,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 60
-  },
-  {
-   "id": "desc-2428-6809-e__gpc-19996",
-   "a": "desc-2428-6809-e",
-   "b": "gpc-19996",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 38.815,
-   "dist_center_mi": 38.752,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     33.38050069999999,
-     -82.687296
-    ]
-   ],
-   "centers": [
-    [
-     33.562599,
-     -82.051362
-    ],
-    [
-     33.3805007,
-     -82.687296
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1978,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 61
+   "rank": 20
   },
   {
    "id": "desc-2428-6810-o__gpc-20793",
@@ -5774,7 +4288,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 62
+   "rank": 21
   },
   {
    "id": "desc-2428-6810-o__gpc-20794",
@@ -5810,43 +4324,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 63
-  },
-  {
-   "id": "desc-2428-6359__gpc-20784",
-   "a": "desc-2428-6359",
-   "b": "gpc-20784",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 45.845,
-   "dist_center_mi": 46.576,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.131501,
-     -81.29764449999999
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2192,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 64
+   "rank": 22
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20784",
@@ -5882,43 +4360,7 @@
    "in_service_gap_days": 2344,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 65
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20784",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20784",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 37.286,
-   "dist_center_mi": 39.731,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.131501,
-     -81.29764449999999
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2344,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 66
+   "rank": 23
   },
   {
    "id": "desc-2428-6852__gpc-20793",
@@ -5954,7 +4396,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 67
+   "rank": 24
   },
   {
    "id": "desc-2428-6852__gpc-20794",
@@ -5990,7 +4432,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 68
+   "rank": 25
   },
   {
    "id": "desc-2428-6810-o__gpc-17993",
@@ -6026,7 +4468,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 69
+   "rank": 26
   },
   {
    "id": "desc-2428-6808-s__gpc-20784",
@@ -6062,43 +4504,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 70
-  },
-  {
-   "id": "desc-2428-6359__gpc-20796",
-   "a": "desc-2428-6359",
-   "b": "gpc-20796",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.594,
-   "dist_center_mi": 47.636,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.697425899999985,
-     -80.8637929
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.6974259,
-     -80.8637929
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2557,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 71
+   "rank": 27
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20796",
@@ -6134,295 +4540,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 72
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20784",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20784",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 37.286,
-   "dist_center_mi": 39.731,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.107719899999985,
-     -81.226912
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.131501,
-     -81.29764449999999
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 73
-  },
-  {
-   "id": "desc-2428-6809-n__gpc-20793",
-   "a": "desc-2428-6809-n",
-   "b": "gpc-20793",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 40.319,
-   "dist_center_mi": 41.505,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.91348669999999,
-     -81.5644353
-    ],
-    [
-     33.660126999999996,
-     -82.195931
-    ]
-   ],
-   "centers": [
-    [
-     33.9134867,
-     -81.5644353
-    ],
-    [
-     33.6020605,
-     -82.1822895
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 74
-  },
-  {
-   "id": "desc-2428-6809-n__gpc-20794",
-   "a": "desc-2428-6809-n",
-   "b": "gpc-20794",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 40.319,
-   "dist_center_mi": 41.505,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.91348669999999,
-     -81.5644353
-    ],
-    [
-     33.6601273,
-     -82.19593070000002
-    ]
-   ],
-   "centers": [
-    [
-     33.9134867,
-     -81.5644353
-    ],
-    [
-     33.60206075,
-     -82.1822894
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 75
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20796",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20796",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.555,
-   "dist_center_mi": 42.509,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 76
-  },
-  {
-   "id": "desc-2428-6371-d__gpc-20793",
-   "a": "desc-2428-6371-d",
-   "b": "gpc-20793",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.176,
-   "dist_center_mi": 47.392,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.65011189999999,
-     -81.3605659
-    ],
-    [
-     33.543994,
-     -82.168648
-    ]
-   ],
-   "centers": [
-    [
-     33.6501119,
-     -81.3605659
-    ],
-    [
-     33.6020605,
-     -82.1822895
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 77
-  },
-  {
-   "id": "desc-2428-6371-d__gpc-20794",
-   "a": "desc-2428-6371-d",
-   "b": "gpc-20794",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 47.176,
-   "dist_center_mi": 47.392,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.65011189999999,
-     -81.3605659
-    ],
-    [
-     33.54399419999999,
-     -82.1686481
-    ]
-   ],
-   "centers": [
-    [
-     33.6501119,
-     -81.3605659
-    ],
-    [
-     33.60206075,
-     -82.1822894
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 78
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-20796",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-20796",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 26.42,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2922,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 79
-  },
-  {
-   "id": "desc-2428-6852__gpc-17993",
-   "a": "desc-2428-6852",
-   "b": "gpc-17993",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 16.73,
-   "dist_center_mi": 28.901,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.43287029999998,
-     -81.9110807
-    ],
-    [
-     33.54399419999999,
-     -82.1686481
-    ]
-   ],
-   "centers": [
-    [
-     33.4837512,
-     -81.79020395
-    ],
-    [
-     33.4989746,
-     -82.29143355
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3063,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 80
+   "rank": 28
   },
   {
    "id": "desc-2428-6809-e__gpc-20793",
@@ -6458,7 +4576,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 81
+   "rank": 29
   },
   {
    "id": "desc-2428-6809-e__gpc-20794",
@@ -6494,7 +4612,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 82
+   "rank": 30
   },
   {
    "id": "desc-2428-6810-a__gpc-14222",
@@ -6530,7 +4648,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 83
+   "rank": 31
   },
   {
    "id": "desc-2428-6809-e__gpc-14222",
@@ -6566,187 +4684,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 84
-  },
-  {
-   "id": "desc-2428-6367-d-g__gpc-20787",
-   "a": "desc-2428-6367-d-g",
-   "b": "gpc-20787",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.357098414725876,
-     -81.11724608814652
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.346439000000004,
-     -81.0785475
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 85
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20796",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20796",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.555,
-   "dist_center_mi": 42.509,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 86
-  },
-  {
-   "id": "desc-2428-6808-l__gpc-20787",
-   "a": "desc-2428-6808-l",
-   "b": "gpc-20787",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 87
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-20787",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-20787",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.321091315383846,
-     -81.00946067177087
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3287,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 88
-  },
-  {
-   "id": "desc-2428-6808-k__gpc-20787",
-   "a": "desc-2428-6808-k",
-   "b": "gpc-20787",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 42.99,
-   "dist_center_mi": 43.0,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.4364883,
-     -80.7210159
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3439,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 89
+   "rank": 32
   },
   {
    "id": "desc-2428-6809-e__gpc-17993",
@@ -6782,7 +4720,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 90
+   "rank": 33
   },
   {
    "id": "desc-2428-6810-a__gpc-17993",
@@ -6816,6 +4754,2062 @@
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 3652,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 34
+  },
+  {
+   "id": "desc-2428-6367-d-g__gpc-17075",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-17075",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.418,
+   "dist_center_mi": 25.593,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.357098414725876,
+     -81.11724608814652
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.346439000000004,
+     -81.0785475
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 35
+  },
+  {
+   "id": "desc-2428-6359__gpc-20277",
+   "a": "desc-2428-6359",
+   "b": "gpc-20277",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 29.941,
+   "dist_center_mi": 29.97,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 882,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 36
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-17075",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-17075",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 37
+  },
+  {
+   "id": "desc-2428-6359__gpc-20066",
+   "a": "desc-2428-6359",
+   "b": "gpc-20066",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 44.772,
+   "dist_center_mi": 46.481,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 38
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20277",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20277",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 27.127,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 39
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20067",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20067",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 33.795,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 40
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20066",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20066",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 34.345,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 41
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-17075",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-17075",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.943,
+   "dist_center_mi": 26.406,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.321091315383846,
+     -81.00946067177087
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.2843925,
+     -80.9429395
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 517,
+   "in_service_gap_days": 213,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 42
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20067",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20067",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 33.795,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 517,
+   "in_service_gap_days": 213,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 43
+  },
+  {
+   "id": "desc-2428-6359__gpc-20065",
+   "a": "desc-2428-6359",
+   "b": "gpc-20065",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 30.191,
+   "dist_center_mi": 33.568,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 44
+  },
+  {
+   "id": "desc-2428-6810-a__gpc-20326",
+   "a": "desc-2428-6810-a",
+   "b": "gpc-20326",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 34.586,
+   "dist_center_mi": 34.586,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.660126999999996,
+     -82.195931
+    ],
+    [
+     34.00183239999999,
+     -82.6362788
+    ]
+   ],
+   "centers": [
+    [
+     33.660127,
+     -82.195931
+    ],
+    [
+     34.0018324,
+     -82.6362788
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 45
+  },
+  {
+   "id": "desc-2428-6359__gpc-20785",
+   "a": "desc-2428-6359",
+   "b": "gpc-20785",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.929,
+   "dist_center_mi": 39.036,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.248701199999985,
+     -81.2094724
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 46
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-17075",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-17075",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 47
+  },
+  {
+   "id": "desc-2428-6359__gpc-20067",
+   "a": "desc-2428-6359",
+   "b": "gpc-20067",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 44.772,
+   "dist_center_mi": 46.633,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 517,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 48
+  },
+  {
+   "id": "desc-2428-6809-e__gpc-20326",
+   "a": "desc-2428-6809-e",
+   "b": "gpc-20326",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.272,
+   "dist_center_mi": 45.27,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.00183239999999,
+     -82.6362788
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.0018324,
+     -82.6362788
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 49
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20277",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20277",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 27.127,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 50
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20065",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20065",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.576,
+   "dist_center_mi": 29.259,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 51
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20785",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20785",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.3,
+   "dist_center_mi": 31.333,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.22602515787742,
+     -81.19513976793566
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 578,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 52
+  },
+  {
+   "id": "desc-2428-6359__gpc-20783",
+   "a": "desc-2428-6359",
+   "b": "gpc-20783",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.845,
+   "dist_center_mi": 46.172,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 731,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 53
+  },
+  {
+   "id": "desc-2428-6359__gpc-20407",
+   "a": "desc-2428-6359",
+   "b": "gpc-20407",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 48.278,
+   "dist_center_mi": 48.393,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 731,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 54
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20785",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20785",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.3,
+   "dist_center_mi": 31.333,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.22602515787742,
+     -81.19513976793566
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 882,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 55
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20407",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20407",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 35.679,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 883,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 56
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20783",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20783",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 36.927,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 883,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 57
+  },
+  {
+   "id": "desc-2428-6359__gpc-21023",
+   "a": "desc-2428-6359",
+   "b": "gpc-21023",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 46.372,
+   "dist_center_mi": 49.654,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 151,
+   "in_service_gap_days": 1096,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 58
+  },
+  {
+   "id": "desc-2428-6810-f__gpc-20793",
+   "a": "desc-2428-6810-f",
+   "b": "gpc-20793",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 32.187,
+   "dist_center_mi": 33.519,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.87217999999999,
+     -81.6977228
+    ],
+    [
+     33.660126999999996,
+     -82.195931
+    ]
+   ],
+   "centers": [
+    [
+     33.87218,
+     -81.6977228
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 1248,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 59
+  },
+  {
+   "id": "desc-2428-6810-o__gpc-14222",
+   "a": "desc-2428-6810-o",
+   "b": "gpc-14222",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 29.106,
+   "dist_center_mi": 29.045,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.453954999999986,
+     -82.414219
+    ]
+   ],
+   "centers": [
+    [
+     33.4328703,
+     -81.9110807
+    ],
+    [
+     33.453955,
+     -82.414219
+    ]
+   ],
+   "window_overlap_days": 364,
+   "in_service_gap_days": 1979,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 60
+  },
+  {
+   "id": "desc-2428-6852__gpc-14222",
+   "a": "desc-2428-6852",
+   "b": "gpc-14222",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 29.106,
+   "dist_center_mi": 36.025,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.453954999999986,
+     -82.414219
+    ]
+   ],
+   "centers": [
+    [
+     33.4837512,
+     -81.79020395
+    ],
+    [
+     33.453955,
+     -82.414219
+    ]
+   ],
+   "window_overlap_days": 376,
+   "in_service_gap_days": 2485,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 61
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20066",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20066",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 31.878,
+   "dist_center_mi": 34.345,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 517,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 62
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20065",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20065",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.576,
+   "dist_center_mi": 29.259,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 882,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 63
+  },
+  {
+   "id": "desc-2428-6810-o__gpc-19996",
+   "a": "desc-2428-6810-o",
+   "b": "gpc-19996",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.011,
+   "dist_center_mi": 44.917,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.4328703,
+     -81.9110807
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 883,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 64
+  },
+  {
+   "id": "desc-2428-6359__gpc-21006",
+   "a": "desc-2428-6359",
+   "b": "gpc-21006",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 48.102,
+   "dist_center_mi": 48.266,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.041230799999994,
+     -81.1444637
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1096,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 65
+  },
+  {
+   "id": "desc-2428-6810-f__gpc-20794",
+   "a": "desc-2428-6810-f",
+   "b": "gpc-20794",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 32.187,
+   "dist_center_mi": 33.519,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.87217999999999,
+     -81.6977228
+    ],
+    [
+     33.6601273,
+     -82.19593070000002
+    ]
+   ],
+   "centers": [
+    [
+     33.87218,
+     -81.6977228
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 66
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20407",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20407",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 35.679,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 67
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-21006",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-21006",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 36.226,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 68
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20783",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20783",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 36.927,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 69
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-21023",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-21023",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 39.808,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 70
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-21006",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-21006",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.642,
+   "dist_center_mi": 36.226,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 71
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-21023",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-21023",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 36.625,
+   "dist_center_mi": 39.808,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 72
+  },
+  {
+   "id": "desc-2428-6810-f__gpc-17993",
+   "a": "desc-2428-6810-f",
+   "b": "gpc-17993",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 35.319,
+   "dist_center_mi": 42.779,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.87217999999999,
+     -81.6977228
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.87218,
+     -81.6977228
+    ],
+    [
+     33.4989746,
+     -82.29143355
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1826,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 73
+  },
+  {
+   "id": "desc-2428-6810-a__gpc-19996",
+   "a": "desc-2428-6810-a",
+   "b": "gpc-19996",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 34.292,
+   "dist_center_mi": 34.27,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.660126999999996,
+     -82.195931
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.660127,
+     -82.195931
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1978,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 74
+  },
+  {
+   "id": "desc-2428-6809-e__gpc-19996",
+   "a": "desc-2428-6809-e",
+   "b": "gpc-19996",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 38.815,
+   "dist_center_mi": 38.752,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1978,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 75
+  },
+  {
+   "id": "desc-2428-6359__gpc-20784",
+   "a": "desc-2428-6359",
+   "b": "gpc-20784",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.845,
+   "dist_center_mi": 46.576,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2192,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 76
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20784",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20784",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 37.286,
+   "dist_center_mi": 39.731,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2344,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 77
+  },
+  {
+   "id": "desc-2428-6359__gpc-20796",
+   "a": "desc-2428-6359",
+   "b": "gpc-20796",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.594,
+   "dist_center_mi": 47.636,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.697425899999985,
+     -80.8637929
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.6974259,
+     -80.8637929
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2557,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 78
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20784",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20784",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 37.286,
+   "dist_center_mi": 39.731,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 79
+  },
+  {
+   "id": "desc-2428-6809-n__gpc-20793",
+   "a": "desc-2428-6809-n",
+   "b": "gpc-20793",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 40.319,
+   "dist_center_mi": 41.505,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.91348669999999,
+     -81.5644353
+    ],
+    [
+     33.660126999999996,
+     -82.195931
+    ]
+   ],
+   "centers": [
+    [
+     33.9134867,
+     -81.5644353
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 80
+  },
+  {
+   "id": "desc-2428-6809-n__gpc-20794",
+   "a": "desc-2428-6809-n",
+   "b": "gpc-20794",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 40.319,
+   "dist_center_mi": 41.505,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.91348669999999,
+     -81.5644353
+    ],
+    [
+     33.6601273,
+     -82.19593070000002
+    ]
+   ],
+   "centers": [
+    [
+     33.9134867,
+     -81.5644353
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 81
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20796",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20796",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.555,
+   "dist_center_mi": 42.509,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 82
+  },
+  {
+   "id": "desc-2428-6371-d__gpc-20793",
+   "a": "desc-2428-6371-d",
+   "b": "gpc-20793",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.176,
+   "dist_center_mi": 47.392,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.65011189999999,
+     -81.3605659
+    ],
+    [
+     33.543994,
+     -82.168648
+    ]
+   ],
+   "centers": [
+    [
+     33.6501119,
+     -81.3605659
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 83
+  },
+  {
+   "id": "desc-2428-6371-d__gpc-20794",
+   "a": "desc-2428-6371-d",
+   "b": "gpc-20794",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.176,
+   "dist_center_mi": 47.392,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.65011189999999,
+     -81.3605659
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.6501119,
+     -81.3605659
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 84
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-20796",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-20796",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 23.197,
+   "dist_center_mi": 26.42,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.2843925,
+     -80.9429395
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2922,
+   "timeline_label": "separate",
+   "flags": [
+    "method_disagree"
+   ],
+   "rank": 85
+  },
+  {
+   "id": "desc-2428-6852__gpc-17993",
+   "a": "desc-2428-6852",
+   "b": "gpc-17993",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 16.73,
+   "dist_center_mi": 28.901,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.43287029999998,
+     -81.9110807
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.4837512,
+     -81.79020395
+    ],
+    [
+     33.4989746,
+     -82.29143355
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3063,
+   "timeline_label": "separate",
+   "flags": [
+    "method_disagree"
+   ],
+   "rank": 86
+  },
+  {
+   "id": "desc-2428-6367-d-g__gpc-20787",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-20787",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.418,
+   "dist_center_mi": 25.593,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.357098414725876,
+     -81.11724608814652
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.346439000000004,
+     -81.0785475
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 87
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20796",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20796",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.555,
+   "dist_center_mi": 42.509,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 88
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-20787",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-20787",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 89
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-20787",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-20787",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.943,
+   "dist_center_mi": 26.406,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.321091315383846,
+     -81.00946067177087
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.2843925,
+     -80.9429395
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3287,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 90
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-20787",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-20787",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 42.99,
+   "dist_center_mi": 43.0,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3439,
    "timeline_label": "separate",
    "flags": [],
    "rank": 91

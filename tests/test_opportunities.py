@@ -70,3 +70,21 @@ def test_window_overlap_drives_same_window_label():
 
     assert opp["window_overlap_days"] == 151
     assert opp["timeline_label"] == "same_window"
+
+
+def test_pairs_beyond_25_miles_have_no_tier_even_with_wider_gate():
+    far = project("gpc-40", "GPC", [(32.05, -81.55)])  # ~30 mi west of A
+
+    [opp] = find_opportunities([A, far], max_miles=50)
+
+    assert 25 < opp["dist_closest_mi"] <= 50
+    assert opp["tier"] is None
+
+
+def test_sperry_flag_uses_fixed_25_mile_rule_regardless_of_gate():
+    far = project("gpc-40", "GPC", [(32.05, -81.55)])
+
+    [opp] = find_opportunities([A, far], max_miles=50)
+
+    assert opp["in_sperry_method"] is False
+    assert "method_disagree" not in opp["flags"]  # both methods agree: beyond 25 mi
