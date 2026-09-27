@@ -16,7 +16,7 @@ from engine.tiers import TIER_LABELS
 API_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voice}?output_format=mp3_44100_128"
 DEFAULT_VOICE_ID = "JBFqnCBsd6RMkjVDRZzb"  # "George", a premade ElevenLabs voice
 DEFAULT_MODEL_ID = "eleven_flash_v2_5"  # low latency, fits a serverless request
-TIMEOUT_S = 25
+TIMEOUT_S = 20  # below the 30 s serverless limit in vercel.json
 MAX_CHARS = 1200
 CACHE_SIZE = 64
 UTILITY = {"DESC": "Dominion Energy South Carolina", "GPC": "Georgia Power"}
