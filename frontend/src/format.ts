@@ -15,9 +15,9 @@ export const TIMING_TEXT: Record<TimelineLabel, string> = {
 };
 
 export const TIMING_SHORT: Record<TimelineLabel, string> = {
-  same_window: "SAME WINDOW",
-  within_1y: "≤ 1 YEAR",
-  separate: "SEPARATE",
+  same_window: "SAME",
+  within_1y: "≤ 1 YR",
+  separate: "SEP",
 };
 
 export const PRECISION_TEXT: Record<Precision, string> = {

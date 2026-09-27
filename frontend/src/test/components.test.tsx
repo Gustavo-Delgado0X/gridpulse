@@ -7,6 +7,9 @@ import { PrecisionTag } from "../components/PrecisionTag";
 import { TierBadge } from "../components/TierBadge";
 import { TriageControl } from "../components/TriageControl";
 import { UtilityChip } from "../components/UtilityChip";
+import { useState } from "react";
+import { HeadlineStrip } from "../components/HeadlineStrip";
+import { applyFilters, EMPTY_FILTERS } from "../filters";
 import { computeEstimate, formatMiles, formatUsd } from "../format";
 import { OPPS, QUALITY } from "./fixtures";
 
@@ -40,9 +43,15 @@ test("estimate matches the backend formula", () => {
   expect(r.total).toBeCloseTo(r.acres * 5000 + 500000);
 });
 
+function Table(props: Partial<Parameters<typeof OpportunityTable>[0]>) {
+  const [filters, setFilters] = useState(EMPTY_FILTERS);
+  return <OpportunityTable items={applyFilters(OPPS, filters)} total={OPPS.length} filters={filters} onFilters={setFilters}
+                           selectedId={null} onSelect={() => {}} onHover={() => {}} triage={{}} {...props} />;
+}
+
 test("opportunity table: rows, keyboard selection and filter shortcut", async () => {
   const onSelect = vi.fn();
-  render(<OpportunityTable items={OPPS} selectedId={null} onSelect={onSelect} triage={{}} />);
+  render(<Table onSelect={onSelect} />);
   const table = screen.getByRole("table");
   expect(within(table).getAllByRole("row")).toHaveLength(3);
 
@@ -54,11 +63,37 @@ test("opportunity table: rows, keyboard selection and filter shortcut", async ()
   fireEvent.keyDown(document.body, { key: "/" });
   expect(screen.getByRole("searchbox")).toHaveFocus();
   await userEvent.type(screen.getByRole("searchbox"), "purrysburg");
-  expect(within(table).getAllByRole("row")).toHaveLength(2);
+  expect(within(screen.getByRole("table")).getAllByRole("row")).toHaveLength(2);
+});
+
+test("tier chips filter the table and an empty result explains itself", async () => {
+  render(<Table />);
+  await userEvent.click(screen.getByRole("button", { name: "Show T2 only" }));
+  expect(screen.getByText("NO PAIRS MATCH THESE FILTERS")).toBeInTheDocument();
+  await userEvent.click(screen.getByRole("button", { name: "Clear filters" }));
+  expect(within(screen.getByRole("table")).getAllByRole("row")).toHaveLength(3);
+});
+
+test("hovering a row reports it for map highlighting", async () => {
+  const onHover = vi.fn();
+  render(<Table onHover={onHover} />);
+  await userEvent.hover(within(screen.getByRole("table")).getAllByRole("row")[1]);
+  expect(onHover).toHaveBeenLastCalledWith("desc-1__gpc-1");
+});
+
+test("headline strip numbers are filter buttons", async () => {
+  const onTier = vi.fn();
+  const onQuality = vi.fn();
+  render(<HeadlineStrip items={OPPS} distance={25} filters={EMPTY_FILTERS} acceptance={QUALITY.acceptance}
+                        onReset={() => {}} onTier={onTier} onSameWindow={() => {}} onFlag={() => {}} onQuality={onQuality} />);
+  await userEvent.click(screen.getByRole("button", { name: /1\s*MUST COORDINATE/ }));
+  expect(onTier).toHaveBeenCalledWith("T1");
+  await userEvent.click(screen.getByRole("button", { name: /ANSWER KEY 6\/6/ }));
+  expect(onQuality).toHaveBeenCalled();
 });
 
 test("opportunity table sorts by a column header", async () => {
-  render(<OpportunityTable items={OPPS} selectedId={null} onSelect={() => {}} triage={{}} />);
+  render(<Table />);
   await userEvent.click(screen.getByRole("button", { name: /Center mi/ }));
   await userEvent.click(screen.getByRole("button", { name: /Center mi/ }));
   const rows = within(screen.getByRole("table")).getAllByRole("row");

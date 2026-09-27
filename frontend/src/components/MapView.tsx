@@ -3,7 +3,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import statesTopo from "us-atlas/states-10m.json";
-import { overlapLines, pairBounds, projectLines, projectPoints, STUDY_AREA, studyAreaOutline, touchPoints } from "../mapData";
+import { allBounds, overlapLines, pairBounds, PLACES, projectLines, projectPoints, STUDY_AREA, studyAreaOutline, touchPoints } from "../mapData";
+import { TIER_TEXT } from "../format";
 import type { Method, Opportunity, Project } from "../types";
 
 const STATE_FIPS = new Set(["45", "13", "37", "12", "01", "47"]); // SC, GA + neighbors for context
@@ -15,8 +16,13 @@ interface Props {
   projects: Project[];
   opportunities: Opportunity[];
   selectedId: string | null;
+  hoveredId: string | null;
   method: Method;
   onSelect: (id: string) => void;
+  onHover: (id: string | null) => void;
+  /** Increments when the user picks a pair (table, map, deep link): the map flies to it. */
+  focusToken: number;
+  theme?: string;
 }
 
 const reducedMotion = () => window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
@@ -94,7 +100,8 @@ function addLayers(map: MLMap) {
   for (const t of TIER_LINES) {
     map.addLayer({ id: `ovl-${t.tier}`, type: "line", source: "overlaps", filter: ["==", ["get", "tier"], t.tier],
       layout: { "line-cap": t.dash ? "butt" : "round" },
-      paint: { "line-color": violet, "line-width": ["case", ["get", "selected"], t.width + 2, t.width],
+      paint: { "line-color": violet, "line-width": ["case", ["get", "focus"], t.width + 2, t.width],
+               "line-opacity": ["case", ["get", "focus"], 1, 0.35],
                ...(t.dash ? { "line-dasharray": t.dash } : {}) } });
   }
   map.addLayer({ id: "ovl-none", type: "line", source: "overlaps", filter: ["==", ["get", "tier"], "none"],
@@ -113,16 +120,53 @@ function addLayers(map: MLMap) {
     paint: { "circle-radius": 1.6, "circle-color": ink } });
 }
 
-export function MapView({ projects, opportunities, selectedId, method, onSelect }: Props) {
+/** Re-read the CSS tokens after a theme switch (MapLibre paint values are not CSS). */
+function applyTheme(map: MLMap) {
+  const ink = color("--text-primary", "#181011");
+  const desc = color("--utility-desc", "#1a5fa8");
+  const gpc = color("--utility-gpc", "#9a4f00");
+  const violet = color("--overlap", "#6e36b5");
+  map.setPaintProperty("bg", "background-color", color("--bg-canvas", "#f3f1ed"));
+  map.setPaintProperty("proj-casing", "line-color", color("--bg-canvas", "#ffffff"));
+  map.setPaintProperty("ovl-casing", "line-color", color("--bg-canvas", "#ffffff"));
+  map.setPaintProperty("states-fill", "fill-color", color("--bg-surface", "#ffffff"));
+  map.setPaintProperty("states-line", "line-color", ink);
+  map.setPaintProperty("study", "line-color", ink);
+  map.setPaintProperty("proj-lines", "line-color", ["match", ["get", "utility"], "DESC", desc, gpc]);
+  map.setPaintProperty("desc-points", "circle-stroke-color", ["case", ["in", ["get", "precision"],
+    ["literal", ["endpoint_proxy", "regional_approximation"]]], desc, "#ffffff"]);
+  for (const t of TIER_LINES) map.setPaintProperty(`ovl-${t.tier}`, "line-color", violet);
+  map.setPaintProperty("touch-ring", "circle-stroke-color", violet);
+}
+
+function tooltip(o: Opportunity): HTMLElement {
+  const el = document.createElement("div");
+  el.className = "map-tip";
+  const head = document.createElement("strong");
+  head.textContent = o.tier ? `${o.tier} · ${TIER_TEXT[o.tier]}` : "BEYOND 25 MI";
+  const pair = document.createElement("span");
+  pair.textContent = `DESC ${o.a.name}  ×  GPC ${o.b.name}`;
+  const dist = document.createElement("span");
+  dist.className = "mono";
+  dist.textContent = `${o.touching ? "touching" : `${o.dist_closest_mi.toFixed(2)} mi closest`} · ${o.dist_center_mi.toFixed(2)} mi centers`;
+  el.append(head, pair, dist);
+  return el;
+}
+
+export function MapView({ projects, opportunities, selectedId, hoveredId, method, onSelect, onHover, focusToken, theme }: Props) {
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MLMap | null>(null);
   const [ready, setReady] = useState(false);
   const [satellite, setSatellite] = useState(false);
   const shownMethod = useRef<Method>(method);
   const labels = useRef<maplibregl.Marker[]>([]);
+  const places = useRef<maplibregl.Marker[]>([]);
+  const popup = useRef<maplibregl.Popup | null>(null);
+  const overviewShown = useRef(false);
   const byId = useMemo(() => new Map(projects.map((p) => [p.id, p])), [projects]);
-  const onSelectRef = useRef(onSelect);
-  onSelectRef.current = onSelect;
+  const byOpp = useMemo(() => new Map(opportunities.map((o) => [o.id, o])), [opportunities]);
+  const callbacks = useRef({ onSelect, onHover, byOpp });
+  callbacks.current = { onSelect, onHover, byOpp };
 
   useEffect(() => {
     if (!container.current) return;
@@ -131,12 +175,30 @@ export function MapView({ projects, opportunities, selectedId, method, onSelect 
       bounds: [[STUDY_AREA.west - 0.6, STUDY_AREA.south - 0.4], [STUDY_AREA.east + 0.6, STUDY_AREA.north + 0.2]],
     });
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
+    popup.current = new maplibregl.Popup({ closeButton: false, closeOnClick: false, offset: 12, maxWidth: "320px" });
     map.on("load", () => { addLayers(map); setReady(true); });
-    map.on("click", "ovl-hit", (e) => { const id = e.features?.[0]?.properties?.id; if (id) onSelectRef.current(String(id)); });
-    map.on("mouseenter", "ovl-hit", () => { map.getCanvas().style.cursor = "pointer"; });
-    map.on("mouseleave", "ovl-hit", () => { map.getCanvas().style.cursor = ""; });
+    map.on("click", "ovl-hit", (e) => { const id = e.features?.[0]?.properties?.id; if (id) callbacks.current.onSelect(String(id)); });
+    map.on("mousemove", "ovl-hit", (e) => {
+      const id = String(e.features?.[0]?.properties?.id ?? "");
+      const o = callbacks.current.byOpp.get(id);
+      map.getCanvas().style.cursor = "pointer";
+      callbacks.current.onHover(id || null);
+      if (o) popup.current?.setLngLat(e.lngLat).setDOMContent(tooltip(o)).addTo(map);
+    });
+    map.on("mouseleave", "ovl-hit", () => {
+      map.getCanvas().style.cursor = "";
+      callbacks.current.onHover(null);
+      popup.current?.remove();
+    });
+    for (const place of PLACES) {
+      const el = document.createElement("div");
+      el.className = `map-place map-place--${place.kind}`;
+      el.textContent = place.name;
+      places.current.push(new maplibregl.Marker({ element: el }).setLngLat([place.lon, place.lat]).addTo(map));
+    }
     mapRef.current = map;
-    return () => { map.remove(); mapRef.current = null; };
+    if (import.meta.env.DEV) (window as unknown as { __gridpulseMap?: MLMap }).__gridpulseMap = map;
+    return () => { popup.current?.remove(); map.remove(); mapRef.current = null; };
   }, []);
 
   useEffect(() => {
@@ -145,6 +207,20 @@ export function MapView({ projects, opportunities, selectedId, method, onSelect 
     (map.getSource("lines") as GeoJSONSource).setData(projectLines(projects));
     (map.getSource("points") as GeoJSONSource).setData(projectPoints(projects));
   }, [ready, projects]);
+
+  const fitAll = (animate = true) => {
+    const map = mapRef.current;
+    const bounds = allBounds(opportunities);
+    if (map && bounds) map.fitBounds(bounds, { padding: 60, maxZoom: 10, duration: animate && !reducedMotion() ? FLY_MS : 0 });
+  };
+
+  // First data: show the whole region, not one pair.
+  useEffect(() => {
+    if (!ready || overviewShown.current || !opportunities.length) return;
+    overviewShown.current = true;
+    fitAll(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, opportunities]);
 
   // Overlap lines; when the method changes, slide them from the old ends to the new ends.
   useEffect(() => {
@@ -155,7 +231,7 @@ export function MapView({ projects, opportunities, selectedId, method, onSelect 
     const from = shownMethod.current;
     shownMethod.current = method;
     if (from === method || reducedMotion()) {
-      overlaps.setData(overlapLines(opportunities, method, method, 1, selectedId));
+      overlaps.setData(overlapLines(opportunities, method, method, 1, selectedId, hoveredId));
       touch.setData(touchPoints(opportunities, method));
       return;
     }
@@ -165,27 +241,23 @@ export function MapView({ projects, opportunities, selectedId, method, onSelect 
     const step = (now: number) => {
       const t = Math.min(1, (now - start) / METHOD_MS);
       const eased = 1 - Math.pow(1 - t, 3);
-      overlaps.setData(overlapLines(opportunities, from, method, eased, selectedId));
+      overlaps.setData(overlapLines(opportunities, from, method, eased, selectedId, hoveredId));
       if (t < 1) frame = requestAnimationFrame(step);
       else touch.setData(touchPoints(opportunities, method));
     };
     frame = requestAnimationFrame(step);
     return () => cancelAnimationFrame(frame);
-  }, [ready, opportunities, method, selectedId]);
+  }, [ready, opportunities, method, selectedId, hoveredId]);
 
-  // Fit the selected pair and label its two projects (HTML labels: no glyph server needed).
+  // Label the selected pair's projects (HTML labels: no glyph server needed).
   useEffect(() => {
     const map = mapRef.current;
     labels.current.forEach((m) => m.remove());
     labels.current = [];
-    if (!ready || !map || !selectedId) return;
-    const selected = opportunities.find((o) => o.id === selectedId);
-    if (!selected) return;
-    const bounds = pairBounds(selected, byId);
-    if (bounds) map.fitBounds(bounds, { padding: 80, maxZoom: 11, duration: reducedMotion() ? 0 : FLY_MS });
+    const selected = selectedId ? byOpp.get(selectedId) : undefined;
+    if (!ready || !map || !selected) return;
     for (const ref of [selected.a, selected.b]) {
-      const located = byId.get(ref.id)?.endpoints.filter((e) => e.lat != null) ?? [];
-      for (const e of located) {
+      for (const e of byId.get(ref.id)?.endpoints.filter((ep) => ep.lat != null) ?? []) {
         const el = document.createElement("div");
         el.className = `map-label map-label--${ref.utility}`;
         el.textContent = e.osm_name ?? e.name_raw;
@@ -193,20 +265,43 @@ export function MapView({ projects, opportunities, selectedId, method, onSelect 
           .setLngLat([e.lon!, e.lat!]).addTo(map));
       }
     }
-  }, [ready, selectedId, opportunities, byId]);
+  }, [ready, selectedId, byOpp, byId]);
+
+  // Fly only when the user asked for a pair.
+  useEffect(() => {
+    const map = mapRef.current;
+    const selected = selectedId ? byOpp.get(selectedId) : undefined;
+    if (!ready || !map || !selected || focusToken === 0) return;
+    const bounds = pairBounds(selected, byId);
+    if (bounds) map.fitBounds(bounds, { padding: 90, maxZoom: 10.5, duration: reducedMotion() ? 0 : FLY_MS });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready, focusToken]);
 
   useEffect(() => {
     const map = mapRef.current;
-    if (ready && map) map.setLayoutProperty("imagery", "visibility", satellite ? "visible" : "none");
+    if (!ready || !map) return;
+    // The parent sets <html data-theme> in its own effect, which runs after this one: wait a frame.
+    const frame = requestAnimationFrame(() => applyTheme(map));
+    return () => cancelAnimationFrame(frame);
+  }, [ready, theme]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!ready || !map) return;
+    map.setLayoutProperty("imagery", "visibility", satellite ? "visible" : "none");
+    places.current.forEach((p) => p.getElement().classList.toggle("is-on-imagery", satellite));
   }, [ready, satellite]);
 
   return (
     <section className="map-panel" aria-label="Map of projects and overlaps">
       <div ref={container} className="map" role="img" aria-label="Schematic map: DESC circles, GPC squares, violet overlap lines" />
       <span className="tag map-study-label">STUDY AREA · SAVANNAH / AUGUSTA</span>
-      <button type="button" className="btn btn--ghost map-sat" aria-pressed={satellite} onClick={() => setSatellite((s) => !s)}>
-        {satellite ? "Schematic" : "Satellite"}
-      </button>
+      <div className="map-actions">
+        <button type="button" className="btn btn--ghost btn--sm" onClick={() => fitAll()} title="Zoom out to every pair">Fit all</button>
+        <button type="button" className="btn btn--ghost btn--sm" aria-pressed={satellite} onClick={() => setSatellite((s) => !s)}>
+          {satellite ? "Schematic" : "Satellite"}
+        </button>
+      </div>
     </section>
   );
 }

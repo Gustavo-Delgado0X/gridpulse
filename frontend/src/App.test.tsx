@@ -22,7 +22,7 @@ beforeEach(() => {
 
 test("renders the ranked opportunities from the API", async () => {
   render(<App />);
-  expect(await screen.findByText("Coordination opportunities")).toBeInTheDocument();
+  expect(await screen.findByRole("heading", { name: "Ranked opportunities" })).toBeInTheDocument();
   expect(await screen.findByText(/SAV: MCINTOSH - PURRYSBURG/)).toBeInTheDocument();
   expect(screen.getByRole("radio", { name: "CLOSEST" })).toHaveAttribute("aria-checked", "true");
   expect(screen.getByText("SEED")).toBeInTheDocument();

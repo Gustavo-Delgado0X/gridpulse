@@ -103,6 +103,7 @@ export interface EvidenceItemData {
 
 export interface EstimatorInputs {
   shared_corridor_mi: number;
+  corridor_source?: string;
   row_width_ft: number;
   usd_per_acre: number;
   mobilization_usd: number;

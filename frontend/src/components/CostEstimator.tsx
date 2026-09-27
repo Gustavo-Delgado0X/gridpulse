@@ -11,22 +11,35 @@ const FIELDS: { key: keyof EstimateValues; label: string; step: number }[] = [
   { key: "avoided_mobilizations", label: "Avoided mobilizations", step: 1 },
 ];
 
-function initial(inputs: EstimatorInputs): Record<keyof EstimateValues, string> {
-  return Object.fromEntries(FIELDS.map((f) => [f.key, String(inputs[f.key])])) as Record<keyof EstimateValues, string>;
+export type EstimatorDraft = Record<keyof EstimateValues, string>;
+
+export function initialDraft(inputs: EstimatorInputs): EstimatorDraft {
+  return Object.fromEntries(FIELDS.map((f) => [f.key, String(inputs[f.key])])) as EstimatorDraft;
+}
+
+export function draftNumbers(draft: EstimatorDraft): EstimateValues {
+  return Object.fromEntries(FIELDS.map((f) => [f.key, Math.max(0, Number(draft[f.key]) || 0)])) as unknown as EstimateValues;
+}
+
+interface Props {
+  inputs: EstimatorInputs;
+  /** Controlled mode (the detail panel shares edits with the brief export). Omit for self-contained use. */
+  draft?: EstimatorDraft;
+  onDraft?: (next: EstimatorDraft) => void;
 }
 
 /** Mount with a `key` per opportunity so edits never leak between pairs. */
-export function CostEstimator({ inputs }: { inputs: EstimatorInputs }) {
-  const [values, setValues] = useState(() => initial(inputs));
+export function CostEstimator({ inputs, draft, onDraft }: Props) {
+  const [local, setLocal] = useState(() => initialDraft(inputs));
+  const values = draft ?? local;
+  const setValues = (update: (v: EstimatorDraft) => EstimatorDraft) => (onDraft ? onDraft(update(values)) : setLocal(update));
 
-  const numbers = Object.fromEntries(
-    FIELDS.map((f) => [f.key, Math.max(0, Number(values[f.key]) || 0)]),
-  ) as unknown as EstimateValues;
-  const result = computeEstimate(numbers);
+  const result = computeEstimate(draftNumbers(values));
 
   return (
     <section className="estimator" aria-label="Cost and impact estimate">
       <header className="section-head"><span className="tag">COST / IMPACT</span><span className="tag tag--warn">ROUGH ESTIMATE</span></header>
+      {inputs.corridor_source && <p className="small muted">Corridor default: {inputs.corridor_source}.</p>}
       <p className="mono formula">acres = mi × 5,280 × ROW ft ÷ 43,560 · value = acres × $/acre + $/mobilization × avoided</p>
       <div className="estimator__grid">
         {FIELDS.map((f) => (
