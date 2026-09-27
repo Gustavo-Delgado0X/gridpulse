@@ -1,4 +1,4 @@
-import { overlapLines, pairBounds, projectLines, projectPoints, touchPoints } from "../mapData";
+import { allBounds, overlapLines, pairBounds, projectLines, projectPoints, touchPoints } from "../mapData";
 import type { Project } from "../types";
 import { OPPS } from "./fixtures";
 
@@ -37,4 +37,16 @@ test("pair bounds cover both projects", () => {
   expect(e).toBeGreaterThanOrEqual(-82.0);
   expect(s).toBeLessThanOrEqual(33.5);
   expect(n).toBeGreaterThanOrEqual(33.7);
+});
+
+test("overview bounds cover every pair's endpoints", () => {
+  const [[w], [, n]] = allBounds(OPPS)!;
+  expect(w).toBeLessThanOrEqual(-82.19);
+  expect(n).toBeGreaterThanOrEqual(33.66);
+  expect(allBounds([])).toBeNull();
+});
+
+test("overlap features carry hover state for highlighting", () => {
+  const [first] = overlapLines(OPPS, "closest", "closest", 1, null, OPPS[0].id).features;
+  expect(first.properties?.hovered).toBe(true);
 });

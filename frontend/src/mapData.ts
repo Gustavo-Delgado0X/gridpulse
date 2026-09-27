@@ -40,13 +40,15 @@ export function overlapEnds(o: Opportunity, method: Method): [LatLon, LatLon] {
 const mix = (a: LatLon, b: LatLon, t: number): [number, number] => [a[1] + (b[1] - a[1]) * t, a[0] + (b[0] - a[0]) * t];
 
 /** Overlap lines, interpolated between two methods (t = 0 -> from, 1 -> to) for the Centers <-> Closest slide. */
-export function overlapLines(items: Opportunity[], from: Method, to: Method, t: number, selectedId: string | null): FeatureCollection<LineString> {
+export function overlapLines(items: Opportunity[], from: Method, to: Method, t: number, selectedId: string | null,
+                             hoveredId: string | null = null): FeatureCollection<LineString> {
   return {
     type: "FeatureCollection",
     features: items.map((o) => {
       const [a0, b0] = overlapEnds(o, from);
       const [a1, b1] = overlapEnds(o, to);
-      return { type: "Feature", id: o.rank, properties: { id: o.id, tier: o.tier ?? "none", touching: o.touching, selected: o.id === selectedId },
+      return { type: "Feature", id: o.rank, properties: { id: o.id, tier: o.tier ?? "none", touching: o.touching, selected: o.id === selectedId,
+                                          hovered: o.id === hoveredId, focus: o.id === selectedId || o.id === hoveredId },
         geometry: { type: "LineString", coordinates: [mix(a0, a1, t), mix(b0, b1, t)] } };
     }),
   };
@@ -75,3 +77,23 @@ export function studyAreaOutline(): FeatureCollection<LineString> {
   return { type: "FeatureCollection", features: [{ type: "Feature", properties: {}, geometry: { type: "LineString",
     coordinates: [[west, south], [east, south], [east, north], [west, north], [west, south]] } }] };
 }
+
+/** Bounds of every overlap's end points: the region overview shown on load and by "Fit all". */
+export function allBounds(items: Opportunity[]): [[number, number], [number, number]] | null {
+  const pts = items.flatMap((o) => [...o.closest_points, ...o.centers].map(lonLat));
+  if (!pts.length) return null;
+  const lons = pts.map((p) => p[0]);
+  const lats = pts.map((p) => p[1]);
+  return [[Math.min(...lons), Math.min(...lats)], [Math.max(...lons), Math.max(...lats)]];
+}
+
+/** Reference places for the schematic map (approximate city centres; orientation only). */
+export const PLACES: { name: string; lat: number; lon: number; kind: "state" | "city" }[] = [
+  { name: "SOUTH CAROLINA", lat: 32.95, lon: -81.05, kind: "state" },
+  { name: "GEORGIA", lat: 32.7, lon: -81.95, kind: "state" },
+  { name: "Savannah", lat: 32.08, lon: -81.09, kind: "city" },
+  { name: "Augusta", lat: 33.47, lon: -81.97, kind: "city" },
+  { name: "Charleston", lat: 32.78, lon: -79.93, kind: "city" },
+  { name: "Columbia", lat: 34.0, lon: -81.03, kind: "city" },
+  { name: "Beaufort", lat: 32.43, lon: -80.67, kind: "city" },
+];

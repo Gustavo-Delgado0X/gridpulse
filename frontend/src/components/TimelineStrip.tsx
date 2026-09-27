@@ -10,13 +10,20 @@ function span(refs: ProjectRef[]): [number, number] {
   return [Math.min(...dates) - pad, Math.max(...dates) + pad];
 }
 
+const MAX_YEAR_LABELS = 6;
+
+/** Year ticks for the axis; every other year (even years) once the span gets long. */
+export function yearLabels(first: number, last: number): number[] {
+  const all = Array.from({ length: last - first + 1 }, (_, i) => first + i);
+  return all.length <= MAX_YEAR_LABELS ? all : all.filter((y) => y % 2 === 0);
+}
+
 /** Build-window bars only where the source gives them; otherwise a date marker (contracts §5 U7). */
 export function TimelineStrip({ opportunity }: { opportunity: Opportunity }) {
   const refs = [opportunity.a, opportunity.b];
   const [lo, hi] = span(refs);
   const pct = (iso: string) => `${((time(iso) - lo) / (hi - lo)) * 100}%`;
-  const years = [];
-  for (let y = new Date(lo).getUTCFullYear() + 1; y <= new Date(hi).getUTCFullYear(); y++) years.push(y);
+  const years = yearLabels(new Date(lo).getUTCFullYear() + 1, new Date(hi).getUTCFullYear());
 
   return (
     <section className="timeline" aria-label="Timeline">
