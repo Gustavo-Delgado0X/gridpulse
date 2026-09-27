@@ -1,9 +1,59 @@
-# Source registry — scaffold placeholder. Fill id, title, url, sha256, pages, retrieved_at per source.
+# Source registry: pinned by SHA-256 (raw files are gitignored; see README).
 sources:
-  - id: desc-2428      # DESC 2024-2028 $2M+ list (starter; sha256 prefix 890876d0faefd405)
-  - id: desc-2529      # DESC 2025-2029 (scrtp.com)
-  - id: desc-2630      # DESC 2026-2030 (scrtp.com)
-  - id: gpc-irp25-v3   # GPC 2025 IRP Vol 3 Public Disclosure (starter)
-  - id: sperry-key     # Projects_Overlaps.xlsx (starter)
-  - id: sertp-2025
-  - id: sertp-2026
+- id: desc-2428
+  title: DESC Planned Transmission Projects $2M+ 2024-2028
+  url: Sperry starter package (identical to https://www.scrtp.com/)
+  file: starter/Project Listings/Dominion Energy/2024-2028-2million-and-above-project-descriptions.pdf
+  sha256: 890876d0faefd40576a0b5e598a804b54b4d8d2d56dd96fb7e40d5a406db0f46
+  pages: 44
+  retrieved_at: '2026-09-26'
+- id: desc-2529
+  title: DESC Planned Transmission Projects $2M+ 2025-2029
+  url: https://www.scrtp.com/
+  file: desc_2025-2029.pdf
+  sha256: 265453ccf14b4f95054fed304b7999270a478dbefc3a812163395b31422e74e0
+  pages: 47
+  retrieved_at: '2026-09-26'
+- id: desc-2630
+  title: DESC Planned Transmission Projects $2M+ 2026-2030
+  url: https://www.scrtp.com/
+  file: desc_2026-2030.pdf
+  sha256: e98bfeb86f2263f790f95f3510a9ab1e1b128c47e4ae633b8ccd27bedfea9b26
+  pages: 54
+  retrieved_at: '2026-09-26'
+- id: gpc-irp25-v3
+  title: Georgia Power 2025 IRP Volume 3 (Public Disclosure)
+  url: Sperry starter package; https://www.georgiapower.com/about/company/filings/irp.html
+  file: starter/Project Listings/Georgia Power/2025 IRP Volume 3 PUBLIC DISCLOSURE.pdf
+  sha256: 0dae2fc3a38462f0930cc2eb0acedca35e329cd0924e4749c81422bdc8602a12
+  pages: 668
+  retrieved_at: '2026-09-26'
+- id: sperry-key
+  title: Sperry Projects_Overlaps.xlsx (answer key)
+  url: Sperry starter package
+  file: starter/Projects_Overlaps.xlsx
+  sha256: fe01df4ed0691d55fd565784a7510ddfe4682316ff63fb70b963b934c5974f24
+  pages: null
+  retrieved_at: '2026-09-26'
+- id: sertp-2025
+  title: SERTP 2025 Preliminary Expansion Plan (non-CEII)
+  url: https://www.southeasternrtp.com/
+  file: sertp_2025_preliminary_non_ceii.pdf
+  sha256: 462f9f3dee796a9c010d31581eca3402f8b93be625af68cc73b2bdba81bed0ae
+  pages: 126
+  retrieved_at: '2026-09-26'
+- id: sertp-2026
+  title: SERTP 2026 Preliminary Expansion Plan (non-CEII)
+  url: https://www.southeasternrtp.com/
+  file: sertp_2026_preliminary_non_ceii.pdf
+  sha256: d3785576bb2f558f558931b7fea22503deaafc6d1f81cec25b8d471deb32cb2c
+  pages: 115
+  retrieved_at: '2026-09-26'
+- id: osm
+  title: OpenStreetMap power=substation/plant features (SC, GA)
+  url: https://www.openstreetmap.org/copyright
+  file: null
+  sha256: null
+  pages: null
+  retrieved_at: '2026-09-27'
+  license: ODbL 1.0, (c) OpenStreetMap contributors
