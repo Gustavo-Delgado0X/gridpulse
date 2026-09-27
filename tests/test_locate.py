@@ -41,12 +41,13 @@ def test_name_variants_relax_unit_numbers_and_dam():
     assert name_variants("THURMOND DAM #5") == ["thurmond dam #5", "thurmond dam", "thurmond"]
 
 
-def test_unique_match_in_state_is_confirmed_osm_feature():
+def test_unique_name_match_is_located_but_not_claimed_as_confirmed():
     ep = locate_endpoint("Jasper", state="SC", zone=None, title="Jasper - Okatie 230 kV #2: Construct", index=INDEX)
 
     assert ep["id"] == "osm:way/10"
     assert ep["precision"] == "osm_feature"
-    assert ep["confirmed_by_pdf_context"] is True
+    assert ep["confirmed_by_pdf_context"] is False  # a unique name is not PDF context
+    assert "unique OSM name" in ep["method"]
     assert (ep["lat"], ep["lon"]) == (32.3606993, -81.1241523)
 
 
@@ -81,12 +82,12 @@ def test_unmatched_name_is_unresolved():
     assert ep["lat"] is None and ep["id"] == "sc:hooks"
 
 
-def test_ambiguous_match_without_zone_is_kept_unconfirmed():
+def test_ambiguous_match_is_left_unresolved_not_guessed():
     ep = locate_endpoint("GOSHEN", state="GA", zone=None, title="GOSHEN - X", index=INDEX)
 
-    assert ep["precision"] == "osm_feature"
-    assert ep["confirmed_by_pdf_context"] is False
-    assert len(ep["alternatives"]) == 1
+    assert ep["precision"] == "unresolved"
+    assert ep["lat"] is None
+    assert "2 OSM features share this name" in ep["method"]
 
 
 ALIASES = OsmIndex({

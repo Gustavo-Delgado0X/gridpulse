@@ -3,6 +3,7 @@
 Run: python -m pipeline.build   (needs data/raw/ PDFs and data/cache/ OSM pulls; see README)
 Outputs are public, unredacted facts only and are committed so the API runs without raw sources.
 """
+
 import csv
 import datetime as dt
 import hashlib
@@ -36,13 +37,27 @@ def _same_facility(a: str, b: str) -> bool:
 
 
 def _key_endpoint(endpoint: dict | None, key_ep: dict, key_id: str) -> dict:
-    base = endpoint or {"id": f"key:{key_id}:{core_name(key_ep['name'])}", "name_raw": key_ep["name"],
-                        "alternatives": [], "confirmed_by_pdf_context": False}
-    previous = [{"id": base["id"], "lat": base["lat"], "lon": base["lon"], "precision": base["precision"]}] \
-        if endpoint and endpoint.get("lat") is not None else []
-    return {**base, "lat": key_ep["lat"], "lon": key_ep["lon"], "precision": "sperry_provided",
-            "method": f"Sperry answer key {key_id}", "source": "Projects_Overlaps.xlsx",
-            "confirmed_by_pdf_context": True, "alternatives": [*base.get("alternatives", []), *previous]}
+    base = endpoint or {
+        "id": f"key:{key_id}:{core_name(key_ep['name'])}",
+        "name_raw": key_ep["name"],
+        "alternatives": [],
+        "confirmed_by_pdf_context": False,
+    }
+    previous = (
+        [{"id": base["id"], "lat": base["lat"], "lon": base["lon"], "precision": base["precision"]}]
+        if endpoint and endpoint.get("lat") is not None
+        else []
+    )
+    return {
+        **base,
+        "lat": key_ep["lat"],
+        "lon": key_ep["lon"],
+        "precision": "sperry_provided",
+        "method": f"Sperry answer key {key_id}",
+        "source": "Projects_Overlaps.xlsx",
+        "confirmed_by_pdf_context": True,
+        "alternatives": [*base.get("alternatives", []), *previous],
+    }
 
 
 def _conflict(project_id: str, endpoint: dict, key_ep: dict) -> dict | None:
@@ -51,10 +66,14 @@ def _conflict(project_id: str, endpoint: dict, key_ep: dict) -> dict | None:
     miles = haversine_mi((endpoint["lat"], endpoint["lon"]), (key_ep["lat"], key_ep["lon"]))
     if miles <= COORDINATE_CONFLICT_MI:
         return None
-    return {"kind": "coordinate_conflict", "project_id": project_id, "endpoint": endpoint["name_raw"],
-            "miles_apart": round(miles, 3),
-            "values": {"osm": [endpoint["lat"], endpoint["lon"]], "answer_key": [key_ep["lat"], key_ep["lon"]]},
-            "message": f"{endpoint['name_raw']}: OSM and Sperry's answer key differ by {miles:.2f} mi"}
+    return {
+        "kind": "coordinate_conflict",
+        "project_id": project_id,
+        "endpoint": endpoint["name_raw"],
+        "miles_apart": round(miles, 3),
+        "values": {"osm": [endpoint["lat"], endpoint["lon"]], "answer_key": [key_ep["lat"], key_ep["lon"]]},
+        "message": f"{endpoint['name_raw']}: OSM and Sperry's answer key differ by {miles:.2f} mi",
+    }
 
 
 def _with_key(project: dict, key_project: dict) -> tuple[dict, list[dict]]:
@@ -67,8 +86,11 @@ def _with_key(project: dict, key_project: dict) -> tuple[dict, list[dict]]:
         if current is not None and (conflict := _conflict(project["id"], current, key_ep)):
             conflicts.append(conflict)
         replacement = _key_endpoint(current, key_ep, key_project["project_id"])
-        endpoints = endpoints[:index] + [replacement] + endpoints[index + 1:] if index is not None \
+        endpoints = (
+            endpoints[:index] + [replacement] + endpoints[index + 1 :]
+            if index is not None
             else [*endpoints, replacement]
+        )
     return {**project, "endpoints": endpoints, "answer_key_id": key_project["project_id"]}, conflicts
 
 
@@ -93,24 +115,37 @@ def apply_overrides(projects: list[dict], rows: list[dict]) -> list[dict]:
         row = by_id.get(endpoint["id"])
         if row is None or endpoint.get("precision") == "sperry_provided":
             return endpoint
-        return {**endpoint, "lat": float(row["lat"]), "lon": float(row["lon"]), "precision": row["precision"],
-                "method": row["method"], "source": row["source"],
-                "confirmed_by_pdf_context": row["confirmed_by_pdf_context"].strip().lower() == "true",
-                "reviewer": row["reviewer"] or None, "notes": row.get("notes") or None}
+        return {
+            **endpoint,
+            "lat": float(row["lat"]),
+            "lon": float(row["lon"]),
+            "precision": row["precision"],
+            "method": row["method"],
+            "source": row["source"],
+            "confirmed_by_pdf_context": row["confirmed_by_pdf_context"].strip().lower() == "true",
+            "reviewer": row["reviewer"] or None,
+            "notes": row.get("notes") or None,
+        }
 
     return [{**p, "endpoints": [override(e) for e in p["endpoints"]]} for p in projects]
 
 
 def _date_conflict(project: dict, disagreement: dict) -> dict:
     message = f"{project['name']}: need date differs between Table 2 and detail page p.{project['detail_page']}"
-    return {"kind": "sources_disagree", "project_id": project["id"], "values": disagreement["values"],
-            "message": message}
+    return {
+        "kind": "sources_disagree",
+        "project_id": project["id"],
+        "values": disagreement["values"],
+        "message": message,
+    }
 
 
 def _locate(project: dict, index: OsmIndex) -> dict:
     state = STATE_OF[project["utility"]]
-    endpoints = [locate_endpoint(name, state, project.get("zone"), project["name"], index, project.get("voltage_kv"))
-                 for name in project["endpoint_names"]]
+    endpoints = [
+        locate_endpoint(name, state, project.get("zone"), project["name"], index, project.get("voltage_kv"))
+        for name in project["endpoint_names"]
+    ]
     return {**project, "state": state, "endpoints": endpoints}
 
 
@@ -129,14 +164,29 @@ def _acceptance(key: dict) -> dict:
     rows = []
     for expected in key["overlaps"]:
         got = found.get((expected["project_id_a"], expected["project_id_b"]))
-        ok = bool(got) and abs(got["dist_center_mi"] - expected["distance_mi"]) <= 0.01 \
+        ok = (
+            bool(got)
+            and abs(got["dist_center_mi"] - expected["distance_mi"]) <= 0.01
             and got["in_service_gap_days"] == expected["time_gap_days"]
-        rows.append({"overlap_id": expected["overlap_id"], "expected_mi": expected["distance_mi"],
-                     "got_mi": got and round(got["dist_center_mi"], 2), "expected_gap": expected["time_gap_days"],
-                     "got_gap": got and got["in_service_gap_days"], "passed": ok})
+        )
+        rows.append(
+            {
+                "overlap_id": expected["overlap_id"],
+                "expected_mi": expected["distance_mi"],
+                "got_mi": got and round(got["dist_center_mi"], 2),
+                "expected_gap": expected["time_gap_days"],
+                "got_gap": got and got["in_service_gap_days"],
+                "passed": ok,
+            }
+        )
     extra = len(found) - sum(r["passed"] for r in rows)
-    return {"passed": all(r["passed"] for r in rows) and extra == 0, "matched": sum(r["passed"] for r in rows),
-            "expected": len(rows), "unexpected": extra, "details": rows}
+    return {
+        "passed": all(r["passed"] for r in rows) and extra == 0,
+        "matched": sum(r["passed"] for r in rows),
+        "expected": len(rows),
+        "unexpected": extra,
+        "details": rows,
+    }
 
 
 def _coverage(projects: list[dict]) -> dict:
@@ -145,8 +195,12 @@ def _coverage(projects: list[dict]) -> dict:
         for e in p["endpoints"]:
             counts[e["precision"]] = counts.get(e["precision"], 0) + 1
     located = sum(1 for p in projects if any(e["lat"] is not None for e in p["endpoints"]))
-    return {"projects": len(projects), "projects_located": located, "projects_unlocated": len(projects) - located,
-            "endpoints_by_precision": counts}
+    return {
+        "projects": len(projects),
+        "projects_located": located,
+        "projects_unlocated": len(projects) - located,
+        "endpoints_by_precision": counts,
+    }
 
 
 def _write(name: str, payload: object) -> None:
@@ -161,17 +215,70 @@ def _with_sertp_flags(projects: list[dict], events: list[dict]) -> list[dict]:
         if event is None:
             return p
         disagreement = {"field": "in_service_year", "values": {"irp": event["before"], "sertp": event["after"]}}
-        return {**p, "flags": sorted({*p.get("flags", []), "sources_disagree"}),
-                "disagreements": [*p.get("disagreements", []), disagreement]}
+        return {
+            **p,
+            "flags": sorted({*p.get("flags", []), "sources_disagree"}),
+            "disagreements": [*p.get("disagreements", []), disagreement],
+        }
 
     return [flag(p) for p in projects]
 
 
-def _changes(desc: list[dict], gpc: list[dict], irp: dict) -> tuple[list[dict], list[dict]]:
+def _parser_anomalies(versions: list[tuple[str, list[dict]]], changes: list[dict]) -> list[dict]:
+    """Issues the parsers resolved silently: cost tables that do not sum, normalized dates, reused Project IDs."""
+    issues = []
+    for _, projects in versions:
+        for p in projects:
+            cost = p.get("cost_public") or {}
+            if cost.get("sums_match") is False:
+                parts = cost["previous_usd"] + sum(cost["by_year"].values())
+                issues.append(
+                    {
+                        "kind": "cost_table_mismatch",
+                        "project_id": p["id"],
+                        "values": {"columns_sum": f"${parts:,}", "stated_total": f"${cost['total_usd']:,}"},
+                        "message": f"{p['name']}: cost columns sum to ${parts:,} but the Total column says "
+                        f"${cost['total_usd']:,} ({p['source_id']} p.{p['page']}); GridPulse shows the Total",
+                    }
+                )
+            if p.get("date_quirk"):
+                issues.append(
+                    {
+                        "kind": "date_normalized",
+                        "project_id": p["id"],
+                        "values": {"printed": p.get("in_service_raw"), "used": p["in_service_date"]},
+                        "message": f"{p['name']}: in-service date {p['date_quirk']} ({p['source_id']} p.{p['page']})",
+                    }
+                )
+            if p.get("id_quirk"):
+                issues.append(
+                    {
+                        "kind": "id_reused",
+                        "project_id": p["id"],
+                        "values": {},
+                        "message": f"{p['name']}: {p['id_quirk']} within {p['source_id']}",
+                    }
+                )
+    issues += [
+        {
+            "kind": "id_reused",
+            "project_id": c["project_id"],
+            "values": {"before": c["before"], "after": c["after"]},
+            "message": f"{c['after']}: Project ID reused from a different project "
+            f"('{c['before']}'); not linked as a change",
+        }
+        for c in changes
+        if c["event"] == "id_reused"
+    ]
+    return issues
+
+
+def _changes(desc: list[dict], gpc: list[dict], irp: dict) -> tuple[list[dict], list[dict], list[dict]]:
     versions = [("desc-2428", desc)] + [(sid, parse_pdf(path, sid)) for sid, path in DESC_VERSIONS]
     sertp_events = sertp_disagreements(gpc, {sid: parse_sertp(path) for sid, path in SERTP.items()})
     tables = {"cancelled": irp["cancelled_rows"], "completed": irp["completed_rows"]}
-    return desc_changes(versions) + gpc_table_changes(tables, gpc) + sertp_events, sertp_events
+    changes = desc_changes(versions) + gpc_table_changes(tables, gpc) + sertp_events
+    return changes, sertp_events, _parser_anomalies(versions, changes)
 
 
 def build() -> dict:
@@ -184,26 +291,45 @@ def build() -> dict:
     gpc = [p for p in irp["projects"] if p["utility"] == "GPC"]
     others = [{**p, "state": "GA", "endpoints": []} for p in irp["projects"] if p["utility"] != "GPC"]
 
-    changes, sertp_events = _changes(desc, gpc, irp)
+    changes, sertp_events, anomalies = _changes(desc, gpc, irp)
     gpc = _with_sertp_flags(gpc, sertp_events)
     located = [_locate(p, index) for p in [*desc, *gpc]]
     keyed, discrepancies = apply_answer_key(located, key, links)
     projects = apply_overrides(keyed, _read_csv(OVERRIDES / "locations.csv"))
-    discrepancies += [_date_conflict(p, d) for p in projects for d in p.get("disagreements", [])
-                      if d["field"] == "need_date"]
-    discrepancies += [{"kind": "sources_disagree", "project_id": e["project_id"], "values": {"irp": e["before"],
-                       "sertp": e["after"]}, "message": f"{e['name']}: {e['before']} vs {e['after']}"}
-                      for e in sertp_events]
+    discrepancies += [
+        _date_conflict(p, d) for p in projects for d in p.get("disagreements", []) if d["field"] == "need_date"
+    ]
+    discrepancies += anomalies
+    discrepancies += [
+        {
+            "kind": "sources_disagree",
+            "project_id": e["project_id"],
+            "values": {"irp": e["before"], "sertp": e["after"]},
+            "message": f"{e['name']}: {e['before']} vs {e['after']}",
+        }
+        for e in sertp_events
+    ]
 
     opportunities = {m: find_opportunities(projects, MAX_PRECOMPUTED_MILES, m) for m in ("closest", "center")}
     PROCESSED.mkdir(parents=True, exist_ok=True)
     _write("projects.json", [*projects, *others])
     _write("opportunities.json", opportunities)
-    _write("quality.json", {"coverage": _coverage(projects), "acceptance": _acceptance(key),
-                            "discrepancies": discrepancies, "built_at": dt.datetime.now(dt.UTC).isoformat()})
+    _write(
+        "quality.json",
+        {
+            "coverage": _coverage(projects),
+            "acceptance": _acceptance(key),
+            "discrepancies": discrepancies,
+            "built_at": dt.datetime.now(dt.UTC).isoformat(),
+        },
+    )
     _write("changes.json", changes)
-    return {"projects": len(projects), "opportunities": {m: len(v) for m, v in opportunities.items()},
-            "discrepancies": len(discrepancies), "changes": len(changes)}
+    return {
+        "projects": len(projects),
+        "opportunities": {m: len(v) for m, v in opportunities.items()},
+        "discrepancies": len(discrepancies),
+        "changes": len(changes),
+    }
 
 
 if __name__ == "__main__":

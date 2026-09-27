@@ -4,7 +4,7 @@ Every input is shown and editable. Defaults are team assumptions, labelled as su
 """
 SQFT_PER_ACRE = 43_560
 FEET_PER_MILE = 5_280
-# Right-of-way widths by voltage: team assumptions within commonly published utility ranges.
+# Right-of-way widths by voltage: team assumptions for illustration, not sourced from either utility.
 ROW_WIDTH_FT = {69: 75, 115: 100, 230: 125, 500: 175}
 DEFAULT_MOBILIZATION_USD = 250_000
 DEFAULT_USD_PER_ACRE = 5_000
@@ -16,8 +16,8 @@ ASSUMPTIONS = [
                                     "500 kV 175 ft): team assumption"},
     {"key": "mobilization_usd", "text": "$250,000 per avoided crew/equipment mobilization: team assumption"},
     {"key": "usd_per_acre", "text": "$5,000 per acre of right-of-way: team assumption"},
-    {"key": "shared_corridor_mi", "text": "Shared corridor = shorter stated line length; 0 when a length is "
-                                          "not stated in the source (enter your own)"},
+    {"key": "shared_corridor_mi", "text": "Shared corridor: 0 by default. No source states that two projects share a "
+                                          "corridor; enter a length to explore the arithmetic"},
 ]
 
 
@@ -30,13 +30,11 @@ def row_width_for(voltage_kv: int | None) -> int:
 
 def default_inputs(project_a: dict, project_b: dict, dist_closest_mi: float) -> dict:
     voltages = [p.get("voltage_kv") for p in (project_a, project_b) if p.get("voltage_kv")]
-    known = [p["line_miles"] for p in (project_a, project_b) if p.get("line_miles") is not None]
-    shared = min(known) if known else 0.0
-    source = {2: "shorter of the two stated line lengths", 1: "stated length of the one project that publishes it",
-              0: "no line length stated in either source; enter your own"}[len(known)]
+    stated = ", ".join(f"{p['utility']} {p['line_miles']:.1f} mi" if p.get("line_miles") is not None
+                       else f"{p['utility']} not stated" for p in (project_a, project_b))
     return {
-        "shared_corridor_mi": float(shared),
-        "corridor_source": source,
+        "shared_corridor_mi": 0.0,
+        "corridor_source": f"No source states a shared corridor; enter one to explore. Stated line lengths: {stated}.",
         "row_width_ft": row_width_for(max(voltages) if voltages else None),
         "usd_per_acre": DEFAULT_USD_PER_ACRE,
         "mobilization_usd": DEFAULT_MOBILIZATION_USD,

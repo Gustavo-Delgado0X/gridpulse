@@ -1,12 +1,12 @@
 {
  "coverage": {
   "projects": 182,
-  "projects_located": 104,
-  "projects_unlocated": 78,
+  "projects_located": 102,
+  "projects_unlocated": 80,
   "endpoints_by_precision": {
    "sperry_provided": 17,
-   "unresolved": 194,
-   "osm_feature": 116
+   "unresolved": 199,
+   "osm_feature": 111
   }
  },
  "acceptance": {
@@ -128,13 +128,199 @@
    "message": "UNION CITY - YATES 230 KV WHITE LINE REBUILD: need date differs between Table 2 and detail page p.279"
   },
   {
-   "kind": "sources_disagree",
-   "project_id": "gpc-18800",
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2428-139-m-n",
    "values": {
-    "irp": "IRP 2025",
-    "sertp": "SERTP 2026: 2030"
+    "columns_sum": "$10,529,933",
+    "stated_total": "$11,116,933"
    },
-   "message": "ECHECONNEE-WELLSTON 115KV REBUILD: IRP 2025 vs SERTP 2026: 2030"
+   "message": "Okatie 230-115kV Substation, Jasper – Yemassee 230kV #1 Fold-in: cost columns sum to $10,529,933 but the Total column says $11,116,933 (desc-2428 p.3); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2428-6367-a-c-h",
+   "values": {
+    "columns_sum": "$17,777,427",
+    "stated_total": "$34,877,427"
+   },
+   "message": "Riverport Tap: Construct Tap: cost columns sum to $17,777,427 but the Total column says $34,877,427 (desc-2428 p.22); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2428-6810-f",
+   "values": {
+    "columns_sum": "$20,000,000",
+    "stated_total": "$30,000,000"
+   },
+   "message": "VCS2-Ward 230kV: Rebuild Line: cost columns sum to $20,000,000 but the Total column says $30,000,000 (desc-2428 p.26); GridPulse shows the Total"
+  },
+  {
+   "kind": "date_normalized",
+   "project_id": "desc-2428-6859",
+   "values": {
+    "printed": "10/1/2025 (phase 1) and 10/1/2026 (phase 2)",
+    "used": "2026-10-01"
+   },
+   "message": "Dawson 230kV Sub and Fold-in: Construct and Rebuild: in-service date phased: 10/1/2025 (phase 1) and 10/1/2026 (phase 2); final phase used (desc-2428 p.34)"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2529-6853-b-f",
+   "values": {
+    "columns_sum": "$28,864,145",
+    "stated_total": "$28,579,145"
+   },
+   "message": "Scout 230 kV Sub and Fold-in: Construct: cost columns sum to $28,864,145 but the Total column says $28,579,145 (desc-2529 p.27); GridPulse shows the Total"
+  },
+  {
+   "kind": "date_normalized",
+   "project_id": "desc-2529-6859",
+   "values": {
+    "printed": "10/1/2025 (phase 1) and 10/1/2026 (phase 2)",
+    "used": "2026-10-01"
+   },
+   "message": "Dawson 230kV Sub and Fold-in: Construct and Rebuild: in-service date phased: 10/1/2025 (phase 1) and 10/1/2026 (phase 2); final phase used (desc-2529 p.28)"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2529-6852",
+   "values": {
+    "columns_sum": "$17,460,000",
+    "stated_total": "$17,520,000"
+   },
+   "message": "Urquhart – Toolebeck 115kV line: Rebuild: cost columns sum to $17,460,000 but the Total column says $17,520,000 (desc-2529 p.29); GridPulse shows the Total"
+  },
+  {
+   "kind": "date_normalized",
+   "project_id": "desc-2630-6810-h",
+   "values": {
+    "printed": "04/31/26",
+    "used": "2026-04-30"
+   },
+   "message": "Summerville 115kV Loop: Rebuild: in-service date invalid day 31 clamped to month end (desc-2630 p.1)"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6853-b-f",
+   "values": {
+    "columns_sum": "$22,008,000",
+    "stated_total": "$19,418,000"
+   },
+   "message": "Scout 230 kV Sub and Fold-in: Construct: cost columns sum to $22,008,000 but the Total column says $19,418,000 (desc-2630 p.3); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6846-a",
+   "values": {
+    "columns_sum": "$2,088,443",
+    "stated_total": "$1,238,443"
+   },
+   "message": "Eastover – Sumter 115kV DEP Tie: Rebuild with 1272 ACSR: cost columns sum to $2,088,443 but the Total column says $1,238,443 (desc-2630 p.4); GridPulse shows the Total"
+  },
+  {
+   "kind": "date_normalized",
+   "project_id": "desc-2630-6809-n",
+   "values": {
+    "printed": "06/31/2026",
+    "used": "2026-06-30"
+   },
+   "message": "Batesburg - Saluda County 115kV: Rebuild: in-service date invalid day 31 clamped to month end (desc-2630 p.5)"
+  },
+  {
+   "kind": "date_normalized",
+   "project_id": "desc-2630-6859",
+   "values": {
+    "printed": "10/1/2025 (phase 1) and 10/1/2026 (phase 2)",
+    "used": "2026-10-01"
+   },
+   "message": "Dawson 230kV Sub and Fold-in: Construct and Rebuild: in-service date phased: 10/1/2025 (phase 1) and 10/1/2026 (phase 2); final phase used (desc-2630 p.8)"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6870-a",
+   "values": {
+    "columns_sum": "$20,130,000",
+    "stated_total": "$20,400,000"
+   },
+   "message": "Saluda Hydro – Bush River 115kV #1 and #2 Tie Lines Rebuild: cost columns sum to $20,130,000 but the Total column says $20,400,000 (desc-2630 p.15); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6847",
+   "values": {
+    "columns_sum": "$28,405,642",
+    "stated_total": "$22,788,174"
+   },
+   "message": "Church Creek – Faber Place – Charleston Transmission: Add 230kV Line: cost columns sum to $28,405,642 but the Total column says $22,788,174 (desc-2630 p.16); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6810-j",
+   "values": {
+    "columns_sum": "$10,194,609",
+    "stated_total": "$10,294,609"
+   },
+   "message": "Elloree – Santee City 46 kV: Rebuild: cost columns sum to $10,194,609 but the Total column says $10,294,609 (desc-2630 p.25); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6388-a",
+   "values": {
+    "columns_sum": "$30,919,648",
+    "stated_total": "$31,100,000"
+   },
+   "message": "Williams-Summerville 230kV: Upgrade to SPDC B1272 ACSR: cost columns sum to $30,919,648 but the Total column says $31,100,000 (desc-2630 p.31); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6809-f",
+   "values": {
+    "columns_sum": "$7,700,000",
+    "stated_total": "$7,912,400"
+   },
+   "message": "Orangeburg #1 - Cameron Jct 46kV Line Rebuild: cost columns sum to $7,700,000 but the Total column says $7,912,400 (desc-2630 p.35); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6809-r",
+   "values": {
+    "columns_sum": "$4,550,000",
+    "stated_total": "$4,450,000"
+   },
+   "message": "CAE Industrial Park - Springdale Sub 115kV: Replace Laminated Wood Polls.: cost columns sum to $4,550,000 but the Total column says $4,450,000 (desc-2630 p.42); GridPulse shows the Total"
+  },
+  {
+   "kind": "cost_table_mismatch",
+   "project_id": "desc-2630-6076-a",
+   "values": {
+    "columns_sum": "$28,121,795",
+    "stated_total": "$38,121,795"
+   },
+   "message": "Canadys-Ritter 115KV: Rebuild SPDC 230/115KV 1272 (Approx 18 Miles): cost columns sum to $28,121,795 but the Total column says $38,121,795 (desc-2630 p.44); GridPulse shows the Total"
+  },
+  {
+   "kind": "id_reused",
+   "project_id": "desc-2630-6809-m-p48",
+   "values": {},
+   "message": "Modoc – McCormick 115/46 kV Rebuild: Project ID 6809 M also used on p.19 within desc-2630"
+  },
+  {
+   "kind": "id_reused",
+   "project_id": "desc-2529-6809-g",
+   "values": {
+    "before": "Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV",
+    "after": "Hooks - Modoc 115/46 kV Rebuild"
+   },
+   "message": "Hooks - Modoc 115/46 kV Rebuild: Project ID reused from a different project ('Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV'); not linked as a change"
+  },
+  {
+   "kind": "id_reused",
+   "project_id": "desc-2529-6367-a-c-h",
+   "values": {
+    "before": "Riverport Tap: Construct Tap",
+    "after": "Sherwood Tap: Construct Tap"
+   },
+   "message": "Sherwood Tap: Construct Tap: Project ID reused from a different project ('Riverport Tap: Construct Tap'); not linked as a change"
   },
   {
    "kind": "sources_disagree",
@@ -180,15 +366,6 @@
     "sertp": "SERTP 2026: 2027"
    },
    "message": "SOUTH MACON 115KV BUSES 1 & 2 REPLACEMENT: IRP 2028 vs SERTP 2026: 2027"
-  },
-  {
-   "kind": "sources_disagree",
-   "project_id": "gpc-21047",
-   "values": {
-    "irp": "IRP 2029",
-    "sertp": "SERTP 2026: 2030"
-   },
-   "message": "BROADWAY - ECHECONNEE 115 KV LINE REBUILD: IRP 2029 vs SERTP 2026: 2030"
   },
   {
    "kind": "sources_disagree",
@@ -272,5 +449,5 @@
    "message": "SAV: LITTLE OGEECHEE 230/115KV BANK REPLACEMENT: IRP 2034 vs SERTP 2026: 2029"
   }
  ],
- "built_at": "2026-09-27T06:00:15.704172+00:00"
+ "built_at": "2026-09-27T09:17:26.318041+00:00"
 }

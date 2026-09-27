@@ -68,3 +68,38 @@ def test_gpc_cancelled_and_completed_tables_feed_changes(changes):
     kinds = {c["event"] for c in changes}
 
     assert {"cancelled", "completed", "slipped", "new"} <= kinds
+
+
+def test_parser_anomalies_are_reported_as_quality_issues():
+    quality = json.loads((PROCESSED / "quality.json").read_text())
+    kinds = {d["kind"] for d in quality["discrepancies"]}
+
+    assert {"cost_table_mismatch", "date_normalized", "id_reused"} <= kinds
+    riverport = [d for d in quality["discrepancies"] if d["kind"] == "cost_table_mismatch" and "Riverport" in d["message"]]
+    assert riverport and "columns sum to" in riverport[0]["message"]
+
+
+def test_no_false_sertp_or_id_reuse_changes(changes):
+    echeconnee = [c for c in changes if c["event"] == "sources_disagree" and "ECHECONNEE" in c["name"] and "WELLSTON" in c["name"]]
+    # 6809 G is Stevens Creek-Hooks in 2024-28 but Hooks-Modoc later: later changes must not link to the 2024-28 project
+    linked_to_old = [c for c in changes if c["project_id"].endswith("6809-g") and c["primary_id"] == "desc-2428-6809-g"]
+
+    assert echeconnee == [] and linked_to_old == []
+    assert any(c["event"] == "id_reused" and c["project_id"] == "desc-2529-6809-g" for c in changes)
+
+
+def test_desc_changes_link_to_ranked_opportunities(changes, opportunities):
+    ranked = {x for o in opportunities["closest"] for x in (o["a"], o["b"])}
+    jasper = [c for c in changes if c["event"] == "slipped" and "Jasper – Okatie 230 kV #2" in c["name"]]
+
+    assert jasper and all(c["primary_id"] == "desc-2428-6367-d-g" for c in jasper)
+    assert "desc-2428-6367-d-g" in ranked
+
+
+def test_no_ambiguous_endpoint_is_drawn():
+    projects = json.loads((PROCESSED / "projects.json").read_text())
+    drawn_ambiguous = [e for p in projects for e in p.get("endpoints", []) if e["precision"] == "osm_feature"
+                       and not e["confirmed_by_pdf_context"] and e.get("alternatives")
+                       and any(a["id"] != e["id"] and abs(a["lat"] - e["lat"]) > 0.01 for a in e["alternatives"])]
+
+    assert drawn_ambiguous == []

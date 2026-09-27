@@ -2,7 +2,9 @@
 
 Order: OSM feature by name (own state, then the neighboring state for tie lines), disambiguated by
 the GPC planning zone; then Sperry answer-key coordinates; then manual overrides; else unresolved.
-Every result carries precision, method, source and whether PDF context confirmed it.
+Every result carries precision, method, source and whether context confirmed it: the GPC planning zone, the
+project voltage in the OSM name, or a tie line in the title. A unique name alone is located but not "confirmed";
+several same-named candidates with no context are left unresolved rather than guessed.
 """
 import re
 
@@ -141,10 +143,12 @@ def locate_endpoint(name: str, state: str, zone: str | None, title: str, index: 
         zone_ok = "zone match" in reasons
         if where != "own state" and not (is_tie or zone_ok):
             continue
+        if len(pool) > 1:  # several same-named features and no context to choose: do not guess
+            return {**unresolved(name, state), "method": f"{len(pool)} OSM features share this name; left unresolved"}
         chosen, others = pool[0], [c for c in candidates if c is not pool[0]]
-        unique = len(pool) == 1
-        confirmed = unique
-        reason = ", ".join(reasons) or ("unique in state" if unique else "ambiguous")
-        method = f"OSM name {how}, {where}, {reason}" + (", tie line" if where != "own state" and is_tie else "")
+        tie_context = where != "own state" and is_tie
+        confirmed = bool(reasons) or tie_context  # zone box, voltage in the OSM name, or a tie line in the title
+        reason = ", ".join(reasons) or "unique OSM name in state"
+        method = f"OSM name {how}, {where}, {reason}" + (", tie line" if tie_context else "")
         return _endpoint(name, chosen, method, confirmed, others)
     return unresolved(name, state)

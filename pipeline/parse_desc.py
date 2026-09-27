@@ -155,6 +155,7 @@ def parse_page(text: str, page: int, source_id: str) -> dict:
         "need_text": need,
         "status": status,
         "in_service_date": in_service,
+        "in_service_raw": date_raw,
         "date_precision": "day",
         "date_quirk": date_quirk,
         "window_start": window_start,

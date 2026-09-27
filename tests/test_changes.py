@@ -106,3 +106,62 @@ def test_parse_sertp_page_blocks():
         (2028, "SOCO: SAV: GOSHEN (SAV) - MCINTOSH 115 KV LINE REBUILD"), (2029, "SOCO: OTHER 230 KV")]
     assert entries[0]["description"].endswith("115 kV line.")
     assert entries[0]["page"] == 53
+
+
+def test_reused_desc_id_with_a_different_project_is_not_a_slip_or_rename():
+    old = [desc("6809 G", "Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV", "2025-12-31", 7_800_000)]
+    new = [desc("6809 G", "Hooks - Modoc 115/46 kV Rebuild", "2027-12-31", 10_534_285, source="desc-2529")]
+
+    events = desc_changes([("desc-2428", old), ("desc-2529", new)])
+
+    assert [e["event"] for e in events] == ["id_reused"]
+    assert events[0]["before"].startswith("Stevens Creek") and events[0]["after"].startswith("Hooks - Modoc")
+
+
+def test_desc_events_carry_the_primary_list_id_used_by_opportunities():
+    old = [desc("6367 D - G", "Jasper – Okatie 230 kV #2: Construct", "2025-12-31")]
+    mid = [desc("6367 D - G", "Jasper – Okatie 230 kV #2: Construct", "2026-05-31", source="desc-2529")]
+    new = [desc("6367 D - G", "Jasper – Okatie 230 kV #2: Construct", "2026-12-01", source="desc-2630"),
+           desc("9999", "Brand New Tap", "2028-12-31", source="desc-2630")]
+
+    events = desc_changes([("desc-2428", old), ("desc-2529", mid), ("desc-2630", new)])
+
+    slips = [e for e in events if e["event"] == "slipped"]
+    assert {e["primary_id"] for e in slips} == {"desc-2428-6367 D - G"}
+    assert next(e for e in events if e["event"] == "new")["primary_id"] is None
+
+
+def test_evidence_quotes_use_the_date_as_printed():
+    old = [{**desc("6810 A", "Hooks - Thurmond", "2024-12-31"), "in_service_raw": "12/31/24"}]
+    new = [{**desc("6810 A", "Hooks - Thurmond", "2025-12-31", source="desc-2529"), "in_service_raw": "12/31/2025"}]
+
+    [slip] = desc_changes([("desc-2428", old), ("desc-2529", new)])
+
+    assert [e["quote"] for e in slip["evidence"]] == ["12/31/24", "12/31/2025"]
+    assert (slip["before"], slip["after"]) == ("2024-12-31", "2025-12-31")
+
+
+def test_ambiguous_sertp_keys_are_not_matched():
+    gpc = [{"id": "gpc-1", "utility": "GPC", "name": "ECHECONNEE-WELLSTON 115KV REBUILD", "in_service_date": "2025-06-01",
+            "detail_page": 1, "source_id": "gpc-irp25-v3"},
+           {"id": "gpc-2", "utility": "GPC", "name": "ECHECONNEE - WELLSTON 115KV REBUILD", "in_service_date": "2030-06-01",
+            "detail_page": 2, "source_id": "gpc-irp25-v3"}]
+    sertp = {"sertp-2026": [{"name": "SOCO: ECHECONNEE - WELLSTON 115 KV REBUILD", "year": 2030, "page": 5}]}
+    dup_sertp = {"sertp-2026": [{"name": "SOCO: A - B 115 KV REBUILD", "year": 2027, "page": 5},
+                                {"name": "SOCO: A - B 115 KV REBUILD", "year": 2030, "page": 9}]}
+    one = [{**gpc[0], "id": "gpc-3", "name": "A - B 115KV REBUILD"}]
+
+    assert sertp_disagreements(gpc, sertp) == []       # two IRP projects share the key
+    assert sertp_disagreements(one, dup_sertp) == []   # two SERTP entries share the key
+
+
+def test_sertp_evidence_quotes_the_printed_name_not_a_synthesized_sentence():
+    gpc = [{"id": "gpc-20065", "utility": "GPC", "name": "SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD",
+            "in_service_date": "2027-06-01", "in_service_raw": "6/1/2027", "detail_page": 250, "page": 180, "source_id": "gpc-irp25-v3"}]
+    sertp = {"sertp-2026": [{"name": "SOCO: SAV: GOSHEN (SAV) - MCINTOSH 115 KV LINE REBUILD", "year": 2028, "page": 53}]}
+
+    [event] = sertp_disagreements(gpc, sertp)
+
+    assert event["evidence"][0]["quote"] == "6/1/2027"
+    assert event["evidence"][1]["quote"] == "SOCO: SAV: GOSHEN (SAV) - MCINTOSH 115 KV LINE REBUILD"
+    assert event["primary_id"] == "gpc-20065"

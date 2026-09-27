@@ -80,6 +80,7 @@ def parse_table_lines(lines: list[str], kind: str, page: int) -> list[dict]:
             name_lines.append(body[i])
             i += 1
         row["name"] = re.sub(r"\s+", " ", " ".join(name_lines)).strip()
+        row["need_date_raw"] = body[i]
         row["need_date"], i = iso_date(body[i]), i + 1
         if has_sponsor:
             row["sponsor"], i = body[i].strip(), i + 1
@@ -113,6 +114,8 @@ def parse_detail_blocks(blocks: list[tuple], page: int) -> dict:
         "title": re.sub(r"\s+", " ", title).strip(),
         "need_date": iso_date(dates.group(1)),
         "start_date": iso_date(dates.group(2)),
+        "need_date_raw": dates.group(1),
+        "start_date_raw": dates.group(2),
         **{field: " ".join(v) for field, v in values.items()},
     }
 
@@ -125,9 +128,9 @@ def _project(row: dict, detail: dict | None) -> dict:
         return {"field": field, "quote": quote, "page": page, "source_id": SOURCE_ID}
 
     evidence = [cite("name", row["name"], row["page"]), cite("teams", row["teams"], row["page"]),
-                cite("need_date", row["need_date"], row["page"]), cite("sponsor", sponsor, row["page"])]
+                cite("need_date", row["need_date_raw"], row["page"]), cite("sponsor", sponsor, row["page"])]
     if detail:
-        evidence += [cite("start_date", detail["start_date"], detail["page"])]
+        evidence += [cite("start_date", detail["start_date_raw"], detail["page"])]
         evidence += [cite(f, detail[f], detail["page"]) for f in
                      ("description", "change_vs_prev_ten_year", "change_vs_prev_irp") if detail.get(f)]
     disagreements = []
@@ -148,6 +151,8 @@ def _project(row: dict, detail: dict | None) -> dict:
         "need_text": None,
         "status": None,
         "in_service_date": row["need_date"],
+        "in_service_raw": row["need_date_raw"],
+        "in_service_page": row["page"],
         "date_precision": "day",
         "window_start": detail.get("start_date"),
         "window_end": row["need_date"] if detail.get("start_date") else None,
