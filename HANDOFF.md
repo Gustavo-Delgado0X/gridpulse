@@ -3,7 +3,7 @@
 ## ▶ BUILD STATUS (updated 2026-09-27 ~05:30 EDT). Read this first.
 
 **Built, deployed and audited.** `main` is pushed to the private repo https://github.com/Gustavo-Delgado0X/gridpulse (all commits authored by **Gustavo Delgado**) and live at https://gridpulse-five.vercel.app (landing at `/`, workspace at `/app`).
-- Tests: 182 pytest (87% coverage of engine/pipeline/app), 47 Vitest, 13 Playwright E2E — all passing.
+- Tests: 193 pytest (engine/pipeline/app + frontend API contract), 55 Vitest, 57 Playwright E2E (every control, checked against live API data) — all passing.
 - Gate A (answer key 6/6) and Gate B (real-data build reproduces all 6) pass; `tests/test_evidence_verbatim.py` checks every quoted fact against its PDF page.
 - Current data: 182 projects (102 located), 52 DESC × GPC pairs within 25 mi (2 T1, 2 T3, 48 T4), 317 plan-change events, 41 data-quality issues.
 

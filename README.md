@@ -116,6 +116,7 @@ npx vercel --prod
 
 ```bash
 make test         # pytest (engine, parsers, locate, build, API, Gate A/B) + Vitest (components, map data)
+cd frontend && npx playwright test   # E2E: every button, filter, link and map control against the live API
 make acceptance   # Gate A only
 ```
 
@@ -126,7 +127,7 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent.
 - `GET /api/health`
 - `GET /api/sources`
 - `GET /api/projects?utility=&located=`
-- `GET /api/opportunities?d=5..50&tier=&timeline=&method=closest|center`
+- `GET /api/opportunities?d=1..50&tier=&timeline=&method=closest|center`
 - `GET /api/opportunities/{id}`
 - `GET /api/opportunities/{id}/brief` (printable HTML)
 - `GET /api/changes?utility=&event=`
