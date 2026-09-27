@@ -17,10 +17,21 @@
   --evidence-ai: #0f6e66;
   --tint-desc: #e3ecf7;
   --tint-gpc: #f6e9da;
+  /* Redesign handoff (design_handoff_gridpulse_redesign/README.md, step 1) */
+  --bg-subtle: #efede8;
+  --bg-hover: #f6f4f0;
+  --bg-toolbar: #fcfbf9;
+  --line-soft: #ece9e3;
+  --tint-warn: #fbf1d6;
+  --line-warn: #e9d59a;
+  --focus: var(--utility-desc);
 
   --font-ui: "IBM Plex Sans", system-ui, sans-serif;
   --font-data: "IBM Plex Mono", ui-monospace, monospace;
   --radius: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --shadow-pop: 0 8px 24px rgba(24, 16, 17, 0.12);
   --motion-fast: 120ms ease-out;
   --motion-base: 200ms cubic-bezier(0.2, 0, 0, 1);
   --motion-method: 300ms cubic-bezier(0.2, 0, 0, 1);
@@ -38,6 +49,12 @@
   --utility-gpc: #f2a33a;
   --overlap: #c792ff;
   --tint-desc: #13263f;
+  --bg-subtle: #18233a;
+  --bg-hover: #141e30;
+  --bg-toolbar: #0e1522;
+  --line-soft: #1c2740;
+  --tint-warn: #2e2610;
+  --line-warn: #5c4a1a;
   --tint-gpc: #2e2213;
   color-scheme: dark;
 }
@@ -49,11 +66,12 @@ html, body, #root { height: 100%; margin: 0; }
 body {
   background: var(--bg-canvas);
   color: var(--text-primary);
-  font: 400 14px/1.4 var(--font-ui);
+  font: 400 13px/1.4 var(--font-ui);
+  font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
 }
 
-:focus-visible { outline: 2px solid var(--overlap); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }

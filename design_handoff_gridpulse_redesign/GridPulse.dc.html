@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#F3F2EE}
+*{box-sizing:border-box}
+a{color:#1C1B19;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#2F63B8}
+button{font-family:inherit}
+input,select{font-family:inherit}
+:focus-visible{outline:2px solid #2F63B8;outline-offset:1px}
+@keyframes gpShimmer{0%{opacity:.55}50%{opacity:1}100%{opacity:.55}}
+</style>
+</helmet>
+<div style="height:100vh;display:flex;flex-direction:column;background:#F3F2EE;color:#1C1B19;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:13px;line-height:1.4;min-width:1180px;overflow:hidden">
+
+  <header style="height:48px;flex:none;display:flex;align-items:center;gap:20px;padding:0 16px;background:#FCFBF9;border-bottom:1px solid #E4E1DA">
+    <div style="display:flex;align-items:center;gap:8px">
+      <div style="width:16px;height:16px;border-radius:50%;border:2px solid #1C1B19;display:flex;align-items:center;justify-content:center"><div style="width:4px;height:4px;border-radius:50%;background:#1C1B19"></div></div>
+      <span style="font-size:15px;font-weight:600;letter-spacing:-0.01em">GridPulse</span>
+    </div>
+    <button title="Switch study" style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:8px;height:30px;padding:0 10px;border:1px solid #E4E1DA;border-radius:6px;background:#FFFFFF;font-size:13px;color:#1C1B19;cursor:pointer">
+      <span style="display:flex;gap:3px"><span style="width:8px;height:8px;border-radius:50%;background:#2F63B8"></span><span style="width:8px;height:8px;background:#B4541C"></span></span>
+      <span style="font-weight:500">DESC × Georgia Power</span>
+      <span style="color:#6F6B64">▾</span>
+    </button>
+    <nav style="display:flex;align-self:stretch;gap:4px">
+      <sc-for list="{{ navTabs }}" as="t" hint-placeholder-count="3">
+        <button onClick="{{ t.onClick }}" style="flex-shrink:0;white-space:nowrap;position:relative;display:flex;align-items:center;gap:6px;padding:0 10px;border:0;background:transparent;font-size:13.5px;font-weight:{{ t.weight }};color:{{ t.color }};cursor:pointer;box-shadow:inset 0 -2px 0 {{ t.bar }}">{{ t.label }}<span style="font-size:11.5px;color:#6F6B64;font-variant-numeric:tabular-nums">{{ t.count }}</span></button>
+      </sc-for>
+    </nav>
+    <div style="flex:1"></div>
+    <label style="display:flex;align-items:center;gap:8px;flex:0 1 280px;min-width:160px;height:30px;padding:0 10px;border:1px solid #E4E1DA;border-radius:6px;background:#FFFFFF;color:#6F6B64">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor"><circle cx="7" cy="7" r="5"></circle><line x1="11" y1="11" x2="15" y2="15"></line></svg>
+      <input value="{{ q }}" onChange="{{ onGlobalQ }}" placeholder="Search" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font-size:13px;color:#1C1B19">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E4E1DA;border-radius:4px;padding:0 4px">⌘K</span>
+    </label>
+    <button onClick="{{ goDQ }}" title="Sperry validation benchmark: 6 of 6 checks passed" style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:0;background:transparent;font-size:12.5px;color:#1E7045;cursor:pointer"><span style="width:7px;height:7px;border-radius:50%;background:#1E7045"></span>Validated 6/6</button>
+    <button title="Help and keyboard shortcuts" style="width:30px;height:30px;border-radius:6px;border:1px solid #E4E1DA;background:#FFFFFF;color:#55524C;cursor:pointer;font-size:13px">?</button>
+    <div title="Profile" style="width:28px;height:28px;border-radius:50%;background:#2B2A27;color:#FCFBF9;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center">AN</div>
+  </header>
+
+  <sc-if value="{{ isOpp }}" hint-placeholder-val="{{ true }}">
+    <div style="height:56px;flex:none;display:flex;align-items:center;gap:16px;padding:0 16px;background:#FCFBF9;border-bottom:1px solid #E4E1DA">
+      <span title="Cross-utility project pairs · ranked by tier, timing, gap, distance" style="flex-shrink:0;font-size:16px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap">Savannah / Augusta study</span>
+      <div style="display:flex;align-items:stretch;height:36px;border-left:1px solid #E4E1DA;padding-left:8px;flex-shrink:0">
+        <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="4">
+          <button onClick="{{ m.onClick }}" title="{{ m.tip }}" style="white-space:nowrap;display:flex;align-items:baseline;gap:6px;padding:6px 10px;border:0;border-radius:6px;background:{{ m.bg }};cursor:pointer;color:#1C1B19" style-hover="background:#F1EFEA">
+            <span style="font-size:18px;font-weight:600;font-variant-numeric:tabular-nums;color:{{ m.numColor }}">{{ m.n }}</span>
+            <span style="font-size:12.5px;color:#55524C">{{ m.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;white-space:nowrap">
+        <span title="How GridPulse measures distance between two projects. Closest points: nearest points of the two alignments. Project centers: centroid to centroid (Sperry method)." style="font-size:12.5px;color:#55524C;cursor:help;border-bottom:1px dotted #9A968F">Distance by</span>
+        <div role="radiogroup" style="display:flex;padding:2px;background:#ECEAE5;border-radius:7px">
+          <sc-for list="{{ modeOpts }}" as="o" hint-placeholder-count="2">
+            <button role="radio" onClick="{{ o.onClick }}" style="white-space:nowrap;height:26px;padding:0 10px;border:0;border-radius:5px;font-size:12.5px;font-weight:500;cursor:pointer;background:{{ o.bg }};color:{{ o.color }};box-shadow:{{ o.shadow }}">{{ o.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:relative;flex-shrink:0">
+        <button onClick="{{ toggleRadius }}" style="white-space:nowrap;display:flex;align-items:center;gap:8px;height:30px;padding:0 10px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;font-size:12.5px;color:#1C1B19;cursor:pointer">
+          <span style="color:#55524C">Radius</span><span style="font-weight:600;font-variant-numeric:tabular-nums">{{ radiusLabel }}</span><span style="color:#6F6B64">▾</span>
+        </button>
+        <sc-if value="{{ radiusOpen }}">
+          <div style="position:absolute;right:0;top:36px;z-index:40;width:260px;padding:12px;background:#FFFFFF;border:1px solid #E4E1DA;border-radius:8px;box-shadow:0 8px 24px rgba(28,27,25,0.12);display:flex;flex-direction:column;gap:10px">
+            <div style="font-size:12px;color:#55524C">Include pairs whose <strong style="font-weight:600;color:#1C1B19">{{ modeNoun }}</strong> are within</div>
+            <div style="display:flex;gap:4px">
+              <sc-for list="{{ radiusPresets }}" as="p" hint-placeholder-count="5">
+                <button onClick="{{ p.onClick }}" style="flex:1;height:28px;border:1px solid {{ p.bd }};border-radius:5px;background:{{ p.bg }};color:{{ p.color }};font-size:12px;font-variant-numeric:tabular-nums;cursor:pointer">{{ p.label }}</button>
+              </sc-for>
+            </div>
+            <input type="range" min="1" max="50" value="{{ radius }}" onChange="{{ onRadius }}" style="width:100%;accent-color:#1C1B19">
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(380px,29%) minmax(0,1fr) minmax(360px,27%)">
+
+      <section aria-label="Opportunity queue" style="min-width:0;overflow:hidden;display:flex;flex-direction:column;min-height:0;background:#FCFBF9;border-right:1px solid #E4E1DA">
+        <div style="padding:12px 16px 8px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #E4E1DA">
+          <div style="display:flex;align-items:baseline;gap:8px">
+            <h2 style="margin:0;font-size:15px;font-weight:600">Opportunities</h2>
+            <span style="font-size:12.5px;color:#6F6B64;font-variant-numeric:tabular-nums;white-space:nowrap">{{ listCountLabel }}</span>
+            <div style="flex:1"></div>
+            <button onClick="{{ toggleDensity }}" title="Toggle row density" style="white-space:nowrap;flex-shrink:0;height:26px;padding:0 8px;border:0;border-radius:5px;background:transparent;font-size:12px;color:#55524C;cursor:pointer" style-hover="background:#EFEDE8">{{ densityLabel }}</button>
+            <button onClick="{{ exportCsv }}" title="Export in Sperry CSV format" style="white-space:nowrap;flex-shrink:0;height:26px;padding:0 8px;border:1px solid #E4E1DA;border-radius:5px;background:#FFFFFF;font-size:12px;color:#1C1B19;cursor:pointer">Export CSV</button>
+          </div>
+          <div style="display:flex;gap:6px;align-items:center">
+            <label style="flex:1;min-width:0;display:flex;align-items:center;gap:6px;height:30px;padding:0 8px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;color:#6F6B64">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"><circle cx="7" cy="7" r="5"></circle><line x1="11" y1="11" x2="15" y2="15"></line></svg>
+              <input ref="{{ searchRef }}" value="{{ q }}" onChange="{{ onQ }}" placeholder="Filter by project name" aria-label="Filter opportunities" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font-size:13px;color:#1C1B19">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;border:1px solid #E4E1DA;border-radius:4px;padding:0 4px">/</span>
+            </label>
+            <div style="position:relative">
+              <button onClick="{{ toggleFilter }}" style="display:flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;font-size:12.5px;color:#1C1B19;cursor:pointer">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"><line x1="2" y1="4" x2="14" y2="4"></line><line x1="4" y1="8" x2="12" y2="8"></line><line x1="6" y1="12" x2="10" y2="12"></line></svg>
+                Filter<sc-if value="{{ hasActiveFilters }}"><span style="min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#1C1B19;color:#FFFFFF;font-size:10.5px;display:flex;align-items:center;justify-content:center">{{ activeCount }}</span></sc-if>
+              </button>
+              <sc-if value="{{ filterOpen }}">
+                <div style="position:absolute;left:0;top:36px;z-index:40;width:300px;padding:12px;background:#FFFFFF;border:1px solid #E4E1DA;border-radius:8px;box-shadow:0 8px 24px rgba(28,27,25,0.12);display:flex;flex-direction:column;gap:14px">
+                  <sc-for list="{{ filterGroups }}" as="g" hint-placeholder-count="4">
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                      <div style="font-size:12px;font-weight:600;color:#55524C">{{ g.title }}</div>
+                      <div style="display:flex;flex-wrap:wrap;gap:4px">
+                        <sc-for list="{{ g.opts }}" as="o">
+                          <button onClick="{{ o.onClick }}" title="{{ o.tip }}" style="height:26px;padding:0 8px;border:1px solid {{ o.bd }};border-radius:5px;background:{{ o.bg }};color:{{ o.color }};font-size:12px;cursor:pointer">{{ o.label }}</button>
+                        </sc-for>
+                      </div>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+            <select value="{{ sort }}" onChange="{{ onSort }}" aria-label="Sort" style="height:30px;padding:0 6px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;font-size:12.5px;color:#1C1B19">
+              <option value="rank">Sort: Rank</option>
+              <option value="dist">Sort: Distance</option>
+              <option value="overlap">Sort: Overlap</option>
+            </select>
+          </div>
+          <sc-if value="{{ hasActiveFilters }}">
+            <div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center">
+              <sc-for list="{{ activeChips }}" as="c">
+                <button onClick="{{ c.onRemove }}" style="display:flex;align-items:center;gap:6px;height:24px;padding:0 6px 0 8px;border:1px solid #D9D5CC;border-radius:5px;background:#EFEDE8;font-size:12px;color:#1C1B19;cursor:pointer"><span style="color:#55524C">{{ c.k }}:</span>{{ c.v }}<span aria-label="Remove filter" style="color:#6F6B64">×</span></button>
+              </sc-for>
+              <button onClick="{{ clearFilters }}" style="height:24px;padding:0 6px;border:0;background:transparent;font-size:12px;color:#55524C;text-decoration:underline;cursor:pointer">Clear all</button>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="flex:1;min-height:0;overflow:auto">
+          <sc-if value="{{ isLoading }}">
+            <sc-for list="{{ skel }}" as="k">
+              <div style="padding:14px 16px;border-bottom:1px solid #ECE9E3;display:flex;flex-direction:column;gap:8px;animation:gpShimmer 1.4s ease-in-out infinite">
+                <div style="width:30%;height:10px;border-radius:3px;background:#E7E4DE"></div>
+                <div style="width:85%;height:12px;border-radius:3px;background:#E7E4DE"></div>
+                <div style="width:70%;height:12px;border-radius:3px;background:#E7E4DE"></div>
+                <div style="width:50%;height:10px;border-radius:3px;background:#EDEAE4"></div>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ isEmpty }}">
+            <div style="padding:40px 24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+              <div style="font-size:14px;font-weight:600">No opportunities match</div>
+              <div style="font-size:13px;color:#55524C;text-wrap:pretty">{{ emptyReason }}</div>
+              <div style="display:flex;gap:8px;margin-top:4px">
+                <button onClick="{{ clearFilters }}" style="height:30px;padding:0 12px;border:1px solid #1C1B19;border-radius:6px;background:#1C1B19;color:#FFFFFF;font-size:12.5px;cursor:pointer">Clear filters</button>
+                <button onClick="{{ widenRadius }}" style="height:30px;padding:0 12px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;font-size:12.5px;cursor:pointer">Widen radius to 50 mi</button>
+              </div>
+            </div>
+          </sc-if>
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+            <div role="option" aria-selected="{{ r.selected }}" tabindex="0" onClick="{{ r.onClick }}" onMouseEnter="{{ r.onEnter }}" onMouseLeave="{{ r.onLeave }}" style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:4px;padding:{{ r.pad }};background:{{ r.bg }};box-shadow:{{ r.edge }};border-bottom:1px solid #ECE9E3;cursor:pointer">
+              <div style="font-size:12px;color:#6F6B64;font-variant-numeric:tabular-nums;padding-top:2px">{{ r.rankLabel }}</div>
+              <div style="display:flex;flex-direction:column;gap:5px;min-width:0">
+                <div style="display:flex;align-items:center;gap:8px">
+                  <span title="{{ r.tierTip }}" style="font-size:11px;font-weight:600;line-height:16px;padding:0 5px;border-radius:4px;background:{{ r.tierBg }};color:{{ r.tierFg }};border:1px solid {{ r.tierBd }}">{{ r.tier }}</span>
+                  <span style="font-size:12px;color:#55524C">{{ r.tierShort }} · {{ r.rec }}</span>
+                  <span style="flex:1"></span>
+                  <sc-if value="{{ r.hasStatus }}"><span style="font-size:11.5px;color:#55524C;border:1px solid #D9D5CC;border-radius:4px;padding:0 5px">{{ r.status }}</span></sc-if>
+                </div>
+                <div style="display:grid;grid-template-columns:38px minmax(0,1fr);gap:6px;align-items:baseline">
+                  <span style="display:flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:#2F63B8"><span style="width:7px;height:7px;border-radius:50%;background:#2F63B8"></span>DESC</span>
+                  <span title="{{ r.dName }}" style="font-size:13.5px;font-weight:{{ r.nameWeight }};overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{ r.clamp }}">{{ r.dName }}</span>
+                </div>
+                <div style="display:grid;grid-template-columns:38px minmax(0,1fr);gap:6px;align-items:baseline">
+                  <span style="display:flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:#B4541C"><span style="width:7px;height:7px;background:#B4541C"></span>GPC</span>
+                  <span title="{{ r.gName }}" style="font-size:13.5px;font-weight:{{ r.nameWeight }};overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{ r.clamp }}">{{ r.gName }}</span>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px;color:#55524C;font-variant-numeric:tabular-nums">
+                  <span><strong style="font-weight:600;color:#1C1B19">{{ r.dist }}</strong> {{ r.distLabel }}</span>
+                  <span style="color:{{ r.timingColor }}">{{ r.timing }}</span>
+                  <span>{{ r.gapLabel }}</span>
+                </div>
+                <sc-if value="{{ r.hasConflict }}">
+                  <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#8A5A00"><span style="font-size:10px">▲</span>{{ r.conflictLabel }}</div>
+                </sc-if>
+                <sc-if value="{{ r.hasLocNote }}">
+                  <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#55524C"><span style="width:7px;height:7px;border:1px solid #55524C;transform:rotate(45deg)"></span>{{ r.locNote }}</div>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ showListFooter }}">
+            <div style="padding:12px 16px;font-size:12px;color:#6F6B64;display:flex;justify-content:space-between"><span>{{ listFooter }}</span><span>↑ ↓ to move · / to search</span></div>
+          </sc-if>
+        </div>
+      </section>
+
+      <section aria-label="Spatial analysis" style="position:relative;min-width:0;min-height:0;overflow:hidden;background:#ECEBE6">
+        <sc-if value="{{ mapOk }}">
+          <div ref="{{ mapRef }}" style="position:absolute;inset:0" onMouseLeave="{{ clearHoverProj }}">{{ mapEl }}</div>
+        </sc-if>
+        <sc-if value="{{ isLoading }}">
+          <div style="position:absolute;inset:0;background:#E7E5E0;animation:gpShimmer 1.4s ease-in-out infinite"></div>
+        </sc-if>
+        <sc-if value="{{ mapError }}">
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#ECEBE6 0 10px,#E8E6E1 10px 20px)">
+            <div style="max-width:320px;padding:16px;background:#FCFBF9;border:1px solid #E4E1DA;border-radius:8px;display:flex;flex-direction:column;gap:8px">
+              <div style="font-size:14px;font-weight:600">Map tiles unavailable</div>
+              <div style="font-size:13px;color:#55524C">The basemap service did not respond. Rankings, distances and evidence are unaffected.</div>
+              <button onClick="{{ retry }}" style="align-self:flex-start;height:28px;padding:0 12px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;font-size:12.5px;cursor:pointer">Retry</button>
+            </div>
+          </div>
+        </sc-if>
+
+        <div style="position:absolute;left:12px;top:12px;display:flex;flex-direction:column;background:#FCFBF9;border:1px solid #E4E1DA;border-radius:6px;overflow:hidden">
+          <button onClick="{{ zoomIn }}" aria-label="Zoom in" style="width:30px;height:30px;border:0;border-bottom:1px solid #E4E1DA;background:transparent;font-size:15px;cursor:pointer">+</button>
+          <button onClick="{{ zoomOut }}" aria-label="Zoom out" style="width:30px;height:30px;border:0;border-bottom:1px solid #E4E1DA;background:transparent;font-size:15px;cursor:pointer">−</button>
+          <button onClick="{{ fitPair }}" title="Fit selected pair" style="width:30px;height:30px;border:0;background:transparent;font-size:11px;font-weight:600;cursor:pointer">Fit</button>
+        </div>
+        <div style="position:absolute;right:12px;top:12px;display:flex;gap:6px">
+          <button onClick="{{ toggleOthers }}" style="height:30px;padding:0 10px;border:1px solid #E4E1DA;border-radius:6px;background:#FCFBF9;font-size:12.5px;color:#1C1B19;cursor:pointer">{{ othersLabel }}</button>
+          <button title="Basemap: streets (satellite available)" style="height:30px;padding:0 10px;border:1px solid #E4E1DA;border-radius:6px;background:#FCFBF9;font-size:12.5px;color:#1C1B19;cursor:pointer">Layers ▾</button>
+        </div>
+        <sc-if value="{{ hasHoverCard }}">
+          <div style="position:absolute;left:54px;top:12px;max-width:320px;padding:8px 10px;background:#FCFBF9;border:1px solid #E4E1DA;border-radius:6px;box-shadow:0 4px 12px rgba(28,27,25,0.08);display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:11px;font-weight:600;color:{{ hoverCard.color }}">{{ hoverCard.util }}</span>
+            <span style="font-size:13px;font-weight:500">{{ hoverCard.name }}</span>
+            <span style="font-size:12px;color:#55524C">{{ hoverCard.meta }} · click to filter queue</span>
+          </div>
+        </sc-if>
+        <div style="position:absolute;left:12px;bottom:28px;background:#FCFBF9;border:1px solid #E4E1DA;border-radius:6px;min-width:190px">
+          <button onClick="{{ toggleLegend }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;height:30px;padding:0 10px;border:0;background:transparent;font-size:12.5px;font-weight:500;cursor:pointer;color:#1C1B19">Legend<span style="color:#6F6B64">{{ legendCaret }}</span></button>
+          <sc-if value="{{ legendOpen }}">
+            <div style="padding:2px 10px 10px;display:grid;grid-template-columns:auto auto;gap:6px 16px;font-size:12px;color:#1C1B19">
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <span style="font-size:11px;color:#6F6B64">Utility</span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;height:3px;background:#2F63B8"></span>DESC project</span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;height:3px;background:#B4541C"></span>Georgia Power</span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;border:1.5px solid #55524C;background:#FFFFFF;margin:0 4px"></span>Approximate</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <span style="font-size:11px;color:#6F6B64">Relationship</span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;border-top:2px dashed #1C1B19"></span>Selected pair</span>
+                <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;height:2px;background:#C3BFB7"></span>Other projects</span>
+                <span style="color:#55524C">T1 touching · T2 &lt;1 mi<br>T3 &lt;5 mi · T4 &lt;25 mi</span>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="position:absolute;right:8px;bottom:6px;font-size:11px;color:#55524C;background:rgba(252,251,249,0.8);padding:1px 6px;border-radius:3px">Unresolved endpoints are not drawn · © OpenStreetMap contributors (ODbL) · US Census</div>
+      </section>
+
+      <section aria-label="Opportunity inspector" style="display:flex;flex-direction:column;min-height:0;background:#FCFBF9;border-left:1px solid #E4E1DA">
+        <sc-if value="{{ hasSel }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:1;min-height:0;overflow:auto">
+            <div style="padding:14px 18px 16px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #E4E1DA">
+              <div style="display:flex;align-items:center;gap:8px">
+                <span style="font-size:12.5px;color:#6F6B64;font-variant-numeric:tabular-nums">{{ ins.rankLabel }}</span>
+                <span title="{{ ins.tierTip }}" style="font-size:11px;font-weight:600;line-height:16px;padding:0 5px;border-radius:4px;background:{{ ins.tierBg }};color:{{ ins.tierFg }};border:1px solid {{ ins.tierBd }}">{{ ins.tier }}</span>
+                <span style="font-size:12.5px;color:#55524C">{{ ins.tierShort }}</span>
+                <div style="flex:1"></div>
+                <div style="position:relative">
+                  <button onClick="{{ toggleStatus }}" aria-label="Review status" style="display:flex;align-items:center;gap:6px;height:28px;padding:0 8px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;font-size:12.5px;cursor:pointer;color:#1C1B19"><span style="width:7px;height:7px;border-radius:50%;background:{{ ins.statusDot }}"></span>{{ ins.status }}<span style="color:#6F6B64">▾</span></button>
+                  <sc-if value="{{ statusOpen }}">
+                    <div style="position:absolute;right:0;top:32px;z-index:40;width:180px;padding:4px;background:#FFFFFF;border:1px solid #E4E1DA;border-radius:8px;box-shadow:0 8px 24px rgba(28,27,25,0.12)">
+                      <div style="padding:6px 8px 4px;font-size:11px;color:#6F6B64">Review status</div>
+                      <sc-for list="{{ statusOpts }}" as="o" hint-placeholder-count="4">
+                        <button onClick="{{ o.onClick }}" style="width:100%;display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border:0;border-radius:5px;background:{{ o.bg }};font-size:13px;color:#1C1B19;cursor:pointer;text-align:left" style-hover="background:#F1EFEA"><span style="width:7px;height:7px;border-radius:50%;background:{{ o.dot }}"></span>{{ o.label }}</button>
+                      </sc-for>
+                    </div>
+                  </sc-if>
+                </div>
+                <button onClick="{{ exportBrief }}" style="height:28px;padding:0 10px;border:1px solid #1C1B19;border-radius:6px;background:#1C1B19;color:#FFFFFF;font-size:12.5px;font-weight:500;cursor:pointer">Export brief</button>
+                <button title="More actions" style="width:28px;height:28px;border:1px solid #E4E1DA;border-radius:6px;background:#FFFFFF;cursor:pointer;color:#55524C">⋯</button>
+              </div>
+              <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600">
+                <sc-if value="{{ showFacts }}"><span title="Assessment — GridPulse conclusion" style="width:7px;height:7px;background:#1C1B19;transform:rotate(45deg)"></span></sc-if>
+                {{ ins.rec }}<span style="font-weight:400;color:#55524C">· {{ ins.timingShort }}</span>
+              </div>
+              <div style="display:flex;flex-direction:column">
+                <div onMouseEnter="{{ ins.hoverA }}" onMouseLeave="{{ clearHoverProj }}" style="display:grid;grid-template-columns:14px minmax(0,1fr);gap:8px;padding:6px 8px;margin:0 -8px;border-radius:6px;cursor:default" style-hover="background:#F1EFEA">
+                  <span style="width:9px;height:9px;border-radius:50%;background:#2F63B8;margin-top:6px"></span>
+                  <div style="display:flex;flex-direction:column;gap:1px">
+                    <span style="font-size:15.5px;font-weight:600;letter-spacing:-0.01em;text-wrap:pretty">{{ ins.aName }}</span>
+                    <span style="font-size:12px;color:#55524C">Dominion Energy SC · <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px">{{ ins.aRef }}</span></span>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;padding:2px 0 2px 3px;font-size:12px;color:#55524C"><span style="width:1px;height:16px;background:#C3BFB7;margin-left:1px"></span><span style="font-variant-numeric:tabular-nums">{{ ins.connector }}</span></div>
+                <div onMouseEnter="{{ ins.hoverB }}" onMouseLeave="{{ clearHoverProj }}" style="display:grid;grid-template-columns:14px minmax(0,1fr);gap:8px;padding:6px 8px;margin:0 -8px;border-radius:6px;cursor:default" style-hover="background:#F1EFEA">
+                  <span style="width:9px;height:9px;background:#B4541C;margin-top:6px"></span>
+                  <div style="display:flex;flex-direction:column;gap:1px">
+                    <span style="font-size:15.5px;font-weight:600;letter-spacing:-0.01em;text-wrap:pretty">{{ ins.bName }}</span>
+                    <span style="font-size:12px;color:#55524C">Georgia Power · <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px">{{ ins.bRef }}</span></span>
+                  </div>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid #ECE9E3;border-bottom:1px solid #ECE9E3">
+                <sc-for list="{{ ins.stats }}" as="st" hint-placeholder-count="4">
+                  <div title="{{ st.tip }}" style="padding:10px 8px 10px 0;display:flex;flex-direction:column;gap:2px">
+                    <span style="font-size:17px;font-weight:{{ st.weight }};font-variant-numeric:tabular-nums;letter-spacing:-0.01em">{{ st.v }}</span>
+                    <span style="display:flex;align-items:center;gap:5px;font-size:11.5px;color:#55524C"><sc-if value="{{ showFacts }}"><span style="width:6px;height:6px;border:1px solid #55524C"></span></sc-if>{{ st.l }}</span>
+                  </div>
+                </sc-for>
+              </div>
+              <sc-if value="{{ ins.hasConflict }}">
+                <div role="alert" style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;background:#FBF1D6;border:1px solid #E9D59A;border-radius:6px">
+                  <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#6B4600"><span style="font-size:10px">▲</span>{{ ins.conflictTitle }}</div>
+                  <div style="font-size:12.5px;color:#4A3A12;text-wrap:pretty">{{ ins.conflictText }}</div>
+                  <div style="display:flex;gap:14px;font-size:12.5px">
+                    <button onClick="{{ openEvidence }}" style="padding:0;border:0;background:transparent;color:#6B4600;font-weight:600;cursor:pointer">Review conflicting sources →</button>
+                    <sc-if value="{{ ins.hasPlanLink }}"><button onClick="{{ ins.goPlan }}" style="padding:0;border:0;background:transparent;color:#6B4600;text-decoration:underline;cursor:pointer">View plan change</button></sc-if>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+
+            <div role="tablist" style="display:flex;gap:4px;padding:0 18px;border-bottom:1px solid #E4E1DA;position:sticky;top:0;background:#FCFBF9;z-index:5">
+              <sc-for list="{{ insTabs }}" as="t" hint-placeholder-count="3">
+                <button role="tab" onClick="{{ t.onClick }}" style="height:38px;padding:0 8px;border:0;background:transparent;font-size:13px;font-weight:{{ t.weight }};color:{{ t.color }};box-shadow:inset 0 -2px 0 {{ t.bar }};cursor:pointer">{{ t.label }} <span style="color:#6F6B64;font-weight:400">{{ t.count }}</span></button>
+              </sc-for>
+            </div>
+
+            <sc-if value="{{ tabOverview }}" hint-placeholder-val="{{ true }}">
+              <div style="padding:16px 18px;display:flex;flex-direction:column;gap:18px">
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <div style="display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:#55524C"><sc-if value="{{ showFacts }}"><span style="width:7px;height:7px;background:#1C1B19;transform:rotate(45deg)"></span></sc-if>Coordination rationale</div>
+                  <p style="margin:0;font-size:13.5px;line-height:1.55;text-wrap:pretty">{{ ins.rationale }}</p>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:12.5px;font-weight:600;color:#55524C">Build windows</span><button onClick="{{ openTimeline }}" style="padding:0;border:0;background:transparent;font-size:12px;color:#55524C;text-decoration:underline;cursor:pointer">Full timeline</button></div>
+                  <div style="position:relative;padding-left:40px">
+                    <div style="position:relative;height:16px">
+                      <sc-for list="{{ tl.ticks }}" as="t"><span style="position:absolute;left:{{ t.left }};top:0;font-size:11px;color:#6F6B64;font-variant-numeric:tabular-nums;padding-left:3px;border-left:1px solid #D9D5CC;height:100%">{{ t.y }}</span></sc-for>
+                    </div>
+                    <div style="position:relative;display:flex;flex-direction:column;gap:6px;padding:6px 0">
+                      <sc-if value="{{ tl.ov.has }}"><div title="{{ tl.ov.title }}" style="position:absolute;top:0;bottom:0;left:{{ tl.ov.left }};width:{{ tl.ov.width }};background:rgba(28,27,25,0.07);border-left:1px dashed #6F6B64;border-right:1px dashed #6F6B64"></div></sc-if>
+                      <sc-for list="{{ tl.bars }}" as="b" hint-placeholder-count="2">
+                        <div style="position:relative;height:14px">
+                          <span style="position:absolute;left:-40px;top:0;font-size:11px;font-weight:600;color:{{ b.color }}">{{ b.label }}</span>
+                          <div title="{{ b.title }}" style="position:absolute;top:2px;height:10px;left:{{ b.left }};width:{{ b.width }};background:{{ b.color }};border-radius:2px"></div>
+                          <div title="{{ b.endTitle }}" style="position:absolute;top:-1px;height:16px;width:2px;left:{{ b.endLeft }};background:#1C1B19"></div>
+                          <sc-if value="{{ b.hasPrior }}"><div title="{{ b.priorTitle }}" style="position:absolute;top:0px;height:14px;width:0;left:{{ b.priorLeft }};border-left:2px dotted #8A5A00"></div></sc-if>
+                        </div>
+                      </sc-for>
+                    </div>
+                  </div>
+                  <div style="font-size:12px;color:#55524C">{{ tl.caption }}</div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                  <div style="display:flex;align-items:center;gap:8px"><span style="font-size:12.5px;font-weight:600;color:#55524C">Evidence quality</span><span style="font-size:11.5px;font-weight:600;color:{{ ins.eqColor }}">{{ ins.eq }}</span><span title="Not in the current product — derived from existing flags" style="font-size:10.5px;color:#6F6B64;border:1px dashed #C3BFB7;border-radius:3px;padding:0 4px">Proposed</span></div>
+                  <sc-for list="{{ ins.eqRows }}" as="e" hint-placeholder-count="3">
+                    <div style="display:grid;grid-template-columns:140px minmax(0,1fr);gap:8px;font-size:12.5px;padding-bottom:6px;border-bottom:1px solid #ECE9E3">
+                      <span style="color:#55524C">{{ e.k }}</span>
+                      <span style="display:flex;align-items:center;gap:6px;color:{{ e.color }}"><span style="width:6px;height:6px;border-radius:50%;background:{{ e.color }}"></span>{{ e.v }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ tabTimeline }}">
+              <div style="padding:16px 18px;display:flex;flex-direction:column;gap:14px">
+                <div style="position:relative;padding-left:40px">
+                  <div style="position:relative;height:18px">
+                    <sc-for list="{{ tl.ticks }}" as="t"><span style="position:absolute;left:{{ t.left }};top:0;font-size:11px;color:#6F6B64;font-variant-numeric:tabular-nums;padding-left:3px;border-left:1px solid #D9D5CC;height:100%">{{ t.y }}</span></sc-for>
+                  </div>
+                  <div style="position:relative;display:flex;flex-direction:column;gap:14px;padding:22px 0 10px;background:repeating-linear-gradient(90deg,transparent 0 calc(100% / {{ tl.nYears }} - 1px),#ECE9E3 calc(100% / {{ tl.nYears }} - 1px) calc(100% / {{ tl.nYears }}))">
+                    <sc-if value="{{ tl.ov.has }}">
+                      <div title="{{ tl.ov.title }}" style="position:absolute;top:0;bottom:0;left:{{ tl.ov.left }};width:{{ tl.ov.width }};background:rgba(28,27,25,0.07);border-left:1px dashed #6F6B64;border-right:1px dashed #6F6B64">
+                        <span style="position:absolute;top:3px;left:4px;font-size:11px;font-weight:600;white-space:nowrap">{{ tl.ov.label }}</span>
+                      </div>
+                    </sc-if>
+                    <sc-for list="{{ tl.bars }}" as="b" hint-placeholder-count="2">
+                      <div style="position:relative;height:18px">
+                        <span style="position:absolute;left:-40px;top:2px;font-size:11.5px;font-weight:600;color:{{ b.color }}">{{ b.label }}</span>
+                        <div title="{{ b.title }}" style="position:absolute;top:3px;height:12px;left:{{ b.left }};width:{{ b.width }};background:{{ b.color }};border-radius:2px"></div>
+                        <div title="{{ b.endTitle }}" style="position:absolute;top:-1px;height:20px;width:2px;left:{{ b.endLeft }};background:#1C1B19"></div>
+                        <sc-if value="{{ b.hasPrior }}"><div title="{{ b.priorTitle }}" style="position:absolute;top:0;height:18px;width:0;left:{{ b.priorLeft }};border-left:2px dotted #8A5A00"></div></sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;gap:14px;font-size:11.5px;color:#55524C;flex-wrap:wrap">
+                  <span style="display:flex;align-items:center;gap:5px"><span style="width:14px;height:8px;background:#2F63B8;border-radius:1px"></span>Construction / spend window</span>
+                  <span style="display:flex;align-items:center;gap:5px"><span style="width:2px;height:12px;background:#1C1B19"></span>In-service / need date</span>
+                  <span style="display:flex;align-items:center;gap:5px"><span style="height:12px;border-left:2px dotted #8A5A00"></span>Prior plan date</span>
+                </div>
+                <table style="width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums">
+                  <thead><tr style="color:#55524C;text-align:left"><th style="font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">Project</th><th style="font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">Start</th><th style="font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">In-service</th><th style="font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">Source</th></tr></thead>
+                  <tbody>
+                    <sc-for list="{{ tl.bars }}" as="b">
+                      <tr><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;font-weight:600;color:{{ b.color }}">{{ b.label }}</td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3">{{ b.startF }}</td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3">{{ b.endF }}<sc-if value="{{ b.hasPrior }}"><span style="display:block;font-size:11.5px;color:#8A5A00">was {{ b.priorF }}</span></sc-if></td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;font-family:'IBM Plex Mono',monospace;font-size:11.5px">{{ b.src }}</td></tr>
+                    </sc-for>
+                  </tbody>
+                </table>
+                <div style="font-size:12px;color:#55524C">{{ tl.caption }}</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ tabEvidence }}">
+              <div style="padding:16px 18px;display:flex;flex-direction:column;gap:16px">
+                <sc-for list="{{ ev.groups }}" as="g" hint-placeholder-count="2">
+                  <div style="display:flex;flex-direction:column;gap:8px">
+                    <div style="display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600"><span style="width:8px;height:8px;border-radius:{{ g.radius }};background:{{ g.color }}"></span>{{ g.title }}</div>
+                    <sc-for list="{{ g.recs }}" as="e">
+                      <div style="display:flex;flex-direction:column;gap:6px;padding:10px 12px;border:1px solid {{ e.bd }};background:{{ e.bg }};border-radius:6px">
+                        <div style="display:flex;align-items:baseline;gap:8px">
+                          <sc-if value="{{ showFacts }}"><span title="Source fact" style="width:6px;height:6px;background:#55524C;flex:none"></span></sc-if>
+                          <span style="font-size:12px;color:#55524C;flex:1">{{ e.field }}</span>
+                          <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#55524C">{{ e.src }}</span>
+                        </div>
+                        <div style="font-size:13.5px;font-weight:500;font-variant-numeric:tabular-nums">{{ e.value }}</div>
+                        <sc-if value="{{ e.hasNote }}"><div style="font-size:12px;color:{{ e.noteColor }}">{{ e.note }}</div></sc-if>
+                        <sc-if value="{{ e.hasConflict }}">
+                          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E9D59A;border-radius:5px;overflow:hidden;margin-top:2px">
+                            <div style="background:#FFFFFF;padding:8px 10px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">{{ e.aLabel }} · used</span><span style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">{{ e.aV }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#55524C">{{ e.aSrc }}</span></div>
+                            <div style="background:#FFFBF0;padding:8px 10px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#8A5A00">{{ e.bLabel }}</span><span style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums">{{ e.bV }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#55524C">{{ e.bSrc }}</span></div>
+                          </div>
+                        </sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </sc-for>
+                <div style="display:flex;flex-direction:column;gap:6px">
+                  <div style="font-size:12.5px;font-weight:600">Derived by GridPulse</div>
+                  <sc-for list="{{ ev.derived }}" as="d" hint-placeholder-count="4">
+                    <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;padding:6px 0;border-bottom:1px solid #ECE9E3;font-size:12.5px">
+                      <span style="display:flex;align-items:center;gap:6px"><sc-if value="{{ showFacts }}"><span style="width:6px;height:6px;border:1px solid #55524C"></span></sc-if>{{ d.k }}</span>
+                      <span style="font-weight:600;font-variant-numeric:tabular-nums">{{ d.v }}</span>
+                      <span style="grid-column:1 / -1;font-size:11.5px;color:#55524C">{{ d.how }}</span>
+                    </div>
+                  </sc-for>
+                </div>
+              </div>
+            </sc-if>
+          </div>
+          <sc-if value="{{ showFacts }}">
+            <div style="flex:none;display:flex;gap:14px;padding:8px 18px;border-top:1px solid #E4E1DA;font-size:11.5px;color:#55524C">
+              <span style="display:flex;align-items:center;gap:5px"><span style="width:6px;height:6px;background:#55524C"></span>Source fact</span>
+              <span style="display:flex;align-items:center;gap:5px"><span style="width:6px;height:6px;border:1px solid #55524C"></span>Derived</span>
+              <span style="display:flex;align-items:center;gap:5px"><span style="width:6px;height:6px;background:#1C1B19;transform:rotate(45deg)"></span>Assessment</span>
+            </div>
+          </sc-if>
+        </sc-if>
+        <sc-if value="{{ noSel }}">
+          <div style="padding:40px 24px;color:#55524C;font-size:13px">Select an opportunity to see why it matters, its timing and its evidence.</div>
+        </sc-if>
+      </section>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isPlan }}">
+    <div style="height:56px;flex:none;display:flex;align-items:center;gap:16px;padding:0 16px;background:#FCFBF9;border-bottom:1px solid #E4E1DA">
+      <div style="display:flex;flex-direction:column;gap:1px;flex-shrink:0;white-space:nowrap">
+        <span style="font-size:16px;font-weight:600;letter-spacing:-0.01em">Plan changes</span>
+        <span title="322 detected between plan versions" style="font-size:12px;color:#6F6B64;font-variant-numeric:tabular-nums">{{ pcCountLabel }} · desc-2428 → desc-2529</span>
+      </div>
+      <div style="width:1px;height:28px;background:#E4E1DA"></div>
+      <label style="display:flex;align-items:center;gap:6px;flex:0 1 240px;min-width:140px;height:30px;padding:0 8px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;color:#6F6B64">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"><circle cx="7" cy="7" r="5"></circle><line x1="11" y1="11" x2="15" y2="15"></line></svg>
+        <input value="{{ pcQ }}" onChange="{{ onPcQ }}" placeholder="Search changes" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font-size:13px;color:#1C1B19">
+      </label>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap">
+        <div style="display:flex;padding:2px;background:#ECEAE5;border-radius:7px">
+          <sc-for list="{{ pcTypeOpts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.onClick }}" style="height:26px;padding:0 10px;border:0;border-radius:5px;font-size:12.5px;font-weight:500;cursor:pointer;background:{{ o.bg }};color:{{ o.color }};box-shadow:{{ o.shadow }}">{{ o.label }}</button></sc-for>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;white-space:nowrap">
+        <div style="display:flex;padding:2px;background:#ECEAE5;border-radius:7px">
+          <sc-for list="{{ pcUtilOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.onClick }}" style="height:26px;padding:0 10px;border:0;border-radius:5px;font-size:12.5px;font-weight:500;cursor:pointer;background:{{ o.bg }};color:{{ o.color }};box-shadow:{{ o.shadow }}">{{ o.label }}</button></sc-for>
+        </div>
+      </div>
+      <button onClick="{{ togglePcLinked }}" style="flex-shrink:0;white-space:nowrap;display:flex;align-items:center;gap:6px;height:30px;padding:0 10px;border:1px solid {{ pcLinkedBd }};border-radius:6px;background:{{ pcLinkedBg }};font-size:12.5px;color:#1C1B19;cursor:pointer"><span style="width:12px;height:12px;border-radius:3px;border:1px solid #1C1B19;background:{{ pcLinkedBox }}"></span>Linked only</button>
+      <div style="flex:1"></div>
+            <button style="flex-shrink:0;white-space:nowrap;height:30px;padding:0 10px;border:1px solid #E4E1DA;border-radius:6px;background:#FFFFFF;font-size:12.5px;cursor:pointer">Export CSV</button>
+    </div>
+    <div style="flex:1;min-height:0;display:flex">
+      <div style="flex:1;min-width:0;overflow:auto;background:#FCFBF9">
+        <div role="row" style="position:sticky;top:0;z-index:5;display:grid;grid-template-columns:minmax(260px,1.2fr) minmax(0,2.6fr);background:#F6F5F1;border-bottom:1px solid #E4E1DA;font-size:12px;color:#55524C;font-weight:500">
+          <div style="padding:8px 16px">Project</div>
+          <div style="display:grid;grid-template-columns:112px minmax(0,1fr) 170px 200px">
+            <div style="padding:8px 8px">Change</div><div style="padding:8px 8px">Before → after</div><div style="padding:8px 8px">Delta ↓</div><div style="padding:8px 16px 8px 8px">Evidence</div>
+          </div>
+        </div>
+        <sc-for list="{{ pcGroups }}" as="g" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:minmax(260px,1.2fr) minmax(0,2.6fr);border-bottom:1px solid #E4E1DA">
+            <div style="padding:10px 16px;display:flex;flex-direction:column;gap:4px">
+              <span style="display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:{{ g.utilColor }}"><span style="width:7px;height:7px;border-radius:{{ g.utilRadius }};background:{{ g.utilColor }}"></span>{{ g.util }}<span style="color:#6F6B64;font-weight:400">· {{ g.nLabel }}</span></span>
+              <span style="font-size:13.5px;font-weight:500;text-wrap:pretty">{{ g.name }}</span>
+              <sc-if value="{{ g.hasLinks }}"><button onClick="{{ g.goOpps }}" style="align-self:flex-start;padding:0;border:0;background:transparent;font-size:12px;color:#1C1B19;text-decoration:underline;text-underline-offset:2px;cursor:pointer">{{ g.linkLabel }} →</button></sc-if>
+            </div>
+            <div style="display:flex;flex-direction:column">
+              <sc-for list="{{ g.changes }}" as="c">
+                <div onClick="{{ c.onClick }}" style="display:grid;grid-template-columns:112px minmax(0,1fr) 170px 200px;align-items:center;min-height:40px;border-top:{{ c.divider }};background:{{ c.bg }};box-shadow:{{ c.edge }};cursor:pointer;font-size:13px">
+                  <div style="padding:6px 8px;display:flex;align-items:center;gap:6px;font-weight:500"><span style="font-size:11px;color:#55524C;width:12px;text-align:center">{{ c.glyph }}</span>{{ c.typeLabel }}</div>
+                  <div style="padding:6px 8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-variant-numeric:tabular-nums;min-width:0"><span style="color:#55524C">{{ c.before }}</span><span style="color:#9A968F">→</span><span style="font-weight:500">{{ c.after }}</span></div>
+                  <div style="padding:6px 8px;display:flex;flex-direction:column;font-variant-numeric:tabular-nums"><span style="font-weight:600;color:{{ c.deltaColor }}">{{ c.delta }}</span><span style="font-size:11.5px;color:#55524C">{{ c.delta2 }}</span></div>
+                  <div style="padding:6px 16px 6px 8px;display:flex;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#55524C"><span>{{ c.ev1 }}</span><span style="color:#9A968F">→</span><span>{{ c.ev2 }}</span></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+        <sc-if value="{{ pcEmpty }}"><div style="padding:40px 24px;display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span style="font-size:14px;font-weight:600">No changes match these filters</span><button onClick="{{ clearPc }}" style="height:30px;padding:0 12px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;font-size:12.5px;cursor:pointer">Clear filters</button></div></sc-if>
+        <div style="padding:12px 16px;font-size:12px;color:#6F6B64">Sample of 322 detected changes · grouped by project</div>
+      </div>
+      <sc-if value="{{ pcHasSel }}">
+        <aside style="width:380px;flex:none;overflow:auto;background:#FCFBF9;border-left:1px solid #E4E1DA;display:flex;flex-direction:column">
+          <div style="padding:14px 18px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #E4E1DA">
+            <div style="display:flex;align-items:center;gap:8px"><span style="font-size:11px;font-weight:600;color:#2F63B8;display:flex;align-items:center;gap:5px"><span style="width:7px;height:7px;border-radius:50%;background:#2F63B8"></span>{{ pcd.util }}</span><div style="flex:1"></div><button onClick="{{ closePc }}" aria-label="Close" style="width:26px;height:26px;border:0;border-radius:5px;background:transparent;font-size:15px;cursor:pointer;color:#55524C">×</button></div>
+            <span style="font-size:15.5px;font-weight:600;letter-spacing:-0.01em;text-wrap:pretty">{{ pcd.name }}</span>
+            <span style="font-size:13px;font-weight:500">{{ pcd.typeLabel }}</span>
+          </div>
+          <div style="padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px;border-bottom:1px solid #E4E1DA;font-variant-numeric:tabular-nums">
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">Previous</span><span style="font-size:14px;font-weight:500;text-wrap:pretty">{{ pcd.beforeLong }}</span></div>
+            <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">Current</span><span style="font-size:14px;font-weight:600;text-wrap:pretty">{{ pcd.afterLong }}</span></div>
+            <div style="grid-column:1 / -1;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">Difference</span><span style="font-size:17px;font-weight:600;color:{{ pcd.deltaColor }}">{{ pcd.delta }} <span style="font-size:12.5px;font-weight:400;color:#55524C">{{ pcd.delta2 }}</span></span></div>
+          </div>
+          <div style="padding:14px 18px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #E4E1DA">
+            <span style="font-size:12.5px;font-weight:600;color:#55524C">Source comparison</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#E4E1DA;border:1px solid #E4E1DA;border-radius:6px;overflow:hidden">
+              <div style="background:#FFFFFF;padding:8px 10px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">Prior plan</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">{{ pcd.ev1 }}</span></div>
+              <div style="background:#FFFFFF;padding:8px 10px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">Current plan</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">{{ pcd.ev2 }}</span></div>
+            </div>
+          </div>
+          <div style="padding:14px 18px;display:flex;flex-direction:column;gap:8px;border-bottom:1px solid #E4E1DA">
+            <span style="font-size:12.5px;font-weight:600;color:#55524C">Other changes to this project</span>
+            <sc-for list="{{ pcd.siblings }}" as="s"><div style="display:flex;justify-content:space-between;font-size:12.5px;font-variant-numeric:tabular-nums"><span>{{ s.typeLabel }}</span><span style="color:#55524C">{{ s.delta }}</span></div></sc-for>
+            <sc-if value="{{ pcd.noSiblings }}"><span style="font-size:12.5px;color:#6F6B64">None in this version pair</span></sc-if>
+          </div>
+          <div style="padding:14px 18px;display:flex;flex-direction:column;gap:8px">
+            <span style="font-size:12.5px;font-weight:600;color:#55524C">Affected opportunities</span>
+            <sc-for list="{{ pcd.opps }}" as="o">
+              <button onClick="{{ o.onClick }}" style="display:grid;grid-template-columns:34px 28px minmax(0,1fr);gap:6px;align-items:baseline;padding:8px 10px;border:1px solid #E4E1DA;border-radius:6px;background:#FFFFFF;text-align:left;cursor:pointer;font-size:12.5px;color:#1C1B19" style-hover="border-color:#1C1B19">
+                <span style="color:#6F6B64;font-variant-numeric:tabular-nums">{{ o.rank }}</span><span style="font-weight:600">{{ o.tier }}</span><span>{{ o.other }} <span style="color:#55524C">· {{ o.dist }}</span></span>
+              </button>
+            </sc-for>
+            <sc-if value="{{ pcd.noOpps }}"><span style="font-size:12.5px;color:#6F6B64">Not part of any pair in the current study area.</span></sc-if>
+          </div>
+        </aside>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isDQ }}">
+    <div style="height:56px;flex:none;display:flex;align-items:center;gap:16px;padding:0 16px;background:#FCFBF9;border-bottom:1px solid #E4E1DA">
+      <div style="display:flex;flex-direction:column;gap:1px;min-width:0;flex:1 1 auto">
+        <span style="font-size:16px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap">Data quality</span>
+        <span style="font-size:12px;color:#6F6B64;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">182 projects · 21 issues · conservative: unresolved values are never guessed</span>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:stretch;border-left:1px solid #E4E1DA;padding-left:8px;flex-shrink:0;white-space:nowrap">
+        <sc-for list="{{ dqHealth }}" as="h" hint-placeholder-count="5">
+          <div title="{{ h.tip }}" style="display:flex;flex-direction:column;gap:3px;padding:2px 16px;border-right:1px solid #ECE9E3;min-width:96px">
+            <span style="font-size:17px;font-weight:600;font-variant-numeric:tabular-nums;color:{{ h.color }}">{{ h.n }}<span style="font-size:12px;font-weight:400;color:#55524C">{{ h.sub }}</span></span>
+            <span style="font-size:12px;color:#55524C">{{ h.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(380px,38%) minmax(0,1fr)">
+      <div style="overflow:auto;background:#FCFBF9;border-right:1px solid #E4E1DA">
+        <div style="padding:16px 18px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #E4E1DA">
+          <div style="display:flex;align-items:baseline;justify-content:space-between"><h2 style="margin:0;font-size:15px;font-weight:600">Location provenance</h2><span style="font-size:12.5px;color:#55524C;font-variant-numeric:tabular-nums">327 endpoints</span></div>
+          <div style="display:flex;height:10px;border-radius:3px;overflow:hidden;gap:2px">
+            <sc-for list="{{ prov }}" as="p" hint-placeholder-count="3"><div title="{{ p.label }}: {{ p.n }}" style="flex:{{ p.n }};background:{{ p.fill }}"></div></sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <sc-for list="{{ prov }}" as="p" hint-placeholder-count="3">
+              <div style="display:grid;grid-template-columns:12px minmax(0,1fr) auto;gap:10px;padding:8px 0;border-bottom:1px solid #ECE9E3;align-items:baseline">
+                <span style="width:10px;height:10px;border-radius:2px;background:{{ p.fill }};border:1px solid {{ p.bd }}"></span>
+                <div style="display:flex;flex-direction:column;gap:1px"><span style="font-size:13px;font-weight:600">{{ p.label }} <span style="font-size:11px;font-weight:600;color:{{ p.stateColor }};margin-left:4px">{{ p.state }}</span></span><span style="font-size:12px;color:#55524C">{{ p.desc }}</span></div>
+                <span style="font-size:13px;font-variant-numeric:tabular-nums;text-align:right"><strong style="font-weight:600">{{ p.n }}</strong> <span style="color:#55524C">{{ p.pct }}</span></span>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin:0;font-size:12.5px;color:#55524C;text-wrap:pretty">Unresolved endpoints are never guessed. Projects with no located endpoint remain listed but are not mapped — 78 of 182 today.</p>
+        </div>
+        <div style="padding:16px 18px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between"><h2 style="margin:0;font-size:15px;font-weight:600">Sperry validation benchmark</h2><span style="font-size:12.5px;font-weight:600;color:#1E7045">6 / 6 passed</span></div>
+          <p style="margin:0;font-size:12.5px;color:#55524C;text-wrap:pretty">Project-center distances calculated by GridPulse, compared against the Sperry answer key. Tolerance ±0.01 mi.</p>
+          <table style="width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums">
+            <thead><tr style="color:#55524C"><th style="text-align:left;font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">Case</th><th style="text-align:right;font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">Expected</th><th style="text-align:right;font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">GridPulse</th><th style="text-align:right;font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">Difference</th><th style="text-align:right;font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">In-service gap</th><th style="text-align:right;font-weight:500;padding:6px 0;border-bottom:1px solid #E4E1DA">Result</th></tr></thead>
+            <tbody>
+              <sc-for list="{{ bench }}" as="b" hint-placeholder-count="6">
+                <tr><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;font-family:'IBM Plex Mono',monospace;font-size:12px">{{ b.id }}</td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;text-align:right">{{ b.exp }}</td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;text-align:right">{{ b.ours }}</td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;text-align:right;color:#55524C">{{ b.diff }}</td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;text-align:right;color:#55524C">{{ b.gap }}</td><td style="padding:7px 0;border-bottom:1px solid #ECE9E3;text-align:right"><span style="font-size:11.5px;font-weight:600;color:#1E7045">✓ Pass</span></td></tr>
+              </sc-for>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;min-height:0;background:#FCFBF9">
+        <div style="padding:12px 18px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #E4E1DA">
+          <h2 style="margin:0;font-size:15px;font-weight:600">Issues</h2>
+          <span style="font-size:12.5px;color:#55524C">21 open</span>
+          <div style="display:flex;padding:2px;background:#ECEAE5;border-radius:7px">
+            <sc-for list="{{ dqTypeOpts }}" as="o" hint-placeholder-count="3"><button onClick="{{ o.onClick }}" style="height:26px;padding:0 10px;border:0;border-radius:5px;font-size:12.5px;font-weight:500;cursor:pointer;background:{{ o.bg }};color:{{ o.color }};box-shadow:{{ o.shadow }}">{{ o.label }}</button></sc-for>
+          </div>
+          <div style="flex:1"></div>
+          <label style="display:flex;align-items:center;gap:6px;width:220px;height:30px;padding:0 8px;border:1px solid #D9D5CC;border-radius:6px;background:#FFFFFF;color:#6F6B64">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor"><circle cx="7" cy="7" r="5"></circle><line x1="11" y1="11" x2="15" y2="15"></line></svg>
+            <input value="{{ dqQ }}" onChange="{{ onDqQ }}" placeholder="Search issues" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font-size:13px;color:#1C1B19">
+          </label>
+        </div>
+        <div role="row" style="display:grid;grid-template-columns:150px minmax(0,1fr) 130px 70px;gap:12px;padding:8px 18px;background:#F6F5F1;border-bottom:1px solid #E4E1DA;font-size:12px;color:#55524C;font-weight:500">
+          <span>Type</span><span>Entity and finding</span><span>Impact</span><span>Status</span>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto">
+          <sc-for list="{{ issues }}" as="i" hint-placeholder-count="7">
+            <div style="border-bottom:1px solid #E4E1DA;background:{{ i.bg }};box-shadow:{{ i.edge }}">
+              <div onClick="{{ i.onClick }}" style="display:grid;grid-template-columns:150px minmax(0,1fr) 130px 70px;gap:12px;padding:10px 18px;cursor:pointer;align-items:start">
+                <span style="display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:{{ i.typeColor }}"><span style="font-size:10px">{{ i.glyph }}</span>{{ i.typeLabel }}</span>
+                <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                  <span style="font-size:13.5px;font-weight:500;text-wrap:pretty">{{ i.entity }}</span>
+                  <span style="font-size:12.5px;color:#55524C;text-wrap:pretty">{{ i.summary }}</span>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#6F6B64">{{ i.id }}</span>
+                </div>
+                <span style="display:flex;flex-direction:column;gap:1px;font-size:12.5px"><span style="font-weight:600;color:{{ i.impactColor }}">{{ i.impact }}</span><span style="color:#55524C">{{ i.pairsLabel }}</span></span>
+                <span style="font-size:12.5px;color:#55524C">Open</span>
+              </div>
+              <sc-if value="{{ i.open }}">
+                <div style="padding:0 18px 14px 180px;display:flex;flex-direction:column;gap:10px">
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#E4E1DA;border:1px solid #E4E1DA;border-radius:6px;overflow:hidden">
+                    <div style="background:#FFFFFF;padding:8px 10px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">{{ i.aLabel }}</span><span style="font-size:13px;font-weight:500">{{ i.aV }}</span></div>
+                    <div style="background:#FFFFFF;padding:8px 10px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">{{ i.bLabel }}</span><span style="font-size:13px;font-weight:500">{{ i.bV }}</span></div>
+                    <div style="background:#F6F5F1;padding:8px 10px;display:flex;flex-direction:column;gap:2px"><span style="font-size:11.5px;color:#55524C">GridPulse uses</span><span style="font-size:13px;font-weight:500">{{ i.used }}</span></div>
+                  </div>
+                  <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center">
+                    <span style="font-size:12px;color:#55524C">Field: {{ i.field }}</span>
+                    <span style="flex:1"></span>
+                    <sc-for list="{{ i.opps }}" as="o"><button onClick="{{ o.onClick }}" style="height:26px;padding:0 8px;border:1px solid #D9D5CC;border-radius:5px;background:#FFFFFF;font-size:12px;cursor:pointer;color:#1C1B19;font-variant-numeric:tabular-nums">{{ o.label }} →</button></sc-for>
+                    <button title="Review workflow is not in the current product" style="height:26px;padding:0 8px;border:1px dashed #C3BFB7;border-radius:5px;background:transparent;font-size:12px;color:#55524C;cursor:default">Mark reviewed · proposed</button>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </sc-for>
+          <div style="padding:12px 18px;font-size:12px;color:#6F6B64">Showing 7 of 21 · <button onClick="{{ noop }}" style="padding:0;border:0;background:transparent;font-size:12px;color:#1C1B19;text-decoration:underline;cursor:pointer">Load 14 more</button></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ hasToast }}">
+    <div role="status" style="position:fixed;left:50%;bottom:24px;transform:translateX(-50%);padding:10px 14px;background:#1C1B19;color:#FCFBF9;border-radius:6px;font-size:13px;box-shadow:0 8px 24px rgba(28,27,25,0.25);z-index:100">{{ toast }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startPage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;opportunities&quot;,&quot;plan&quot;,&quot;dq&quot;],&quot;default&quot;:&quot;opportunities&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;View&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;comfortable&quot;,&quot;compact&quot;],&quot;default&quot;:&quot;comfortable&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;View&quot;},&quot;showFactMarkers&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;View&quot;},&quot;simulateState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;none&quot;,&quot;loading&quot;,&quot;empty&quot;,&quot;mapError&quot;],&quot;default&quot;:&quot;none&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;States&quot;}}">
+const DAY = 864e5;
+const T = s => Date.parse(s + 'T00:00:00Z');
+const fd = s => new Date(T(s)).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const M = v => '$' + (v / 1e6).toFixed(2) + 'M';
+const U = { DESC: { c: '#2F63B8', r: '50%' }, GPC: { c: '#B4541C', r: '1px' } };
+const TIER = {
+  T1: { short: 'Touching', tip: 'T1 — shared facility or touching', rec: 'Shared facility', bg: '#1C1B19', fg: '#FFFFFF', bd: '#1C1B19' },
+  T2: { short: '< 1 mi', tip: 'T2 — within 1 mile', rec: 'Must coordinate', bg: '#FFFFFF', fg: '#1C1B19', bd: '#1C1B19' },
+  T3: { short: '< 5 mi', tip: 'T3 — within 5 miles', rec: 'Share logistics', bg: '#EFEDE8', fg: '#1C1B19', bd: '#D9D5CC' },
+  T4: { short: '< 25 mi', tip: 'T4 — within 25 miles', rec: 'Monitor', bg: 'transparent', fg: '#55524C', bd: '#D9D5CC' }
+};
+const STATUS = { New: '#2F63B8', Reviewed: '#55524C', Contacted: '#1E7045', Dismissed: '#B8B3AA' };
+
+const PROJ = {
+  d_jo2: { u: 'DESC', name: 'Jasper – Okatie 230 kV #2: Construct', ref: 'desc-2428-6367-d-g', src: 'desc-2529 · p.18', start: '2024-01-15', end: '2026-05-31', prior: '2025-12-31', pts: [[556, 380], [600, 392], [648, 404]], ends: ['Jasper', 'Okatie'], locs: [['Jasper', 'resolved', 'OSM coordinate differs from Sperry answer key by 0.11 mi'], ['Okatie', 'confirmed']], conflict: { title: 'Schedule conflict detected', text: 'Two DESC plan versions list different in-service dates for Jasper – Okatie 230 kV #2 (Dec 31, 2025 vs May 31, 2026). GridPulse uses the current plan.', field: 'In-service date', a: { l: 'Current plan', v: 'May 31, 2026', s: 'desc-2529 · p.18' }, b: { l: 'Prior plan', v: 'Dec 31, 2025', s: 'desc-2428 · p.23' }, row: 'Schedule conflict · plan versions disagree' }, plan: 'Jasper – Okatie 230 kV #2: Construct', cost: '$28,578,734' },
+  d_okf: { u: 'DESC', name: 'Okatie 230-115kV Substation, Jasper – Yemassee 230kV #1 Fold-in', ref: 'desc-2428-4410-s', src: 'desc-2529 · p.2', start: '2023-06-01', end: '2026-05-31', prior: '2024-12-31', pts: [[648, 404], [668, 352], [700, 318]], ends: ['Okatie', 'Yemassee'], locs: [['Okatie', 'confirmed'], ['Yemassee', 'resolved']], plan: 'Okatie 230-115kV Substation, Jasper – Yemassee 230kV #1 Fold-in' },
+  d_yr: { u: 'DESC', name: 'Yemassee – Ritter 230kV #1 & #2: Construct SPDC with B-1272', ref: 'desc-2428-5102-d', src: 'desc-2529 · p.16', start: '2025-01-15', end: '2027-06-01', prior: '2026-06-01', pts: [[716, 300], [770, 246], [842, 190]], ends: ['', 'Ritter'], locs: [['Yemassee', 'resolved'], ['Ritter', 'resolved']], plan: 'Yemassee– Ritter 230kV #1 & #2: Construct SPDC with B-1272', cost: '$45,032,777' },
+  d_okb: { u: 'DESC', name: 'Okatie-Bluffton 115kV: Rebuild', ref: 'desc-2428-3391-r', src: 'desc-2529', start: '2025-03-01', end: '2026-12-31', pts: [[648, 404], [700, 470], [722, 560]], ends: ['', 'Bluffton'], locs: [['Okatie', 'confirmed'], ['Bluffton', 'resolved']] },
+  d_sher: { u: 'DESC', name: 'Sherwood Tap: Construct Tap', ref: 'desc-2428-6120-t', src: 'desc-2529 · p.17', start: '2024-09-01', end: '2026-05-31', prior: '2025-12-31', pts: [[596, 570], [636, 606]], ends: ['Sherwood', ''], locs: [['Sherwood', 'resolved'], ['Tap point', 'resolved']], plan: 'Sherwood Tap: Construct Tap', cost: '$54,446,256' },
+  d_can: { u: 'DESC', name: 'Canadys-Ritter 115KV-Rebld SPDC 230/115KV 1272', ref: 'desc-2428-2207-r', src: 'desc-2529 · p.15', start: '2026-01-01', end: '2028-06-01', prior: '2026-06-01', pts: [[842, 190], [900, 120], [960, 80]], ends: ['', 'Canadys'], locs: [['Ritter', 'resolved'], ['Canadys', 'resolved']], plan: 'Canadys-Ritter 115KV-Rebld SPDC 230/115KV 1272 (Approx 18 Miles)' },
+  g_gm: { u: 'GPC', name: 'SAV: Goshen (SAV) - McIntosh 115KV Line Rebuild', ref: 'gpc-20065', src: 'gpc-20065 · Table 2', start: '2025-10-30', end: '2027-10-30', pts: [[526, 384], [512, 452], [500, 522]], ends: ['McIntosh', 'Goshen'], locs: [['McIntosh', 'resolved', 'OSM coordinate differs from Sperry answer key by 0.41 mi'], ['Goshen', 'resolved']] },
+  g_pm: { u: 'GPC', name: 'SAV: McIntosh - Purrysburg 230KV Line', ref: 'gpc-20412', src: 'gpc-20412 · Table 2', start: '2026-09-01', end: '2028-12-31', pts: [[526, 384], [566, 372], [620, 350], [700, 318]], ends: ['McIntosh', 'Purrysburg'], locs: [['McIntosh', 'resolved', 'OSM coordinate differs from Sperry answer key by 0.41 mi'], ['Purrysburg', 'resolved']] },
+  g_gk: { u: 'GPC', name: 'SAV: Goshen (SAV) - Kraft 115KV Line Rebuild', ref: 'gpc-20071', src: 'gpc-20071 · Table 2', start: '2025-02-01', end: '2026-09-30', pts: [[500, 522], [536, 572], [572, 600]], ends: ['', 'Kraft'], locs: [['Goshen', 'resolved'], ['Kraft', 'resolved']] },
+  g_hy: { u: 'GPC', name: 'SAV: CC - Hyundai Motors Savannah AKA Project EA', ref: 'gpc-19523', src: 'gpc-19523 · Table 2', start: '2025-11-01', end: '2027-03-31', pts: [[300, 560], [400, 600], [445, 640], [395, 730]], ends: ['Hyundai Metaplant', ''], approxEnd: 1, locs: [['Metaplant', 'resolved'], ['Southern terminal', 'approx', 'Approximate — placed from parcel centroid']], conflict: { title: 'Source conflict detected', text: 'The Georgia Power need date differs between Table 2 and the project detail page (p.231). GridPulse uses Table 2.', field: 'Need date', a: { l: 'Table 2', v: 'Mar 31, 2027', s: 'gpc-19523 · Table 2' }, b: { l: 'Detail page', v: 'Differs — not extracted', s: 'gpc-19523 · p.231' }, row: 'Source conflict · need date differs' } }
+};
+const PAIRS = [
+  [1, 'T1', 'd_okf', 'g_pm', 0.00, 4.09], [2, 'T2', 'd_jo2', 'g_pm', 0.41, 5.65], [3, 'T3', 'd_yr', 'g_pm', 1.86, 8.01],
+  [4, 'T3', 'd_jo2', 'g_gm', 3.40, 7.55], [5, 'T3', 'd_sher', 'g_gk', 3.80, 9.84], [6, 'T4', 'd_sher', 'g_gm', 10.70, 14.34],
+  [7, 'T4', 'd_can', 'g_pm', 19.10, 22.60], [8, 'T4', 'd_sher', 'g_hy', 19.88, 22.40], [9, 'T4', 'd_jo2', 'g_hy', 23.73, 25.56],
+  [10, 'T4', 'd_yr', 'g_gk', 24.10, 26.80], [11, 'T4', 'd_okb', 'g_gm', 12.40, 13.70], [12, 'T4', 'd_jo2', 'g_gk', 9.09, 11.76],
+  [13, 'T4', 'd_okb', 'g_gk', 11.90, 14.95], [14, 'T4', 'd_okf', 'g_gk', 11.90, 12.63]
+].map(([rank, tier, d, g, closest, center]) => {
+  const A = PROJ[d], B = PROJ[g];
+  const os = Math.max(T(A.start), T(B.start)), oe = Math.min(T(A.end), T(B.end));
+  const overlap = Math.max(0, Math.round((oe - os) / DAY));
+  const apart = overlap ? 0 : Math.round((os - oe) / DAY);
+  const gap = Math.round(Math.abs(T(B.end) - T(A.end)) / DAY);
+  const conflict = A.conflict || B.conflict;
+  const locNote = [A, B].flatMap(p => p.locs.filter(l => l[2] && l[1] !== 'approx').map(l => l[0] + ' coordinates differ from Sperry'))[0];
+  const approx = [A, B].some(p => p.locs.some(l => l[1] === 'approx'));
+  return { rank, tier, d, g, A, B, closest, center, overlap, apart, gap, conflict, locNote: approx ? 'Approximate endpoint location' : locNote, coords: !!locNote || approx };
+});
+
+const CH = [
+  ['Okatie 230-115kV Substation, Jasper – Yemassee 230kV #1 Fold-in', [['s', '2024-12-31', '2026-05-31', 'p.3', 'p.2']]],
+  ['Cainhoy - Hamlin 115kV: Rebuild Line and Cainhoy – Hamlin 115 kV #2: Construct New 115 kV Line', [['s', '2025-12-01', '2026-12-02', 'p.4', 'p.3'], ['c', 19890850, 31362092, 'p.4', 'p.3']]],
+  ['Burton-St Helena 115kV: Rebuild Burton-Frogmore Transmission Section', [['s', '2024-12-31', '2025-04-30', 'p.6', 'p.4'], ['c', 8580000, 12000000, 'p.6', 'p.4']]],
+  ['Burton-St Helena 115kV: Frogmore Distribution - St Helena', [['s', '2025-12-31', '2027-12-31', 'p.7', 'p.5'], ['c', 6925000, 18825000, 'p.7', 'p.5']]],
+  ['VCS1-Denny Terrace 230kV & VCS1-Pineland 230kV: Rebuild Single Circuit Sections', [['s', '2026-12-31', '2027-12-31', 'p.8', 'p.6'], ['c', 4912096, 8667157, 'p.8', 'p.6']]],
+  ['Hopkins-CIP 230kV: Rebuild', [['c', 2600000, 3500000, 'p.11', 'p.9']]],
+  ['Faber Place-Bayfront 115kV: Rebuild North Bridge Terrace to Bayfront Section', [['c', 10200000, 13218768, 'p.12', 'p.10']]],
+  ['Hooks - Modoc 115/46 kV Rebuild', [['s', '2025-12-31', '2027-12-31', 'p.15', 'p.11'], ['r', 'Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV', 'Hooks - Modoc 115/46 kV Rebuild', 'p.15', 'p.11']]],
+  ['Edenwood Sub: #1 & #2 230-115kV Autobanks, Replace with 336MVA', [['s', '2024-12-25', '2025-06-30', 'p.16', 'p.12'], ['c', 10833462, 9821256, 'p.16', 'p.12']]],
+  ['Williams St Sub: Replace Sw House & Relays, AM Williams Sub: Replace Sw House, and McMeekin Sub: Add Sw House', [['c', 9898924, 11182924, 'p.17', 'p.13']]],
+  ['Canadys-Ritter 115KV-Rebld SPDC 230/115KV 1272 (Approx 18 Miles)', [['s', '2026-06-01', '2028-06-01', 'p.20', 'p.15']]],
+  ['Yemassee– Ritter 230kV #1 & #2: Construct SPDC with B-1272', [['s', '2026-06-01', '2027-06-01', 'p.21', 'p.16'], ['c', 40611419, 45032777, 'p.21', 'p.16']]],
+  ['Sherwood Tap: Construct Tap', [['s', '2025-12-31', '2026-05-31', 'p.22', 'p.17'], ['r', 'Riverport Tap: Construct Tap', 'Sherwood Tap: Construct Tap', 'p.22', 'p.17'], ['c', 34877427, 54446256, 'p.22', 'p.17']]],
+  ['Jasper – Okatie 230 kV #2: Construct', [['s', '2025-12-31', '2026-05-31', 'p.23', 'p.18'], ['c', 23787423, 28578734, 'p.23', 'p.18']]],
+  ['Wagener 115kV Tap: Construct Tap', [['s', '2025-12-31', '2027-12-31', 'p.24', 'p.19']]],
+  ['Church Creek - Ritter 230kV - Replace 38 Large Angles and Dead Ends', [['s', '2024-06-01', '2025-12-31', 'p.25', 'p.20'], ['c', 10850000, 11401163, 'p.25', 'p.20']]],
+  ['VCS2-Ward 230kV: Rebuild Line', [['c', 30000000, 38275000, 'p.26', 'p.21']]]
+];
+const TYPE = { s: { l: 'Schedule slip', g: '→' }, c: { l: 'Cost change', g: '$' }, r: { l: 'Renamed', g: 'Aa' } };
+
+const ISSUES = [
+  { id: 'desc-2428-6367-d-g', t: 'coord', entity: 'Jasper', summary: 'OSM and Sperry answer key differ by 0.11 mi', field: 'Endpoint location', a: ['OSM', 'Resolved point'], b: ['Sperry answer key', '0.11 mi away'], used: 'OSM point', projs: ['d_jo2'] },
+  { id: 'gpc-20065', t: 'coord', entity: 'McIntosh', summary: 'OSM and Sperry answer key differ by 0.41 mi', field: 'Endpoint location', a: ['OSM', 'Resolved point'], b: ['Sperry answer key', '0.41 mi away'], used: 'OSM point', projs: ['g_gm', 'g_pm'] },
+  { id: 'gpc-19523', t: 'source', entity: 'SAV: CC - Hyundai Motors Savannah AKA Project EA', summary: 'Need date differs between Table 2 and detail page p.231', field: 'Need date', a: ['Table 2', 'Mar 31, 2027'], b: ['Detail page p.231', 'Not extracted'], used: 'Table 2', projs: ['g_hy'] },
+  { id: 'gpc-20684', t: 'source', entity: 'Camden Industrial Park (GPC)', summary: 'Need date differs between Table 2 and detail page p.248', field: 'Need date', a: ['Table 2', 'Not extracted'], b: ['Detail page p.248', 'Not extracted'], used: 'Table 2', projs: [] },
+  { id: 'gpc-17900', t: 'source', entity: 'Union City - Yates 230 kV White Line Rebuild', summary: 'Need date differs between Table 2 and detail page p.279', field: 'Need date', a: ['Table 2', 'Not extracted'], b: ['Detail page p.279', 'Not extracted'], used: 'Table 2', projs: [] },
+  { id: 'gpc-18800', t: 'source', entity: 'Echeconnee-Wellston 115kV Rebuild', summary: 'In-service year differs: IRP 2025 vs SERTP 2026 (2030)', field: 'In-service year', a: ['IRP 2025', 'Not extracted'], b: ['SERTP 2026', '2030'], used: 'SERTP 2026', projs: [] },
+  { id: 'gpc-21139', t: 'source', entity: 'Grady - Morrow (White) 115kV Rebuild', summary: 'In-service year differs: IRP 2026 vs SERTP 2026 (2029)', field: 'In-service year', a: ['IRP 2026', 'Not extracted'], b: ['SERTP 2026', '2029'], used: 'SERTP 2026', projs: [] }
+];
+const BENCH = [['OVL_1', 4.09, 3074], ['OVL_2', 5.65, 152], ['OVL_3', 7.55, 517], ['OVL_4', 8.01, 3074], ['OVL_5', 14.34, 365], ['OVL_6', 14.81, 730]];
+
+const seg = (active, onClick, label) => ({ label, onClick, bg: active ? '#FFFFFF' : 'transparent', color: active ? '#1C1B19' : '#55524C', shadow: active ? '0 1px 2px rgba(28,27,25,0.12)' : 'none' });
+const chip = (active, onClick, label, tip) => ({ label, onClick, tip: tip || label, bg: active ? '#1C1B19' : '#FFFFFF', color: active ? '#FFFFFF' : '#1C1B19', bd: active ? '#1C1B19' : '#D9D5CC' });
+
+function dens(pts) { if (pts.length === 1) return pts; const o = []; for (let i = 0; i < pts.length - 1; i++) for (let k = 0; k < 12; k++) { const t = k / 12; o.push([pts[i][0] + (pts[i + 1][0] - pts[i][0]) * t, pts[i][1] + (pts[i + 1][1] - pts[i][1]) * t]); } o.push(pts[pts.length - 1]); return o; }
+function nearest(a, b) { let best = null, bd = 1e9; dens(a).forEach(p => dens(b).forEach(q => { const d = Math.hypot(p[0] - q[0], p[1] - q[1]); if (d < bd) { bd = d; best = [p, q]; } })); return best; }
+const centroid = pts => [pts.reduce((s, p) => s + p[0], 0) / pts.length, pts.reduce((s, p) => s + p[1], 0) / pts.length];
+
+class Component extends DCLogic {
+  state = { page: null, sel: 4, hoverPair: null, hoverProj: null, mode: 'closest', radius: 25, radiusOpen: false, filterOpen: false, statusOpen: false, q: '', tiers: [], fOverlap: false, fConflict: false, fCoords: false, fStatus: [], projFilter: null, sort: 'rank', tab: 'overview', statuses: {}, zoom: 1, legendOpen: true, showOthers: true, toast: null, density: null, pcType: 'all', pcUtil: 'all', pcLinked: false, pcQ: '', pcSel: null, dqType: 'all', dqSel: 'gpc-19523', dqQ: '', retried: false };
+  searchRef = React.createRef();
+  mapRef = React.createRef();
+
+  componentDidMount() {
+    this.onKey = e => {
+      const tag = (e.target.tagName || '').toLowerCase();
+      if (e.key === 'Escape') return this.setState({ radiusOpen: false, filterOpen: false, statusOpen: false });
+      if (tag === 'input' || tag === 'select' || tag === 'textarea') return;
+      const page = this.state.page || this.props.startPage || 'opportunities';
+      if (page !== 'opportunities') return;
+      if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key === 'k')) { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); }
+      else if (e.key === 'f') this.setState(s => ({ filterOpen: !s.filterOpen }));
+      else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault(); const l = this._list || []; const i = l.findIndex(p => p.rank === this.state.sel);
+        const n = l[Math.max(0, Math.min(l.length - 1, i + (e.key === 'ArrowDown' ? 1 : -1)))]; if (n) this.select(n.rank);
+      }
+    };
+    window.addEventListener('keydown', this.onKey);
+    this._ro = new ResizeObserver(() => { const el = this.mapRef.current; if (el) { const r = el.getBoundingClientRect(); if (r.width && (Math.abs(r.width - (this.state.mapW || 0)) > 1 || Math.abs(r.height - (this.state.mapH || 0)) > 1)) this.setState({ mapW: r.width, mapH: r.height }); } });
+    this._roT = setInterval(() => { const el = this.mapRef.current; if (el && el !== this._roEl) { if (this._roEl) this._ro.unobserve(this._roEl); this._ro.observe(el); this._roEl = el; } }, 300);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); clearInterval(this._roT); this._ro && this._ro.disconnect(); clearTimeout(this._t); }
+  flash(msg) { this.setState({ toast: msg }); clearTimeout(this._t); this._t = setTimeout(() => this.setState({ toast: null }), 2200); }
+  select(rank) { this.setState({ sel: rank, zoom: 1, statusOpen: false }); }
+  toggleIn(key, v) { this.setState(s => ({ [key]: s[key].includes(v) ? s[key].filter(x => x !== v) : [...s[key], v] })); }
+  clearFilters = () => this.setState({ q: '', tiers: [], fOverlap: false, fConflict: false, fCoords: false, fStatus: [], projFilter: null });
+  goOppsForProj(key) { this.setState({ page: 'opportunities', tiers: [], fOverlap: false, fConflict: false, fCoords: false, fStatus: [], q: '', projFilter: key }); const p = PAIRS.find(x => x.d === key || x.g === key); if (p) this.select(p.rank); }
+
+  buildMap(list, sel) {
+    const h = React.createElement, s = this.state;
+    const focus = sel ? [sel.d, sel.g] : [];
+    const hp = s.hoverPair != null ? PAIRS.find(p => p.rank === s.hoverPair) : null;
+    const hov = hp ? [hp.d, hp.g] : s.hoverProj ? [s.hoverProj] : [];
+    const vis = new Set(); list.forEach(p => { vis.add(p.d); vis.add(p.g); });
+    let cx = 520, cy = 400, sc = s.zoom;
+    if (sel) {
+      const pts = focus.flatMap(k => PROJ[k].pts); const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+      const w = Math.max(...xs) - Math.min(...xs) + 220, ht = Math.max(...ys) - Math.min(...ys) + 220;
+      cx = (Math.max(...xs) + Math.min(...xs)) / 2; cy = (Math.max(...ys) + Math.min(...ys)) / 2;
+      sc = Math.max(1, Math.min(1000 / w, 800 / ht, 2.6)) * s.zoom;
+    }
+    const k = s.mapW ? Math.max(s.mapW / 1000, s.mapH / 800) : 1;
+    const inv = 1 / (sc * k);
+    const kids = [
+      h('polyline', { key: 'river', points: '380,0 430,120 480,230 530,320 545,380 560,470 600,560 650,640 720,720 800,800 860,900', fill: 'none', stroke: '#C7D0D6', strokeWidth: 5, vectorEffect: 'non-scaling-stroke', strokeLinejoin: 'round' }),
+      h('polyline', { key: 'c1', points: '200,300 360,330 470,300', fill: 'none', stroke: '#D6D3CC', strokeWidth: 1, strokeDasharray: '4 4', vectorEffect: 'non-scaling-stroke' }),
+      h('polyline', { key: 'c2', points: '620,120 700,420 900,470', fill: 'none', stroke: '#D6D3CC', strokeWidth: 1, strokeDasharray: '4 4', vectorEffect: 'non-scaling-stroke' }),
+      ...[['GEORGIA', 300, 420, 13, 600], ['SOUTH CAROLINA', 760, 110, 13, 600], ['Savannah', 520, 690, 12, 400], ['Bluffton', 760, 600, 12, 400], ['Hardeeville', 610, 470, 12, 400]].map(([t, x, y, fs, fw]) => h('text', { key: t, x, y, fontSize: fs * inv, fontWeight: fw, fill: '#9A968F', letterSpacing: fw > 500 ? 2 * inv : 0, fontStyle: fw < 500 ? 'italic' : 'normal', fontFamily: 'IBM Plex Sans' }, t))
+    ];
+    const keys = Object.keys(PROJ).sort((a, b) => (focus.includes(a) || hov.includes(a) ? 1 : 0) - (focus.includes(b) || hov.includes(b) ? 1 : 0));
+    keys.forEach(k => {
+      const P = PROJ[k], isF = focus.includes(k), isH = hov.includes(k), inL = vis.has(k);
+      if (!s.showOthers && !isF && !isH) return;
+      const col = isF || isH ? U[P.u].c : (inL ? U[P.u].c : '#B8B3AA');
+      const op = isF || isH ? 1 : sel ? 0.3 : 0.8;
+      const pts = P.pts.map(p => p.join(',')).join(' ');
+      const g = [];
+      g.push(h('polyline', { key: 'l', points: pts, fill: 'none', stroke: col, strokeWidth: isF ? 3.5 : isH ? 3 : 2, vectorEffect: 'non-scaling-stroke', strokeLinejoin: 'round', strokeLinecap: 'round' }));
+      const ends = [P.pts[0], P.pts[P.pts.length - 1]];
+      ends.forEach((e, i) => {
+        const approx = P.locs[i] && P.locs[i][1] === 'approx';
+        const r = (isF ? 5 : 4) * inv;
+        g.push(P.u === 'DESC'
+          ? h('circle', { key: 'e' + i, cx: e[0], cy: e[1], r, fill: approx ? '#FFFFFF' : col, stroke: approx ? col : '#FFFFFF', strokeWidth: 1.5 * inv })
+          : h('rect', { key: 'e' + i, x: e[0] - r, y: e[1] - r, width: 2 * r, height: 2 * r, fill: approx ? '#FFFFFF' : col, stroke: approx ? col : '#FFFFFF', strokeWidth: 1.5 * inv }));
+        if ((isF || isH) && P.ends[i]) g.push(h('text', { key: 't' + i, x: e[0] + 8 * inv, y: e[1] - 8 * inv, fontSize: 12 * inv, fontWeight: 500, fill: '#1C1B19', stroke: '#F3F2EE', strokeWidth: 3 * inv, paintOrder: 'stroke', fontFamily: 'IBM Plex Sans' }, P.ends[i]));
+      });
+      g.push(h('polyline', { key: 'hit', points: pts, fill: 'none', stroke: 'transparent', strokeWidth: 14, vectorEffect: 'non-scaling-stroke', style: { cursor: 'pointer' }, onMouseEnter: () => this.setState({ hoverProj: k }), onMouseLeave: () => this.setState({ hoverProj: null }), onClick: () => this.setState({ projFilter: k, hoverProj: null }) }));
+      kids.push(h('g', { key: k, opacity: op, style: { transition: 'opacity 160ms' } }, g));
+    });
+    if (sel) {
+      const pr = s.mode === 'closest' ? nearest(sel.A.pts, sel.B.pts) : [centroid(sel.A.pts), centroid(sel.B.pts)];
+      const [p, q] = pr; const mx = (p[0] + q[0]) / 2, my = (p[1] + q[1]) / 2;
+      const lbl = (s.mode === 'closest' ? sel.closest : sel.center).toFixed(2) + ' mi';
+      kids.push(h('g', { key: 'conn' }, [
+        h('line', { key: 'l', x1: p[0], y1: p[1], x2: q[0], y2: q[1], stroke: '#1C1B19', strokeWidth: 1.5, strokeDasharray: '5 4', vectorEffect: 'non-scaling-stroke' }),
+        h('circle', { key: 'a', cx: p[0], cy: p[1], r: 2.5 * inv, fill: '#1C1B19' }), h('circle', { key: 'b', cx: q[0], cy: q[1], r: 2.5 * inv, fill: '#1C1B19' }),
+        h('rect', { key: 'r', x: mx - 30 * inv, y: my + 8 * inv, width: 60 * inv, height: 20 * inv, rx: 3 * inv, fill: '#1C1B19' }),
+        h('text', { key: 't', x: mx, y: my + 22 * inv, fontSize: 12 * inv, fontWeight: 600, fill: '#FFFFFF', textAnchor: 'middle', fontFamily: 'IBM Plex Sans', style: { fontVariantNumeric: 'tabular-nums' } }, lbl)
+      ]));
+    }
+    return h('svg', { viewBox: '0 0 1000 800', preserveAspectRatio: 'xMidYMid slice', style: { width: '100%', height: '100%', display: 'block' } }, [
+      h('rect', { key: 'bg', x: -3000, y: -3000, width: 7000, height: 7000, fill: '#ECEBE6' }),
+      h('g', { key: 'world', style: { transform: `translate(500px,400px) scale(${sc}) translate(${-cx}px,${-cy}px)`, transition: 'transform 260ms cubic-bezier(.2,.7,.2,1)' } }, kids)
+    ]);
+  }
+
+  renderVals() {
+    const s = this.state, P = this.props;
+    const page = s.page || P.startPage || 'opportunities';
+    const compact = (s.density || P.density || 'comfortable') === 'compact';
+    const sim = P.simulateState || 'none';
+    const showFacts = P.showFactMarkers ?? true;
+    const status = r => s.statuses[r] || 'New';
+    const dKey = s.mode === 'closest' ? 'closest' : 'center';
+    const inR = PAIRS.filter(p => p[dKey] <= s.radius);
+    const ql = s.q.trim().toLowerCase();
+    let list = inR.filter(p =>
+      (!ql || (p.A.name + ' ' + p.B.name).toLowerCase().includes(ql)) &&
+      (!s.tiers.length || s.tiers.includes(p.tier)) && (!s.fOverlap || p.overlap > 0) &&
+      (!s.fConflict || p.conflict) && (!s.fCoords || p.coords) &&
+      (!s.fStatus.length || s.fStatus.includes(status(p.rank))) &&
+      (!s.projFilter || p.d === s.projFilter || p.g === s.projFilter));
+    if (s.sort === 'dist') list = [...list].sort((a, b) => a[dKey] - b[dKey]);
+    if (s.sort === 'overlap') list = [...list].sort((a, b) => b.overlap - a.overlap);
+    if (sim === 'empty') list = [];
+    const isLoading = sim === 'loading';
+    if (isLoading) list = [];
+    this._list = list;
+    const sel = isLoading ? null : PAIRS.find(p => p.rank === s.sel);
+
+    const rows = list.map(p => {
+      const t = TIER[p.tier], on = sel && p.rank === sel.rank, st = status(p.rank);
+      return {
+        rankLabel: '#' + p.rank, tier: p.tier, tierShort: t.short, tierTip: t.tip, tierBg: t.bg, tierFg: t.fg, tierBd: t.bd, rec: t.rec,
+        dName: p.A.name, gName: p.B.name, clamp: compact ? 1 : 2, nameWeight: on ? 600 : 500,
+        dist: p[dKey].toFixed(2) + ' mi', distLabel: s.mode === 'closest' ? 'closest' : 'centers',
+        timing: p.overlap ? p.overlap + '-day overlap' : 'No overlap', timingColor: p.overlap ? '#1C1B19' : '#6F6B64',
+        gapLabel: p.gap + ' d in-service gap',
+        hasConflict: !!p.conflict, conflictLabel: p.conflict ? p.conflict.row : '',
+        hasLocNote: !compact && !!p.locNote, locNote: p.locNote || '',
+        hasStatus: st !== 'New', status: st, selected: on ? 'true' : 'false',
+        pad: compact ? '8px 16px' : '12px 16px', bg: on ? '#EFEDE8' : (s.hoverPair === p.rank ? '#F6F4F0' : 'transparent'), edge: on ? 'inset 3px 0 0 #1C1B19' : 'none',
+        onClick: () => this.select(p.rank), onEnter: () => this.setState({ hoverPair: p.rank }), onLeave: () => this.setState({ hoverPair: null })
+      };
+    });
+
+    const metrics = [
+      { n: inR.length, label: 'candidates', tip: 'Pairs within the current radius', on: false, click: () => this.clearFilters() },
+      { n: inR.filter(p => p.tier === 'T1' || p.tier === 'T2').length, label: 'must coordinate', tip: 'Filter to T1 and T2', on: s.tiers.length === 2 && s.tiers.includes('T1') && s.tiers.includes('T2'), click: () => this.setState(st => ({ tiers: st.tiers.length === 2 ? [] : ['T1', 'T2'] })) },
+      { n: inR.filter(p => p.overlap > 0).length, label: 'overlap', tip: 'Filter to overlapping build windows', on: s.fOverlap, click: () => this.setState(st => ({ fOverlap: !st.fOverlap })) },
+      { n: inR.filter(p => p.conflict).length, label: 'conflicts', tip: 'Filter to pairs with conflicting sources', on: s.fConflict, warn: true, click: () => this.setState(st => ({ fConflict: !st.fConflict })) }
+    ].map(m => ({ ...m, onClick: m.click, bg: m.on ? '#EFEDE8' : 'transparent', numColor: m.warn ? '#8A5A00' : '#1C1B19' }));
+
+    const chips = [];
+    if (s.projFilter) chips.push({ k: 'Project', v: PROJ[s.projFilter].name.slice(0, 32) + (PROJ[s.projFilter].name.length > 32 ? '…' : ''), onRemove: () => this.setState({ projFilter: null }) });
+    if (s.tiers.length) chips.push({ k: 'Tier', v: s.tiers.sort().join(', '), onRemove: () => this.setState({ tiers: [] }) });
+    if (s.fOverlap) chips.push({ k: 'Timing', v: 'Overlap', onRemove: () => this.setState({ fOverlap: false }) });
+    if (s.fConflict) chips.push({ k: 'Sources', v: 'Conflict', onRemove: () => this.setState({ fConflict: false }) });
+    if (s.fCoords) chips.push({ k: 'Location', v: 'Imprecise', onRemove: () => this.setState({ fCoords: false }) });
+    if (s.fStatus.length) chips.push({ k: 'Status', v: s.fStatus.join(', '), onRemove: () => this.setState({ fStatus: [] }) });
+    if (ql) chips.push({ k: 'Search', v: '“' + s.q + '”', onRemove: () => this.setState({ q: '' }) });
+
+    const filterGroups = [
+      { title: 'Tier', opts: ['T1', 'T2', 'T3', 'T4'].map(t => chip(s.tiers.includes(t), () => this.toggleIn('tiers', t), t + ' · ' + TIER[t].short, TIER[t].tip)) },
+      { title: 'Timing', opts: [chip(s.fOverlap, () => this.setState(x => ({ fOverlap: !x.fOverlap })), 'Build windows overlap')] },
+      { title: 'Data quality', opts: [chip(s.fConflict, () => this.setState(x => ({ fConflict: !x.fConflict })), 'Source conflict'), chip(s.fCoords, () => this.setState(x => ({ fCoords: !x.fCoords })), 'Imprecise location')] },
+      { title: 'Review status', opts: Object.keys(STATUS).map(k => chip(s.fStatus.includes(k), () => this.toggleIn('fStatus', k), k)) }
+    ];
+
+    // inspector
+    let ins = {}, tl = { ticks: [], bars: [], ov: {}, caption: '', nYears: 1 }, ev = { groups: [], derived: [] };
+    if (sel) {
+      const t = TIER[sel.tier], A = sel.A, B = sel.B, st = status(sel.rank);
+      const pw = sel.overlap ? `their published build windows overlap by ${sel.overlap} days` : `their build windows do not overlap (${sel.apart} days apart)`;
+      const tierLine = { T1: 'They touch or share a facility — coordinate before either design is finalized.', T2: 'At under a mile apart, coordination on outages, access and crossings is required.', T3: 'Proximity and timing make shared logistics worth reviewing — staging, access roads, outages and crews.', T4: 'Close enough to monitor; no action needed unless schedules converge.' }[sel.tier];
+      const locs = [...A.locs, ...B.locs];
+      const worstLoc = locs.some(l => l[1] === 'approx') ? ['Approximate endpoint', '#8A5A00'] : locs.some(l => l[2]) ? ['OSM-resolved · differs from Sperry', '#55524C'] : locs.every(l => l[1] === 'confirmed') ? ['Sperry-confirmed', '#1E7045'] : ['OSM-resolved', '#55524C'];
+      const eqRows = [
+        { k: 'Source agreement', v: sel.conflict ? 'Conflict in ' + (A.conflict ? 'DESC' : 'GPC') + ' ' + sel.conflict.field.toLowerCase() : 'Sources agree', color: sel.conflict ? '#8A5A00' : '#1E7045' },
+        { k: 'Location provenance', v: worstLoc[0], color: worstLoc[1] },
+        { k: 'Schedule completeness', v: 'Start and in-service dates for both', color: '#1E7045' }
+      ];
+      const eqLvl = sel.conflict ? 'Medium' : locs.some(l => l[1] === 'approx') ? 'Medium' : 'High';
+      const cp = A.conflict ? A : B.conflict ? B : null;
+      ins = {
+        rankLabel: '#' + String(sel.rank).padStart(2, '0'), tier: sel.tier, tierShort: t.short, tierTip: t.tip, tierBg: t.bg, tierFg: t.fg, tierBd: t.bd,
+        rec: t.rec, timingShort: sel.overlap ? 'Same build window' : 'Separate build windows',
+        status: st, statusDot: STATUS[st],
+        aName: A.name, aRef: A.ref, bName: B.name, bRef: B.ref,
+        connector: (s.mode === 'closest' ? sel.closest.toFixed(2) + ' mi at closest points' : sel.center.toFixed(2) + ' mi between centers'),
+        hoverA: () => this.setState({ hoverProj: sel.d }), hoverB: () => this.setState({ hoverProj: sel.g }),
+        stats: [
+          { v: sel.closest.toFixed(2) + ' mi', l: 'Closest', tip: 'Derived — nearest points of the two alignments', weight: s.mode === 'closest' ? 600 : 400 },
+          { v: sel.center.toFixed(2) + ' mi', l: 'Centers', tip: 'Derived — centroid to centroid (Sperry method)', weight: s.mode === 'center' ? 600 : 400 },
+          { v: sel.overlap ? sel.overlap + ' d' : '—', l: 'Overlap', tip: 'Derived — days both build windows are active', weight: 600 },
+          { v: sel.gap + ' d', l: 'In-service gap', tip: 'Derived — days between in-service / need dates', weight: 400 }
+        ],
+        hasConflict: !!cp, conflictTitle: cp ? cp.conflict.title : '', conflictText: cp ? cp.conflict.text : '',
+        hasPlanLink: !!(cp && cp.plan), goPlan: () => { const gi = CH.findIndex(c => c[0] === (cp && cp.plan)); this.setState({ page: 'plan', pcSel: gi >= 0 ? gi + ':0' : null, pcType: 'all', pcUtil: 'all', pcLinked: false, pcQ: '' }); },
+        rationale: `${A.name.split(':')[0]} (DESC) and ${B.name.replace('SAV: ', '')} (Georgia Power) come within ${sel.closest.toFixed(2)} mi at their closest points, and ${pw}. ${tierLine} Candidate for human review.`,
+        eq: eqLvl, eqColor: eqLvl === 'High' ? '#1E7045' : '#8A5A00', eqRows
+      };
+      const y0 = new Date(Math.min(T(A.start), T(B.start))).getUTCFullYear(), y1 = new Date(Math.max(T(A.end), T(B.end))).getUTCFullYear() + 1;
+      const t0 = Date.UTC(y0, 0, 1), t1 = Date.UTC(y1, 0, 1), pct = x => ((x - t0) / (t1 - t0) * 100).toFixed(2) + '%';
+      const ticks = []; for (let y = y0; y < y1; y++) ticks.push({ y, left: pct(Date.UTC(y, 0, 1)) });
+      const bar = (Pp, label) => ({ label, color: U[Pp.u].c, left: pct(T(Pp.start)), width: ((T(Pp.end) - T(Pp.start)) / (t1 - t0) * 100).toFixed(2) + '%', endLeft: pct(T(Pp.end)), title: `${fd(Pp.start)} → ${fd(Pp.end)}`, endTitle: (Pp.u === 'GPC' ? 'Need date ' : 'In-service ') + fd(Pp.end), hasPrior: !!Pp.prior && Pp === cp, priorLeft: Pp.prior ? pct(T(Pp.prior)) : '0%', priorTitle: Pp.prior ? 'Prior plan: ' + fd(Pp.prior) : '', priorF: Pp.prior ? fd(Pp.prior) : '', startF: fd(Pp.start), endF: fd(Pp.end), src: Pp.src });
+      const os = Math.max(T(A.start), T(B.start)), oe = Math.min(T(A.end), T(B.end));
+      tl = {
+        ticks, nYears: y1 - y0, bars: [bar(A, 'DESC'), bar(B, 'GPC')],
+        ov: { has: sel.overlap > 0, left: pct(os), width: ((oe - os) / (t1 - t0) * 100).toFixed(2) + '%', label: sel.overlap + '-day overlap', title: `Overlap ${new Date(os).toISOString().slice(0, 10)} → ${new Date(oe).toISOString().slice(0, 10)}` },
+        caption: 'Bars: DESC spend years (public cost schedule) and GPC start → need date. Marker: in-service / need date.'
+      };
+      const recsFor = Pp => {
+        const r = [];
+        const dateRec = { field: (Pp.u === 'GPC' ? 'Need date' : 'In-service date'), src: Pp.src, value: fd(Pp.end), hasNote: false, note: '', noteColor: '#55524C', hasConflict: false, bd: '#E4E1DA', bg: '#FFFFFF' };
+        if (Pp.conflict) Object.assign(dateRec, { hasConflict: true, bd: '#E9D59A', bg: '#FFFDF7', value: 'Conflict detected', aLabel: Pp.conflict.a.l, aV: Pp.conflict.a.v, aSrc: Pp.conflict.a.s, bLabel: Pp.conflict.b.l, bV: Pp.conflict.b.v, bSrc: Pp.conflict.b.s });
+        r.push(dateRec);
+        r.push({ field: 'Construction start', src: Pp.src, value: fd(Pp.start), hasNote: false, hasConflict: false, bd: '#E4E1DA', bg: '#FFFFFF' });
+        if (Pp.cost) r.push({ field: 'Estimated cost', src: Pp.src, value: Pp.cost, hasNote: true, note: 'Changed since prior plan — see Plan changes', noteColor: '#55524C', hasConflict: false, bd: '#E4E1DA', bg: '#FFFFFF' });
+        Pp.locs.forEach(l => r.push({ field: 'Endpoint · ' + l[0], src: l[1] === 'confirmed' ? 'Sperry answer key' : 'OpenStreetMap', value: { confirmed: 'Sperry-confirmed', resolved: 'OSM-resolved', approx: 'Approximate' }[l[1]], hasNote: !!l[2], note: l[2] || '', noteColor: l[1] === 'approx' ? '#8A5A00' : '#55524C', hasConflict: false, bd: '#E4E1DA', bg: '#FFFFFF' }));
+        return r;
+      };
+      ev = {
+        groups: [{ title: 'Dominion Energy SC · ' + A.ref, color: U.DESC.c, radius: '50%', recs: recsFor(A) }, { title: 'Georgia Power · ' + B.ref, color: U.GPC.c, radius: '1px', recs: recsFor(B) }],
+        derived: [
+          { k: 'Closest distance', v: sel.closest.toFixed(2) + ' mi', how: 'Nearest points between located endpoints and alignment' },
+          { k: 'Center distance', v: sel.center.toFixed(2) + ' mi', how: 'Centroid to centroid · matches Sperry method' },
+          { k: 'Build-window overlap', v: sel.overlap ? sel.overlap + ' days' : 'None', how: 'Intersection of start → in-service windows' },
+          { k: 'In-service gap', v: sel.gap + ' days', how: 'Difference between DESC in-service and GPC need date' }
+        ]
+      };
+    }
+    const evCount = ev.groups.reduce((n, g) => n + g.recs.length, 0) + ev.derived.length;
+    const tabs = [['overview', 'Overview', ''], ['timeline', 'Timeline', ''], ['evidence', 'Evidence', evCount || '']];
+
+    // plan changes
+    const pcq = s.pcQ.trim().toLowerCase();
+    const oppsFor = name => { const k = Object.keys(PROJ).find(x => PROJ[x].plan === name); return k ? PAIRS.filter(p => p.d === k || p.g === k) : []; };
+    const fmtCh = c => {
+      if (c[0] === 's') { const d = Math.round((T(c[2]) - T(c[1])) / DAY); return { before: c[1], after: c[2], bl: fd(c[1]), al: fd(c[2]), delta: (d > 0 ? '+' : '') + d + ' days', delta2: '≈ ' + (Math.abs(d) / 30.44).toFixed(1) + ' mo later', color: d > 365 ? '#8A5A00' : '#1C1B19' }; }
+      if (c[0] === 'c') { const d = c[2] - c[1], pc = d / c[1] * 100; return { before: M(c[1]), after: M(c[2]), bl: '$' + c[1].toLocaleString(), al: '$' + c[2].toLocaleString(), delta: (d > 0 ? '+' : '−') + M(Math.abs(d)), delta2: (pc > 0 ? '+' : '') + pc.toFixed(1) + '%', color: pc > 50 ? '#8A5A00' : d < 0 ? '#1E7045' : '#1C1B19' }; }
+      return { before: c[1], after: c[2], bl: c[1], al: c[2], delta: 'Name', delta2: 'no value change', color: '#55524C' };
+    };
+    const pcGroups = [];
+    let pcN = 0;
+    CH.forEach(([name, chs], gi) => {
+      const opps = oppsFor(name);
+      if (s.pcUtil === 'GPC') return;
+      if (s.pcLinked && !opps.length) return;
+      if (pcq && !name.toLowerCase().includes(pcq)) return;
+      const cs = chs.map((c, ci) => ({ c, ci })).filter(({ c }) => s.pcType === 'all' || c[0] === s.pcType);
+      if (!cs.length) return;
+      pcN += cs.length;
+      pcGroups.push({
+        name, util: 'DESC', utilColor: U.DESC.c, utilRadius: '50%', nLabel: chs.length + (chs.length > 1 ? ' changes' : ' change'),
+        hasLinks: opps.length > 0, linkLabel: opps.length + (opps.length > 1 ? ' opportunities' : ' opportunity'),
+        goOpps: () => this.goOppsForProj(Object.keys(PROJ).find(x => PROJ[x].plan === name)),
+        changes: cs.map(({ c, ci }, j) => { const f = fmtCh(c), id = gi + ':' + ci, on = s.pcSel === id; return { typeLabel: TYPE[c[0]].l, glyph: TYPE[c[0]].g, before: f.before, after: f.after, delta: f.delta, delta2: f.delta2, deltaColor: f.color, ev1: 'desc-2428 ' + c[3], ev2: 'desc-2529 ' + c[4], divider: j ? '1px solid #ECE9E3' : '0', bg: on ? '#EFEDE8' : 'transparent', edge: on ? 'inset 3px 0 0 #1C1B19' : 'none', onClick: () => this.setState({ pcSel: on ? null : id }) }; })
+      });
+    });
+    let pcd = {};
+    if (s.pcSel) {
+      const [gi, ci] = s.pcSel.split(':').map(Number); const [name, chs] = CH[gi]; const c = chs[ci]; const f = fmtCh(c);
+      pcd = {
+        util: 'DESC', name, typeLabel: TYPE[c[0]].l, beforeLong: f.bl, afterLong: f.al, delta: f.delta, delta2: f.delta2, deltaColor: f.color,
+        ev1: 'desc-2428 · ' + c[3], ev2: 'desc-2529 · ' + c[4],
+        siblings: chs.filter((_, i) => i !== ci).map(x => ({ typeLabel: TYPE[x[0]].l, delta: fmtCh(x).delta })), noSiblings: chs.length === 1,
+        opps: oppsFor(name).map(p => ({ rank: '#' + p.rank, tier: p.tier, other: p.B.name.replace('SAV: ', ''), dist: p.closest.toFixed(2) + ' mi', onClick: () => { this.setState({ page: 'opportunities' }); this.select(p.rank); } })),
+      };
+      pcd.noOpps = !pcd.opps.length;
+    }
+
+    // data quality
+    const dqq = s.dqQ.trim().toLowerCase();
+    const issues = ISSUES.filter(i => (s.dqType === 'all' || i.t === s.dqType) && (!dqq || (i.entity + i.summary + i.id).toLowerCase().includes(dqq))).map(i => {
+      const ps = PAIRS.filter(p => i.projs.includes(p.d) || i.projs.includes(p.g));
+      const crit = ps.some(p => p.tier === 'T1' || p.tier === 'T2');
+      const on = s.dqSel === i.id;
+      return {
+        ...i, typeLabel: i.t === 'coord' ? 'Coordinate mismatch' : 'Source conflict', glyph: i.t === 'coord' ? '◇' : '▲', typeColor: i.t === 'coord' ? '#1C1B19' : '#8A5A00',
+        impact: crit ? 'Medium' : ps.length ? 'Low' : 'None', impactColor: crit ? '#8A5A00' : '#1C1B19',
+        pairsLabel: ps.length ? ps.length + (ps.length > 1 ? ' pairs affected' : ' pair affected') : 'Not in study area',
+        aLabel: i.a[0], aV: i.a[1], bLabel: i.b[0], bV: i.b[1], open: on, bg: on ? '#F6F4F0' : 'transparent', edge: on ? 'inset 3px 0 0 #1C1B19' : 'none',
+        onClick: () => this.setState({ dqSel: on ? null : i.id }),
+        opps: ps.slice(0, 4).map(p => ({ label: 'Pair #' + p.rank + ' · ' + p.tier, onClick: () => { this.setState({ page: 'opportunities' }); this.select(p.rank); } }))
+      };
+    });
+
+    const hk = s.hoverProj && PROJ[s.hoverProj];
+    return {
+      isOpp: page === 'opportunities', isPlan: page === 'plan', isDQ: page === 'dq',
+      navTabs: [['opportunities', 'Opportunities', inR.length], ['plan', 'Plan changes', 322], ['dq', 'Data quality', 21]].map(([k, l, n]) => ({ label: l, count: n, onClick: () => this.setState({ page: k }), weight: page === k ? 600 : 500, color: page === k ? '#1C1B19' : '#55524C', bar: page === k ? '#1C1B19' : 'transparent' })),
+      q: s.q, onQ: e => this.setState({ q: e.target.value }), onGlobalQ: e => this.setState({ q: e.target.value, page: 'opportunities' }),
+      goDQ: () => this.setState({ page: 'dq' }),
+      metrics,
+      modeOpts: [seg(s.mode === 'closest', () => this.setState({ mode: 'closest' }), 'Closest points'), seg(s.mode === 'center', () => this.setState({ mode: 'center' }), 'Project centers')],
+      modeNoun: s.mode === 'closest' ? 'closest points' : 'project centers',
+      toggleRadius: () => this.setState(x => ({ radiusOpen: !x.radiusOpen, filterOpen: false })), radiusOpen: s.radiusOpen, radiusLabel: s.radius + ' mi', radius: s.radius,
+      onRadius: e => this.setState({ radius: +e.target.value }),
+      radiusPresets: [1, 5, 10, 25, 50].map(v => ({ label: v + ' mi', onClick: () => this.setState({ radius: v }), bg: s.radius === v ? '#1C1B19' : '#FFFFFF', color: s.radius === v ? '#FFFFFF' : '#1C1B19', bd: s.radius === v ? '#1C1B19' : '#D9D5CC' })),
+      listCountLabel: isLoading ? 'Loading…' : list.length === inR.length ? inR.length + ' candidates' : list.length + ' of ' + inR.length,
+      densityLabel: compact ? 'Comfortable' : 'Compact', toggleDensity: () => this.setState({ density: compact ? 'comfortable' : 'compact' }),
+      exportCsv: () => this.flash('Exported ' + list.length + ' pairs · Sperry CSV format'),
+      searchRef: this.searchRef, toggleFilter: () => this.setState(x => ({ filterOpen: !x.filterOpen, radiusOpen: false })), filterOpen: s.filterOpen, filterGroups,
+      hasActiveFilters: chips.length > 0, activeCount: chips.length, activeChips: chips, clearFilters: this.clearFilters,
+      sort: s.sort, onSort: e => this.setState({ sort: e.target.value }),
+      isLoading, skel: [1, 2, 3, 4, 5, 6], isEmpty: !isLoading && list.length === 0,
+      emptyReason: `No pairs within ${s.radius} mi (${s.mode === 'closest' ? 'closest points' : 'project centers'}) match ${chips.length ? 'the active filters' : 'this study'}.`,
+      widenRadius: () => this.setState({ radius: 50 }),
+      rows, showListFooter: list.length > 0, listFooter: 'Sample of 14 of 52 study pairs',
+      mapOk: !isLoading && !(sim === 'mapError' && !s.retried), mapError: sim === 'mapError' && !s.retried, retry: () => this.setState({ retried: true }),
+      mapEl: isLoading ? null : this.buildMap(list, sel),
+      clearHoverProj: () => this.setState({ hoverProj: null }),
+      zoomIn: () => this.setState(x => ({ zoom: Math.min(4, x.zoom * 1.4) })), zoomOut: () => this.setState(x => ({ zoom: Math.max(0.5, x.zoom / 1.4) })), fitPair: () => this.setState({ zoom: 1 }),
+      toggleOthers: () => this.setState(x => ({ showOthers: !x.showOthers })), othersLabel: s.showOthers ? 'Hide unrelated' : 'Show all projects',
+      hasHoverCard: !!hk, hoverCard: hk ? { util: hk.u === 'DESC' ? 'Dominion Energy SC' : 'Georgia Power', color: U[hk.u].c, name: hk.name, meta: PAIRS.filter(p => p.d === s.hoverProj || p.g === s.hoverProj).length + ' opportunities' } : {},
+      legendOpen: s.legendOpen, legendCaret: s.legendOpen ? '▾' : '▸', toggleLegend: () => this.setState(x => ({ legendOpen: !x.legendOpen })),
+      hasSel: !!sel, noSel: !sel && !isLoading, ins, tl, ev, showFacts,
+      toggleStatus: () => this.setState(x => ({ statusOpen: !x.statusOpen })), statusOpen: s.statusOpen,
+      statusOpts: Object.keys(STATUS).map(k => ({ label: k, dot: STATUS[k], bg: sel && status(sel.rank) === k ? '#EFEDE8' : 'transparent', onClick: () => { this.setState(x => ({ statuses: { ...x.statuses, [sel.rank]: k }, statusOpen: false })); this.flash('Pair #' + sel.rank + ' marked ' + k); } })),
+      exportBrief: () => this.flash('Brief for pair #' + (sel && sel.rank) + ' exported'),
+      insTabs: tabs.map(([k, l, n]) => ({ label: l, count: n, onClick: () => this.setState({ tab: k }), weight: s.tab === k ? 600 : 500, color: s.tab === k ? '#1C1B19' : '#55524C', bar: s.tab === k ? '#1C1B19' : 'transparent' })),
+      tabOverview: s.tab === 'overview', tabTimeline: s.tab === 'timeline', tabEvidence: s.tab === 'evidence',
+      openEvidence: () => this.setState({ tab: 'evidence' }), openTimeline: () => this.setState({ tab: 'timeline' }),
+      pcQ: s.pcQ, onPcQ: e => this.setState({ pcQ: e.target.value }),
+      pcTypeOpts: [['all', 'All'], ['s', 'Schedule'], ['c', 'Cost'], ['r', 'Renamed']].map(([k, l]) => seg(s.pcType === k, () => this.setState({ pcType: k }), l)),
+      pcUtilOpts: [['all', 'All'], ['DESC', 'DESC'], ['GPC', 'GPC']].map(([k, l]) => seg(s.pcUtil === k, () => this.setState({ pcUtil: k }), l)),
+      togglePcLinked: () => this.setState(x => ({ pcLinked: !x.pcLinked })), pcLinkedBg: s.pcLinked ? '#EFEDE8' : '#FFFFFF', pcLinkedBd: s.pcLinked ? '#1C1B19' : '#D9D5CC', pcLinkedBox: s.pcLinked ? '#1C1B19' : '#FFFFFF',
+      pcCountLabel: pcN + ' of 322 changes · ' + pcGroups.length + ' projects', pcGroups, pcEmpty: pcGroups.length === 0,
+      clearPc: () => this.setState({ pcType: 'all', pcUtil: 'all', pcLinked: false, pcQ: '' }),
+      pcHasSel: !!s.pcSel, pcd, closePc: () => this.setState({ pcSel: null }),
+      dqHealth: [
+        { n: '182', sub: '', label: 'Projects parsed', color: '#1C1B19', tip: 'Projects extracted from source plans' },
+        { n: '104', sub: ' · 57%', label: 'Located', color: '#1C1B19', tip: 'At least one endpoint located' },
+        { n: '78', sub: '', label: 'Not located · listed, not mapped', color: '#55524C', tip: 'No endpoint could be located safely' },
+        { n: '6/6', sub: '', label: 'Validation passed', color: '#1E7045', tip: 'Sperry benchmark' },
+        { n: '21', sub: '', label: 'Open issues', color: '#8A5A00', tip: 'Coordinate mismatches and source conflicts' }
+      ],
+      prov: [
+        { label: 'Sperry-confirmed', state: 'CONFIRMED', stateColor: '#1E7045', desc: 'Matches the Sperry answer key', n: 17, pct: '5%', fill: '#1E7045', bd: '#1E7045' },
+        { label: 'OSM-resolved', state: 'RESOLVED', stateColor: '#2B2A27', desc: 'Matched to a named OpenStreetMap substation', n: 116, pct: '35%', fill: '#55524C', bd: '#55524C' },
+        { label: 'Unresolved', state: 'UNRESOLVED', stateColor: '#6F6B64', desc: 'No safe match — intentionally not guessed', n: 194, pct: '59%', fill: '#E0DDD6', bd: '#C3BFB7' }
+      ],
+      bench: BENCH.map(([id, v, g]) => ({ id, exp: v.toFixed(2) + ' mi', ours: v.toFixed(2) + ' mi', diff: '0.00 mi', gap: g + ' d' })),
+      dqTypeOpts: [['all', 'All'], ['coord', 'Coordinate mismatch'], ['source', 'Source conflict']].map(([k, l]) => seg(s.dqType === k, () => this.setState({ dqType: k }), l)),
+      dqQ: s.dqQ, onDqQ: e => this.setState({ dqQ: e.target.value }), issues, noop: () => this.flash('Remaining 14 issues load from the live dataset'),
+      mapRef: this.mapRef, hasToast: !!s.toast, toast: s.toast || ''
+    };
+  }
+}
+</script>
+</body>
+</html>
