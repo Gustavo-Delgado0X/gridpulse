@@ -1,0 +1,200 @@
+{
+ "cancelled": [
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "214",
+   "teams": "12016",
+   "name": "ARKWRIGHT - LLOYD SHOALS 115 KV LINE RECONDUCTOR",
+   "need_date": "2024-06-01",
+   "sponsor": "GPC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "216",
+   "teams": "19628",
+   "name": "ARLINGTON PRIMARY - LIZARD LOPE 115KV RECONDUCTOR",
+   "need_date": "2029-06-01",
+   "sponsor": "GPC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "212",
+   "teams": "20477",
+   "name": "BANKS CROSSING - CENTER PRIMARY (BLACK) 230 KV LINE",
+   "need_date": "2029-06-01",
+   "sponsor": "GPC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "201",
+   "teams": "12063",
+   "name": "DOUGLASVILLE - POST RD 115KV REBUILD",
+   "need_date": "2029-06-01",
+   "sponsor": "GPC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "215",
+   "teams": "19623",
+   "name": "GTC: AUGUSTA CORPORATE PARK - VOGTLE 230KV REBUILD",
+   "need_date": "2029-06-01",
+   "sponsor": "GTC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "214",
+   "teams": "20513",
+   "name": "GTC: BIG GROCERY-WESTLAKE ROAD 230KV PROJECTS",
+   "need_date": "2029-06-01",
+   "sponsor": "GTC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "219",
+   "teams": "15228",
+   "name": "KRAFT 230/115KV TRANSFORMER RATING INCREASE",
+   "need_date": "2029-06-01",
+   "sponsor": "GPC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "208",
+   "teams": "20000",
+   "name": "YATES 6 AND 7 230KV LIMITING ELEMENT REPLACEMENT",
+   "need_date": "2029-06-01",
+   "sponsor": "GPC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "213",
+   "teams": "20482",
+   "name": "PITTMAN ROAD - WEST POINT DAM (USA) 115KV REBUILD",
+   "need_date": "2031-06-01",
+   "sponsor": "GPC"
+  },
+  {
+   "kind": "cancelled",
+   "page": 191,
+   "zone": "215",
+   "teams": "20266",
+   "name": "GTC: GOSHEN - VOGTLE 230KV REBUILD",
+   "need_date": "2031-06-01",
+   "sponsor": "GTC"
+  }
+ ],
+ "completed": [
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "214",
+   "teams": "20017",
+   "name": "ARKWRIGHT - SOUTH MACON (BLACK) 115KV LINE REBUILD",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "213",
+   "teams": "18671",
+   "name": "CORN CRIB - LAGRANGE 115KV LINE REBUILD",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "212",
+   "teams": "19340",
+   "name": "GTC: MIDDLE FORK STATCOM SYSTEM",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "218",
+   "teams": "19028",
+   "name": "KINGSLAND BANK C REPLACEMENT",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "206",
+   "teams": "18104",
+   "name": "KLONDIKE SWITCH REPLACEMENT",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "211",
+   "teams": "19305",
+   "name": "MCGRAU FORD STATCOM SYSTEM",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "202",
+   "teams": "20006",
+   "name": "NORCROSS 230KV BUS 2-3 SERIES BUS TIE BREAKER INSTALLATION",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "216",
+   "teams": "19019",
+   "name": "PINE GROVE PRIMARY BANK B REPLACEMENT",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "215",
+   "teams": "14271",
+   "name": "THOMSON PRI - WARRENTON PRI 115KV WHITE LINE REBUILD",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "215",
+   "teams": "19625",
+   "name": "WARRENTON PRIMARY 230KV SWITCHES AND JUMPER REPLACEMENT",
+   "need_date": "2024-06-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "211",
+   "teams": "19341",
+   "name": "GTC: JUDY MOUNTAIN SHUNT REACTOR",
+   "need_date": "2024-12-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "208",
+   "teams": "20021",
+   "name": "GTC: UNION CITY 230KV BUS TIE",
+   "need_date": "2024-12-01"
+  },
+  {
+   "kind": "completed",
+   "page": 192,
+   "zone": "211",
+   "teams": "20430",
+   "name": "EAST DALTON JUMPER REPLACEMENT",
+   "need_date": "2025-06-01"
+  }
+ ]
+}

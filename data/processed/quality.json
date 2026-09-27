@@ -1,0 +1,132 @@
+{
+ "coverage": {
+  "projects": 182,
+  "projects_located": 101,
+  "projects_unlocated": 81,
+  "endpoints_by_precision": {
+   "sperry_provided": 16,
+   "unresolved": 197,
+   "osm_feature": 114
+  }
+ },
+ "acceptance": {
+  "passed": true,
+  "matched": 6,
+  "expected": 6,
+  "unexpected": 0,
+  "details": [
+   {
+    "overlap_id": "OVL_1",
+    "expected_mi": 4.09,
+    "got_mi": 4.09,
+    "expected_gap": 3074,
+    "got_gap": 3074,
+    "passed": true
+   },
+   {
+    "overlap_id": "OVL_2",
+    "expected_mi": 5.65,
+    "got_mi": 5.65,
+    "expected_gap": 152,
+    "got_gap": 152,
+    "passed": true
+   },
+   {
+    "overlap_id": "OVL_3",
+    "expected_mi": 7.55,
+    "got_mi": 7.55,
+    "expected_gap": 517,
+    "got_gap": 517,
+    "passed": true
+   },
+   {
+    "overlap_id": "OVL_4",
+    "expected_mi": 8.01,
+    "got_mi": 8.01,
+    "expected_gap": 3074,
+    "got_gap": 3074,
+    "passed": true
+   },
+   {
+    "overlap_id": "OVL_5",
+    "expected_mi": 14.34,
+    "got_mi": 14.34,
+    "expected_gap": 365,
+    "got_gap": 365,
+    "passed": true
+   },
+   {
+    "overlap_id": "OVL_6",
+    "expected_mi": 14.81,
+    "got_mi": 14.81,
+    "expected_gap": 730,
+    "got_gap": 730,
+    "passed": true
+   }
+  ]
+ },
+ "discrepancies": [
+  {
+   "kind": "coordinate_conflict",
+   "project_id": "desc-2428-6367-d-g",
+   "endpoint": "Jasper",
+   "miles_apart": 0.112,
+   "values": {
+    "osm": [
+     32.3606993,
+     -81.1241523
+    ],
+    "answer_key": [
+     32.35912,
+     -81.1246
+    ]
+   },
+   "message": "Jasper: OSM and Sperry's answer key differ by 0.11 mi"
+  },
+  {
+   "kind": "coordinate_conflict",
+   "project_id": "gpc-20065",
+   "endpoint": "MCINTOSH",
+   "miles_apart": 0.408,
+   "values": {
+    "osm": [
+     32.3521162,
+     -81.1751124
+    ],
+    "answer_key": [
+     32.352116,
+     -81.182105
+    ]
+   },
+   "message": "MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-19523",
+   "values": {
+    "table_2": "2025-01-01",
+    "detail_page": "2025-04-25"
+   },
+   "message": "SAV: CC - HYUNDAI MOTORS SAVANNAH AKA. PROJECT EA: need date differs between Table 2 and detail page p.231"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-20684",
+   "values": {
+    "table_2": "2025-06-01",
+    "detail_page": "2025-06-30"
+   },
+   "message": "CAMDEN INDUSTRIAL PARK (GPC): need date differs between Table 2 and detail page p.248"
+  },
+  {
+   "kind": "sources_disagree",
+   "project_id": "gpc-17900",
+   "values": {
+    "table_2": "2026-04-01",
+    "detail_page": "2026-06-01"
+   },
+   "message": "UNION CITY - YATES 230 KV WHITE LINE REBUILD: need date differs between Table 2 and detail page p.279"
+  }
+ ],
+ "built_at": "2026-09-27T04:16:07.738213+00:00"
+}

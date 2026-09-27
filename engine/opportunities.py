@@ -68,7 +68,7 @@ def _evaluate(pa: dict, pb: dict, max_miles: float, method: str) -> dict | None:
         "a": a["id"],
         "b": b["id"],
         "method": method,
-        "tier": tier_for(gate_touching, gate_miles),
+        "tier": tier_for(gate_touching, gate_miles, max_miles),
         "touching": touching,
         "dist_closest_mi": round(dist_closest, 3),
         "dist_center_mi": round(dist_center, 3),

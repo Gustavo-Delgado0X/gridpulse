@@ -1,0 +1,11 @@
+key_project_id,project_id,evidence
+DESC_1,desc-2428-6809-e,"DESC 2024-28 p.14 'Stevens Creek - Hooks 115kV/LR Plumb Branch 46kV Rebuilds' (Project ID 6809 E)"
+DESC_2,desc-2428-6810-a,"DESC 2024-28 p.31 'Hooks - Thurmond 115kV Tie: Rebuild' (Project ID 6810 A)"
+DESC_3,desc-2428-6367-d-g,"DESC 2024-28 p.23 'Jasper – Okatie 230 kV #2: Construct' (Project ID 06367 D - G)"
+DESC_4,desc-2428-6807-b,"DESC 2024-28 p.1 'Queensboro - Ft Johnson 115 kV & Queensboro-Bayfront 115kV' (Project ID 6807 B)"
+DESC_5,desc-2428-6808-s,"DESC 2024-28 p.10 'Okatie-Bluffton 115kV: Rebuild' (Project ID 6808 S)"
+GPC_1,gpc-20793,"GPC IRP Table 2 TEAMS 20793 'EVANS PRIMARY - THURMOND DAM (USA) #5 115KV REBUILD'"
+GPC_2,gpc-20277,"GPC IRP Table 2 TEAMS 20277 'SAV: MCINTOSH - PURRYSBURG 230KV REACTORS'"
+GPC_3,gpc-20065,"GPC IRP Table 2 TEAMS 20065 'SAV: GOSHEN (SAV) - MCINTOSH 115KV LINE REBUILD'"
+GPC_4,gpc-18492,"GPC IRP Table 2 TEAMS 18492 'MITCHELL - NORTH TIFTON 230KV RECONDUCTOR'"
+GPC_5,gpc-11821,"GPC IRP Table 2 TEAMS 11821 'JESUP - LUDOWICI PRIMARY 115KV REBUILD'"
