@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { api, ApiError } from "./api";
+import { CoordinationNow } from "./components/CoordinationNow";
 import { DataQualityView } from "./components/DataQualityView";
 import { DetailPanel } from "./components/DetailPanel";
 import { MapView } from "./components/MapView";
@@ -87,6 +88,7 @@ export default function App() {
   const [collapsed, setCollapsed] = useState(() => readStored("gridpulse.sidebar") === "collapsed");
   const [help, setHelp] = useState(false);
   const [analyst, setAnalyst] = useState(false);
+  const [listMode, setListMode] = useState<"ranked" | "now">("ranked");
   const [triage, setTriage] = useTriage();
 
   const [health] = useLoad<Health>((s) => api.health(s), []);
@@ -227,9 +229,18 @@ export default function App() {
               <div className="col col--panel">
                 {panel === "list" ? (
                   <>
-                    {opps.status === "loading" && <Skeleton />}
+                    <div className="segmented segmented--block list-mode" role="group" aria-label="List">
+                      <button type="button" className="segmented__item" aria-pressed={listMode === "ranked"} onClick={() => setListMode("ranked")}
+                              title="Ranked on DESC 2024–28, the edition Sperry's answer key uses (six-case benchmark)">Ranked · benchmark</button>
+                      <button type="button" className="segmented__item" aria-pressed={listMode === "now"} onClick={() => setListMode("now")}
+                              title="Ranked on each project's latest published date; finished work drops out">Coordination now · latest plans</button>
+                    </div>
+                    {listMode === "now" && opps.status === "ok" && (
+                      <CoordinationNow opportunities={all} changes={changeList} today={new Date().toISOString().slice(0, 10)} onOpen={openDetail} />
+                    )}
+                    {listMode === "ranked" && opps.status === "loading" && <Skeleton />}
                     {opps.status === "error" && <ErrorCard message={opps.message} onRetry={retryOpps} />}
-                    {opps.status === "ok" && (
+                    {listMode === "ranked" && opps.status === "ok" && (
                       <OpportunityTable items={items} total={all.length} filters={filters} onFilters={setFilters} selectedId={selectedId}
                                         onSelect={choose} onOpen={openDetail} onHover={setHoveredId} triage={triage} method={method}
                                         distance={distance} onWiden={() => setDistance(50)} csvUrl={api.csvUrl({ d: distance, method })}

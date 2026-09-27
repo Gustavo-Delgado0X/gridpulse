@@ -563,3 +563,10 @@ p.sidebar__item { margin: 0; cursor: default; } /* labels, not controls: no poin
 @media (max-width: 900px) { .voice-agent { right: 12px; bottom: 12px; } }
 .sidebar__ask { font-weight: 600; }
 .sidebar__mic { width: 16px; text-align: center; flex-shrink: 0; }
+
+/* List mode switch and Coordination now */
+.list-mode { margin: 10px 12px 0; }
+.now { overflow-y: auto; }
+.now__note { margin: 0; padding: 0 12px 8px; line-height: 1.45; }
+.now__plan { margin: 0 0 4px 22px; color: var(--text-muted); }
+.now__plan .mono { color: var(--text-primary); }
