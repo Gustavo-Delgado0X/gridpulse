@@ -118,3 +118,22 @@ def synthesize(text: str) -> bytes:
     if len(_cache) > CACHE_SIZE:
         _cache.popitem(last=False)
     return audio
+
+
+# --- Voice agent (ElevenLabs Agents): the browser talks to the agent over a signed, short-lived URL. ---
+SIGNED_URL = "https://api.elevenlabs.io/v1/convai/conversation/get-signed-url?agent_id={agent}"
+AGENT_ID = re.compile(r"agent_[A-Za-z0-9]{6,64}")
+
+
+def agent_id() -> str | None:
+    value = (os.environ.get("ELEVENLABS_AGENT_ID") or "").strip()
+    return value if AGENT_ID.fullmatch(value) else None
+
+
+def signed_session_url() -> str:
+    key, agent = api_key(), agent_id()
+    if key is None or agent is None:
+        raise VoiceError("voice agent is not configured")
+    request = Request(SIGNED_URL.format(agent=agent), headers={"xi-api-key": key})
+    with urlopen(request, timeout=TIMEOUT_S) as response:
+        return json.loads(response.read())["signed_url"]
