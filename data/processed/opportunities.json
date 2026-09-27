@@ -183,6 +183,42 @@
    "rank": 5
   },
   {
+   "id": "desc-2428-139-m-n__gpc-20067",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20067",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 18.416,
+   "dist_center_mi": 20.072,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 6
+  },
+  {
    "id": "desc-2428-6367-d-g__gpc-20066",
    "a": "desc-2428-6367-d-g",
    "b": "gpc-20066",
@@ -216,7 +252,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 6
+   "rank": 7
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20067",
@@ -252,7 +288,46 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 7
+   "rank": 8
+  },
+  {
+   "id": "desc-2428-6367-d-g__gpc-19523",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-19523",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 23.731,
+   "dist_center_mi": 25.556,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.35912,
+     -81.1246
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.346439000000004,
+     -81.0785475
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 366,
+   "in_service_gap_days": 364,
+   "timeline_label": "same_window",
+   "flags": [
+    "method_disagree",
+    "sources_disagree"
+   ],
+   "rank": 9
   },
   {
    "id": "desc-2428-6808-s__gpc-20277",
@@ -288,7 +363,43 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 8
+   "rank": 10
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20277",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20277",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 8.438,
+   "dist_center_mi": 8.421,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 11
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20785",
@@ -326,7 +437,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 9
+   "rank": 12
   },
   {
    "id": "desc-2428-6808-s__gpc-20785",
@@ -364,7 +475,45 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 10
+   "rank": 13
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20785",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20785",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 11.901,
+   "dist_center_mi": 12.627,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.248701199999985,
+     -81.2094724
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 882,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 14
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20783",
@@ -400,7 +549,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 11
+   "rank": 15
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20407",
@@ -436,7 +585,43 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 12
+   "rank": 16
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-14222",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-14222",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 22.247,
+   "dist_center_mi": 22.212,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.453954999999986,
+     -82.414219
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.453955,
+     -82.414219
+    ]
+   ],
+   "window_overlap_days": 152,
+   "in_service_gap_days": 2709,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 17
   },
   {
    "id": "desc-2428-6808-s__gpc-20066",
@@ -472,7 +657,43 @@
    "in_service_gap_days": 365,
    "timeline_label": "within_1y",
    "flags": [],
-   "rank": 13
+   "rank": 18
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20066",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20066",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 18.416,
+   "dist_center_mi": 19.686,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 517,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 19
   },
   {
    "id": "desc-2428-6808-s__gpc-20065",
@@ -510,7 +731,45 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 14
+   "rank": 20
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20065",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20065",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 8.842,
+   "dist_center_mi": 9.809,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 882,
+   "timeline_label": "separate",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 21
   },
   {
    "id": "desc-2428-6808-s__gpc-20783",
@@ -546,7 +805,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 15
+   "rank": 22
   },
   {
    "id": "desc-2428-6808-s__gpc-20407",
@@ -582,7 +841,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 16
+   "rank": 23
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21023",
@@ -618,7 +877,43 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 17
+   "rank": 24
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20783",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20783",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 19.294,
+   "dist_center_mi": 19.385,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 25
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21006",
@@ -654,7 +949,43 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 18
+   "rank": 26
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20407",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20407",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 21.664,
+   "dist_center_mi": 21.721,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 27
   },
   {
    "id": "desc-2428-6808-s__gpc-21023",
@@ -690,7 +1021,7 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 19
+   "rank": 28
   },
   {
    "id": "desc-2428-6808-s__gpc-21006",
@@ -726,7 +1057,79 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 20
+   "rank": 29
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-21023",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-21023",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 19.521,
+   "dist_center_mi": 22.783,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 30
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-21006",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-21006",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 21.197,
+   "dist_center_mi": 21.408,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.041230799999994,
+     -81.1444637
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 31
   },
   {
    "id": "desc-2428-6810-o__gpc-20793",
@@ -762,7 +1165,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 21
+   "rank": 32
   },
   {
    "id": "desc-2428-6810-o__gpc-20794",
@@ -798,7 +1201,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 22
+   "rank": 33
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20784",
@@ -836,7 +1239,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 23
+   "rank": 34
   },
   {
    "id": "desc-2428-6852__gpc-20793",
@@ -872,7 +1275,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 24
+   "rank": 35
   },
   {
    "id": "desc-2428-6852__gpc-20794",
@@ -908,7 +1311,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 25
+   "rank": 36
   },
   {
    "id": "desc-2428-6810-o__gpc-17993",
@@ -944,7 +1347,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 26
+   "rank": 37
   },
   {
    "id": "desc-2428-6808-s__gpc-20784",
@@ -982,7 +1385,117 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 27
+   "rank": 38
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-20793",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-20793",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 6.888,
+   "dist_center_mi": 8.014,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.543994,
+     -82.168648
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 39
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-20794",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-20794",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 6.888,
+   "dist_center_mi": 8.014,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 40
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20784",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20784",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 19.294,
+   "dist_center_mi": 20.867,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 41
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20796",
@@ -1018,7 +1531,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 28
+   "rank": 42
   },
   {
    "id": "desc-2428-6808-s__gpc-20796",
@@ -1056,7 +1569,7 @@
    "flags": [
     "method_disagree"
    ],
-   "rank": 29
+   "rank": 43
   },
   {
    "id": "desc-2428-6852__gpc-17993",
@@ -1094,7 +1607,7 @@
    "flags": [
     "method_disagree"
    ],
-   "rank": 30
+   "rank": 44
   },
   {
    "id": "desc-2428-6809-e__gpc-20793",
@@ -1130,7 +1643,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 31
+   "rank": 45
   },
   {
    "id": "desc-2428-6809-e__gpc-20794",
@@ -1166,7 +1679,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 32
+   "rank": 46
   },
   {
    "id": "desc-2428-6810-a__gpc-14222",
@@ -1202,7 +1715,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 33
+   "rank": 47
   },
   {
    "id": "desc-2428-6809-e__gpc-14222",
@@ -1238,7 +1751,79 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 34
+   "rank": 48
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20796",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20796",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 23.197,
+   "dist_center_mi": 23.181,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 49
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-17993",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-17993",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 6.888,
+   "dist_center_mi": 14.509,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.4989746,
+     -82.29143355
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3287,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 50
   },
   {
    "id": "desc-2428-6809-e__gpc-17993",
@@ -1274,7 +1859,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 35
+   "rank": 51
   },
   {
    "id": "desc-2428-6810-a__gpc-17993",
@@ -1310,7 +1895,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 36
+   "rank": 52
   },
   {
    "id": "desc-2428-6367-d-g__gpc-17075",
@@ -1346,7 +1931,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 37
+   "rank": 53
   },
   {
    "id": "desc-2428-6359__gpc-20277",
@@ -1382,7 +1967,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 38
+   "rank": 54
   },
   {
    "id": "desc-2428-6808-l__gpc-17075",
@@ -1418,7 +2003,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 39
+   "rank": 55
   },
   {
    "id": "desc-2428-6359__gpc-20066",
@@ -1454,7 +2039,157 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 40
+   "rank": 56
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-20326",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-20326",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.272,
+   "dist_center_mi": 45.27,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.00183239999999,
+     -82.6362788
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.0018324,
+     -82.6362788
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 57
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-19523",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-19523",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.597,
+   "dist_center_mi": 27.563,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 1,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 58
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-19523",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-19523",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.119,
+   "dist_center_mi": 47.057,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 1,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 59
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-19523",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-19523",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.597,
+   "dist_center_mi": 31.348,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.2843925,
+     -80.9429395
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 366,
+   "in_service_gap_days": 151,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 60
   },
   {
    "id": "desc-2428-6808-l__gpc-20277",
@@ -1490,7 +2225,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 41
+   "rank": 61
   },
   {
    "id": "desc-2428-6808-k__gpc-20067",
@@ -1526,7 +2261,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 42
+   "rank": 62
   },
   {
    "id": "desc-2428-6808-l__gpc-20066",
@@ -1562,7 +2297,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 43
+   "rank": 63
   },
   {
    "id": "desc-2428-6808-s__gpc-17075",
@@ -1598,7 +2333,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 44
+   "rank": 64
   },
   {
    "id": "desc-2428-6808-l__gpc-20067",
@@ -1634,7 +2369,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 45
+   "rank": 65
   },
   {
    "id": "desc-2428-6810-o__gpc-19248",
@@ -1670,7 +2405,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 46
+   "rank": 66
   },
   {
    "id": "desc-2428-6852__gpc-19248",
@@ -1706,7 +2441,81 @@
    "in_service_gap_days": 293,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 47
+   "rank": 67
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-19523",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-19523",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.119,
+   "dist_center_mi": 47.057,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 366,
+   "in_service_gap_days": 364,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 68
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-17075",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-17075",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.977,
+   "dist_center_mi": 26.018,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 69
   },
   {
    "id": "desc-2428-6359__gpc-20065",
@@ -1744,7 +2553,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 48
+   "rank": 70
   },
   {
    "id": "desc-2428-6810-a__gpc-20326",
@@ -1780,7 +2589,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 49
+   "rank": 71
   },
   {
    "id": "desc-2428-6359__gpc-20785",
@@ -1818,7 +2627,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 50
+   "rank": 72
   },
   {
    "id": "desc-2428-6808-k__gpc-17075",
@@ -1854,7 +2663,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 51
+   "rank": 73
   },
   {
    "id": "desc-2428-6359__gpc-20067",
@@ -1890,7 +2699,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 52
+   "rank": 74
   },
   {
    "id": "desc-2428-6809-e__gpc-20326",
@@ -1926,7 +2735,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 53
+   "rank": 75
   },
   {
    "id": "desc-2428-6808-k__gpc-20277",
@@ -1962,7 +2771,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 54
+   "rank": 76
   },
   {
    "id": "desc-2428-6808-l__gpc-20065",
@@ -2000,7 +2809,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 55
+   "rank": 77
   },
   {
    "id": "desc-2428-6808-l__gpc-20785",
@@ -2038,7 +2847,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 56
+   "rank": 78
   },
   {
    "id": "desc-2428-6359__gpc-20783",
@@ -2074,7 +2883,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 57
+   "rank": 79
   },
   {
    "id": "desc-2428-6359__gpc-20407",
@@ -2110,7 +2919,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 58
+   "rank": 80
   },
   {
    "id": "desc-2428-6808-k__gpc-20785",
@@ -2148,7 +2957,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 59
+   "rank": 81
   },
   {
    "id": "desc-2428-6808-l__gpc-20407",
@@ -2184,7 +2993,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 60
+   "rank": 82
   },
   {
    "id": "desc-2428-6808-l__gpc-20783",
@@ -2220,7 +3029,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 61
+   "rank": 83
   },
   {
    "id": "desc-2428-6359__gpc-21023",
@@ -2256,7 +3065,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 62
+   "rank": 84
   },
   {
    "id": "desc-2428-6810-f__gpc-20793",
@@ -2292,7 +3101,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 63
+   "rank": 85
   },
   {
    "id": "desc-2428-6810-o__gpc-20756",
@@ -2328,7 +3137,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 64
+   "rank": 86
   },
   {
    "id": "desc-2428-6852__gpc-20756",
@@ -2364,7 +3173,7 @@
    "in_service_gap_days": 1754,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 65
+   "rank": 87
   },
   {
    "id": "desc-2428-6810-o__gpc-14222",
@@ -2400,7 +3209,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 66
+   "rank": 88
   },
   {
    "id": "desc-2428-6852__gpc-14222",
@@ -2436,7 +3245,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 67
+   "rank": 89
   },
   {
    "id": "desc-2428-6808-k__gpc-20066",
@@ -2472,7 +3281,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 68
+   "rank": 90
   },
   {
    "id": "desc-2428-6808-k__gpc-20065",
@@ -2510,7 +3319,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 69
+   "rank": 91
   },
   {
    "id": "desc-2428-6810-o__gpc-19996",
@@ -2546,7 +3355,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 70
+   "rank": 92
   },
   {
    "id": "desc-2428-6359__gpc-21006",
@@ -2582,7 +3391,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 71
+   "rank": 93
   },
   {
    "id": "desc-2428-6810-f__gpc-20794",
@@ -2618,7 +3427,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 72
+   "rank": 94
   },
   {
    "id": "desc-2428-6808-k__gpc-20407",
@@ -2654,7 +3463,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 73
+   "rank": 95
   },
   {
    "id": "desc-2428-6808-l__gpc-21006",
@@ -2690,7 +3499,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 74
+   "rank": 96
   },
   {
    "id": "desc-2428-6808-k__gpc-20783",
@@ -2726,7 +3535,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 75
+   "rank": 97
   },
   {
    "id": "desc-2428-6808-l__gpc-21023",
@@ -2762,7 +3571,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 76
+   "rank": 98
   },
   {
    "id": "desc-2428-6852__gpc-19996",
@@ -2798,7 +3607,7 @@
    "in_service_gap_days": 1389,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 77
+   "rank": 99
   },
   {
    "id": "desc-2428-6808-k__gpc-21006",
@@ -2834,7 +3643,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 78
+   "rank": 100
   },
   {
    "id": "desc-2428-6808-k__gpc-21023",
@@ -2870,7 +3679,43 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 79
+   "rank": 101
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-19996",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-19996",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 38.815,
+   "dist_center_mi": 38.752,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 102
   },
   {
    "id": "desc-2428-6810-f__gpc-17993",
@@ -2906,7 +3751,7 @@
    "in_service_gap_days": 1826,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 80
+   "rank": 103
   },
   {
    "id": "desc-2428-6810-a__gpc-19996",
@@ -2942,7 +3787,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 81
+   "rank": 104
   },
   {
    "id": "desc-2428-6809-e__gpc-19996",
@@ -2978,7 +3823,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 82
+   "rank": 105
   },
   {
    "id": "desc-2428-6359__gpc-20784",
@@ -3016,7 +3861,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 83
+   "rank": 106
   },
   {
    "id": "desc-2428-6808-l__gpc-20784",
@@ -3054,7 +3899,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 84
+   "rank": 107
   },
   {
    "id": "desc-2428-6359__gpc-20796",
@@ -3090,7 +3935,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 85
+   "rank": 108
   },
   {
    "id": "desc-2428-6808-k__gpc-20784",
@@ -3128,7 +3973,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 86
+   "rank": 109
   },
   {
    "id": "desc-2428-6809-n__gpc-20793",
@@ -3164,7 +4009,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 87
+   "rank": 110
   },
   {
    "id": "desc-2428-6809-n__gpc-20794",
@@ -3200,7 +4045,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 88
+   "rank": 111
   },
   {
    "id": "desc-2428-6808-l__gpc-20796",
@@ -3236,7 +4081,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 89
+   "rank": 112
   },
   {
    "id": "desc-2428-6371-d__gpc-20793",
@@ -3272,7 +4117,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 90
+   "rank": 113
   },
   {
    "id": "desc-2428-6371-d__gpc-20794",
@@ -3308,7 +4153,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 91
+   "rank": 114
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20787",
@@ -3346,7 +4191,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 92
+   "rank": 115
   },
   {
    "id": "desc-2428-6808-k__gpc-20796",
@@ -3382,7 +4227,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 93
+   "rank": 116
   },
   {
    "id": "desc-2428-6808-l__gpc-20787",
@@ -3420,7 +4265,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 94
+   "rank": 117
   },
   {
    "id": "desc-2428-6808-s__gpc-20787",
@@ -3458,7 +4303,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 95
+   "rank": 118
   },
   {
    "id": "desc-2428-6809-n__gpc-17993",
@@ -3494,7 +4339,7 @@
    "in_service_gap_days": 3287,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 96
+   "rank": 119
   },
   {
    "id": "desc-2428-6371-d__gpc-17993",
@@ -3530,7 +4375,45 @@
    "in_service_gap_days": 3287,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 97
+   "rank": 120
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20787",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20787",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.977,
+   "dist_center_mi": 26.018,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3439,
+   "timeline_label": "separate",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 121
   },
   {
    "id": "desc-2428-6808-k__gpc-20787",
@@ -3568,7 +4451,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 98
+   "rank": 122
   }
  ],
  "center": [
@@ -3717,6 +4600,42 @@
    "rank": 4
   },
   {
+   "id": "desc-2428-139-m-n__gpc-20067",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20067",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 18.416,
+   "dist_center_mi": 20.072,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.044757399999995,
+     -81.0672826
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 5
+  },
+  {
    "id": "desc-2428-6367-d-g__gpc-20066",
    "a": "desc-2428-6367-d-g",
    "b": "gpc-20066",
@@ -3750,7 +4669,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 5
+   "rank": 6
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20067",
@@ -3786,7 +4705,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 6
+   "rank": 7
   },
   {
    "id": "desc-2428-6808-s__gpc-20277",
@@ -3822,7 +4741,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 7
+   "rank": 8
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20065",
@@ -3860,7 +4779,43 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 8
+   "rank": 9
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20277",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20277",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 8.438,
+   "dist_center_mi": 8.421,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.352116,
+     -81.175112
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 517,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 10
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20785",
@@ -3898,7 +4853,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 9
+   "rank": 11
   },
   {
    "id": "desc-2428-6808-s__gpc-20785",
@@ -3936,7 +4891,45 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 10
+   "rank": 12
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20785",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20785",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 11.901,
+   "dist_center_mi": 12.627,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.248701199999985,
+     -81.2094724
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.19841825,
+     -81.17772794999999
+    ]
+   ],
+   "window_overlap_days": 213,
+   "in_service_gap_days": 882,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 13
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20783",
@@ -3972,7 +4965,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 11
+   "rank": 14
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20407",
@@ -4008,7 +5001,43 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 12
+   "rank": 15
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-14222",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-14222",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 22.247,
+   "dist_center_mi": 22.212,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.453954999999986,
+     -82.414219
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.453955,
+     -82.414219
+    ]
+   ],
+   "window_overlap_days": 152,
+   "in_service_gap_days": 2709,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 16
   },
   {
    "id": "desc-2428-6808-s__gpc-20066",
@@ -4044,7 +5073,43 @@
    "in_service_gap_days": 365,
    "timeline_label": "within_1y",
    "flags": [],
-   "rank": 13
+   "rank": 17
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20066",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20066",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 18.416,
+   "dist_center_mi": 19.686,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.06682789999998,
+     -81.0483845
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.05402935,
+     -81.09642410000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 517,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 18
   },
   {
    "id": "desc-2428-6808-s__gpc-20065",
@@ -4082,7 +5147,45 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 14
+   "rank": 19
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20065",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20065",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 8.842,
+   "dist_center_mi": 9.809,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.352116,
+     -81.182105
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.3004085,
+     -81.1957885
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 882,
+   "timeline_label": "separate",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 20
   },
   {
    "id": "desc-2428-6808-s__gpc-20783",
@@ -4118,7 +5221,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 15
+   "rank": 21
   },
   {
    "id": "desc-2428-6808-s__gpc-20407",
@@ -4154,7 +5257,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 16
+   "rank": 22
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21023",
@@ -4190,7 +5293,43 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 17
+   "rank": 23
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20783",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20783",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 19.294,
+   "dist_center_mi": 19.385,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0956148,
+     -81.20781715
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 24
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21006",
@@ -4226,7 +5365,43 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 18
+   "rank": 25
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20407",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20407",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 21.664,
+   "dist_center_mi": 21.721,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.022686899999975,
+     -81.0861807
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0226869,
+     -81.0861807
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1248,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 26
   },
   {
    "id": "desc-2428-6808-s__gpc-21023",
@@ -4262,7 +5437,7 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 19
+   "rank": 27
   },
   {
    "id": "desc-2428-6808-s__gpc-21006",
@@ -4298,7 +5473,79 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 20
+   "rank": 28
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-21023",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-21023",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 19.521,
+   "dist_center_mi": 22.783,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 29
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-21006",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-21006",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 21.197,
+   "dist_center_mi": 21.408,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.041230799999994,
+     -81.1444637
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.031958849999995,
+     -81.11532220000001
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 30
   },
   {
    "id": "desc-2428-6810-o__gpc-20793",
@@ -4334,7 +5581,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 21
+   "rank": 31
   },
   {
    "id": "desc-2428-6810-o__gpc-20794",
@@ -4370,7 +5617,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 22
+   "rank": 32
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20784",
@@ -4408,7 +5655,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 23
+   "rank": 33
   },
   {
    "id": "desc-2428-6852__gpc-20793",
@@ -4444,7 +5691,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 24
+   "rank": 34
   },
   {
    "id": "desc-2428-6852__gpc-20794",
@@ -4480,7 +5727,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 25
+   "rank": 35
   },
   {
    "id": "desc-2428-6810-o__gpc-17993",
@@ -4516,7 +5763,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 26
+   "rank": 36
   },
   {
    "id": "desc-2428-6808-s__gpc-20784",
@@ -4554,7 +5801,117 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 27
+   "rank": 37
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-20793",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-20793",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 6.888,
+   "dist_center_mi": 8.014,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.543994,
+     -82.168648
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.6020605,
+     -82.1822895
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 38
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-20794",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-20794",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 6.888,
+   "dist_center_mi": 8.014,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 39
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20784",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20784",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 19.294,
+   "dist_center_mi": 20.867,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.107719899999985,
+     -81.226912
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.131501,
+     -81.29764449999999
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2709,
+   "timeline_label": "separate",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 40
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20796",
@@ -4590,7 +5947,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 28
+   "rank": 41
   },
   {
    "id": "desc-2428-6809-e__gpc-20793",
@@ -4626,7 +5983,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 29
+   "rank": 42
   },
   {
    "id": "desc-2428-6809-e__gpc-20794",
@@ -4662,7 +6019,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 30
+   "rank": 43
   },
   {
    "id": "desc-2428-6810-a__gpc-14222",
@@ -4698,7 +6055,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 31
+   "rank": 44
   },
   {
    "id": "desc-2428-6809-e__gpc-14222",
@@ -4734,7 +6091,79 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 32
+   "rank": 45
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20796",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20796",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 23.197,
+   "dist_center_mi": 23.181,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 46
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-17993",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-17993",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 6.888,
+   "dist_center_mi": 14.509,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.54399419999999,
+     -82.1686481
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.4989746,
+     -82.29143355
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3287,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 47
   },
   {
    "id": "desc-2428-6809-e__gpc-17993",
@@ -4770,7 +6199,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 33
+   "rank": 48
   },
   {
    "id": "desc-2428-6810-a__gpc-17993",
@@ -4806,7 +6235,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 34
+   "rank": 49
   },
   {
    "id": "desc-2428-6367-d-g__gpc-17075",
@@ -4842,7 +6271,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 35
+   "rank": 50
   },
   {
    "id": "desc-2428-6359__gpc-20277",
@@ -4878,7 +6307,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 36
+   "rank": 51
   },
   {
    "id": "desc-2428-6808-l__gpc-17075",
@@ -4914,7 +6343,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 37
+   "rank": 52
   },
   {
    "id": "desc-2428-6359__gpc-20066",
@@ -4950,7 +6379,157 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 38
+   "rank": 53
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-20326",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-20326",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 45.272,
+   "dist_center_mi": 45.27,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.00183239999999,
+     -82.6362788
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     34.0018324,
+     -82.6362788
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 0,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 54
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-19523",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-19523",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.597,
+   "dist_center_mi": 27.563,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 1,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 55
+  },
+  {
+   "id": "desc-2428-6808-k__gpc-19523",
+   "a": "desc-2428-6808-k",
+   "b": "gpc-19523",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.119,
+   "dist_center_mi": 47.057,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 1,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 56
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-19523",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-19523",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 27.597,
+   "dist_center_mi": 31.348,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.2843925,
+     -80.9429395
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 366,
+   "in_service_gap_days": 151,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 57
   },
   {
    "id": "desc-2428-6808-l__gpc-20277",
@@ -4986,7 +6565,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 39
+   "rank": 58
   },
   {
    "id": "desc-2428-6808-k__gpc-20067",
@@ -5022,7 +6601,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 40
+   "rank": 59
   },
   {
    "id": "desc-2428-6808-l__gpc-20066",
@@ -5058,7 +6637,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 41
+   "rank": 60
   },
   {
    "id": "desc-2428-6808-s__gpc-17075",
@@ -5094,7 +6673,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 42
+   "rank": 61
   },
   {
    "id": "desc-2428-6808-l__gpc-20067",
@@ -5130,7 +6709,120 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 43
+   "rank": 62
+  },
+  {
+   "id": "desc-2428-6367-d-g__gpc-19523",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-19523",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 23.731,
+   "dist_center_mi": 25.556,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.35912,
+     -81.1246
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.346439000000004,
+     -81.0785475
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 366,
+   "in_service_gap_days": 364,
+   "timeline_label": "same_window",
+   "flags": [
+    "method_disagree",
+    "sources_disagree"
+   ],
+   "rank": 63
+  },
+  {
+   "id": "desc-2428-6808-l__gpc-19523",
+   "a": "desc-2428-6808-l",
+   "b": "gpc-19523",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 47.119,
+   "dist_center_mi": 47.057,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.4364883,
+     -80.7210159
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 366,
+   "in_service_gap_days": 364,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 64
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-17075",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-17075",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.977,
+   "dist_center_mi": 26.018,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 365,
+   "in_service_gap_days": 365,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 65
   },
   {
    "id": "desc-2428-6359__gpc-20065",
@@ -5168,7 +6860,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 44
+   "rank": 66
   },
   {
    "id": "desc-2428-6810-a__gpc-20326",
@@ -5204,7 +6896,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 45
+   "rank": 67
   },
   {
    "id": "desc-2428-6359__gpc-20785",
@@ -5242,7 +6934,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 46
+   "rank": 68
   },
   {
    "id": "desc-2428-6808-k__gpc-17075",
@@ -5278,7 +6970,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 47
+   "rank": 69
   },
   {
    "id": "desc-2428-6359__gpc-20067",
@@ -5314,7 +7006,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 48
+   "rank": 70
   },
   {
    "id": "desc-2428-6809-e__gpc-20326",
@@ -5350,7 +7042,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 49
+   "rank": 71
   },
   {
    "id": "desc-2428-6808-k__gpc-20277",
@@ -5386,7 +7078,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 50
+   "rank": 72
   },
   {
    "id": "desc-2428-6808-l__gpc-20065",
@@ -5424,7 +7116,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 51
+   "rank": 73
   },
   {
    "id": "desc-2428-6808-l__gpc-20785",
@@ -5462,7 +7154,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 52
+   "rank": 74
   },
   {
    "id": "desc-2428-6359__gpc-20783",
@@ -5498,7 +7190,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 53
+   "rank": 75
   },
   {
    "id": "desc-2428-6359__gpc-20407",
@@ -5534,7 +7226,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 54
+   "rank": 76
   },
   {
    "id": "desc-2428-6808-k__gpc-20785",
@@ -5572,7 +7264,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 55
+   "rank": 77
   },
   {
    "id": "desc-2428-6808-l__gpc-20407",
@@ -5608,7 +7300,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 56
+   "rank": 78
   },
   {
    "id": "desc-2428-6808-l__gpc-20783",
@@ -5644,7 +7336,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 57
+   "rank": 79
   },
   {
    "id": "desc-2428-6359__gpc-21023",
@@ -5680,7 +7372,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 58
+   "rank": 80
   },
   {
    "id": "desc-2428-6810-f__gpc-20793",
@@ -5716,7 +7408,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 59
+   "rank": 81
   },
   {
    "id": "desc-2428-6810-o__gpc-14222",
@@ -5752,7 +7444,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 60
+   "rank": 82
   },
   {
    "id": "desc-2428-6852__gpc-14222",
@@ -5788,7 +7480,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 61
+   "rank": 83
   },
   {
    "id": "desc-2428-6808-k__gpc-20066",
@@ -5824,7 +7516,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 62
+   "rank": 84
   },
   {
    "id": "desc-2428-6808-k__gpc-20065",
@@ -5862,7 +7554,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 63
+   "rank": 85
   },
   {
    "id": "desc-2428-6810-o__gpc-19996",
@@ -5898,7 +7590,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 64
+   "rank": 86
   },
   {
    "id": "desc-2428-6359__gpc-21006",
@@ -5934,7 +7626,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 65
+   "rank": 87
   },
   {
    "id": "desc-2428-6810-f__gpc-20794",
@@ -5970,7 +7662,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 66
+   "rank": 88
   },
   {
    "id": "desc-2428-6808-k__gpc-20407",
@@ -6006,7 +7698,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 67
+   "rank": 89
   },
   {
    "id": "desc-2428-6808-l__gpc-21006",
@@ -6042,7 +7734,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 68
+   "rank": 90
   },
   {
    "id": "desc-2428-6808-k__gpc-20783",
@@ -6078,7 +7770,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 69
+   "rank": 91
   },
   {
    "id": "desc-2428-6808-l__gpc-21023",
@@ -6114,7 +7806,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 70
+   "rank": 92
   },
   {
    "id": "desc-2428-6808-k__gpc-21006",
@@ -6150,7 +7842,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 71
+   "rank": 93
   },
   {
    "id": "desc-2428-6808-k__gpc-21023",
@@ -6186,7 +7878,43 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 72
+   "rank": 94
+  },
+  {
+   "id": "desc-2428-6809-g__gpc-19996",
+   "a": "desc-2428-6809-g",
+   "b": "gpc-19996",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 38.815,
+   "dist_center_mi": 38.752,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.38050069999999,
+     -82.687296
+    ]
+   ],
+   "centers": [
+    [
+     33.562599,
+     -82.051362
+    ],
+    [
+     33.3805007,
+     -82.687296
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1613,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 95
   },
   {
    "id": "desc-2428-6810-f__gpc-17993",
@@ -6222,7 +7950,7 @@
    "in_service_gap_days": 1826,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 73
+   "rank": 96
   },
   {
    "id": "desc-2428-6810-a__gpc-19996",
@@ -6258,7 +7986,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 74
+   "rank": 97
   },
   {
    "id": "desc-2428-6809-e__gpc-19996",
@@ -6294,7 +8022,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 75
+   "rank": 98
   },
   {
    "id": "desc-2428-6359__gpc-20784",
@@ -6332,7 +8060,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 76
+   "rank": 99
   },
   {
    "id": "desc-2428-6808-l__gpc-20784",
@@ -6370,7 +8098,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 77
+   "rank": 100
   },
   {
    "id": "desc-2428-6359__gpc-20796",
@@ -6406,7 +8134,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 78
+   "rank": 101
   },
   {
    "id": "desc-2428-6808-k__gpc-20784",
@@ -6444,7 +8172,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 79
+   "rank": 102
   },
   {
    "id": "desc-2428-6809-n__gpc-20793",
@@ -6480,7 +8208,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 80
+   "rank": 103
   },
   {
    "id": "desc-2428-6809-n__gpc-20794",
@@ -6516,7 +8244,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 81
+   "rank": 104
   },
   {
    "id": "desc-2428-6808-l__gpc-20796",
@@ -6552,7 +8280,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 82
+   "rank": 105
   },
   {
    "id": "desc-2428-6371-d__gpc-20793",
@@ -6588,7 +8316,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 83
+   "rank": 106
   },
   {
    "id": "desc-2428-6371-d__gpc-20794",
@@ -6624,7 +8352,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 84
+   "rank": 107
   },
   {
    "id": "desc-2428-6808-s__gpc-20796",
@@ -6662,7 +8390,7 @@
    "flags": [
     "method_disagree"
    ],
-   "rank": 85
+   "rank": 108
   },
   {
    "id": "desc-2428-6852__gpc-17993",
@@ -6700,7 +8428,7 @@
    "flags": [
     "method_disagree"
    ],
-   "rank": 86
+   "rank": 109
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20787",
@@ -6738,7 +8466,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 87
+   "rank": 110
   },
   {
    "id": "desc-2428-6808-k__gpc-20796",
@@ -6774,7 +8502,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 88
+   "rank": 111
   },
   {
    "id": "desc-2428-6808-l__gpc-20787",
@@ -6812,7 +8540,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 89
+   "rank": 112
   },
   {
    "id": "desc-2428-6808-s__gpc-20787",
@@ -6850,7 +8578,45 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 90
+   "rank": 113
+  },
+  {
+   "id": "desc-2428-139-m-n__gpc-20787",
+   "a": "desc-2428-139-m-n",
+   "b": "gpc-20787",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 25.977,
+   "dist_center_mi": 26.018,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.333757999999996,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "centers": [
+    [
+     32.333758,
+     -81.032495
+    ],
+    [
+     32.0067859,
+     -81.2531513
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3439,
+   "timeline_label": "separate",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 114
   },
   {
    "id": "desc-2428-6808-k__gpc-20787",
@@ -6888,7 +8654,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 91
+   "rank": 115
   }
  ]
 }

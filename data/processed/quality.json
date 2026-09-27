@@ -1,12 +1,12 @@
 {
  "coverage": {
   "projects": 182,
-  "projects_located": 101,
-  "projects_unlocated": 81,
+  "projects_located": 104,
+  "projects_unlocated": 78,
   "endpoints_by_precision": {
-   "sperry_provided": 16,
-   "unresolved": 197,
-   "osm_feature": 114
+   "sperry_provided": 17,
+   "unresolved": 194,
+   "osm_feature": 116
   }
  },
  "acceptance": {
@@ -272,5 +272,5 @@
    "message": "SAV: LITTLE OGEECHEE 230/115KV BANK REPLACEMENT: IRP 2034 vs SERTP 2026: 2029"
   }
  ],
- "built_at": "2026-09-27T04:30:01.545795+00:00"
+ "built_at": "2026-09-27T04:37:38.944690+00:00"
 }

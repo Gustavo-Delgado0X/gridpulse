@@ -17,8 +17,8 @@ GridPulse reads the public transmission plans of **Dominion Energy South Carolin
 | | |
 |---|---|
 | Projects parsed | 182 (44 DESC 2024–28 + 138 GPC/SAV from the 2025 IRP), plus 70 other-utility rows kept but hidden |
-| Projects located | 101 (OpenStreetMap substations, confirmed against PDF context, plus Sperry's coordinates) |
-| DESC × GPC pairs within 25 mi (closest points) | 36: **2 × T1**, 2 × T3, 32 × T4. 10 of them share a build window |
+| Projects located | 104 (OpenStreetMap substations, confirmed against PDF context, plus Sperry's coordinates) |
+| DESC × GPC pairs within 25 mi (closest points) | 52: **2 × T1**, 2 × T3, 48 × T4. 15 of them share a build window |
 | Plan-change events | 322 across DESC 2024–28 → 2025–29 → 2026–30, GPC IRP tables, and IRP vs SERTP 2025/2026 |
 
 What the ranked list shows that the answer key does not:
@@ -76,7 +76,7 @@ data/raw PDFs ──► pipeline/ parse ──► locate (OSM) ──► answer 
 ### Design choices
 
 - **Evidence over assertion.** Every fact carries a verbatim quote and a page number. Derived numbers name their method, and interpretations are labelled `TEMPLATE`.
-- **Honest locations.** Nothing is geocoded by guesswork: 197 endpoints stay `unresolved` and are listed, not drawn. Coordinate conflicts are reported, for example McIntosh vs West McIntosh (0.41 mi) between OSM and the answer key.
+- **Honest locations.** Nothing is geocoded by guesswork: 194 endpoints stay `unresolved` and are listed, not drawn. Coordinate conflicts are reported, for example McIntosh vs West McIntosh (0.41 mi) between OSM and the answer key.
 - **Color is never the only signal.** DESC is always a blue circle and GPC an orange square, each with a text label. Tiers use line weight and dash as well as a text badge.
 
 ## Run it

@@ -310,14 +310,15 @@
    {
     "id": "sc:okatie",
     "name_raw": "Okatie",
-    "lat": null,
-    "lon": null,
-    "precision": "unresolved",
-    "method": "no OSM name match",
-    "source": null,
-    "confirmed_by_pdf_context": false,
+    "lat": 32.333758,
+    "lon": -81.032495,
+    "precision": "sperry_provided",
+    "method": "Sperry answer key coordinate for Okatie Sub (DESC_3, DESC_5) reused for the same facility",
+    "source": "Projects_Overlaps.xlsx",
+    "confirmed_by_pdf_context": true,
     "alternatives": [],
-    "reviewer": null
+    "reviewer": "GridPulse team",
+    "notes": "Okatie is not tagged in OSM"
    }
   ]
  },
@@ -1661,14 +1662,15 @@
    {
     "id": "sc:stevens-creek",
     "name_raw": "Stevens Creek",
-    "lat": null,
-    "lon": null,
-    "precision": "unresolved",
-    "method": "no OSM name match",
-    "source": null,
-    "confirmed_by_pdf_context": false,
+    "lat": 33.562599,
+    "lon": -82.051362,
+    "precision": "osm_feature",
+    "method": "OSM way 1088635944 'Stevens Creek Power Plant' (operator Dominion Energy South Carolina); identical to Sperry key coordinate",
+    "source": "OpenStreetMap (ODbL)",
+    "confirmed_by_pdf_context": true,
     "alternatives": [],
-    "reviewer": null
+    "reviewer": "GridPulse team",
+    "notes": "Plant sits on the GA bank but is a DESC facility; state filter would reject it"
    },
    {
     "id": "sc:hooks",
@@ -4942,14 +4944,15 @@
    {
     "id": "ga:hyundai-motors-savannah-aka-project-ea",
     "name_raw": "HYUNDAI MOTORS SAVANNAH AKA. PROJECT EA",
-    "lat": null,
-    "lon": null,
-    "precision": "unresolved",
-    "method": "no OSM name match",
-    "source": null,
-    "confirmed_by_pdf_context": false,
+    "lat": 32.167,
+    "lon": -81.461,
+    "precision": "osm_feature",
+    "method": "OSM 'Hyundai Motors Substation' inside GPC zone 219 (Savannah)",
+    "source": "OpenStreetMap (ODbL)",
+    "confirmed_by_pdf_context": true,
     "alternatives": [],
-    "reviewer": null
+    "reviewer": "GridPulse team",
+    "notes": "Customer substation for the Hyundai Metaplant"
    }
   ]
  },

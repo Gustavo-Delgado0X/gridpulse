@@ -1,1 +1,4 @@
 endpoint_id,name_raw,lat,lon,precision,method,source,confirmed_by_pdf_context,reviewer,notes
+sc:stevens-creek,Stevens Creek,33.562599,-82.051362,osm_feature,"OSM way 1088635944 'Stevens Creek Power Plant' (operator Dominion Energy South Carolina); identical to Sperry key coordinate",OpenStreetMap (ODbL),true,GridPulse team,Plant sits on the GA bank but is a DESC facility; state filter would reject it
+ga:hyundai-motors-savannah-aka-project-ea,HYUNDAI MOTORS SAVANNAH AKA. PROJECT EA,32.167,-81.461,osm_feature,"OSM 'Hyundai Motors Substation' inside GPC zone 219 (Savannah)",OpenStreetMap (ODbL),true,GridPulse team,Customer substation for the Hyundai Metaplant
+sc:okatie,Okatie,32.333758,-81.032495,sperry_provided,"Sperry answer key coordinate for Okatie Sub (DESC_3, DESC_5) reused for the same facility",Projects_Overlaps.xlsx,true,GridPulse team,Okatie is not tagged in OSM
