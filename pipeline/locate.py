@@ -1,7 +1,7 @@
 """Locate project endpoints (contracts §1.5), following Sperry's "Finding Real Locations" guide.
 
 Order: OSM feature by name (own state, then the neighboring state for tie lines), disambiguated by
-the GPC planning zone; then Sperry answer-key coordinates; then manual overrides; else unresolved.
+the GPC planning zone; then reviewed manual overrides; else unresolved. (Sperry's answer key is a benchmark only.)
 Every result carries precision, method, source and whether context confirmed it: the GPC planning zone, the
 project voltage in the OSM name, or a tie line in the title. A unique name alone is located but not "confirmed";
 several same-named candidates with no context are left unresolved rather than guessed.

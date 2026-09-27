@@ -88,12 +88,12 @@
    {
     "id": "sc:queensboro",
     "name_raw": "Queensboro",
-    "lat": 32.722793,
-    "lon": -79.967332,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key DESC_4",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
+    "lat": null,
+    "lon": null,
+    "precision": "unresolved",
+    "method": "2 OSM features share this name; left unresolved",
+    "source": null,
+    "confirmed_by_pdf_context": false,
     "alternatives": [],
     "reviewer": null
    },
@@ -299,15 +299,14 @@
    {
     "id": "sc:okatie",
     "name_raw": "Okatie",
-    "lat": 32.333758,
-    "lon": -81.032495,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key coordinate for Okatie Sub (DESC_3, DESC_5) reused for the same facility",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
+    "lat": null,
+    "lon": null,
+    "precision": "unresolved",
+    "method": "no OSM name match",
+    "source": null,
+    "confirmed_by_pdf_context": false,
     "alternatives": [],
-    "reviewer": "GridPulse team",
-    "notes": "Okatie is not tagged in OSM"
+    "reviewer": null
    }
   ]
  },
@@ -1082,12 +1081,12 @@
    {
     "id": "sc:okatie",
     "name_raw": "Okatie",
-    "lat": 32.333758,
-    "lon": -81.032495,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key DESC_5",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
+    "lat": null,
+    "lon": null,
+    "precision": "unresolved",
+    "method": "no OSM name match",
+    "source": null,
+    "confirmed_by_pdf_context": false,
     "alternatives": [],
     "reviewer": null
    },
@@ -1096,20 +1095,13 @@
     "name_raw": "Bluffton",
     "osm_name": "Bluffton Substation",
     "osm_operator": "South Carolina Electric & Gas",
-    "lat": 32.235027,
-    "lon": -80.853384,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key DESC_5",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/498967268",
-      "lat": 32.2350272,
-      "lon": -80.8533836,
-      "precision": "osm_feature"
-     }
-    ],
+    "lat": 32.2350272,
+    "lon": -80.8533836,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, unique OSM name in state",
+    "source": "OpenStreetMap (ODbL)",
+    "confirmed_by_pdf_context": false,
+    "alternatives": [],
     "reviewer": null
    }
   ],
@@ -1544,12 +1536,13 @@
     "name_raw": "Stevens Creek",
     "lat": 33.562599,
     "lon": -82.051362,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key DESC_1",
-    "source": "Projects_Overlaps.xlsx",
+    "precision": "osm_feature",
+    "method": "OSM way 1088635944 'Stevens Creek Power Plant' (operator Dominion Energy South Carolina); identical to Sperry key coordinate",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
     "alternatives": [],
-    "reviewer": null
+    "reviewer": "GridPulse team",
+    "notes": "Plant sits on the GA bank but is a DESC facility; state filter would reject it"
    },
    {
     "id": "sc:hooks",
@@ -2495,31 +2488,24 @@
     "name_raw": "Jasper",
     "osm_name": "Jasper Substation",
     "osm_operator": null,
-    "lat": 32.35912,
-    "lon": -81.1246,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key DESC_3",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/185380597",
-      "lat": 32.3606993,
-      "lon": -81.1241523,
-      "precision": "osm_feature"
-     }
-    ],
+    "lat": 32.3606993,
+    "lon": -81.1241523,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, unique OSM name in state",
+    "source": "OpenStreetMap (ODbL)",
+    "confirmed_by_pdf_context": false,
+    "alternatives": [],
     "reviewer": null
    },
    {
     "id": "sc:okatie",
     "name_raw": "Okatie",
-    "lat": 32.333758,
-    "lon": -81.032495,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key DESC_3",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
+    "lat": null,
+    "lon": null,
+    "precision": "unresolved",
+    "method": "no OSM name match",
+    "source": null,
+    "confirmed_by_pdf_context": false,
     "alternatives": [],
     "reviewer": null
    }
@@ -3384,20 +3370,13 @@
     "name_raw": "Thurmond",
     "osm_name": "Thurmond Substation",
     "osm_operator": "Georgia Power",
-    "lat": 33.660127,
-    "lon": -82.195931,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key DESC_2",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/52102019",
-      "lat": 33.6601273,
-      "lon": -82.1959307,
-      "precision": "osm_feature"
-     }
-    ],
+    "lat": 33.6601273,
+    "lon": -82.1959307,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, unique OSM name in state",
+    "source": "OpenStreetMap (ODbL)",
+    "confirmed_by_pdf_context": false,
+    "alternatives": [],
     "reviewer": null
    }
   ],
@@ -5073,23 +5052,17 @@
     "name_raw": "MITCHELL",
     "osm_name": "Mitchell Substation (230kV)",
     "osm_operator": "Georgia Power",
-    "lat": 31.447121,
-    "lon": -84.133843,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_4",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 31.4471208,
+    "lon": -84.1338426,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, 230 kV name match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
     "alternatives": [
      {
       "id": "osm:way/1039823943",
       "lat": 31.44391,
       "lon": -84.1350948
-     },
-     {
-      "id": "osm:way/656743294",
-      "lat": 31.4471208,
-      "lon": -84.1338426,
-      "precision": "osm_feature"
      }
     ],
     "reviewer": null
@@ -5097,12 +5070,12 @@
    {
     "id": "ga:north-tifton",
     "name_raw": "NORTH TIFTON",
-    "lat": 31.478089,
-    "lon": -83.54913,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_4",
-    "source": "Projects_Overlaps.xlsx",
-    "confirmed_by_pdf_context": true,
+    "lat": null,
+    "lon": null,
+    "precision": "unresolved",
+    "method": "2 OSM features share this name; left unresolved",
+    "source": null,
+    "confirmed_by_pdf_context": false,
     "alternatives": [],
     "reviewer": null
    }
@@ -5551,20 +5524,13 @@
     "name_raw": "JESUP",
     "osm_name": "Jesup Substation",
     "osm_operator": "Georgia Power",
-    "lat": 31.603106,
-    "lon": -81.924947,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_5",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 31.6031063,
+    "lon": -81.9249474,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, zone match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/103029795",
-      "lat": 31.6031063,
-      "lon": -81.9249474,
-      "precision": "osm_feature"
-     }
-    ],
+    "alternatives": [],
     "reviewer": null
    },
    {
@@ -5572,20 +5538,13 @@
     "name_raw": "LUDOWICI PRIMARY",
     "osm_name": "Ludowici Primary Substation",
     "osm_operator": "Georgia Power",
-    "lat": 31.721597,
-    "lon": -81.743703,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_5",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 31.7215974,
+    "lon": -81.7437028,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, zone match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/358894868",
-      "lat": 31.7215974,
-      "lon": -81.7437028,
-      "precision": "osm_feature"
-     }
-    ],
+    "alternatives": [],
     "reviewer": null
    }
   ],
@@ -9048,20 +9007,13 @@
     "name_raw": "MCINTOSH",
     "osm_name": "McIntosh Substation",
     "osm_operator": "Georgia Power",
-    "lat": 32.352116,
-    "lon": -81.175112,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_2",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 32.3521162,
+    "lon": -81.1751124,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, zone match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/121624352",
-      "lat": 32.3521162,
-      "lon": -81.1751124,
-      "precision": "osm_feature"
-     }
-    ],
+    "alternatives": [],
     "reviewer": null
    },
    {
@@ -11715,23 +11667,17 @@
     "name_raw": "GOSHEN",
     "osm_name": "Goshen Substation",
     "osm_operator": "Georgia Power",
-    "lat": 32.248701,
-    "lon": -81.209472,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_3",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 32.2487012,
+    "lon": -81.2094724,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, zone match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
     "alternatives": [
      {
       "id": "osm:way/52019569",
       "lat": 33.3197599,
       "lon": -81.9953118
-     },
-     {
-      "id": "osm:way/1008141064",
-      "lat": 32.2487012,
-      "lon": -81.2094724,
-      "precision": "osm_feature"
      }
     ],
     "reviewer": null
@@ -11741,20 +11687,13 @@
     "name_raw": "MCINTOSH",
     "osm_name": "McIntosh Substation",
     "osm_operator": "Georgia Power",
-    "lat": 32.352116,
-    "lon": -81.182105,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_3",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 32.3521162,
+    "lon": -81.1751124,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, zone match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/121624352",
-      "lat": 32.3521162,
-      "lon": -81.1751124,
-      "precision": "osm_feature"
-     }
-    ],
+    "alternatives": [],
     "reviewer": null
    }
   ],
@@ -19276,20 +19215,13 @@
     "name_raw": "EVANS PRIMARY",
     "osm_name": "Evans Primary Substation",
     "osm_operator": "Georgia Power",
-    "lat": 33.543994,
-    "lon": -82.168648,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_1",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 33.5439942,
+    "lon": -82.1686481,
+    "precision": "osm_feature",
+    "method": "OSM name exact, own state, zone match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/52103255",
-      "lat": 33.5439942,
-      "lon": -82.1686481,
-      "precision": "osm_feature"
-     }
-    ],
+    "alternatives": [],
     "reviewer": null
    },
    {
@@ -19297,20 +19229,13 @@
     "name_raw": "THURMOND DAM #5",
     "osm_name": "Thurmond Substation",
     "osm_operator": "Georgia Power",
-    "lat": 33.660127,
-    "lon": -82.195931,
-    "precision": "sperry_provided",
-    "method": "Sperry answer key GPC_1",
-    "source": "Projects_Overlaps.xlsx",
+    "lat": 33.6601273,
+    "lon": -82.1959307,
+    "precision": "osm_feature",
+    "method": "OSM name relaxed ('thurmond'), neighboring state, zone match",
+    "source": "OpenStreetMap (ODbL)",
     "confirmed_by_pdf_context": true,
-    "alternatives": [
-     {
-      "id": "osm:way/52102019",
-      "lat": 33.6601273,
-      "lon": -82.1959307,
-      "precision": "osm_feature"
-     }
-    ],
+    "alternatives": [],
     "reviewer": null
    }
   ],

@@ -1,4 +1,6 @@
-"""Offline build: parse -> locate -> answer key / overrides -> engine -> data/processed/*.json.
+"""Offline build: parse -> locate (OSM) -> overrides -> engine -> data/processed/*.json.
+
+Sperry's answer key is only a benchmark: it labels projects and is compared against, never copied into locations.
 
 Run: python -m pipeline.build   (needs data/raw/ PDFs and data/cache/ OSM pulls; see README)
 Outputs are public, unredacted facts only and are committed so the API runs without raw sources.
@@ -36,30 +38,6 @@ def _same_facility(a: str, b: str) -> bool:
     return core_name(a) == core_name(b)
 
 
-def _key_endpoint(endpoint: dict | None, key_ep: dict, key_id: str) -> dict:
-    base = endpoint or {
-        "id": f"key:{key_id}:{core_name(key_ep['name'])}",
-        "name_raw": key_ep["name"],
-        "alternatives": [],
-        "confirmed_by_pdf_context": False,
-    }
-    previous = (
-        [{"id": base["id"], "lat": base["lat"], "lon": base["lon"], "precision": base["precision"]}]
-        if endpoint and endpoint.get("lat") is not None
-        else []
-    )
-    return {
-        **base,
-        "lat": key_ep["lat"],
-        "lon": key_ep["lon"],
-        "precision": "sperry_provided",
-        "method": f"Sperry answer key {key_id}",
-        "source": "Projects_Overlaps.xlsx",
-        "confirmed_by_pdf_context": True,
-        "alternatives": [*base.get("alternatives", []), *previous],
-    }
-
-
 def _conflict(project_id: str, endpoint: dict, key_ep: dict) -> dict | None:
     if endpoint.get("lat") is None:
         return None
@@ -72,29 +50,27 @@ def _conflict(project_id: str, endpoint: dict, key_ep: dict) -> dict | None:
         "endpoint": endpoint["name_raw"],
         "miles_apart": round(miles, 3),
         "values": {"osm": [endpoint["lat"], endpoint["lon"]], "answer_key": [key_ep["lat"], key_ep["lon"]]},
-        "message": f"{endpoint['name_raw']}: OSM and Sperry's answer key differ by {miles:.2f} mi",
+        "message": f"{endpoint['name_raw']}: OSM and Sperry's answer key differ by {miles:.2f} mi; "
+        "GridPulse uses OpenStreetMap",
     }
 
 
-def _with_key(project: dict, key_project: dict) -> tuple[dict, list[dict]]:
-    endpoints, conflicts = list(project["endpoints"]), []
+def _key_conflicts(project: dict, key_project: dict) -> list[dict]:
+    conflicts = []
     for key_ep in key_project["endpoints"]:
         if key_ep["lat"] is None:
             continue
-        index = next((i for i, e in enumerate(endpoints) if _same_facility(e["name_raw"], key_ep["name"])), None)
-        current = endpoints[index] if index is not None else None
-        if current is not None and (conflict := _conflict(project["id"], current, key_ep)):
+        ours = next((e for e in project["endpoints"] if _same_facility(e["name_raw"], key_ep["name"])), None)
+        if ours is not None and (conflict := _conflict(project["id"], ours, key_ep)):
             conflicts.append(conflict)
-        replacement = _key_endpoint(current, key_ep, key_project["project_id"])
-        endpoints = (
-            endpoints[:index] + [replacement] + endpoints[index + 1 :]
-            if index is not None
-            else [*endpoints, replacement]
-        )
-    return {**project, "endpoints": endpoints, "answer_key_id": key_project["project_id"]}, conflicts
+    return conflicts
 
 
-def apply_answer_key(projects: list[dict], key: dict, links: dict[str, str]) -> tuple[list[dict], list[dict]]:
+def link_answer_key(projects: list[dict], key: dict, links: dict[str, str]) -> tuple[list[dict], list[dict]]:
+    """Label projects with their answer-key id and report coordinate disagreements.
+
+    The answer key is a benchmark, never a data source: no coordinate from it is copied into a project.
+    """
     by_project = {links[k["project_id"]]: k for k in key["projects"] if k["project_id"] in links}
     result, discrepancies = [], []
     for project in projects:
@@ -102,10 +78,33 @@ def apply_answer_key(projects: list[dict], key: dict, links: dict[str, str]) -> 
         if key_project is None:
             result.append(project)
             continue
-        updated, conflicts = _with_key(project, key_project)
-        result.append(updated)
-        discrepancies.extend(conflicts)
+        result.append({**project, "answer_key_id": key_project["project_id"]})
+        discrepancies.extend(_key_conflicts(project, key_project))
     return result, discrepancies
+
+
+def independent_check(key: dict, links: dict[str, str], opportunities: dict[str, list[dict]]) -> dict:
+    """Which answer-key pairs GridPulse finds with its own locations (OSM + reviewed overrides, no key coordinates)."""
+    closest = {(o["a"], o["b"]): o for o in opportunities["closest"]}
+    center = {(o["a"], o["b"]): o for o in opportunities["center"]}
+    rows = []
+    for expected in key["overlaps"]:
+        pair = (links.get(expected["project_id_a"]), links.get(expected["project_id_b"]))
+        got, got_center = closest.get(pair), center.get(pair)
+        rows.append(
+            {
+                "overlap_id": expected["overlap_id"],
+                "expected_mi": expected["distance_mi"],
+                "got_center_mi": got_center and round(got_center["dist_center_mi"], 2),
+                "tier": got and got["tier"],
+                "touching": bool(got and got["touching"]),
+                "got_closest_mi": got and round(got["dist_closest_mi"], 2),
+                "expected_gap": expected["time_gap_days"],
+                "got_gap": got and got["in_service_gap_days"],
+                "found": bool(got and got["tier"]),
+            }
+        )
+    return {"found": sum(r["found"] for r in rows), "expected": len(rows), "details": rows}
 
 
 def apply_overrides(projects: list[dict], rows: list[dict]) -> list[dict]:
@@ -113,7 +112,7 @@ def apply_overrides(projects: list[dict], rows: list[dict]) -> list[dict]:
 
     def override(endpoint: dict) -> dict:
         row = by_id.get(endpoint["id"])
-        if row is None or endpoint.get("precision") == "sperry_provided":
+        if row is None:
             return endpoint
         return {
             **endpoint,
@@ -294,7 +293,7 @@ def build() -> dict:
     changes, sertp_events, anomalies = _changes(desc, gpc, irp)
     gpc = _with_sertp_flags(gpc, sertp_events)
     located = [_locate(p, index) for p in [*desc, *gpc]]
-    keyed, discrepancies = apply_answer_key(located, key, links)
+    keyed, discrepancies = link_answer_key(located, key, links)
     projects = apply_overrides(keyed, _read_csv(OVERRIDES / "locations.csv"))
     discrepancies += [
         _date_conflict(p, d) for p in projects for d in p.get("disagreements", []) if d["field"] == "need_date"
@@ -319,6 +318,7 @@ def build() -> dict:
         {
             "coverage": _coverage(projects),
             "acceptance": _acceptance(key),
+            "independent": independent_check(key, links, opportunities),
             "discrepancies": discrepancies,
             "built_at": dt.datetime.now(dt.UTC).isoformat(),
         },

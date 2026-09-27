@@ -12,22 +12,22 @@
    "in_sperry_method": true,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ]
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
@@ -48,18 +48,18 @@
    "in_sperry_method": true,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
-     33.6601270571159,
-     -82.1959306428497
+     33.6601273,
+     -82.19593070000002
     ]
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.60206075,
@@ -79,27 +79,27 @@
    "method": "closest",
    "tier": "T3",
    "touching": false,
-   "dist_closest_mi": 2.993,
-   "dist_center_mi": 5.65,
+   "dist_closest_mi": 3.039,
+   "dist_center_mi": 3.033,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 730,
@@ -115,27 +115,27 @@
    "method": "closest",
    "tier": "T3",
    "touching": false,
-   "dist_closest_mi": 3.398,
-   "dist_center_mi": 7.548,
+   "dist_closest_mi": 3.039,
+   "dist_center_mi": 5.76,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 213,
@@ -153,13 +153,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 15.945,
-   "dist_center_mi": 18.084,
+   "dist_closest_mi": 16.278,
+   "dist_center_mi": 18.15,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.259796830808725,
-     -80.89822700194975
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.06682789999998,
@@ -168,8 +168,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.044757399999995,
@@ -183,55 +183,19 @@
    "rank": 5
   },
   {
-   "id": "desc-2428-139-m-n__gpc-20067",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20067",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 20.072,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 6
-  },
-  {
    "id": "desc-2428-6367-d-g__gpc-20066",
    "a": "desc-2428-6367-d-g",
    "b": "gpc-20066",
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 20.231,
+   "dist_closest_mi": 20.73,
+   "dist_center_mi": 21.251,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.06682789999998,
@@ -240,8 +204,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.05402935,
@@ -252,7 +216,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 7
+   "rank": 6
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20067",
@@ -261,13 +225,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 20.855,
+   "dist_closest_mi": 20.73,
+   "dist_center_mi": 22.081,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.06682789999998,
@@ -276,8 +240,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.044757399999995,
@@ -288,7 +252,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 8
+   "rank": 7
   },
   {
    "id": "desc-2428-6367-d-g__gpc-19523",
@@ -297,13 +261,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 23.731,
-   "dist_center_mi": 25.556,
-   "in_sperry_method": false,
+   "dist_closest_mi": 23.813,
+   "dist_center_mi": 23.8,
+   "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.167,
@@ -312,8 +276,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.167,
@@ -324,10 +288,9 @@
    "in_service_gap_days": 364,
    "timeline_label": "same_window",
    "flags": [
-    "method_disagree",
     "sources_disagree"
    ],
-   "rank": 9
+   "rank": 8
   },
   {
    "id": "desc-2428-6808-s__gpc-20277",
@@ -336,70 +299,34 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 8.438,
-   "dist_center_mi": 14.342,
+   "dist_closest_mi": 20.486,
+   "dist_center_mi": 20.459,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 517,
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 10
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20277",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20277",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 8.438,
-   "dist_center_mi": 8.421,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 11
+   "rank": 9
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20785",
@@ -408,13 +335,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 9.086,
-   "dist_center_mi": 11.755,
+   "dist_closest_mi": 9.192,
+   "dist_center_mi": 11.641,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.248701199999985,
@@ -423,8 +350,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.19841825,
@@ -437,7 +364,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 12
+   "rank": 10
   },
   {
    "id": "desc-2428-6808-s__gpc-20785",
@@ -446,23 +373,23 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 11.901,
-   "dist_center_mi": 14.952,
+   "dist_closest_mi": 18.16,
+   "dist_center_mi": 19.128,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
-     32.248701199999985,
-     -81.2094724
+     32.14813529999999,
+     -81.1459835
     ]
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.19841825,
@@ -475,45 +402,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 13
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20785",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20785",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 11.901,
-   "dist_center_mi": 12.627,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.248701199999985,
-     -81.2094724
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 882,
-   "timeline_label": "same_window",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 14
+   "rank": 11
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20783",
@@ -522,13 +411,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.225,
-   "dist_center_mi": 19.275,
+   "dist_closest_mi": 19.47,
+   "dist_center_mi": 19.521,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.34842562474771,
-     -81.08572132758668
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.08350969999999,
@@ -537,8 +426,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0835097,
@@ -549,7 +438,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 15
+   "rank": 12
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20407",
@@ -558,13 +447,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 21.664,
-   "dist_center_mi": 22.374,
+   "dist_closest_mi": 23.396,
+   "dist_center_mi": 23.46,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.022686899999975,
@@ -573,8 +462,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0226869,
@@ -585,7 +474,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 16
+   "rank": 13
   },
   {
    "id": "desc-2428-6809-g__gpc-14222",
@@ -621,7 +510,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 17
+   "rank": 14
   },
   {
    "id": "desc-2428-6808-s__gpc-20066",
@@ -630,13 +519,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 15.945,
-   "dist_center_mi": 18.274,
+   "dist_closest_mi": 16.278,
+   "dist_center_mi": 18.936,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.259796830808725,
-     -80.89822700194975
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.06682789999998,
@@ -645,8 +534,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.05402935,
@@ -657,43 +546,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "within_1y",
    "flags": [],
-   "rank": 18
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20066",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20066",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 19.686,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 517,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 19
+   "rank": 15
   },
   {
    "id": "desc-2428-6808-s__gpc-20065",
@@ -702,27 +555,27 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 8.842,
-   "dist_center_mi": 14.81,
+   "dist_closest_mi": 20.318,
+   "dist_center_mi": 20.309,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
-     32.352116,
-     -81.182105
+     32.31407888595729,
+     -81.18776188366665
     ]
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 0,
@@ -731,81 +584,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 20
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20065",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20065",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 8.842,
-   "dist_center_mi": 9.809,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 882,
-   "timeline_label": "separate",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 21
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-20783",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-20783",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 19.45,
-   "dist_center_mi": 19.981,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.3190925763037,
-     -81.00582746214246
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.0835097,
-     -81.1887223
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1096,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 22
+   "rank": 16
   },
   {
    "id": "desc-2428-6808-s__gpc-20407",
@@ -814,13 +593,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.704,
-   "dist_center_mi": 19.929,
+   "dist_closest_mi": 20.009,
+   "dist_center_mi": 20.02,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.261183193070295,
-     -80.90073868593524
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.022686899999975,
@@ -829,8 +608,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.0226869,
@@ -841,7 +620,43 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 23
+   "rank": 17
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-20783",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-20783",
+   "method": "closest",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 22.256,
+   "dist_center_mi": 22.234,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.235027200000005,
+     -80.8533836
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.2350272,
+     -80.8533836
+    ],
+    [
+     32.0835097,
+     -81.1887223
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1096,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 18
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21023",
@@ -850,13 +665,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.225,
-   "dist_center_mi": 22.42,
+   "dist_closest_mi": 19.47,
+   "dist_center_mi": 22.525,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.34842562474771,
-     -81.08572132758668
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.08350969999999,
@@ -865,8 +680,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.045147799999995,
@@ -877,43 +692,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 24
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20783",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20783",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 19.521,
-   "dist_center_mi": 19.555,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0835097,
-     -81.1887223
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 25
+   "rank": 19
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21006",
@@ -922,13 +701,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 21.197,
-   "dist_center_mi": 21.835,
+   "dist_closest_mi": 22.045,
+   "dist_center_mi": 22.72,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.041230799999994,
@@ -937,8 +716,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.031958849999995,
@@ -949,79 +728,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 26
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20407",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20407",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 21.664,
-   "dist_center_mi": 21.721,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 27
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-21023",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-21023",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 19.45,
-   "dist_center_mi": 23.187,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.3190925763037,
-     -81.00582746214246
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1461,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 28
+   "rank": 20
   },
   {
    "id": "desc-2428-6808-s__gpc-21006",
@@ -1030,13 +737,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.704,
-   "dist_center_mi": 20.147,
+   "dist_closest_mi": 20.009,
+   "dist_center_mi": 20.779,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.261183193070295,
-     -80.90073868593524
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.022686899999975,
@@ -1045,8 +752,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.031958849999995,
@@ -1057,22 +764,22 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 29
+   "rank": 21
   },
   {
-   "id": "desc-2428-139-m-n__gpc-21023",
-   "a": "desc-2428-139-m-n",
+   "id": "desc-2428-6808-s__gpc-21023",
+   "a": "desc-2428-6808-s",
    "b": "gpc-21023",
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.521,
-   "dist_center_mi": 22.783,
-   "in_sperry_method": true,
+   "dist_closest_mi": 22.256,
+   "dist_center_mi": 25.19,
+   "in_sperry_method": false,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.08350969999999,
@@ -1081,8 +788,8 @@
    ],
    "centers": [
     [
-     32.333758,
-     -81.032495
+     32.2350272,
+     -80.8533836
     ],
     [
      32.045147799999995,
@@ -1090,46 +797,12 @@
     ]
    ],
    "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
+   "in_service_gap_days": 1461,
    "timeline_label": "separate",
-   "flags": [],
-   "rank": 30
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-21006",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-21006",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 21.197,
-   "dist_center_mi": 21.408,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.041230799999994,
-     -81.1444637
-    ]
+   "flags": [
+    "method_disagree"
    ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 31
+   "rank": 22
   },
   {
    "id": "desc-2428-6810-o__gpc-20793",
@@ -1147,8 +820,8 @@
      -81.9110807
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -1157,15 +830,15 @@
      -81.9110807
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 32
+   "rank": 23
   },
   {
    "id": "desc-2428-6810-o__gpc-20794",
@@ -1201,7 +874,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 33
+   "rank": 24
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20784",
@@ -1210,13 +883,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 20.025,
-   "dist_center_mi": 21.477,
+   "dist_closest_mi": 20.12,
+   "dist_center_mi": 20.126,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -1225,8 +898,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -1239,7 +912,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 34
+   "rank": 25
   },
   {
    "id": "desc-2428-6852__gpc-20793",
@@ -1257,8 +930,8 @@
      -81.9110807
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -1267,15 +940,15 @@
      -81.79020395
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 35
+   "rank": 26
   },
   {
    "id": "desc-2428-6852__gpc-20794",
@@ -1311,7 +984,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 36
+   "rank": 27
   },
   {
    "id": "desc-2428-6810-o__gpc-17993",
@@ -1347,46 +1020,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 37
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-20784",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-20784",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 26.42,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2557,
-   "timeline_label": "separate",
-   "flags": [
-    "method_disagree",
-    "sources_disagree"
-   ],
-   "rank": 38
+   "rank": 28
   },
   {
    "id": "desc-2428-6809-g__gpc-20793",
@@ -1404,8 +1038,8 @@
      -82.051362
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -1414,15 +1048,15 @@
      -82.051362
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 39
+   "rank": 29
   },
   {
    "id": "desc-2428-6809-g__gpc-20794",
@@ -1458,7 +1092,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 40
+   "rank": 30
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20796",
@@ -1467,13 +1101,13 @@
    "method": "closest",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 20.025,
-   "dist_center_mi": 21.477,
+   "dist_closest_mi": 20.12,
+   "dist_center_mi": 20.126,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -1482,8 +1116,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -1494,83 +1128,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 41
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20784",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20784",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 23.181,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 42
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-20796",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-20796",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 26.42,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2922,
-   "timeline_label": "separate",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 43
+   "rank": 31
   },
   {
    "id": "desc-2428-6852__gpc-17993",
@@ -1608,7 +1166,7 @@
    "flags": [
     "method_disagree"
    ],
-   "rank": 44
+   "rank": 32
   },
   {
    "id": "desc-2428-6809-e__gpc-20793",
@@ -1626,8 +1184,8 @@
      -82.051362
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -1636,15 +1194,15 @@
      -82.051362
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 45
+   "rank": 33
   },
   {
    "id": "desc-2428-6809-e__gpc-20794",
@@ -1680,7 +1238,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 46
+   "rank": 34
   },
   {
    "id": "desc-2428-6810-a__gpc-14222",
@@ -1694,8 +1252,8 @@
    "in_sperry_method": true,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      33.453954999999986,
@@ -1704,8 +1262,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.453955,
@@ -1716,7 +1274,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 47
+   "rank": 35
   },
   {
    "id": "desc-2428-6809-e__gpc-14222",
@@ -1752,43 +1310,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 48
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20796",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20796",
-   "method": "closest",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 23.181,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 49
+   "rank": 36
   },
   {
    "id": "desc-2428-6809-g__gpc-17993",
@@ -1824,7 +1346,7 @@
    "in_service_gap_days": 3287,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 50
+   "rank": 37
   },
   {
    "id": "desc-2428-6809-e__gpc-17993",
@@ -1860,7 +1382,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 51
+   "rank": 38
   },
   {
    "id": "desc-2428-6810-a__gpc-17993",
@@ -1874,8 +1396,8 @@
    "in_sperry_method": true,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      33.54399419999999,
@@ -1884,8 +1406,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.4989746,
@@ -1896,7 +1418,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 52
+   "rank": 39
   },
   {
    "id": "desc-2428-6367-d-g__gpc-17075",
@@ -1905,13 +1427,13 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
+   "dist_closest_mi": 25.531,
+   "dist_center_mi": 25.59,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.357098414725876,
-     -81.11724608814652
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -1920,8 +1442,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -1932,7 +1454,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 53
+   "rank": 40
   },
   {
    "id": "desc-2428-6359__gpc-20277",
@@ -1950,8 +1472,8 @@
      -80.8637929
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -1960,15 +1482,15 @@
      -80.8637929
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 882,
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 54
+   "rank": 41
   },
   {
    "id": "desc-2428-6808-l__gpc-17075",
@@ -2004,7 +1526,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 55
+   "rank": 42
   },
   {
    "id": "desc-2428-6359__gpc-20066",
@@ -2040,7 +1562,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 56
+   "rank": 43
   },
   {
    "id": "desc-2428-6809-g__gpc-20326",
@@ -2076,45 +1598,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 57
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-19523",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-19523",
-   "method": "closest",
-   "tier": null,
-   "touching": false,
-   "dist_closest_mi": 27.597,
-   "dist_center_mi": 27.563,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.167,
-     -81.461
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.167,
-     -81.461
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 1,
-   "timeline_label": "same_window",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 58
+   "rank": 44
   },
   {
    "id": "desc-2428-6808-k__gpc-19523",
@@ -2152,7 +1636,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 59
+   "rank": 45
   },
   {
    "id": "desc-2428-6808-s__gpc-19523",
@@ -2161,13 +1645,13 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 27.597,
-   "dist_center_mi": 31.348,
+   "dist_closest_mi": 35.906,
+   "dist_center_mi": 35.835,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.167,
@@ -2176,8 +1660,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.167,
@@ -2190,7 +1674,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 60
+   "rank": 46
   },
   {
    "id": "desc-2428-6808-l__gpc-20277",
@@ -2208,8 +1692,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -2218,15 +1702,15 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 730,
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 61
+   "rank": 47
   },
   {
    "id": "desc-2428-6808-k__gpc-20067",
@@ -2262,7 +1746,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 62
+   "rank": 48
   },
   {
    "id": "desc-2428-6808-l__gpc-20066",
@@ -2298,7 +1782,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 63
+   "rank": 49
   },
   {
    "id": "desc-2428-6808-s__gpc-17075",
@@ -2307,13 +1791,13 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
+   "dist_closest_mi": 28.228,
+   "dist_center_mi": 28.213,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.321091315383846,
-     -81.00946067177087
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -2322,8 +1806,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -2334,7 +1818,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 64
+   "rank": 50
   },
   {
    "id": "desc-2428-6808-l__gpc-20067",
@@ -2370,7 +1854,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 65
+   "rank": 51
   },
   {
    "id": "desc-2428-6810-o__gpc-19248",
@@ -2406,7 +1890,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 66
+   "rank": 52
   },
   {
    "id": "desc-2428-6852__gpc-19248",
@@ -2442,7 +1926,7 @@
    "in_service_gap_days": 293,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 67
+   "rank": 53
   },
   {
    "id": "desc-2428-6808-l__gpc-19523",
@@ -2480,43 +1964,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 68
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-17075",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-17075",
-   "method": "closest",
-   "tier": null,
-   "touching": false,
-   "dist_closest_mi": 25.977,
-   "dist_center_mi": 26.018,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 69
+   "rank": 54
   },
   {
    "id": "desc-2428-6359__gpc-20065",
@@ -2525,8 +1973,8 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 30.191,
-   "dist_center_mi": 33.568,
+   "dist_closest_mi": 29.941,
+   "dist_center_mi": 33.451,
    "in_sperry_method": false,
    "closest_points": [
     [
@@ -2534,8 +1982,8 @@
      -80.8637929
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -2544,8 +1992,8 @@
      -80.8637929
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 365,
@@ -2554,7 +2002,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 70
+   "rank": 55
   },
   {
    "id": "desc-2428-6810-a__gpc-20326",
@@ -2568,8 +2016,8 @@
    "in_sperry_method": false,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      34.00183239999999,
@@ -2578,8 +2026,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      34.0018324,
@@ -2590,7 +2038,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 71
+   "rank": 56
   },
   {
    "id": "desc-2428-6359__gpc-20785",
@@ -2628,7 +2076,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 72
+   "rank": 57
   },
   {
    "id": "desc-2428-6808-k__gpc-17075",
@@ -2664,7 +2112,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 73
+   "rank": 58
   },
   {
    "id": "desc-2428-6359__gpc-20067",
@@ -2700,7 +2148,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 74
+   "rank": 59
   },
   {
    "id": "desc-2428-6809-e__gpc-20326",
@@ -2736,7 +2184,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 75
+   "rank": 60
   },
   {
    "id": "desc-2428-6808-k__gpc-20277",
@@ -2754,8 +2202,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -2764,15 +2212,15 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 365,
    "in_service_gap_days": 517,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 76
+   "rank": 61
   },
   {
    "id": "desc-2428-6808-l__gpc-20065",
@@ -2781,8 +2229,8 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 29.066,
    "in_sperry_method": false,
    "closest_points": [
     [
@@ -2790,8 +2238,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -2800,8 +2248,8 @@
      -80.7210159
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 213,
@@ -2810,7 +2258,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 77
+   "rank": 62
   },
   {
    "id": "desc-2428-6808-l__gpc-20785",
@@ -2848,7 +2296,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 78
+   "rank": 63
   },
   {
    "id": "desc-2428-6359__gpc-20783",
@@ -2884,7 +2332,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 79
+   "rank": 64
   },
   {
    "id": "desc-2428-6359__gpc-20407",
@@ -2920,7 +2368,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 80
+   "rank": 65
   },
   {
    "id": "desc-2428-6808-k__gpc-20785",
@@ -2958,7 +2406,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 81
+   "rank": 66
   },
   {
    "id": "desc-2428-6808-l__gpc-20407",
@@ -2994,7 +2442,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 82
+   "rank": 67
   },
   {
    "id": "desc-2428-6808-l__gpc-20783",
@@ -3030,7 +2478,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 83
+   "rank": 68
   },
   {
    "id": "desc-2428-6359__gpc-21023",
@@ -3066,7 +2514,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 84
+   "rank": 69
   },
   {
    "id": "desc-2428-6810-f__gpc-20793",
@@ -3084,8 +2532,8 @@
      -81.6977228
     ],
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ]
    ],
    "centers": [
@@ -3094,15 +2542,15 @@
      -81.6977228
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 213,
    "in_service_gap_days": 1248,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 85
+   "rank": 70
   },
   {
    "id": "desc-2428-6810-o__gpc-20756",
@@ -3138,7 +2586,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 86
+   "rank": 71
   },
   {
    "id": "desc-2428-6852__gpc-20756",
@@ -3174,7 +2622,7 @@
    "in_service_gap_days": 1754,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 87
+   "rank": 72
   },
   {
    "id": "desc-2428-6810-o__gpc-14222",
@@ -3210,7 +2658,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 88
+   "rank": 73
   },
   {
    "id": "desc-2428-6852__gpc-14222",
@@ -3246,7 +2694,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 89
+   "rank": 74
   },
   {
    "id": "desc-2428-6808-k__gpc-20066",
@@ -3282,7 +2730,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 90
+   "rank": 75
   },
   {
    "id": "desc-2428-6808-k__gpc-20065",
@@ -3291,8 +2739,8 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 29.066,
    "in_sperry_method": false,
    "closest_points": [
     [
@@ -3300,8 +2748,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -3310,8 +2758,8 @@
      -80.7210159
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 0,
@@ -3320,7 +2768,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 91
+   "rank": 76
   },
   {
    "id": "desc-2428-6810-o__gpc-19996",
@@ -3356,7 +2804,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 92
+   "rank": 77
   },
   {
    "id": "desc-2428-6359__gpc-21006",
@@ -3392,7 +2840,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 93
+   "rank": 78
   },
   {
    "id": "desc-2428-6810-f__gpc-20794",
@@ -3428,7 +2876,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 94
+   "rank": 79
   },
   {
    "id": "desc-2428-6808-k__gpc-20407",
@@ -3464,7 +2912,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 95
+   "rank": 80
   },
   {
    "id": "desc-2428-6808-l__gpc-21006",
@@ -3500,7 +2948,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 96
+   "rank": 81
   },
   {
    "id": "desc-2428-6808-k__gpc-20783",
@@ -3536,7 +2984,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 97
+   "rank": 82
   },
   {
    "id": "desc-2428-6808-l__gpc-21023",
@@ -3572,7 +3020,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 98
+   "rank": 83
   },
   {
    "id": "desc-2428-6852__gpc-19996",
@@ -3608,7 +3056,7 @@
    "in_service_gap_days": 1389,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 99
+   "rank": 84
   },
   {
    "id": "desc-2428-6808-k__gpc-21006",
@@ -3644,7 +3092,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 100
+   "rank": 85
   },
   {
    "id": "desc-2428-6808-k__gpc-21023",
@@ -3680,7 +3128,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 101
+   "rank": 86
   },
   {
    "id": "desc-2428-6809-g__gpc-19996",
@@ -3716,7 +3164,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 102
+   "rank": 87
   },
   {
    "id": "desc-2428-6810-f__gpc-17993",
@@ -3752,7 +3200,7 @@
    "in_service_gap_days": 1826,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 103
+   "rank": 88
   },
   {
    "id": "desc-2428-6810-a__gpc-19996",
@@ -3766,8 +3214,8 @@
    "in_sperry_method": false,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      33.38050069999999,
@@ -3776,8 +3224,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.3805007,
@@ -3788,7 +3236,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 104
+   "rank": 89
   },
   {
    "id": "desc-2428-6809-e__gpc-19996",
@@ -3824,7 +3272,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 105
+   "rank": 90
   },
   {
    "id": "desc-2428-6359__gpc-20784",
@@ -3862,7 +3310,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 106
+   "rank": 91
   },
   {
    "id": "desc-2428-6808-l__gpc-20784",
@@ -3900,7 +3348,45 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 107
+   "rank": 92
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-20784",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-20784",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 30.67,
+   "dist_center_mi": 30.612,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.235027200000005,
+     -80.8533836
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.2350272,
+     -80.8533836
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2557,
+   "timeline_label": "separate",
+   "flags": [
+    "sources_disagree"
+   ],
+   "rank": 93
   },
   {
    "id": "desc-2428-6359__gpc-20796",
@@ -3936,7 +3422,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 108
+   "rank": 94
   },
   {
    "id": "desc-2428-6809-n__gpc-20793",
@@ -3954,8 +3440,8 @@
      -81.5644353
     ],
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ]
    ],
    "centers": [
@@ -3964,15 +3450,15 @@
      -81.5644353
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 109
+   "rank": 95
   },
   {
    "id": "desc-2428-6809-n__gpc-20794",
@@ -4008,7 +3494,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 110
+   "rank": 96
   },
   {
    "id": "desc-2428-6808-k__gpc-20784",
@@ -4046,7 +3532,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 111
+   "rank": 97
   },
   {
    "id": "desc-2428-6808-l__gpc-20796",
@@ -4082,7 +3568,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 112
+   "rank": 98
   },
   {
    "id": "desc-2428-6371-d__gpc-20793",
@@ -4100,8 +3586,8 @@
      -81.3605659
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -4110,15 +3596,15 @@
      -81.3605659
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 113
+   "rank": 99
   },
   {
    "id": "desc-2428-6371-d__gpc-20794",
@@ -4154,7 +3640,43 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 114
+   "rank": 100
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-20796",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-20796",
+   "method": "closest",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 30.67,
+   "dist_center_mi": 30.612,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.235027200000005,
+     -80.8533836
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "centers": [
+    [
+     32.2350272,
+     -80.8533836
+    ],
+    [
+     32.1552821,
+     -81.368377
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 2922,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 101
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20787",
@@ -4163,13 +3685,13 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
+   "dist_closest_mi": 25.531,
+   "dist_center_mi": 25.59,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.357098414725876,
-     -81.11724608814652
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -4178,8 +3700,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -4192,7 +3714,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 115
+   "rank": 102
   },
   {
    "id": "desc-2428-6808-k__gpc-20796",
@@ -4228,7 +3750,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 116
+   "rank": 103
   },
   {
    "id": "desc-2428-6808-l__gpc-20787",
@@ -4266,7 +3788,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 117
+   "rank": 104
   },
   {
    "id": "desc-2428-6808-s__gpc-20787",
@@ -4275,13 +3797,13 @@
    "method": "closest",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
+   "dist_closest_mi": 28.228,
+   "dist_center_mi": 28.213,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.321091315383846,
-     -81.00946067177087
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -4290,8 +3812,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -4304,7 +3826,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 118
+   "rank": 105
   },
   {
    "id": "desc-2428-6809-n__gpc-17993",
@@ -4340,7 +3862,7 @@
    "in_service_gap_days": 3287,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 119
+   "rank": 106
   },
   {
    "id": "desc-2428-6371-d__gpc-17993",
@@ -4376,45 +3898,7 @@
    "in_service_gap_days": 3287,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 120
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20787",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20787",
-   "method": "closest",
-   "tier": null,
-   "touching": false,
-   "dist_closest_mi": 25.977,
-   "dist_center_mi": 26.018,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3439,
-   "timeline_label": "separate",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 121
+   "rank": 107
   },
   {
    "id": "desc-2428-6808-k__gpc-20787",
@@ -4452,10 +3936,46 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 122
+   "rank": 108
   }
  ],
  "center": [
+  {
+   "id": "desc-2428-6367-d-g__gpc-20277",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-20277",
+   "method": "center",
+   "tier": "T3",
+   "touching": false,
+   "dist_closest_mi": 3.039,
+   "dist_center_mi": 3.033,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.360699299999986,
+     -81.1241523
+    ],
+    [
+     32.352116200000005,
+     -81.1751124
+    ]
+   ],
+   "centers": [
+    [
+     32.3606993,
+     -81.1241523
+    ],
+    [
+     32.3521162,
+     -81.1751124
+    ]
+   ],
+   "window_overlap_days": 730,
+   "in_service_gap_days": 152,
+   "timeline_label": "same_window",
+   "flags": [],
+   "rank": 1
+  },
   {
    "id": "desc-2428-6810-a__gpc-20793",
    "a": "desc-2428-6810-a",
@@ -4468,54 +3988,18 @@
    "in_sperry_method": true,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ]
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
-    ],
-    [
-     33.6020605,
-     -82.1822895
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 1
-  },
-  {
-   "id": "desc-2428-6810-a__gpc-20794",
-   "a": "desc-2428-6810-a",
-   "b": "gpc-20794",
-   "method": "center",
-   "tier": "T3",
-   "touching": true,
-   "dist_closest_mi": 0.0,
-   "dist_center_mi": 4.088,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     33.660126999999996,
-     -82.195931
-    ],
-    [
-     33.6601270571159,
-     -82.1959306428497
-    ]
-   ],
-   "centers": [
-    [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.60206075,
@@ -4529,19 +4013,55 @@
    "rank": 2
   },
   {
+   "id": "desc-2428-6810-a__gpc-20794",
+   "a": "desc-2428-6810-a",
+   "b": "gpc-20794",
+   "method": "center",
+   "tier": "T3",
+   "touching": true,
+   "dist_closest_mi": 0.0,
+   "dist_center_mi": 4.088,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     33.6601273,
+     -82.19593070000002
+    ],
+    [
+     33.6601273,
+     -82.19593070000002
+    ]
+   ],
+   "centers": [
+    [
+     33.6601273,
+     -82.1959307
+    ],
+    [
+     33.60206075,
+     -82.1822894
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 3074,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 3
+  },
+  {
    "id": "desc-2428-6808-s__gpc-20067",
    "a": "desc-2428-6808-s",
    "b": "gpc-20067",
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 15.945,
-   "dist_center_mi": 18.084,
+   "dist_closest_mi": 16.278,
+   "dist_center_mi": 18.15,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.259796830808725,
-     -80.89822700194975
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.06682789999998,
@@ -4550,8 +4070,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.044757399999995,
@@ -4562,79 +4082,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 3
-  },
-  {
-   "id": "desc-2428-6367-d-g__gpc-20277",
-   "a": "desc-2428-6367-d-g",
-   "b": "gpc-20277",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 2.993,
-   "dist_center_mi": 5.65,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.35912,
-     -81.1246
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.346439000000004,
-     -81.0785475
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 730,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
    "rank": 4
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20067",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20067",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 20.072,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.044757399999995,
-     -81.0672826
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 152,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 5
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20066",
@@ -4643,13 +4091,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 20.231,
+   "dist_closest_mi": 20.73,
+   "dist_center_mi": 21.251,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.06682789999998,
@@ -4658,8 +4106,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.05402935,
@@ -4670,7 +4118,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 6
+   "rank": 5
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20067",
@@ -4679,13 +4127,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 20.855,
+   "dist_closest_mi": 20.73,
+   "dist_center_mi": 22.081,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.06682789999998,
@@ -4694,8 +4142,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.044757399999995,
@@ -4706,6 +4154,44 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
+   "rank": 6
+  },
+  {
+   "id": "desc-2428-6367-d-g__gpc-19523",
+   "a": "desc-2428-6367-d-g",
+   "b": "gpc-19523",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 23.813,
+   "dist_center_mi": 23.8,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.360699299999986,
+     -81.1241523
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "centers": [
+    [
+     32.3606993,
+     -81.1241523
+    ],
+    [
+     32.167,
+     -81.461
+    ]
+   ],
+   "window_overlap_days": 366,
+   "in_service_gap_days": 364,
+   "timeline_label": "same_window",
+   "flags": [
+    "sources_disagree"
+   ],
    "rank": 7
   },
   {
@@ -4715,27 +4201,27 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 8.438,
-   "dist_center_mi": 14.342,
+   "dist_closest_mi": 20.486,
+   "dist_center_mi": 20.459,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 517,
@@ -4751,27 +4237,27 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 3.398,
-   "dist_center_mi": 7.548,
+   "dist_closest_mi": 3.039,
+   "dist_center_mi": 5.76,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 213,
@@ -4783,55 +4269,19 @@
    "rank": 9
   },
   {
-   "id": "desc-2428-139-m-n__gpc-20277",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20277",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 8.438,
-   "dist_center_mi": 8.421,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.352116,
-     -81.175112
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 517,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 10
-  },
-  {
    "id": "desc-2428-6367-d-g__gpc-20785",
    "a": "desc-2428-6367-d-g",
    "b": "gpc-20785",
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 9.086,
-   "dist_center_mi": 11.755,
+   "dist_closest_mi": 9.192,
+   "dist_center_mi": 11.641,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.248701199999985,
@@ -4840,8 +4290,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.19841825,
@@ -4854,7 +4304,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 11
+   "rank": 10
   },
   {
    "id": "desc-2428-6808-s__gpc-20785",
@@ -4863,23 +4313,23 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 11.901,
-   "dist_center_mi": 14.952,
+   "dist_closest_mi": 18.16,
+   "dist_center_mi": 19.128,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
-     32.248701199999985,
-     -81.2094724
+     32.14813529999999,
+     -81.1459835
     ]
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.19841825,
@@ -4892,45 +4342,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 12
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20785",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20785",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 11.901,
-   "dist_center_mi": 12.627,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.248701199999985,
-     -81.2094724
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.19841825,
-     -81.17772794999999
-    ]
-   ],
-   "window_overlap_days": 213,
-   "in_service_gap_days": 882,
-   "timeline_label": "same_window",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 13
+   "rank": 11
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20783",
@@ -4939,13 +4351,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.225,
-   "dist_center_mi": 19.275,
+   "dist_closest_mi": 19.47,
+   "dist_center_mi": 19.521,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.34842562474771,
-     -81.08572132758668
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.08350969999999,
@@ -4954,8 +4366,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0835097,
@@ -4966,7 +4378,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 14
+   "rank": 12
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20407",
@@ -4975,13 +4387,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 21.664,
-   "dist_center_mi": 22.374,
+   "dist_closest_mi": 23.396,
+   "dist_center_mi": 23.46,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.022686899999975,
@@ -4990,8 +4402,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0226869,
@@ -5002,7 +4414,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 15
+   "rank": 13
   },
   {
    "id": "desc-2428-6809-g__gpc-14222",
@@ -5038,7 +4450,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 16
+   "rank": 14
   },
   {
    "id": "desc-2428-6808-s__gpc-20066",
@@ -5047,13 +4459,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 15.945,
-   "dist_center_mi": 18.274,
+   "dist_closest_mi": 16.278,
+   "dist_center_mi": 18.936,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.259796830808725,
-     -80.89822700194975
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.06682789999998,
@@ -5062,8 +4474,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.05402935,
@@ -5074,43 +4486,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "within_1y",
    "flags": [],
-   "rank": 17
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20066",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20066",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 18.416,
-   "dist_center_mi": 19.686,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.06682789999998,
-     -81.0483845
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.05402935,
-     -81.09642410000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 517,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 18
+   "rank": 15
   },
   {
    "id": "desc-2428-6808-s__gpc-20065",
@@ -5119,27 +4495,27 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 8.842,
-   "dist_center_mi": 14.81,
+   "dist_closest_mi": 20.318,
+   "dist_center_mi": 20.309,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
-     32.352116,
-     -81.182105
+     32.31407888595729,
+     -81.18776188366665
     ]
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 0,
@@ -5148,81 +4524,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 19
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20065",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20065",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 8.842,
-   "dist_center_mi": 9.809,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.352116,
-     -81.182105
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.3004085,
-     -81.1957885
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 882,
-   "timeline_label": "separate",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 20
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-20783",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-20783",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 19.45,
-   "dist_center_mi": 19.981,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.3190925763037,
-     -81.00582746214246
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.0835097,
-     -81.1887223
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1096,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 21
+   "rank": 16
   },
   {
    "id": "desc-2428-6808-s__gpc-20407",
@@ -5231,13 +4533,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.704,
-   "dist_center_mi": 19.929,
+   "dist_closest_mi": 20.009,
+   "dist_center_mi": 20.02,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.261183193070295,
-     -80.90073868593524
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.022686899999975,
@@ -5246,8 +4548,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.0226869,
@@ -5258,7 +4560,43 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 22
+   "rank": 17
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-20783",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-20783",
+   "method": "center",
+   "tier": "T4",
+   "touching": false,
+   "dist_closest_mi": 22.256,
+   "dist_center_mi": 22.234,
+   "in_sperry_method": true,
+   "closest_points": [
+    [
+     32.235027200000005,
+     -80.8533836
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.2350272,
+     -80.8533836
+    ],
+    [
+     32.0835097,
+     -81.1887223
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1096,
+   "timeline_label": "separate",
+   "flags": [],
+   "rank": 18
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21023",
@@ -5267,13 +4605,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.225,
-   "dist_center_mi": 22.42,
+   "dist_closest_mi": 19.47,
+   "dist_center_mi": 22.525,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.34842562474771,
-     -81.08572132758668
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.08350969999999,
@@ -5282,8 +4620,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.045147799999995,
@@ -5294,43 +4632,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 23
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20783",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20783",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 19.521,
-   "dist_center_mi": 19.555,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0835097,
-     -81.1887223
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 24
+   "rank": 19
   },
   {
    "id": "desc-2428-6367-d-g__gpc-21006",
@@ -5339,13 +4641,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 21.197,
-   "dist_center_mi": 21.835,
+   "dist_closest_mi": 22.045,
+   "dist_center_mi": 22.72,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.041230799999994,
@@ -5354,8 +4656,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.031958849999995,
@@ -5366,79 +4668,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 25
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20407",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20407",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 21.664,
-   "dist_center_mi": 21.721,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.022686899999975,
-     -81.0861807
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0226869,
-     -81.0861807
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1248,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 26
-  },
-  {
-   "id": "desc-2428-6808-s__gpc-21023",
-   "a": "desc-2428-6808-s",
-   "b": "gpc-21023",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 19.45,
-   "dist_center_mi": 23.187,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.3190925763037,
-     -81.00582746214246
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.2843925,
-     -80.9429395
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1461,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 27
+   "rank": 20
   },
   {
    "id": "desc-2428-6808-s__gpc-21006",
@@ -5447,13 +4677,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 19.704,
-   "dist_center_mi": 20.147,
+   "dist_closest_mi": 20.009,
+   "dist_center_mi": 20.779,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.261183193070295,
-     -80.90073868593524
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.022686899999975,
@@ -5462,8 +4692,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.031958849999995,
@@ -5474,79 +4704,7 @@
    "in_service_gap_days": 1461,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 28
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-21023",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-21023",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 19.521,
-   "dist_center_mi": 22.783,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.08350969999999,
-     -81.1887223
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.045147799999995,
-     -81.2209368
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 29
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-21006",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-21006",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 21.197,
-   "dist_center_mi": 21.408,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.041230799999994,
-     -81.1444637
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.031958849999995,
-     -81.11532220000001
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 1613,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 30
+   "rank": 21
   },
   {
    "id": "desc-2428-6810-o__gpc-20793",
@@ -5564,8 +4722,8 @@
      -81.9110807
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -5574,15 +4732,15 @@
      -81.9110807
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 31
+   "rank": 22
   },
   {
    "id": "desc-2428-6810-o__gpc-20794",
@@ -5618,7 +4776,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 32
+   "rank": 23
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20784",
@@ -5627,13 +4785,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 20.025,
-   "dist_center_mi": 21.477,
+   "dist_closest_mi": 20.12,
+   "dist_center_mi": 20.126,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -5642,8 +4800,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -5656,7 +4814,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 33
+   "rank": 24
   },
   {
    "id": "desc-2428-6852__gpc-20793",
@@ -5674,8 +4832,8 @@
      -81.9110807
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -5684,15 +4842,15 @@
      -81.79020395
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 34
+   "rank": 25
   },
   {
    "id": "desc-2428-6852__gpc-20794",
@@ -5728,7 +4886,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 35
+   "rank": 26
   },
   {
    "id": "desc-2428-6810-o__gpc-17993",
@@ -5764,7 +4922,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 36
+   "rank": 27
   },
   {
    "id": "desc-2428-6809-g__gpc-20793",
@@ -5782,8 +4940,8 @@
      -82.051362
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -5792,15 +4950,15 @@
      -82.051362
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 37
+   "rank": 28
   },
   {
    "id": "desc-2428-6809-g__gpc-20794",
@@ -5836,7 +4994,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 38
+   "rank": 29
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20796",
@@ -5845,13 +5003,13 @@
    "method": "center",
    "tier": "T4",
    "touching": false,
-   "dist_closest_mi": 20.025,
-   "dist_center_mi": 21.477,
+   "dist_closest_mi": 20.12,
+   "dist_center_mi": 20.126,
    "in_sperry_method": true,
    "closest_points": [
     [
-     32.35912,
-     -81.1246
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -5860,8 +5018,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.1552821,
@@ -5872,45 +5030,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 39
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20784",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20784",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 23.181,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 2709,
-   "timeline_label": "separate",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 40
+   "rank": 30
   },
   {
    "id": "desc-2428-6809-e__gpc-20793",
@@ -5928,8 +5048,8 @@
      -82.051362
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -5938,15 +5058,15 @@
      -82.051362
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 41
+   "rank": 31
   },
   {
    "id": "desc-2428-6809-e__gpc-20794",
@@ -5982,7 +5102,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 42
+   "rank": 32
   },
   {
    "id": "desc-2428-6810-a__gpc-14222",
@@ -5996,8 +5116,8 @@
    "in_sperry_method": true,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      33.453954999999986,
@@ -6006,8 +5126,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.453955,
@@ -6018,7 +5138,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 43
+   "rank": 33
   },
   {
    "id": "desc-2428-6809-e__gpc-14222",
@@ -6054,43 +5174,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 44
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20796",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20796",
-   "method": "center",
-   "tier": "T4",
-   "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 23.181,
-   "in_sperry_method": true,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.1552821,
-     -81.368377
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3074,
-   "timeline_label": "separate",
-   "flags": [],
-   "rank": 45
+   "rank": 34
   },
   {
    "id": "desc-2428-6809-g__gpc-17993",
@@ -6126,7 +5210,7 @@
    "in_service_gap_days": 3287,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 46
+   "rank": 35
   },
   {
    "id": "desc-2428-6809-e__gpc-17993",
@@ -6162,7 +5246,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 47
+   "rank": 36
   },
   {
    "id": "desc-2428-6810-a__gpc-17993",
@@ -6176,8 +5260,8 @@
    "in_sperry_method": true,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      33.54399419999999,
@@ -6186,8 +5270,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.4989746,
@@ -6198,7 +5282,7 @@
    "in_service_gap_days": 3652,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 48
+   "rank": 37
   },
   {
    "id": "desc-2428-6367-d-g__gpc-17075",
@@ -6207,13 +5291,13 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
+   "dist_closest_mi": 25.531,
+   "dist_center_mi": 25.59,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.357098414725876,
-     -81.11724608814652
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -6222,8 +5306,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -6234,7 +5318,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 49
+   "rank": 38
   },
   {
    "id": "desc-2428-6359__gpc-20277",
@@ -6252,8 +5336,8 @@
      -80.8637929
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -6262,15 +5346,15 @@
      -80.8637929
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 882,
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 50
+   "rank": 39
   },
   {
    "id": "desc-2428-6808-l__gpc-17075",
@@ -6306,7 +5390,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 51
+   "rank": 40
   },
   {
    "id": "desc-2428-6359__gpc-20066",
@@ -6342,7 +5426,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 52
+   "rank": 41
   },
   {
    "id": "desc-2428-6809-g__gpc-20326",
@@ -6378,45 +5462,7 @@
    "in_service_gap_days": 0,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 53
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-19523",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-19523",
-   "method": "center",
-   "tier": null,
-   "touching": false,
-   "dist_closest_mi": 27.597,
-   "dist_center_mi": 27.563,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.167,
-     -81.461
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.167,
-     -81.461
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 1,
-   "timeline_label": "same_window",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 54
+   "rank": 42
   },
   {
    "id": "desc-2428-6808-k__gpc-19523",
@@ -6454,7 +5500,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 55
+   "rank": 43
   },
   {
    "id": "desc-2428-6808-s__gpc-19523",
@@ -6463,13 +5509,13 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 27.597,
-   "dist_center_mi": 31.348,
+   "dist_closest_mi": 35.906,
+   "dist_center_mi": 35.835,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.167,
@@ -6478,8 +5524,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.167,
@@ -6492,7 +5538,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 56
+   "rank": 44
   },
   {
    "id": "desc-2428-6808-l__gpc-20277",
@@ -6510,8 +5556,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -6520,15 +5566,15 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 730,
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 57
+   "rank": 45
   },
   {
    "id": "desc-2428-6808-k__gpc-20067",
@@ -6564,7 +5610,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 58
+   "rank": 46
   },
   {
    "id": "desc-2428-6808-l__gpc-20066",
@@ -6600,7 +5646,7 @@
    "in_service_gap_days": 152,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 59
+   "rank": 47
   },
   {
    "id": "desc-2428-6808-s__gpc-17075",
@@ -6609,13 +5655,13 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
+   "dist_closest_mi": 28.228,
+   "dist_center_mi": 28.213,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.321091315383846,
-     -81.00946067177087
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -6624,8 +5670,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -6636,7 +5682,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 60
+   "rank": 48
   },
   {
    "id": "desc-2428-6808-l__gpc-20067",
@@ -6672,46 +5718,7 @@
    "in_service_gap_days": 213,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 61
-  },
-  {
-   "id": "desc-2428-6367-d-g__gpc-19523",
-   "a": "desc-2428-6367-d-g",
-   "b": "gpc-19523",
-   "method": "center",
-   "tier": null,
-   "touching": false,
-   "dist_closest_mi": 23.731,
-   "dist_center_mi": 25.556,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.35912,
-     -81.1246
-    ],
-    [
-     32.167,
-     -81.461
-    ]
-   ],
-   "centers": [
-    [
-     32.346439000000004,
-     -81.0785475
-    ],
-    [
-     32.167,
-     -81.461
-    ]
-   ],
-   "window_overlap_days": 366,
-   "in_service_gap_days": 364,
-   "timeline_label": "same_window",
-   "flags": [
-    "method_disagree",
-    "sources_disagree"
-   ],
-   "rank": 62
+   "rank": 49
   },
   {
    "id": "desc-2428-6808-l__gpc-19523",
@@ -6749,43 +5756,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 63
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-17075",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-17075",
-   "method": "center",
-   "tier": null,
-   "touching": false,
-   "dist_closest_mi": 25.977,
-   "dist_center_mi": 26.018,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 365,
-   "in_service_gap_days": 365,
-   "timeline_label": "same_window",
-   "flags": [],
-   "rank": 64
+   "rank": 50
   },
   {
    "id": "desc-2428-6359__gpc-20065",
@@ -6794,8 +5765,8 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 30.191,
-   "dist_center_mi": 33.568,
+   "dist_closest_mi": 29.941,
+   "dist_center_mi": 33.451,
    "in_sperry_method": false,
    "closest_points": [
     [
@@ -6803,8 +5774,8 @@
      -80.8637929
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -6813,8 +5784,8 @@
      -80.8637929
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 365,
@@ -6823,7 +5794,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 65
+   "rank": 51
   },
   {
    "id": "desc-2428-6810-a__gpc-20326",
@@ -6837,8 +5808,8 @@
    "in_sperry_method": false,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      34.00183239999999,
@@ -6847,8 +5818,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      34.0018324,
@@ -6859,7 +5830,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 66
+   "rank": 52
   },
   {
    "id": "desc-2428-6359__gpc-20785",
@@ -6897,7 +5868,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 67
+   "rank": 53
   },
   {
    "id": "desc-2428-6808-k__gpc-17075",
@@ -6933,7 +5904,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 68
+   "rank": 54
   },
   {
    "id": "desc-2428-6359__gpc-20067",
@@ -6969,7 +5940,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 69
+   "rank": 55
   },
   {
    "id": "desc-2428-6809-e__gpc-20326",
@@ -7005,7 +5976,7 @@
    "in_service_gap_days": 365,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 70
+   "rank": 56
   },
   {
    "id": "desc-2428-6808-k__gpc-20277",
@@ -7023,8 +5994,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -7033,15 +6004,15 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.175112
+     32.3521162,
+     -81.1751124
     ]
    ],
    "window_overlap_days": 365,
    "in_service_gap_days": 517,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 71
+   "rank": 57
   },
   {
    "id": "desc-2428-6808-l__gpc-20065",
@@ -7050,8 +6021,8 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 29.066,
    "in_sperry_method": false,
    "closest_points": [
     [
@@ -7059,8 +6030,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -7069,8 +6040,8 @@
      -80.7210159
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 213,
@@ -7079,7 +6050,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 72
+   "rank": 58
   },
   {
    "id": "desc-2428-6808-l__gpc-20785",
@@ -7117,7 +6088,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 73
+   "rank": 59
   },
   {
    "id": "desc-2428-6359__gpc-20783",
@@ -7153,7 +6124,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 74
+   "rank": 60
   },
   {
    "id": "desc-2428-6359__gpc-20407",
@@ -7189,7 +6160,7 @@
    "in_service_gap_days": 731,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 75
+   "rank": 61
   },
   {
    "id": "desc-2428-6808-k__gpc-20785",
@@ -7227,7 +6198,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 76
+   "rank": 62
   },
   {
    "id": "desc-2428-6808-l__gpc-20407",
@@ -7263,7 +6234,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 77
+   "rank": 63
   },
   {
    "id": "desc-2428-6808-l__gpc-20783",
@@ -7299,7 +6270,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 78
+   "rank": 64
   },
   {
    "id": "desc-2428-6359__gpc-21023",
@@ -7335,7 +6306,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 79
+   "rank": 65
   },
   {
    "id": "desc-2428-6810-f__gpc-20793",
@@ -7353,8 +6324,8 @@
      -81.6977228
     ],
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ]
    ],
    "centers": [
@@ -7363,15 +6334,15 @@
      -81.6977228
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 213,
    "in_service_gap_days": 1248,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 80
+   "rank": 66
   },
   {
    "id": "desc-2428-6810-o__gpc-20756",
@@ -7407,7 +6378,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 81
+   "rank": 67
   },
   {
    "id": "desc-2428-6810-o__gpc-14222",
@@ -7443,7 +6414,7 @@
    "in_service_gap_days": 1979,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 82
+   "rank": 68
   },
   {
    "id": "desc-2428-6852__gpc-14222",
@@ -7479,7 +6450,7 @@
    "in_service_gap_days": 2485,
    "timeline_label": "same_window",
    "flags": [],
-   "rank": 83
+   "rank": 69
   },
   {
    "id": "desc-2428-6808-k__gpc-20066",
@@ -7515,7 +6486,7 @@
    "in_service_gap_days": 517,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 84
+   "rank": 70
   },
   {
    "id": "desc-2428-6808-k__gpc-20065",
@@ -7524,8 +6495,8 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 27.576,
-   "dist_center_mi": 29.259,
+   "dist_closest_mi": 27.177,
+   "dist_center_mi": 29.066,
    "in_sperry_method": false,
    "closest_points": [
     [
@@ -7533,8 +6504,8 @@
      -80.7210159
     ],
     [
-     32.352116,
-     -81.182105
+     32.352116200000005,
+     -81.1751124
     ]
    ],
    "centers": [
@@ -7543,8 +6514,8 @@
      -80.7210159
     ],
     [
-     32.3004085,
-     -81.1957885
+     32.3004087,
+     -81.1922924
     ]
    ],
    "window_overlap_days": 0,
@@ -7553,7 +6524,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 85
+   "rank": 71
   },
   {
    "id": "desc-2428-6810-o__gpc-19996",
@@ -7589,7 +6560,7 @@
    "in_service_gap_days": 883,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 86
+   "rank": 72
   },
   {
    "id": "desc-2428-6359__gpc-21006",
@@ -7625,7 +6596,7 @@
    "in_service_gap_days": 1096,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 87
+   "rank": 73
   },
   {
    "id": "desc-2428-6810-f__gpc-20794",
@@ -7661,7 +6632,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 88
+   "rank": 74
   },
   {
    "id": "desc-2428-6808-k__gpc-20407",
@@ -7697,7 +6668,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 89
+   "rank": 75
   },
   {
    "id": "desc-2428-6808-l__gpc-21006",
@@ -7733,7 +6704,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 90
+   "rank": 76
   },
   {
    "id": "desc-2428-6808-k__gpc-20783",
@@ -7769,7 +6740,7 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 91
+   "rank": 77
   },
   {
    "id": "desc-2428-6808-l__gpc-21023",
@@ -7805,7 +6776,45 @@
    "in_service_gap_days": 1248,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 92
+   "rank": 78
+  },
+  {
+   "id": "desc-2428-6808-s__gpc-21023",
+   "a": "desc-2428-6808-s",
+   "b": "gpc-21023",
+   "method": "center",
+   "tier": null,
+   "touching": false,
+   "dist_closest_mi": 22.256,
+   "dist_center_mi": 25.19,
+   "in_sperry_method": false,
+   "closest_points": [
+    [
+     32.235027200000005,
+     -80.8533836
+    ],
+    [
+     32.08350969999999,
+     -81.1887223
+    ]
+   ],
+   "centers": [
+    [
+     32.2350272,
+     -80.8533836
+    ],
+    [
+     32.045147799999995,
+     -81.2209368
+    ]
+   ],
+   "window_overlap_days": 0,
+   "in_service_gap_days": 1461,
+   "timeline_label": "separate",
+   "flags": [
+    "method_disagree"
+   ],
+   "rank": 79
   },
   {
    "id": "desc-2428-6808-k__gpc-21006",
@@ -7841,7 +6850,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 93
+   "rank": 80
   },
   {
    "id": "desc-2428-6808-k__gpc-21023",
@@ -7877,7 +6886,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 94
+   "rank": 81
   },
   {
    "id": "desc-2428-6809-g__gpc-19996",
@@ -7913,7 +6922,7 @@
    "in_service_gap_days": 1613,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 95
+   "rank": 82
   },
   {
    "id": "desc-2428-6810-f__gpc-17993",
@@ -7949,7 +6958,7 @@
    "in_service_gap_days": 1826,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 96
+   "rank": 83
   },
   {
    "id": "desc-2428-6810-a__gpc-19996",
@@ -7963,8 +6972,8 @@
    "in_sperry_method": false,
    "closest_points": [
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ],
     [
      33.38050069999999,
@@ -7973,8 +6982,8 @@
    ],
    "centers": [
     [
-     33.660127,
-     -82.195931
+     33.6601273,
+     -82.1959307
     ],
     [
      33.3805007,
@@ -7985,7 +6994,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 97
+   "rank": 84
   },
   {
    "id": "desc-2428-6809-e__gpc-19996",
@@ -8021,7 +7030,7 @@
    "in_service_gap_days": 1978,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 98
+   "rank": 85
   },
   {
    "id": "desc-2428-6359__gpc-20784",
@@ -8059,7 +7068,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 99
+   "rank": 86
   },
   {
    "id": "desc-2428-6808-l__gpc-20784",
@@ -8097,7 +7106,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 100
+   "rank": 87
   },
   {
    "id": "desc-2428-6808-s__gpc-20784",
@@ -8106,13 +7115,13 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 26.42,
+   "dist_closest_mi": 30.67,
+   "dist_center_mi": 30.612,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.1552821,
@@ -8121,8 +7130,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.1552821,
@@ -8133,10 +7142,9 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [
-    "method_disagree",
     "sources_disagree"
    ],
-   "rank": 101
+   "rank": 88
   },
   {
    "id": "desc-2428-6359__gpc-20796",
@@ -8172,7 +7180,7 @@
    "in_service_gap_days": 2557,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 102
+   "rank": 89
   },
   {
    "id": "desc-2428-6809-n__gpc-20793",
@@ -8190,8 +7198,8 @@
      -81.5644353
     ],
     [
-     33.660126999999996,
-     -82.195931
+     33.6601273,
+     -82.19593070000002
     ]
    ],
    "centers": [
@@ -8200,15 +7208,15 @@
      -81.5644353
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 103
+   "rank": 90
   },
   {
    "id": "desc-2428-6809-n__gpc-20794",
@@ -8244,7 +7252,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 104
+   "rank": 91
   },
   {
    "id": "desc-2428-6808-k__gpc-20784",
@@ -8282,7 +7290,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 105
+   "rank": 92
   },
   {
    "id": "desc-2428-6808-l__gpc-20796",
@@ -8318,7 +7326,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 106
+   "rank": 93
   },
   {
    "id": "desc-2428-6371-d__gpc-20793",
@@ -8336,8 +7344,8 @@
      -81.3605659
     ],
     [
-     33.543994,
-     -82.168648
+     33.54399419999999,
+     -82.1686481
     ]
    ],
    "centers": [
@@ -8346,15 +7354,15 @@
      -81.3605659
     ],
     [
-     33.6020605,
-     -82.1822895
+     33.60206075,
+     -82.1822894
     ]
    ],
    "window_overlap_days": 0,
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 107
+   "rank": 94
   },
   {
    "id": "desc-2428-6371-d__gpc-20794",
@@ -8390,7 +7398,7 @@
    "in_service_gap_days": 2709,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 108
+   "rank": 95
   },
   {
    "id": "desc-2428-6808-s__gpc-20796",
@@ -8399,13 +7407,13 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 23.197,
-   "dist_center_mi": 26.42,
+   "dist_closest_mi": 30.67,
+   "dist_center_mi": 30.612,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.333757999999996,
-     -81.032495
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.1552821,
@@ -8414,8 +7422,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.1552821,
@@ -8425,10 +7433,8 @@
    "window_overlap_days": 0,
    "in_service_gap_days": 2922,
    "timeline_label": "separate",
-   "flags": [
-    "method_disagree"
-   ],
-   "rank": 109
+   "flags": [],
+   "rank": 96
   },
   {
    "id": "desc-2428-6852__gpc-17993",
@@ -8466,7 +7472,7 @@
    "flags": [
     "method_disagree"
    ],
-   "rank": 110
+   "rank": 97
   },
   {
    "id": "desc-2428-6367-d-g__gpc-20787",
@@ -8475,13 +7481,13 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.418,
-   "dist_center_mi": 25.593,
+   "dist_closest_mi": 25.531,
+   "dist_center_mi": 25.59,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.357098414725876,
-     -81.11724608814652
+     32.360699299999986,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -8490,8 +7496,8 @@
    ],
    "centers": [
     [
-     32.346439000000004,
-     -81.0785475
+     32.3606993,
+     -81.1241523
     ],
     [
      32.0067859,
@@ -8504,7 +7510,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 111
+   "rank": 98
   },
   {
    "id": "desc-2428-6808-k__gpc-20796",
@@ -8540,7 +7546,7 @@
    "in_service_gap_days": 3074,
    "timeline_label": "separate",
    "flags": [],
-   "rank": 112
+   "rank": 99
   },
   {
    "id": "desc-2428-6808-l__gpc-20787",
@@ -8578,7 +7584,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 113
+   "rank": 100
   },
   {
    "id": "desc-2428-6808-s__gpc-20787",
@@ -8587,13 +7593,13 @@
    "method": "center",
    "tier": null,
    "touching": false,
-   "dist_closest_mi": 25.943,
-   "dist_center_mi": 26.406,
+   "dist_closest_mi": 28.228,
+   "dist_center_mi": 28.213,
    "in_sperry_method": false,
    "closest_points": [
     [
-     32.321091315383846,
-     -81.00946067177087
+     32.235027200000005,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -8602,8 +7608,8 @@
    ],
    "centers": [
     [
-     32.2843925,
-     -80.9429395
+     32.2350272,
+     -80.8533836
     ],
     [
      32.0067859,
@@ -8616,45 +7622,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 114
-  },
-  {
-   "id": "desc-2428-139-m-n__gpc-20787",
-   "a": "desc-2428-139-m-n",
-   "b": "gpc-20787",
-   "method": "center",
-   "tier": null,
-   "touching": false,
-   "dist_closest_mi": 25.977,
-   "dist_center_mi": 26.018,
-   "in_sperry_method": false,
-   "closest_points": [
-    [
-     32.333757999999996,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "centers": [
-    [
-     32.333758,
-     -81.032495
-    ],
-    [
-     32.0067859,
-     -81.2531513
-    ]
-   ],
-   "window_overlap_days": 0,
-   "in_service_gap_days": 3439,
-   "timeline_label": "separate",
-   "flags": [
-    "sources_disagree"
-   ],
-   "rank": 115
+   "rank": 101
   },
   {
    "id": "desc-2428-6808-k__gpc-20787",
@@ -8692,7 +7660,7 @@
    "flags": [
     "sources_disagree"
    ],
-   "rank": 116
+   "rank": 102
   }
  ]
 }

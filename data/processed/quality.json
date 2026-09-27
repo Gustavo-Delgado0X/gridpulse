@@ -1,12 +1,11 @@
 {
  "coverage": {
   "projects": 182,
-  "projects_located": 102,
-  "projects_unlocated": 80,
+  "projects_located": 100,
+  "projects_unlocated": 82,
   "endpoints_by_precision": {
-   "sperry_provided": 17,
-   "unresolved": 199,
-   "osm_feature": 111
+   "unresolved": 204,
+   "osm_feature": 123
   }
  },
  "acceptance": {
@@ -65,6 +64,78 @@
    }
   ]
  },
+ "independent": {
+  "found": 6,
+  "expected": 6,
+  "details": [
+   {
+    "overlap_id": "OVL_1",
+    "expected_mi": 4.09,
+    "got_center_mi": 4.09,
+    "tier": "T1",
+    "touching": true,
+    "got_closest_mi": 0.0,
+    "expected_gap": 3074,
+    "got_gap": 3074,
+    "found": true
+   },
+   {
+    "overlap_id": "OVL_2",
+    "expected_mi": 5.65,
+    "got_center_mi": 3.03,
+    "tier": "T3",
+    "touching": false,
+    "got_closest_mi": 3.04,
+    "expected_gap": 152,
+    "got_gap": 152,
+    "found": true
+   },
+   {
+    "overlap_id": "OVL_3",
+    "expected_mi": 7.55,
+    "got_center_mi": 5.76,
+    "tier": "T3",
+    "touching": false,
+    "got_closest_mi": 3.04,
+    "expected_gap": 517,
+    "got_gap": 517,
+    "found": true
+   },
+   {
+    "overlap_id": "OVL_4",
+    "expected_mi": 8.01,
+    "got_center_mi": 8.01,
+    "tier": "T4",
+    "touching": false,
+    "got_closest_mi": 6.89,
+    "expected_gap": 3074,
+    "got_gap": 3074,
+    "found": true
+   },
+   {
+    "overlap_id": "OVL_5",
+    "expected_mi": 14.34,
+    "got_center_mi": 20.46,
+    "tier": "T4",
+    "touching": false,
+    "got_closest_mi": 20.49,
+    "expected_gap": 365,
+    "got_gap": 365,
+    "found": true
+   },
+   {
+    "overlap_id": "OVL_6",
+    "expected_mi": 14.81,
+    "got_center_mi": 20.31,
+    "tier": "T4",
+    "touching": false,
+    "got_closest_mi": 20.32,
+    "expected_gap": 730,
+    "got_gap": 730,
+    "found": true
+   }
+  ]
+ },
  "discrepancies": [
   {
    "kind": "coordinate_conflict",
@@ -81,7 +152,7 @@
      -81.1246
     ]
    },
-   "message": "Jasper: OSM and Sperry's answer key differ by 0.11 mi"
+   "message": "Jasper: OSM and Sperry's answer key differ by 0.11 mi; GridPulse uses OpenStreetMap"
   },
   {
    "kind": "coordinate_conflict",
@@ -98,7 +169,7 @@
      -81.182105
     ]
    },
-   "message": "MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi"
+   "message": "MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi; GridPulse uses OpenStreetMap"
   },
   {
    "kind": "sources_disagree",
@@ -449,5 +520,5 @@
    "message": "SAV: LITTLE OGEECHEE 230/115KV BANK REPLACEMENT: IRP 2034 vs SERTP 2026: 2029"
   }
  ],
- "built_at": "2026-09-27T09:46:19.949172+00:00"
+ "built_at": "2026-09-27T10:31:53.395806+00:00"
 }
