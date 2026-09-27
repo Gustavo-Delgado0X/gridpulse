@@ -15,8 +15,13 @@ const MODE_TEXT = { speaking: "Speaking", listening: "Listening" };
  * client tools below, which read the live GridPulse API; our server hands out a signed session URL so the key never
  * reaches the browser.
  */
-export function VoiceAgent({ onShow }: { onShow: (opportunityId: string) => void }) {
-  const [open, setOpen] = useState(false);
+interface Props {
+  open: boolean;
+  onClose: () => void;
+  onShow: (opportunityId: string) => void;
+}
+
+export function VoiceAgent({ open, onClose, onShow }: Props) {
   const [status, setStatus] = useState<Status>("idle");
   const [mode, setMode] = useState<"speaking" | "listening">("listening");
   const [lines, setLines] = useState<Line[]>([]);
@@ -57,7 +62,6 @@ export function VoiceAgent({ onShow }: { onShow: (opportunityId: string) => void
   };
 
   const start = async () => {
-    setOpen(true);
     setError(null);
     setLines([]);
     setStatus("connecting");
@@ -84,17 +88,25 @@ export function VoiceAgent({ onShow }: { onShow: (opportunityId: string) => void
     setStatus("idle");
   };
 
+  useEffect(() => {
+    if (open && status === "idle" && !session.current) void start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  const close = () => { void end(); onClose(); };
+
+  if (!open) return null;
   const live = status === "connecting" || status === "connected";
   return (
-    <div className={`voice-agent ${open ? "is-open" : ""}`}>
-      {open && (
+    <div className="voice-agent">
+      {(
         <section className="voice-agent__panel" aria-label="GridPulse voice analyst">
           <header className="voice-agent__head">
             <span className={`voice-agent__dot voice-agent__dot--${live ? mode : "off"}`} aria-hidden="true" />
             <strong>GridPulse analyst</strong>
             <span className="muted small">{status === "connecting" ? "Connecting…" : status === "connected" ? MODE_TEXT[mode] : "Not connected"}</span>
             <span className="spacer" />
-            <button type="button" className="icon-btn" onClick={() => { void end(); setOpen(false); }} aria-label="Close voice analyst">×</button>
+            <button type="button" className="icon-btn" onClick={close} aria-label="Close voice analyst">×</button>
           </header>
           {error && <p role="alert" className="voice-agent__error small">{error}</p>}
           <ol ref={logRef} className="voice-agent__log" role="log" aria-label="Conversation">
@@ -109,11 +121,6 @@ export function VoiceAgent({ onShow }: { onShow: (opportunityId: string) => void
             <span className="small muted">Voice by ElevenLabs · candidates for human review</span>
           </footer>
         </section>
-      )}
-      {!open && (
-        <button type="button" className="voice-agent__fab btn btn--primary" onClick={() => void start()} aria-label="Talk to the GridPulse analyst">
-          <span aria-hidden="true">🎙</span> Ask GridPulse
-        </button>
       )}
     </div>
   );

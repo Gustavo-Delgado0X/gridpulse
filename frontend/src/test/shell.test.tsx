@@ -86,3 +86,15 @@ test("pair panel navigates back, previous, next and widens", async () => {
   expect(props.onBack).toHaveBeenCalled();
   expect(screen.getByText("detail body")).toBeInTheDocument();
 });
+
+test("sidebar shows Ask GridPulse only when the voice analyst is available", async () => {
+  const onAskAnalyst = vi.fn();
+  renderSidebar({ onAskAnalyst });
+  await userEvent.click(screen.getByRole("button", { name: "Talk to the GridPulse analyst" }));
+  expect(onAskAnalyst).toHaveBeenCalled();
+});
+
+test("without the voice analyst there is no Ask button", () => {
+  renderSidebar();
+  expect(screen.queryByRole("button", { name: "Talk to the GridPulse analyst" })).not.toBeInTheDocument();
+});
