@@ -149,6 +149,8 @@ export interface Quality {
 
 export interface Change {
   project_id: string;
+  /** Id of the same project in the list the opportunities are ranked on (DESC 2024-28 / GPC IRP), if any. */
+  primary_id?: string | null;
   utility: Utility;
   name: string;
   event: string;

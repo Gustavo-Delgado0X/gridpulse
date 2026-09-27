@@ -7,10 +7,11 @@ import { UtilityChip } from "./UtilityChip";
 const EVENT_TEXT: Record<string, string> = {
   new: "New", removed: "Removed", completed: "Completed", cancelled: "Cancelled", slipped: "Schedule slip",
   moved_earlier: "Moved earlier", renamed: "Renamed", cost_changed: "Cost change", sources_disagree: "Sources disagree", changed: "Changed",
+  id_reused: "Project ID reused",
 };
 const EVENT_GLYPH: Record<string, string> = {
   slipped: "→", moved_earlier: "←", cost_changed: "$", renamed: "Aa", sources_disagree: "▲", new: "+", removed: "−",
-  completed: "✓", cancelled: "×", changed: "~",
+  completed: "✓", cancelled: "×", changed: "~", id_reused: "≠",
 };
 const GROUPS: Record<string, (c: Change) => boolean> = {
   All: () => true,
@@ -21,6 +22,7 @@ const GROUPS: Record<string, (c: Change) => boolean> = {
   "New projects": (c) => c.event === "new",
   "Removed / completed / cancelled": (c) => ["removed", "completed", "cancelled"].includes(c.event),
   "Change notes": (c) => c.event === "changed",
+  "Reused Project IDs": (c) => c.event === "id_reused",
 };
 const MAIN_GROUPS = ["All", "Schedule", "Cost", "Renamed"];
 
@@ -48,16 +50,19 @@ export function PlanChangesView({ changes, opportunities = [], onOpenOpportunity
   const [open, setOpen] = useState<Change | null>(null);
 
   const linked = useMemo(() => new Set(opportunities.flatMap((o) => [o.a.id, o.b.id])), [opportunities]);
+  const ranked = (c: Change) => c.primary_id ?? c.project_id; // the id opportunities use
   const shown = useMemo(() => changes.filter((c) =>
-    GROUPS[group](c) && (utility === "All" || c.utility === utility) && (!linkedOnly || linked.has(c.project_id)) &&
-    (!query || `${c.name} ${c.project_id}`.toLowerCase().includes(query.toLowerCase()))), [changes, group, utility, linkedOnly, linked, query]);
+    GROUPS[group](c) && (utility === "All" || c.utility === utility) && (!linkedOnly || linked.has(ranked(c))) &&
+    (!query || `${c.name} ${c.project_id} ${c.primary_id ?? ""}`.toLowerCase().includes(query.toLowerCase()))),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [changes, group, utility, linkedOnly, linked, query]);
   const byProject = useMemo(() => {
     const map = new Map<string, Change[]>();
     for (const c of shown) map.set(c.project_id, [...(map.get(c.project_id) ?? []), c]);
     return [...map.entries()];
   }, [shown]);
   const csvHref = `data:text/csv;charset=utf-8,${encodeURIComponent(toCsv(shown))}`;
-  const openPairs = open ? pairsFor(open.project_id, opportunities) : [];
+  const openPairs = open ? pairsFor(ranked(open), opportunities) : [];
   const openDelta = open ? changeDelta(open.before, open.after) : null;
 
   return (
@@ -97,7 +102,7 @@ export function PlanChangesView({ changes, opportunities = [], onOpenOpportunity
           </div>
           {byProject.length === 0 && <div className="empty"><p className="empty__title">No changes match</p></div>}
           {byProject.map(([projectId, rows]) => {
-            const pairs = pairsFor(projectId, opportunities);
+            const pairs = pairsFor(ranked(rows[0]), opportunities);
             return (
               <div key={projectId} className="changes-group" role="rowgroup">
                 <div className="changes-group__project">

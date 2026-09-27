@@ -36,3 +36,21 @@ test("validation table renders every answer-key case", () => {
   expect(within(table).getByText("OVL_1")).toBeInTheDocument();
   expect(within(table).getAllByText("Pass")).toHaveLength(QUALITY.acceptance.details.length);
 });
+
+test("landing derives the overlap window and source fact from the featured pair", () => {
+  const featured = { ...OPPS[1], window_overlap_days: 213,
+    a: { ...OPPS[1].a, window_start: "2024-01-01", window_end: "2025-12-31" },
+    b: { ...OPPS[1].b, window_start: "2025-06-01", window_end: "2027-06-01" } };
+  render(<Landing stats={{ projects: 182, pairs: 52, changes: 317, acceptance: QUALITY.acceptance }} featured={featured} quality={QUALITY}
+                  sourceFact={{ name: "Jasper – Okatie 230 kV #2: Construct", printed: "12/31/25", source_id: "desc-2428", page: 23 }} />);
+  expect(screen.getByText(/Jun 2025 → Dec 2025/)).toBeInTheDocument();
+  expect(screen.getByText(/planned in-service: 12\/31\/25/)).toBeInTheDocument();
+  expect(screen.getByText(/desc-2428 · p\.23/)).toBeInTheDocument();
+});
+
+test("landing shows placeholders, never stale numbers, while data loads", () => {
+  render(<Landing stats={{ projects: null, pairs: null, changes: null, acceptance: null }} />);
+  const proof = screen.getByRole("region", { name: "At a glance" });
+  expect(within(proof).queryByText("182")).not.toBeInTheDocument();
+  expect(within(proof).getAllByText("—").length).toBeGreaterThan(0);
+});

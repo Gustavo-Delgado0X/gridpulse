@@ -17,9 +17,10 @@ GridPulse reads the public transmission plans of **Dominion Energy South Carolin
 | | |
 |---|---|
 | Projects parsed | 182 (44 DESC 2024–28 + 138 GPC/SAV from the 2025 IRP), plus 70 other-utility rows kept but hidden |
-| Projects located | 104 (OpenStreetMap substations, confirmed against PDF context, plus Sperry's coordinates) |
+| Projects located | 102 (OpenStreetMap substations matched by name — confirmed by GPC zone, voltage or tie-line context where available — plus Sperry's coordinates). 80 are listed but not mapped |
 | DESC × GPC pairs within 25 mi (closest points) | 52: **2 × T1**, 2 × T3, 48 × T4. 15 of them share a build window |
-| Plan-change events | 322 across DESC 2024–28 → 2025–29 → 2026–30, GPC IRP tables, and IRP vs SERTP 2025/2026 |
+| Plan-change events | 317 across DESC 2024–28 → 2025–29 → 2026–30, GPC IRP tables, and IRP vs SERTP 2025/2026 |
+| Data-quality issues | 41: source conflicts, coordinate mismatches, cost tables that do not sum, normalized dates, reused Project IDs |
 
 What the ranked list shows that the answer key does not:
 
@@ -66,17 +67,18 @@ data/raw PDFs ──► pipeline/ parse ──► locate (OSM) ──► answer 
 - **Tiers:** T1 touching or shared facility · T2 < 1 mi · T3 < 5 mi · T4 ≤ 25 mi.
 - **Timeline:** window overlap, day gap, and a timing label.
 - **Ranking:** deterministic, by tier, then timing, then gap, then distance, then ID.
-- **Estimator:** the cost/impact calculation.
+- **Estimator:** illustrative cost/impact arithmetic. The shared corridor defaults to 0 because no source states that two projects share one; users enter a length to explore.
 
 **UI**
-- Ranked table, schematic map and detail panel, linked by selection.
+- Ranked queue, schematic map and inspector, linked by selection.
 - Centers ↔ Closest toggle, with an animated slide on the map.
 - Evidence, estimator, triage, brief, CSV export, plan-changes view and data-quality view.
 
 ### Design choices
 
-- **Evidence over assertion.** Every fact carries a verbatim quote and a page number. Derived numbers name their method, and interpretations are labelled `TEMPLATE`.
-- **Honest locations.** Nothing is geocoded by guesswork: 194 endpoints stay `unresolved` and are listed, not drawn. Coordinate conflicts are reported, for example McIntosh vs West McIntosh (0.41 mi) between OSM and the answer key.
+- **Evidence over assertion.** Every source fact is quoted as printed (dates like `6/1/2027` included) with its page; a test checks each quote against its cited PDF page. Derived numbers name their method, and interpretations are labelled `TEMPLATE`.
+- **Honest locations.** Ambiguous or unmatched names are not guessed: 199 endpoints stay `unresolved` and are listed, not drawn. When several OpenStreetMap features share a name and nothing (zone, voltage, tie line) picks one, the endpoint stays unresolved. Coordinate conflicts are reported, for example two McIntosh coordinates 0.41 mi apart (OpenStreetMap vs Sperry's answer key).
+- **One list for ranking, all lists for change.** Opportunities are ranked on the DESC 2024–28 list, the edition Sperry's answer key uses. The 2025–29 and 2026–30 lists feed the plan-change view, and the inspector shows when a later list moves a date.
 - **Color is never the only signal.** DESC is always a blue circle and GPC an orange square, each with a text label. Tiers use line weight and dash as well as a text badge.
 
 ## Run it
@@ -161,7 +163,7 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent.
 
 ## Disclosures
 
-- **AI assistance:** built with Claude Code (Anthropic) as a pair programmer. All code is written for this project and tested (test-first). No code was copied from other teams.
+- **AI assistance:** built with Claude Code (Anthropic) as a pair programmer, mostly test-first. All code is written for this project; no code was copied from other teams. An independent review with the Codex CLI flagged overclaims and data-integrity issues, which were fixed and are covered by tests.
 - **AI features:** the PydanticAI resource-profiler and explainer (plan item P1c) are **not** included in this submission. Explanations are deterministic templates, labelled `TEMPLATE`.
-- **Estimates:** cost/impact figures are rough, for discussion only. Right-of-way widths, $/acre and mobilization costs are team assumptions shown in the UI.
+- **Estimates:** cost/impact figures are illustrative arithmetic, not forecasts. Right-of-way widths, $/acre and mobilization costs are team assumptions (not sourced from either utility), shown and editable in the UI.
 - **Planning documents:** `docs/GRIDPULSE_MASTER_STRATEGY.md` and `docs/GRIDPULSE_CONTRACTS_DRAFT.md`.

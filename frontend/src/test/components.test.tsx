@@ -147,3 +147,23 @@ test("issue messages split into entity and finding even when names contain colon
   expect(splitIssue("MCINTOSH: OSM and Sperry's answer key differ by 0.41 mi", "MCINTOSH"))
     .toEqual(["MCINTOSH", "OSM and Sperry's answer key differ by 0.41 mi"]);
 });
+
+test("data quality lists parser anomalies with their own labels", async () => {
+  const q = { ...QUALITY, discrepancies: [...QUALITY.discrepancies,
+    { kind: "cost_table_mismatch", project_id: "desc-2428-x", message: "Riverport Tap: cost columns sum to $1 but the Total column says $2 (desc-2428 p.22); GridPulse shows the Total",
+      values: { columns_sum: "$1", stated_total: "$2" } }] };
+  render(<DataQualityView quality={q} opportunities={OPPS} />);
+  expect(screen.getByText("◆ Cost table mismatch")).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Cost tables" })).toBeInTheDocument();
+  expect(screen.getAllByText("No ranked pair").length).toBeGreaterThan(0);
+});
+
+test("plan changes link later-list events to the ranked opportunity through primary_id", async () => {
+  const { PlanChangesView } = await import("../components/PlanChangesView");
+  const onOpen = vi.fn();
+  render(<PlanChangesView opportunities={OPPS} onOpenOpportunity={onOpen} changes={[{ project_id: "desc-2529-z", primary_id: "desc-3",
+    utility: "DESC", name: "Jasper – Okatie 230 kV #2: Construct", event: "slipped", before: "2025-12-31", after: "2026-05-31",
+    evidence: [{ source_id: "desc-2428", page: 23, quote: "12/31/25" }, { source_id: "desc-2529", page: 18, quote: "5/31/2026" }] }]} />);
+  await userEvent.click(screen.getByRole("button", { name: "1 opportunity →" }));
+  expect(onOpen).toHaveBeenCalledWith("desc-3__gpc-2");
+});

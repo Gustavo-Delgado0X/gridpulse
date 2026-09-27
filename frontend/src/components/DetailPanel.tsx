@@ -60,16 +60,26 @@ function ProjectFacts({ project, mapsLink }: { project: Project; mapsLink: strin
   );
 }
 
-function Compare({ change }: { change: Change }) {
-  const [prior, current] = [change.evidence[0], change.evidence[change.evidence.length - 1]];
+/** One cell per cited source. The cell from the list GridPulse ranks on (the project's own source) is marked as used. */
+function Compare({ change, rankedSource }: { change: Change; rankedSource: string }) {
+  const values = [change.before, change.after];
+  const heading = change.event === "sources_disagree" ? "Sources disagree"
+    : change.event === "id_reused" ? "Project ID reused for a different project" : `${title(change.event.replace("_", " "))} between plan versions`;
   return (
     <div className="compare">
-      <p className="compare__title">{change.event === "sources_disagree" ? "Sources disagree" : `${title(change.event.replace("_", " "))} between plan versions`}</p>
+      <p className="compare__title">{heading}</p>
       <div className="compare__grid">
-        <div className="compare__cell compare__cell--used"><span className="compare__label">Current · used</span>
-          <strong>{change.after ?? "—"}</strong>{current && <span className="mono">{current.source_id} · p.{current.page}</span>}</div>
-        <div className="compare__cell"><span className="compare__label">{change.event === "sources_disagree" ? "Other source" : "Prior plan"}</span>
-          <strong>{change.before ?? "—"}</strong>{prior && change.evidence.length > 1 && <span className="mono">{prior.source_id} · p.{prior.page}</span>}</div>
+        {change.evidence.map((e, i) => {
+          const used = e.source_id === rankedSource;
+          return (
+            <div key={`${e.source_id}-${i}`} className={`compare__cell ${used ? "compare__cell--used" : ""}`}>
+              <span className="compare__label">{used ? "Used by GridPulse" : `${i < change.evidence.length - 1 ? "Earlier" : "Later"} plan · ${e.source_id} p.${e.page}`}</span>
+              <strong>{e.quote}</strong>
+              {used && <span className="mono">{e.source_id} · p.{e.page}</span>}
+              {!used && values[i] && values[i] !== e.quote && <span className="muted small">{values[i]}</span>}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
@@ -82,11 +92,13 @@ export function DetailPanel({ detail, triage, onTriage, briefUrl, changes = [], 
   const derived = detail.evidence.filter((e) => e.type === "derived");
   const interpretation = detail.evidence.find((e) => e.type === "interpretation");
   const query = new URLSearchParams(draft).toString();
-  const pairChanges = changes.filter((c) => c.project_id === detail.a.id || c.project_id === detail.b.id);
+  const linkedTo = (c: Change) => c.primary_id ?? c.project_id;
+  const pairChanges = changes.filter((c) => linkedTo(c) === detail.a.id || linkedTo(c) === detail.b.id);
   const scheduleChanges = pairChanges.filter((c) => SCHEDULE_EVENTS.has(c.event));
+  const usedDate = (projectId: string) => (projectId === detail.a.id ? detail.project_a : detail.project_b).in_service_date;
   const priorDates: PriorDate[] = pairChanges
-    .filter((c) => SCHEDULE_EVENTS.has(c.event) && c.before && ISO.test(c.before))
-    .map((c) => ({ projectId: c.project_id, date: c.before!, label: "Earlier plan" }));
+    .filter((c) => SCHEDULE_EVENTS.has(c.event) && c.after && ISO.test(c.after) && c.after !== usedDate(linkedTo(c)))
+    .map((c) => ({ projectId: linkedTo(c), date: c.after!, label: `Later plan (${c.evidence[c.evidence.length - 1]?.source_id ?? "source"})` }));
   const closestActive = detail.method === "closest";
   const distanceText = detail.touching ? "touching at a shared facility" : `${detail.dist_closest_mi.toFixed(2)} mi at closest points`;
 
@@ -147,11 +159,12 @@ export function DetailPanel({ detail, triage, onTriage, briefUrl, changes = [], 
 
         {scheduleChanges.length > 0 && (
           <div className="alert alert--warn" role="note">
-            <p className="alert__title">▲ Schedule changed between plan versions</p>
-            <p>{scheduleChanges.map((c) => `${c.name}: ${c.before} → ${c.after}`).join("; ")}. GridPulse uses the list shown in the evidence.</p>
+            <p className="alert__title">▲ Schedule changed in later plan versions</p>
+            <p>{scheduleChanges.map((c) => `${c.name}: ${c.before} → ${c.after}`).join("; ")}. GridPulse ranks on DESC 2024–28, the
+              list Sperry's answer key uses; later dates are shown for review.</p>
             <p className="alert__actions">
               <button type="button" className="link-btn" onClick={() => setTab("evidence")}>Review conflicting sources →</button>
-              {onViewChanges && <button type="button" className="link-btn" onClick={() => onViewChanges(scheduleChanges[0].project_id)}>View plan change</button>}
+              {onViewChanges && <button type="button" className="link-btn" onClick={() => onViewChanges(linkedTo(scheduleChanges[0]))}>View plan change</button>}
             </p>
           </div>
         )}
@@ -163,7 +176,7 @@ export function DetailPanel({ detail, triage, onTriage, briefUrl, changes = [], 
               <p className="alert__actions">
                 <button type="button" className="link-btn" onClick={() => setTab("evidence")}>Review conflicting sources →</button>
                 {onViewChanges && pairChanges.some((c) => c.event === "sources_disagree") && (
-                  <button type="button" className="link-btn" onClick={() => onViewChanges(pairChanges.find((c) => c.event === "sources_disagree")!.project_id)}>View plan change</button>
+                  <button type="button" className="link-btn" onClick={() => onViewChanges(linkedTo(pairChanges.find((c) => c.event === "sources_disagree")!))}>View plan change</button>
                 )}
               </p>
             )}
@@ -201,11 +214,11 @@ export function DetailPanel({ detail, triage, onTriage, briefUrl, changes = [], 
             <section aria-label="Evidence">
               {[detail.project_a, detail.project_b].map((p) => {
                 const own = facts.filter((e) => e.project_id === p.id);
-                const conflicts = pairChanges.filter((c) => c.project_id === p.id && COMPARE_EVENTS.has(c.event));
+                const conflicts = pairChanges.filter((c) => linkedTo(c) === p.id && COMPARE_EVENTS.has(c.event));
                 return (
                   <div key={p.id} className="evidence-group">
                     <h4 className="section-title"><UtilityChip utility={p.utility} /> {UTILITY_NAME[p.utility]} · <span className="mono">{p.id}</span></h4>
-                    {conflicts.map((c, i) => <Compare key={`${c.event}-${i}`} change={c} />)}
+                    {conflicts.map((c, i) => <Compare key={`${c.event}-${i}`} change={c} rankedSource={p.source_id} />)}
                     <ul className="evidence-list">{own.map((e) => <EvidenceItem key={e.id} item={e} />)}</ul>
                   </div>
                 );

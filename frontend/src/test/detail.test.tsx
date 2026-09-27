@@ -39,12 +39,17 @@ test("brief export carries the edited estimate", async () => {
 test("schedule changes from the plan-change feed surface as an alert with actions", async () => {
   const onView = vi.fn();
   render(<DetailPanel detail={DETAIL} triage="new" onTriage={() => {}} briefUrl={(q) => `/brief?${q}`} onViewChanges={onView}
-                      changes={[{ project_id: "desc-1", utility: "DESC", name: "DESC project", event: "slipped", before: "2025-12-31",
-                                  after: "2026-05-31", evidence: [{ source_id: "desc-2428", page: 23, quote: "12/31/25" },
-                                                                  { source_id: "desc-2529", page: 18, quote: "5/31/26" }] }]} />);
-  expect(screen.getByText(/Schedule changed between plan versions/)).toBeInTheDocument();
+                      changes={[{ project_id: "desc-2529-x", primary_id: "desc-1", utility: "DESC", name: "DESC project", event: "slipped",
+                                  before: "2025-12-31", after: "2026-05-31", evidence: [{ source_id: "s", page: 3, quote: "12/31/25" },
+                                                                  { source_id: "desc-2529", page: 18, quote: "5/31/2026" }] }]} />);
+  expect(screen.getByText(/Schedule changed in later plan versions/)).toBeInTheDocument();
   await userEvent.click(screen.getByRole("button", { name: "View plan change" }));
   expect(onView).toHaveBeenCalledWith("desc-1");
   await userEvent.click(screen.getByRole("button", { name: "Review conflicting sources →" }));
-  expect(screen.getByText("Current · used")).toBeInTheDocument();
+  // the ranked list (source "s", the project's own source) is what GridPulse uses, not the later plan
+  const used = screen.getByText("Used by GridPulse").closest(".compare__cell")!;
+  expect(used).toHaveTextContent("12/31/25");
+  expect(screen.getByText("Later plan · desc-2529 p.18").closest(".compare__cell")).toHaveTextContent("5/31/2026");
+  await userEvent.click(screen.getByRole("tab", { name: "Overview" }));
+  expect(screen.getByTitle("Later plan (desc-2529): 2026-05-31")).toBeInTheDocument();
 });

@@ -8,7 +8,19 @@ const PROVENANCE: { key: string; label: string; tag: string; tone: "ok" | "neutr
   { key: "approximate", label: "Approximate", tag: "Approximate", tone: "warn", help: "Endpoint proxy or regional approximation" },
   { key: "unresolved", label: "Unresolved", tag: "Unresolved", tone: "muted", help: "No safe match — intentionally not guessed" },
 ];
-const ISSUE_TYPES = { all: "All", coordinate_conflict: "Coordinate mismatch", sources_disagree: "Source conflict" } as const;
+const ISSUE_TYPES = { all: "All", coordinate_conflict: "Coordinates", sources_disagree: "Source conflicts",
+  cost_table_mismatch: "Cost tables", date_normalized: "Dates", id_reused: "Reused IDs" } as const;
+const ISSUE_LABEL: Record<string, { text: string; warn: boolean }> = {
+  coordinate_conflict: { text: "◇ Coordinate mismatch", warn: false },
+  sources_disagree: { text: "▲ Source conflict", warn: true },
+  cost_table_mismatch: { text: "◆ Cost table mismatch", warn: true },
+  date_normalized: { text: "◇ Date normalized", warn: false },
+  id_reused: { text: "≠ Project ID reused", warn: true },
+};
+const USES: Record<string, string> = {
+  coordinate_conflict: "Sperry answer key", cost_table_mismatch: "The Total column", date_normalized: "The normalized date shown",
+  id_reused: "Not linked as a change",
+};
 type IssueFilter = keyof typeof ISSUE_TYPES;
 
 interface Props {
@@ -17,7 +29,7 @@ interface Props {
   onOpenOpportunity?: (id: string) => void;
 }
 
-const FINDING = /: (need date|IRP \d|OSM and)/;
+const FINDING = /: (need date|IRP \d|OSM and|cost columns|in-service date|Project ID)/;
 
 /** "Entity: finding" — entity names can contain colons ("SAV: GOSHEN…"), so split on the known finding phrases. */
 export function splitIssue(message: string, entity?: string): [string, string] {
@@ -32,7 +44,8 @@ function formatValue(v: unknown): string {
 }
 
 const VALUE_LABEL: Record<string, string> = { osm: "OpenStreetMap", answer_key: "Sperry answer key", table_2: "IRP Table 2",
-  detail_page: "IRP detail page", irp: "GPC IRP", sertp: "SERTP" };
+  detail_page: "IRP detail page", irp: "GPC IRP", sertp: "SERTP", columns_sum: "Cost columns sum", stated_total: "Total column",
+  printed: "Printed", used: "Normalized to", before: "Earlier project", after: "Later project" };
 
 export function DataQualityView({ quality, opportunities = [], onOpenOpportunity }: Props) {
   const { coverage, acceptance, discrepancies } = quality;
@@ -51,7 +64,7 @@ export function DataQualityView({ quality, opportunities = [], onOpenOpportunity
       <section className="toolbar">
         <div>
           <h1 className="page-title">Data quality</h1>
-          <p className="muted small">{coverage.projects} projects · {discrepancies.length} issues · conservative: unresolved values are never guessed</p>
+          <p className="muted small">{coverage.projects} projects · {discrepancies.length} issues · conservative: ambiguous or unmatched locations are left unresolved, not guessed</p>
         </div>
         <span className="spacer" />
         <dl className="health">
@@ -78,7 +91,7 @@ export function DataQualityView({ quality, opportunities = [], onOpenOpportunity
                 </li>
               ))}
             </ul>
-            <p className="muted small">Unresolved endpoints are never guessed. Projects with no located endpoint remain listed but are not mapped — {coverage.projects_unlocated} of {coverage.projects} today.</p>
+            <p className="muted small">Ambiguous or unmatched endpoints are left unresolved rather than guessed. Projects with no located endpoint remain listed but are not mapped — {coverage.projects_unlocated} of {coverage.projects} today.</p>
           </section>
           <section className="block">
             <header className="block__head"><h2 className="panel-title">Sperry validation benchmark</h2>
@@ -121,10 +134,10 @@ export function DataQualityView({ quality, opportunities = [], onOpenOpportunity
             return (
               <div key={d.index} className={`issue ${isOpen ? "is-open" : ""}`}>
                 <button type="button" className="issues__row" aria-expanded={isOpen} onClick={() => setExpanded(isOpen ? null : d.index)}>
-                  <span className={d.kind === "sources_disagree" ? "tone-text--warn" : ""}>{d.kind === "sources_disagree" ? "▲ Source conflict" : "◇ Coordinate mismatch"}</span>
+                  <span className={ISSUE_LABEL[d.kind]?.warn ? "tone-text--warn" : ""}>{ISSUE_LABEL[d.kind]?.text ?? d.kind}</span>
                   <span><strong>{splitIssue(d.message, d.endpoint)[0]}</strong><span className="issue__msg">{splitIssue(d.message, d.endpoint)[1]}</span>
                     <span className="mono muted small">{d.project_id}</span></span>
-                  <span>{pairs.length ? `${pairs.length} ${pairs.length === 1 ? "pair" : "pairs"} affected` : <span className="muted">Not in study area</span>}</span>
+                  <span>{pairs.length ? `${pairs.length} ${pairs.length === 1 ? "pair" : "pairs"} affected` : <span className="muted">No ranked pair</span>}</span>
                   <span className="muted">Open</span>
                 </button>
                 {isOpen && (
@@ -135,7 +148,7 @@ export function DataQualityView({ quality, opportunities = [], onOpenOpportunity
                           <div key={k} className="compare__cell"><span className="compare__label">{VALUE_LABEL[k] ?? k}</span><strong>{formatValue(v)}</strong></div>
                         ))}
                         <div className="compare__cell compare__cell--used"><span className="compare__label">GridPulse uses</span>
-                          <strong>{d.kind === "coordinate_conflict" ? "Sperry answer key" : d.values.table_2 ? "IRP Table 2" : "GPC IRP"}</strong></div>
+                          <strong>{USES[d.kind] ?? (d.values.table_2 ? "IRP Table 2" : "GPC IRP")}</strong></div>
                       </div>
                     )}
                     <div className="issue__actions">

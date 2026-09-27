@@ -9,11 +9,39 @@ export interface LandingStats {
   acceptance: Quality["acceptance"] | null;
 }
 
+export interface SourceFact {
+  name: string;
+  printed: string;
+  source_id: string;
+  page: number;
+}
+
 interface Props {
   stats: LandingStats;
   featured?: Opportunity | null;
   quality?: Quality | null;
   conflict?: { message: string; project_id: string } | null;
+  /** The featured DESC project's in-service date exactly as printed in the list GridPulse ranks on. */
+  sourceFact?: SourceFact | null;
+}
+
+const PENDING = "—";
+const MONTH = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+const month = (iso: string) => MONTH.format(new Date(`${iso}T00:00:00Z`));
+
+/** The build-window intersection of the featured pair, e.g. "Jun 2025 → Dec 2025". */
+export function overlapRange(o: Opportunity | null | undefined): string | null {
+  const [a, b] = o ? [o.a, o.b] : [];
+  if (!a?.window_start || !a.window_end || !b?.window_start || !b.window_end || !o?.window_overlap_days) return null;
+  const start = a.window_start > b.window_start ? a.window_start : b.window_start;
+  const end = a.window_end < b.window_end ? a.window_end : b.window_end;
+  return `${month(start)} → ${month(end)}`;
+}
+
+function coordLabel(o: Opportunity | null | undefined): string {
+  if (!o) return "SAVANNAH / AUGUSTA STUDY AREA";
+  const [[lat1, lon1], [lat2, lon2]] = o.closest_points;
+  return `${((lat1 + lat2) / 2).toFixed(2)}°N ${Math.abs((lon1 + lon2) / 2).toFixed(2)}°W · FEATURED PAIR`;
 }
 
 const FEATURED_ID = "desc-2428-6367-d-g__gpc-20065";
@@ -35,15 +63,21 @@ const STEPS = [
   { n: "04", h: "Trace to evidence", b: "Open any pair to see the rationale, the timeline, and each quoted field with its source document and page." },
 ];
 
-const LAYERS = [
-  { tag: "Source fact", glyph: "fact", claim: "Jasper – Okatie 230 kV #2 planned in-service: May 31, 2026.", src: "desc-2529 · p.18 · verbatim quote" },
-  { tag: "Derived", glyph: "derived", claim: "Closest points 3.40 mi apart; build windows overlap by 213 days.", src: "computed · closest-point geometry, EPSG:5070" },
-  { tag: "Assessment", glyph: "assessment", claim: "Tier T3 — shared logistics worth reviewing. Candidate for human review.", src: "GridPulse rationale · labelled as such" },
-];
+function layers(pair: Opportunity | null, fact: SourceFact | null | undefined) {
+  const miles = pair ? (pair.touching ? "touching" : `${pair.dist_closest_mi.toFixed(2)} mi apart`) : PENDING;
+  return [
+    { tag: "Source fact", glyph: "fact",
+      claim: fact ? `${fact.name.replace(/:.*$/, "")} planned in-service: ${fact.printed}` : PENDING,
+      src: fact ? `${fact.source_id} · p.${fact.page} · quoted as printed` : "loading" },
+    { tag: "Derived", glyph: "derived",
+      claim: pair ? `Closest points ${miles}; build windows overlap by ${pair.window_overlap_days ?? 0} days.` : PENDING,
+      src: "computed · geodesic closest points (nearest points found in EPSG:5070)" },
+    { tag: "Assessment", glyph: "assessment", claim: "Tier T3 — shared logistics worth reviewing. Candidate for human review.",
+      src: "GridPulse rationale · labelled as such" },
+  ];
+}
 
-const FALLBACK_BENCH = [["OVL_1", 4.09, 3074], ["OVL_2", 5.65, 152], ["OVL_3", 7.55, 517], ["OVL_4", 8.01, 3074], ["OVL_5", 14.34, 365], ["OVL_6", 14.81, 730]] as const;
-
-const fmt = (n: number | null | undefined, fallback: string) => (n == null ? fallback : String(n));
+const fmt = (n: number | null | undefined) => (n == null ? PENDING : String(n));
 
 function Schematic() {
   return (
@@ -73,18 +107,19 @@ function Schematic() {
   );
 }
 
-export function Landing({ stats, featured, quality, conflict }: Props) {
+export function Landing({ stats, featured, quality, conflict, sourceFact }: Props) {
   const acceptance = stats.acceptance;
   const pair = featured ?? null;
   const studyHref = `${WORKSPACE_PATH}${toHash({ pair: pair?.id ?? FEATURED_ID, method: "closest", d: 25 })}`;
-  const precision = quality?.coverage.endpoints_by_precision ?? {};
-  const bench = acceptance?.details.map((d) => ({ id: d.overlap_id, expected: d.expected_mi, got: d.got_mi, gap: d.got_gap, passed: d.passed }))
-    ?? FALLBACK_BENCH.map(([id, v, g]) => ({ id, expected: v, got: v, gap: g, passed: true }));
+  const precision = quality?.coverage.endpoints_by_precision;
+  const count = (key: string) => (precision ? String(precision[key] ?? 0) : PENDING);
+  const bench = acceptance?.details.map((d) => ({ id: d.overlap_id, expected: d.expected_mi, got: d.got_mi, gap: d.got_gap, passed: d.passed })) ?? [];
+  const overlap = overlapRange(pair);
   const proof = [
-    { n: fmt(stats.projects, "182"), l: "projects parsed from public plans" },
-    { n: fmt(stats.pairs, "52"), l: "DESC × GPC pairs within 25 mi" },
-    { n: fmt(stats.changes, "322"), l: "changes detected between plan versions" },
-    { n: acceptance ? `${acceptance.matched} / ${acceptance.expected}` : "6 / 6", l: "Sperry answer-key overlaps reproduced" },
+    { n: fmt(stats.projects), l: "projects parsed from public plans" },
+    { n: fmt(stats.pairs), l: "DESC × GPC pairs within 25 mi" },
+    { n: fmt(stats.changes), l: "changes detected between plan versions" },
+    { n: acceptance ? `${acceptance.matched} / ${acceptance.expected}` : PENDING, l: "Sperry answer-key overlaps reproduced" },
   ];
 
   return (
@@ -114,22 +149,22 @@ export function Landing({ stats, featured, quality, conflict }: Props) {
             </div>
           </div>
           <div className="lp-hero__visual" aria-label="Example from the study">
-            <p className="lp-hero__coords">32.26°N 81.01°W · STUDY AREA</p>
+            <p className="lp-hero__coords">{coordLabel(pair)}</p>
             <figure className="lp-card lp-card--pair" aria-label="Example opportunity">
               <div className="lp-card__head"><span className="lp-tierchip">{pair?.tier ?? "T3"} · SHARE LOGISTICS</span>
-                <span className="lp-muted">#{String(pair?.rank ?? 4).padStart(2, "0")} of {fmt(stats.pairs, "52")}</span></div>
-              <p className="lp-card__proj"><span className="lp-shape lp-shape--circle" aria-hidden="true" /><span className="lp-code">DESC</span>{pair?.a.name ?? "Jasper – Okatie 230 kV #2"}</p>
-              <p className="lp-card__proj"><span className="lp-shape lp-shape--square" aria-hidden="true" /><span className="lp-code">GPC</span>{pair?.b.name ?? "Goshen – McIntosh 115 kV rebuild"}</p>
+                <span className="lp-muted">#{pair ? String(pair.rank).padStart(2, "0") : PENDING} of {fmt(stats.pairs)}</span></div>
+              <p className="lp-card__proj"><span className="lp-shape lp-shape--circle" aria-hidden="true" /><span className="lp-code">DESC</span>{pair?.a.name ?? PENDING}</p>
+              <p className="lp-card__proj"><span className="lp-shape lp-shape--square" aria-hidden="true" /><span className="lp-code">GPC</span>{pair?.b.name ?? PENDING}</p>
               <dl className="lp-card__stats">
-                <div><dd>{pair ? `${pair.dist_closest_mi.toFixed(2)} mi` : "3.40 mi"}</dd><dt>closest</dt></div>
-                <div><dd>{pair ? `${pair.dist_center_mi.toFixed(2)} mi` : "7.55 mi"}</dd><dt>centers</dt></div>
-                <div><dd>{pair ? `${pair.in_service_gap_days} d` : "517 d"}</dd><dt>in-service gap</dt></div>
+                <div><dd>{pair ? `${pair.dist_closest_mi.toFixed(2)} mi` : PENDING}</dd><dt>closest</dt></div>
+                <div><dd>{pair ? `${pair.dist_center_mi.toFixed(2)} mi` : PENDING}</dd><dt>centers</dt></div>
+                <div><dd>{pair ? `${pair.in_service_gap_days} d` : PENDING}</dd><dt>in-service gap</dt></div>
               </dl>
             </figure>
             <figure className="lp-card lp-card--alert" aria-label="Example data-quality finding">
               <p className="lp-card__title">Sources disagree</p>
-              <p>{conflict?.message ?? "Need date for SAV: CC – Hyundai Motors Savannah differs between Table 2 and detail page p.231."}</p>
-              <p className="lp-mono lp-muted">{conflict?.project_id ?? "gpc-19523"}</p>
+              <p>{conflict?.message ?? PENDING}</p>
+              <p className="lp-mono lp-muted">{conflict?.project_id ?? ""}</p>
             </figure>
           </div>
         </section>
@@ -165,8 +200,8 @@ export function Landing({ stats, featured, quality, conflict }: Props) {
           <div className="lp-split">
             <div className="lp-schematic">
               <Schematic />
-              <div className="lp-card lp-card--float"><p className="lp-card__title">Build windows overlap · 213 days</p>
-                <p className="lp-muted">Oct 2025 → May 2026. Shared staging and outages worth reviewing.</p></div>
+              <div className="lp-card lp-card--float"><p className="lp-card__title">Build windows overlap · {pair?.window_overlap_days ?? PENDING} days</p>
+                <p className="lp-muted">{overlap ?? PENDING}. Shared staging and outages worth reviewing.</p></div>
             </div>
             <ol className="lp-steps">
               {STEPS.map((s) => <li key={s.n}><span className="lp-mono lp-muted">{s.n}</span><div><h3>{s.h}</h3><p>{s.b}</p></div></li>)}
@@ -178,7 +213,7 @@ export function Landing({ stats, featured, quality, conflict }: Props) {
                 <p className="lp-muted small">#04 <span className="lp-badge">T3</span> &lt; 5 mi · Share logistics</p>
                 <p><span className="lp-code">DESC</span> Jasper – Okatie 230 kV #2</p><p><span className="lp-code">GPC</span> SAV: Goshen – McIntosh 115 kV</p>
                 <p><strong>3.40 mi</strong> <span className="lp-muted">closest · 213-day overlap</span></p>
-                <p className="lp-warn small">▲ Schedule conflict · plan versions disagree</p>
+                <p className="lp-warn small">▲ Source conflict · IRP and SERTP disagree on a date</p>
               </div>
               <h3>Opportunities</h3>
               <p>A ranked queue of cross-utility project pairs — by tier, build-window overlap, in-service gap and distance — measured at closest points or Sperry's center method.</p>
@@ -191,17 +226,17 @@ export function Landing({ stats, featured, quality, conflict }: Props) {
                 <p className="lp-mono lp-muted">desc-2428 p.23 → desc-2529 p.18</p>
               </div>
               <h3>Plan changes</h3>
-              <p>{fmt(stats.changes, "322")} detected changes between plan versions — slips, cost moves and renames — with the magnitude computed and both source pages cited.</p>
+              <p>{fmt(stats.changes)} detected changes between plan versions — slips, cost moves and renames — with the magnitude computed and both source pages cited.</p>
             </article>
             <article>
               <div className="lp-mini">
                 <div className="lp-bar" aria-hidden="true">
-                  <span style={{ flexGrow: precision.sperry_provided ?? 17 }} className="ok" /><span style={{ flexGrow: precision.osm_feature ?? 116 }} className="ink" />
-                  <span style={{ flexGrow: precision.unresolved ?? 194 }} className="none" />
+                  <span style={{ flexGrow: precision?.sperry_provided ?? 0 }} className="ok" /><span style={{ flexGrow: precision?.osm_feature ?? 0 }} className="ink" />
+                  <span style={{ flexGrow: precision?.unresolved ?? 0 }} className="none" />
                 </div>
-                <p className="lp-row"><span>Sperry-confirmed</span><strong>{precision.sperry_provided ?? 17}</strong></p>
-                <p className="lp-row"><span>OSM-resolved</span><strong>{precision.osm_feature ?? 116}</strong></p>
-                <p className="lp-row"><span className="lp-muted">Unresolved — never guessed</span><strong>{precision.unresolved ?? 194}</strong></p>
+                <p className="lp-row"><span>Sperry-confirmed</span><strong>{count("sperry_provided")}</strong></p>
+                <p className="lp-row"><span>OSM-resolved</span><strong>{count("osm_feature")}</strong></p>
+                <p className="lp-row"><span className="lp-muted">Unresolved — not guessed</span><strong>{count("unresolved")}</strong></p>
               </div>
               <h3>Data quality</h3>
               <p>Location provenance for every endpoint, a live validation benchmark, and an issue queue of every place the sources disagree.</p>
@@ -217,7 +252,7 @@ export function Landing({ stats, featured, quality, conflict }: Props) {
               <p className="lp-lede">GridPulse keeps three kinds of statement apart, so a planner can tell what a utility published from what we calculated and what we recommend.</p>
             </div>
             <ul className="lp-layers">
-              {LAYERS.map((l) => (
+              {layers(pair, sourceFact).map((l) => (
                 <li key={l.tag}>
                   <span className="lp-layer__tag"><span className={`lp-glyph lp-glyph--${l.glyph}`} aria-hidden="true" />{l.tag}</span>
                   <div><p className="lp-layer__claim">{l.claim}</p><p className="lp-mono lp-muted">{l.src}</p></div>
@@ -233,7 +268,7 @@ export function Landing({ stats, featured, quality, conflict }: Props) {
             <h2 className="lp-h2">Checked against the answer key. {acceptance && !acceptance.passed ? "Not yet six for six." : "Six for six."}</h2>
             <p className="lp-lede">GridPulse reproduces every overlap in Sperry's answer key to within ±0.01 mi using the center method, matches every in-service gap,
               and leaves the three control projects unflagged.</p>
-            <p className="lp-muted">And where the data is thin, it says so. Unresolved endpoints are never guessed — {quality ? `${quality.coverage.projects_unlocated} of ${quality.coverage.projects}` : "78 of 182"} projects are listed but not mapped.</p>
+            <p className="lp-muted">And where the data is thin, it says so. Ambiguous or unmatched endpoints are left unresolved rather than guessed — {quality ? `${quality.coverage.projects_unlocated} of ${quality.coverage.projects}` : PENDING} projects are listed but not mapped.</p>
           </div>
           <table className="lp-table" aria-label="Sperry answer-key benchmark">
             <thead><tr><th scope="col">Case</th><th scope="col" className="num">Answer key</th><th scope="col" className="num">GridPulse</th>
