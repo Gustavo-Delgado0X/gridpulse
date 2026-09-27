@@ -46,7 +46,7 @@ def test_api_ts_uses_the_expected_routes():
         "/opportunities/${encodeURIComponent(id)}/brief/script?method=${method}",
         "/opportunities/${encodeURIComponent(id)}/brief?method=${method}",
         "/opportunities/${encodeURIComponent(id)}?method=${method}", "/opportunities?d=${q.d}&method=${q.method}",
-        "/projects?located=true", "/quality"])
+        "/projects?located=true", "/quality", "/voice/session"])
 
 
 @pytest.mark.parametrize("d", ["1", "25", "50"])
@@ -54,8 +54,10 @@ def test_api_ts_uses_the_expected_routes():
 def test_every_frontend_route_is_served(d, method):
     for template in templates():
         res = client.get("/api" + concrete(template, d, method))
-        if "/brief/audio" in template and res.status_code == 503:  # no ElevenLabs key here: documented fallback
+        if ("/brief/audio" in template or "/voice/session" in template) and res.status_code == 503:  # no key here
             assert res.json()["error"]["code"] == "unavailable"
+            continue
+        if "/voice/session" in template and res.status_code == 429:  # 5 sessions/min: this test calls it 6 times
             continue
         assert res.status_code == 200, (template, res.text[:200])
 
@@ -86,3 +88,13 @@ def test_one_mile_radius_returns_only_pairs_within_a_mile():
     data = client.get("/api/opportunities?d=1&method=closest").json()["data"]
     assert data and all(o["touching"] or o["dist_closest_mi"] <= 1 for o in data)
     assert client.get("/api/opportunities?d=0.5").status_code == 400
+
+
+def test_voice_agent_tool_names_match_the_frontend():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("voice_agent", ROOT / "scripts" / "voice_agent.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    tools_ts = (ROOT / "frontend" / "src" / "agentTools.ts").read_text()
+    declared = re.search(r"TOOL_NAMES = \[(.*?)\] as const", tools_ts, re.S).group(1)
+    assert re.findall(r'"(\w+)"', declared) == module.TOOL_NAMES

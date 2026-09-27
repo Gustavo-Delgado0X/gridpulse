@@ -13,6 +13,7 @@ from app import voice
 from app.limits import limiter
 from app.repository import get_repository
 from app.routes import changes, export, opportunities, projects, sources
+from app.routes import voice as voice_routes
 from app.schemas import fail, ok
 
 API_PREFIX = "/api"
@@ -56,8 +57,9 @@ def health() -> dict:
     ai = "available" if os.environ.get("OPENROUTER_API_KEY") or os.environ.get("GOOGLE_API_KEY") else "unavailable"
     return ok({"api": "ok", "data_mode": os.environ.get("DATA_MODE", "seed"), "ai": ai,
                "voice": "available" if voice.api_key() else "unavailable",
+               "agent": "available" if voice.api_key() and voice.agent_id() else "unavailable",
                "sources_pinned": sum(1 for s in get_repository().sources if s.get("sha256"))})
 
 
-for module in (sources, projects, opportunities, changes, export):
+for module in (sources, projects, opportunities, changes, export, voice_routes):
     app.include_router(module.router, prefix=API_PREFIX)

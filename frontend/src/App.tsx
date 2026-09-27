@@ -9,6 +9,7 @@ import { PlanChangesView } from "./components/PlanChangesView";
 import { ShortcutsDialog } from "./components/ShortcutsDialog";
 import { Sidebar, type Theme, type View } from "./components/Sidebar";
 import { StudyBar } from "./components/StudyBar";
+import { VoiceAgent } from "./components/VoiceAgent";
 import { applyFilters, EMPTY_FILTERS, type Filters } from "./filters";
 import type { Change, Health, Method, Opportunity, OpportunityDetail, Project, Quality } from "./types";
 import { parseHash, toHash } from "./urlState";
@@ -202,6 +203,7 @@ export default function App() {
       <div className="shell__main">
         <p className="sr-only" aria-live="polite">{selected ? `Selected: ${selected.a.name} and ${selected.b.name}, tier ${selected.tier ?? "none"}` : ""}</p>
         <ShortcutsDialog open={help} onClose={() => setHelp(false)} />
+        {health.status === "ok" && health.data.agent === "available" && <VoiceAgent onShow={openOpportunity} />}
 
         {view === "opportunities" && (
           <>

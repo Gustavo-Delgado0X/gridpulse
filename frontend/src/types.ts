@@ -175,5 +175,7 @@ export interface Health {
   ai: "available" | "unavailable";
   /** ElevenLabs voice briefing: available only when the server has an API key. */
   voice?: "available" | "unavailable";
+  /** ElevenLabs voice agent: available when the server has a key and an agent id. */
+  agent?: "available" | "unavailable";
   sources_pinned: number;
 }
