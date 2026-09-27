@@ -11,6 +11,8 @@ from pathlib import Path
 
 import openpyxl
 
+from pipeline.normalize import endpoint_id
+
 EXCEL_EPOCH = dt.date(1899, 12, 30)
 PROJECT_COLUMNS = ("project_id", "utility", "state", "project_name", "name_a", "lat_a", "lon_a",
                    "name_b", "lat_b", "lon_b")
@@ -71,7 +73,7 @@ def _project(row: dict) -> dict:
 def _rows(sheet) -> list[dict]:
     rows = list(sheet.iter_rows(values_only=True))
     header = [str(h).strip() if h is not None else "" for h in rows[0]]
-    return [dict(zip(header, r)) for r in rows[1:] if any(c is not None for c in r)]
+    return [dict(zip(header, r, strict=False)) for r in rows[1:] if any(c is not None for c in r)]
 
 
 def parse_workbook(path: Path) -> dict:
@@ -98,3 +100,24 @@ def main(argv: list[str]) -> None:
 
 if __name__ == "__main__":
     main(sys.argv)
+
+
+def to_engine_projects(key: dict) -> list[dict]:
+    """Answer-key projects in the engine's project shape (Sperry coordinates, no build windows)."""
+    return [
+        {
+            "id": p["project_id"],
+            "utility": p["utility"],
+            "name": p["project_name"],
+            "endpoints": [
+                {"id": endpoint_id(p["state"], e["name"]), "name": e["name"], "lat": e["lat"], "lon": e["lon"],
+                 "precision": "sperry_provided" if e["lat"] is not None else "unresolved"}
+                for e in p["endpoints"]
+            ],
+            "line": None,
+            "in_service_date": p["in_service_date"],
+            "window_start": None,
+            "window_end": None,
+        }
+        for p in key["projects"]
+    ]

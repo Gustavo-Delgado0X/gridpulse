@@ -21,7 +21,8 @@ def test_haversine_zero_for_same_point():
 
 
 def test_center_point_is_midpoint_or_single_point():
-    assert center_point([EVANS, THURMOND]) == pytest.approx(((33.543994 + 33.660127) / 2, (-82.168648 + -82.195931) / 2))
+    expected = ((33.543994 + 33.660127) / 2, (-82.168648 + -82.195931) / 2)
+    assert center_point([EVANS, THURMOND]) == pytest.approx(expected)
     assert center_point([STEVENS_CREEK]) == STEVENS_CREEK
     assert center_point([]) is None
 
