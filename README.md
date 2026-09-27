@@ -2,7 +2,7 @@
 
 Cross-utility planning intelligence for Sperry Tech's **GridLock** challenge (ShellHacks 2026).
 
-GridPulse reads the public transmission plans of **Dominion Energy South Carolina (DESC)** and **Georgia Power (GPC)**. It finds where their planned work overlaps across the Savannah River and ranks those pairs so planners know whom to call first. Every value it shows cites the source page it came from, and it shows what changed between plan versions.
+GridPulse reads the public transmission plans of **Dominion Energy South Carolina (DESC)** and **Georgia Power (GPC)**. It finds where their planned work overlaps across the Savannah River and ranks those pairs so planners know whom to call first. Every source fact it quotes cites its page, every derived value names its method, and it shows what changed between plan versions.
 
 - **Primary signal:** geographic overlap within 25 mi, measured between **closest points**, in four tiers. Sperry's center-to-center method is always shown next to it.
 - **Secondary signal:** timeline overlap (shared build windows and the gap in days).
@@ -163,7 +163,7 @@ Tests that need the gitignored PDFs skip cleanly when those files are absent.
 
 ## Disclosures
 
-- **AI assistance:** built with Claude Code (Anthropic) as a pair programmer, with tests written alongside the code (see the commit history). All code is written for this project; no code was copied from other teams. An independent review with the Codex CLI flagged overclaims and data-integrity issues, which were fixed and are covered by tests.
+- **AI assistance:** built with Claude Code (Anthropic) as a pair programmer. All code is written for this project; no code was copied from other teams. An independent review with the Codex CLI flagged overclaims and data-integrity issues, which were fixed and are covered by tests.
 - **AI features:** the PydanticAI resource-profiler and explainer (plan item P1c) are **not** included in this submission. Explanations are deterministic templates, labelled `TEMPLATE`.
 - **Estimates:** cost/impact figures are illustrative arithmetic, not forecasts. Right-of-way widths, $/acre and mobilization costs are team assumptions (not sourced from either utility), shown and editable in the UI.
 - **Planning documents:** `docs/GRIDPULSE_MASTER_STRATEGY.md` and `docs/GRIDPULSE_CONTRACTS_DRAFT.md`.

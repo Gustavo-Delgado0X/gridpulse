@@ -142,7 +142,7 @@ export function Landing({ stats, featured, quality, conflict, sourceFact }: Prop
             <p className="lp-hero__kicker">Two utilities. One corridor. Separate plans.</p>
             <h1 className="lp-hero__title">GridPulse finds where transmission plans meet — before the crews do.</h1>
             <p className="lp-hero__lede">GridPulse reads Dominion Energy SC and Georgia Power transmission plans, ranks the project pairs that should talk to
-              each other, and traces every distance, date and dollar back to its source page.</p>
+              each other, cites the source page for every fact it quotes, and names the method behind every derived distance and date.</p>
             <div className="lp-actions">
               <a className="lp-btn lp-btn--primary" href={studyHref}>Open the Savannah / Augusta study</a>
               <a className="lp-btn lp-btn--ghost" href="#how">See how it works</a>
@@ -248,7 +248,7 @@ export function Landing({ stats, featured, quality, conflict, sourceFact }: Prop
           <div className="lp-wrap lp-split">
             <div>
               <p className="lp-eyebrow">Evidence</p>
-              <h2 className="lp-h2">Every number has a page number.</h2>
+              <h2 className="lp-h2">Every fact has a page number.</h2>
               <p className="lp-lede">GridPulse keeps three kinds of statement apart, so a planner can tell what a utility published from what we calculated and what we recommend.</p>
             </div>
             <ul className="lp-layers">
