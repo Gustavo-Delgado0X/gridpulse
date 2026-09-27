@@ -37,8 +37,7 @@ beforeEach(() => {
 });
 
 async function start(onShow = vi.fn()) {
-  render(<VoiceAgent onShow={onShow} />);
-  await userEvent.click(screen.getByRole("button", { name: "Talk to the GridPulse analyst" }));
+  render(<VoiceAgent open onClose={vi.fn()} onShow={onShow} />);
   await vi.waitFor(() => expect(captured).not.toBeNull());
   return onShow;
 }
@@ -83,8 +82,22 @@ test("End closes the session", async () => {
 
 test("a session failure is explained", async () => {
   RESPONSES["/api/voice/session"] = undefined;
-  render(<VoiceAgent onShow={vi.fn()} />);
-  await userEvent.click(screen.getByRole("button", { name: "Talk to the GridPulse analyst" }));
+  render(<VoiceAgent open onClose={vi.fn()} onShow={vi.fn()} />);
   expect(await screen.findByRole("alert")).toHaveTextContent("Could not start the voice analyst");
   RESPONSES["/api/voice/session"] = { signed_url: "wss://signed" };
+});
+
+test("closed, it renders nothing and starts no session", () => {
+  const { container } = render(<VoiceAgent open={false} onClose={vi.fn()} onShow={vi.fn()} />);
+  expect(container).toBeEmptyDOMElement();
+  expect(captured).toBeNull();
+});
+
+test("closing ends the session and tells the parent", async () => {
+  const onClose = vi.fn();
+  render(<VoiceAgent open onClose={onClose} onShow={vi.fn()} />);
+  await vi.waitFor(() => expect(captured).not.toBeNull());
+  await userEvent.click(screen.getByRole("button", { name: "Close voice analyst" }));
+  expect(session.endSession).toHaveBeenCalled();
+  expect(onClose).toHaveBeenCalled();
 });

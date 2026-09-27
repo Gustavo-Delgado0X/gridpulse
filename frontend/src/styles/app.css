@@ -546,7 +546,7 @@ p.sidebar__item { margin: 0; cursor: default; } /* labels, not controls: no poin
 
 /* Voice analyst (ElevenLabs agent) */
 .voice-agent { position: fixed; right: 20px; bottom: 20px; z-index: 40; }
-.voice-agent__fab { gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; box-shadow: var(--shadow-popover, 0 8px 24px rgba(0,0,0,.18)); }
+
 .voice-agent__panel { display: flex; flex-direction: column; width: min(380px, calc(100vw - 32px)); max-height: min(520px, calc(100vh - 120px));
   background: var(--bg-surface); border: 1px solid var(--line-soft); border-radius: var(--radius-lg, 12px); box-shadow: 0 16px 40px rgba(0,0,0,.22); }
 .voice-agent__head { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--line-hairline); }
@@ -561,3 +561,5 @@ p.sidebar__item { margin: 0; cursor: default; } /* labels, not controls: no poin
 .voice-agent__line--you { align-self: flex-end; max-width: 85%; padding: 6px 10px; border-radius: 10px; background: var(--bg-subtle); }
 .voice-agent__foot { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-top: 1px solid var(--line-hairline); }
 @media (max-width: 900px) { .voice-agent { right: 12px; bottom: 12px; } }
+.sidebar__ask { font-weight: 600; }
+.sidebar__mic { width: 16px; text-align: center; flex-shrink: 0; }

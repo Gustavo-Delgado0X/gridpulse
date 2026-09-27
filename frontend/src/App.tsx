@@ -86,6 +86,7 @@ export default function App() {
   const [wide, setWide] = useState(false);
   const [collapsed, setCollapsed] = useState(() => readStored("gridpulse.sidebar") === "collapsed");
   const [help, setHelp] = useState(false);
+  const [analyst, setAnalyst] = useState(false);
   const [triage, setTriage] = useTriage();
 
   const [health] = useLoad<Health>((s) => api.health(s), []);
@@ -172,6 +173,7 @@ export default function App() {
   }, [openDetail]);
 
   const selected = items.find((o) => o.id === selectedId);
+  const analystAvailable = health.status === "ok" && health.data.agent === "available";
   const acceptance = quality.status === "ok" ? quality.data.acceptance : null;
   const projectName = filters.projectId ? projectList.find((p) => p.id === filters.projectId)?.name : undefined;
 
@@ -199,11 +201,12 @@ export default function App() {
     <div className={`shell ${collapsed ? "shell--collapsed" : ""}`}>
       <Sidebar view={view} onView={setView} counts={counts} collapsed={collapsed} onCollapse={setCollapsed}
                query={filters.query} onQuery={(q) => setFilters((f) => ({ ...f, query: q }))} acceptance={acceptance}
-               dataMode={health.status === "ok" ? health.data.data_mode : null} theme={theme} onTheme={setTheme} onHelp={() => setHelp(true)} />
+               dataMode={health.status === "ok" ? health.data.data_mode : null} theme={theme} onTheme={setTheme} onHelp={() => setHelp(true)}
+               onAskAnalyst={analystAvailable ? () => setAnalyst(true) : undefined} />
       <div className="shell__main">
         <p className="sr-only" aria-live="polite">{selected ? `Selected: ${selected.a.name} and ${selected.b.name}, tier ${selected.tier ?? "none"}` : ""}</p>
         <ShortcutsDialog open={help} onClose={() => setHelp(false)} />
-        {health.status === "ok" && health.data.agent === "available" && <VoiceAgent onShow={openOpportunity} />}
+        {analystAvailable && <VoiceAgent open={analyst} onClose={() => setAnalyst(false)} onShow={openOpportunity} />}
 
         {view === "opportunities" && (
           <>

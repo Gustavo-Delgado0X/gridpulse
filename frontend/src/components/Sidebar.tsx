@@ -19,6 +19,8 @@ interface Props {
   theme: Theme;
   onTheme: (t: Theme) => void;
   onHelp: () => void;
+  /** Opens the ElevenLabs voice analyst; omitted when the server has no agent configured. */
+  onAskAnalyst?: () => void;
 }
 
 const VIEWS: { id: View; label: string; icon: IconName; count: keyof Props["counts"] }[] = [
@@ -28,7 +30,7 @@ const VIEWS: { id: View; label: string; icon: IconName; count: keyof Props["coun
 ];
 
 /** Collapsible primary navigation (two-column design). Collapsed, every control keeps its accessible name. */
-export function Sidebar({ view, onView, counts, collapsed, onCollapse, query, onQuery, acceptance, dataMode, theme, onTheme, onHelp }: Props) {
+export function Sidebar({ view, onView, counts, collapsed, onCollapse, query, onQuery, acceptance, dataMode, theme, onTheme, onHelp, onAskAnalyst }: Props) {
   const search = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -99,6 +101,11 @@ export function Sidebar({ view, onView, counts, collapsed, onCollapse, query, on
           <span className="status-square" aria-hidden="true" /><span className="sidebar__text">{dataMode === "db" ? "Live database" : "Seed dataset"}</span>
           {collapsed && <span className="sr-only">{dataMode === "db" ? "Live database" : "Seed dataset"}</span>}
         </p>
+        {onAskAnalyst && (
+          <button type="button" className="sidebar__item sidebar__ask" onClick={onAskAnalyst} aria-label="Talk to the GridPulse analyst">
+            <span className="sidebar__mic" aria-hidden="true">🎙</span><span className="sidebar__text">Ask GridPulse</span>
+          </button>
+        )}
         <button type="button" className="sidebar__item" onClick={onHelp} aria-label="Help and keyboard shortcuts">
           <Icon name="help" /><span className="sidebar__text">Help &amp; shortcuts</span>
         </button>
